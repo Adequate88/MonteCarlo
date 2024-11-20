@@ -1,3 +1,0 @@
-C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/project/cmake-build-debug/CMakeFiles/exercise-template.dir
-C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/project/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

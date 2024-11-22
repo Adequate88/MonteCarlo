@@ -1,0 +1,6 @@
+C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/pcsc.dir
+C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/main.dir
+C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/test_pcsc.dir
+C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

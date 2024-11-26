@@ -10,13 +10,11 @@
 class nonuniform_sampler {
 
   public:
-    virtual float sample() = 0;
+    nonuniform_sampler(int seed) : seed(seed), uniform_sampler(seed) {}
 
   protected:
     int seed;
-    uniform uniform_sampler;
-
-    nonuniform_sampler(int seed) : seed(seed), uniform_sampler(seed) {}
+    UniformSampler uniform_sampler;
 
 };
 

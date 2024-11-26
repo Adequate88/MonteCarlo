@@ -2,16 +2,26 @@
 #include "sampling/uniform_sampler.hh"
 #include "sampling/nonuniform_sampler.hh"
 #include "sampling/normal_sampler.hh"
-
+#include "statistics/statistics.hh"
 
 int main(int argc, char **argv) {
+    // Create a UniformSampler instance
+    UniformSampler sampler(20, -2, 5);
 
-    UniformSampler sampler(20, -2,5);
-    for (int i = 1; i < 30; i++) {
-        std::cout << sampler.sample() << std::endl;
-    }
+    // Create a Statistics instance with the sampler
+    Statistics stats(sampler, 1000); // Generate 1000 samples
 
-    sampler.generateDistribution(1000,1000000);
-    sampler.printDistribution();
+    // Test expectation, variance, and moments with identity function
+    auto identity = [](double x) { return x; };
 
+    std::cout << "Expectation: " << stats.expectation(identity) << std::endl;
+    std::cout << "Variance: " << stats.variance(identity) << std::endl;
+    std::cout << "Third Moment: " << stats.moment(3, identity) << std::endl;
+    std::cout << "Fourth Central Moment: " << stats.central_moment(4, identity) << std::endl;
+
+    // Generate and add new samples
+    stats.gen_N_new_samples(500);
+    std::cout << "Updated Expectation after adding 500 more samples: " << stats.expectation(identity) << std::endl;
+
+    return 0;
 }

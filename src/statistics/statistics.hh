@@ -1,3 +1,6 @@
+//
+// Created by alixb1908 on 26/11/24.
+//
 #ifndef STATISTICS_HH
 #define STATISTICS_HH
 
@@ -8,7 +11,7 @@
 class Statistics {
 public:
     // Constructor that accepts a sampler object
-    Statistics(const AbstractSampler& sampler, int num_samples);
+    Statistics(AbstractSampler& sampler, int num_samples);
 
     // Standard Destructor
     ~Statistics() = default;
@@ -35,8 +38,9 @@ public:
     void clear_data();
 
 private:
+    AbstractSampler& sampler;
     std::vector<double> data;
-    int N;
+    unsigned int N;
 };
 
 #endif // STATISTICS_HH

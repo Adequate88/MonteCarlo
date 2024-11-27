@@ -67,6 +67,4 @@ void UniformSampler::plotDistribution() {
     }
 
     // Initialize Gnuplot
-
-
 }

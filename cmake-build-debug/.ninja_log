@@ -1,10 +1,15 @@
 # ninja log v6
-26	185	7539850403215467	CMakeFiles/pcsc.dir/src/uniform_sampler.cc.obj	474d43e37ac50681
-1	131	7539829651815989	CMakeFiles/pcsc.dir/src/pcsc.cc.obj	c555723ea2d2ea3d
-12	224	7539829651913748	CMakeFiles/main.dir/src/probability_generator.cc.obj	2e63d1225159fdd8
-9	283	7539905991534369	build.ninja	3a7c23c9bee65fda
+9	283	7544140435095631	build.ninja	3a7c23c9bee65fda
+31	579	7544047105233576	CMakeFiles/main.dir/src/sampling/uniform_sampler.cc.obj	65ac6225a24fe99
 191	262	7539855918361276	libpcsc.a	3b2bf354ef9174d1
-19	317	7539855916639916	CMakeFiles/main.dir/src/main.cc.obj	a67955d4066cf257
-12	170	7539834530461373	CMakeFiles/pcsc.dir/src/probability_generator.cc.obj	62e2ea9da94a62da
-317	392	7539855919622278	main.exe	360f77a58bf5227a
-16	190	7539855916614871	CMakeFiles/pcsc.dir/src/sampling/uniform_sampler.cc.obj	c4c819403c53a357
+27	694	7544139766058778	CMakeFiles/main.dir/src/main.cc.obj	8eb824b92152caa
+51	601	7544025262022925	CMakeFiles/main.dir/src/sampling/abstract_sampler.cc.obj	df03c9f756597379
+698	839	7544071440876833	main.exe	dbcd953484513609
+67	706	7544025262169616	CMakeFiles/main.dir/src/statistics/statistics.cc.obj	2bd9b6ee5c801bd1
+29	666	7544062888253101	CMakeFiles/main.dir/src/sampling/normal_sampler.cc.obj	fae16bf38d33b00
+33	643	7544139766123675	CMakeFiles/main.dir/src/sampling/normal_boxmuller_sampler.cc.obj	e4cc9a62f1eaf71f
+38	653	7544139766163681	CMakeFiles/main.dir/src/sampling/normal_inverse_sampler.cc.obj	771ff5e2af553d0e
+21	605	7544140448452569	CMakeFiles/main.dir/src/sampling/normal_sampler.cc.obj	fae16bf38d33b00
+606	730	7544140454294073	main.exe	bb096854910ab2fd
+8	632	7544140685455708	CMakeFiles/main.dir/src/main.cc.obj	8eb824b92152caa
+632	789	7544140691700683	main.exe	bb096854910ab2fd

@@ -1,6 +1,8 @@
 #include <iostream>
+#include <normal_inverse_sampler.hh>
+
+#include "normal_boxmuller_sampler.hh"
 #include "sampling/uniform_sampler.hh"
-#include "sampling/nonuniform_sampler.hh"
 #include "sampling/normal_sampler.hh"
 #include "statistics/statistics.hh"
 
@@ -23,5 +25,14 @@ int main(int argc, char **argv) {
     stats.gen_N_new_samples(500);
     std::cout << "Updated Expectation after adding 500 more samples: " << stats.expectation(identity) << std::endl;
 
+    std::cout << "Testing normal: " << stats.expectation(identity) << std::endl;
+
+    // Create a UniformSampler instance
+    NormalInverseSampler normal(35, 0, 1);
+
+    normal.generateDistribution(100, 1000000);
+    normal.printDistribution();
+
     return 0;
 }
+

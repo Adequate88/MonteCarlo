@@ -8,6 +8,7 @@ include_directories(src/statistics src/sampling)
 
 # Add all source files in the sampling directory
 file(GLOB SAMPLING_SRC "src/sampling/*.cc")
+
 # Add all source files in the statistics directory
 file(GLOB STATISTICS_SRC "src/statistics/*.cc")
 

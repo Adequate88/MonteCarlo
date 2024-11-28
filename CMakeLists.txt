@@ -13,7 +13,9 @@ file(GLOB STATISTICS_SRC "src/statistics/*.cc")
 
 # Add all executables in the src directory (like main.cc) to the project
 file(GLOB EXECUTABLES "src/*.cc")
-add_executable(main ${EXECUTABLES} ${SAMPLING_SRC} ${STATISTICS_SRC})
+add_executable(main ${EXECUTABLES} ${SAMPLING_SRC} ${STATISTICS_SRC}
+        src/functions/abstract_function.cpp
+        src/functions/abstract_function.h)
 
 # Add test executable (renamed to avoid conflicts)
 file(GLOB TEST_EXECUTABLES "test/*.cc")

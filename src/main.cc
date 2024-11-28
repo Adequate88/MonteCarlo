@@ -3,6 +3,7 @@
 #include "sampling/nonuniform_sampler.hh"
 #include "sampling/normal_sampler.hh"
 #include "statistics/statistics.hh"
+#include "functions/abstract_function.h"
 
 int main(int argc, char **argv) {
     // Create a UniformSampler instance
@@ -12,7 +13,7 @@ int main(int argc, char **argv) {
     Statistics stats(sampler, 1000); // Generate 1000 samples
 
     // Test expectation, variance, and moments with identity function
-    auto identity = [](double x) { return x; };
+    auto identity = IdentityFunction<double>();
 
     std::cout << "Expectation: " << stats.expectation(identity) << std::endl;
     std::cout << "Variance: " << stats.variance(identity) << std::endl;

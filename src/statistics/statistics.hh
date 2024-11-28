@@ -7,6 +7,7 @@
 #include <vector>
 #include <functional>
 #include "abstract_sampler.hh"
+#include "abstract_function.h"
 
 class Statistics {
 public:
@@ -23,16 +24,16 @@ public:
     void gen_N_new_samples(int N);
 
     // Expectation value for an arbitrary function f
-    double expectation(const std::function<double(double)>& f = [](double x) { return x; }) const;
+    [[nodiscard]] double expectation(const AbstractFunction<double,double>& f) const;
 
     // Variance for an arbitrary function f
-    double variance(const std::function<double(double)>& f = [](double x) { return x; }) const;
+    [[nodiscard]] double variance(const AbstractFunction<double,double>& f) const;
 
     // Generalized function to calculate any power moment for an arbitrary function f
-    double moment(int power, const std::function<double(double)>& f = [](double x) { return x; }) const;
+    [[nodiscard]] double moment(int power, const AbstractFunction<double,double>& f) const;
 
     // Function to calculate central moments
-    double central_moment(int power, const std::function<double(double)>& f = [](double x) { return x; }) const;
+    [[nodiscard]] double central_moment(int power, const AbstractFunction<double,double>& f) const;
 
     // Function to clear data
     void clear_data();

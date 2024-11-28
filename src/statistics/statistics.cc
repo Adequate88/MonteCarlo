@@ -5,6 +5,8 @@
 #include "abstract_sampler.hh"
 #include <numeric>
 #include <cmath>
+#include "abstract_function.h"
+
 
 // Constructor
 Statistics::Statistics(AbstractSampler& sampler_ref, int num_samples) : sampler(sampler_ref), N(num_samples) {
@@ -28,40 +30,40 @@ void Statistics::gen_N_new_samples(int N) {
 }
 
 // Expectation value for an arbitrary function f
-double Statistics::expectation(const std::function<double(double)>& f) const {
+double Statistics::expectation(const  AbstractFunction<double,double>& f) const {
     double sum = 0.0;
     for (double value : data) {
-        sum += f(value);
+        sum += f.eval(value);
     }
     return sum / N;
 }
 
 // Variance for an arbitrary function f
-double Statistics::variance(const std::function<double(double)>& f) const {
+double Statistics::variance(const AbstractFunction<double,double>& f) const {
     const double exp_value = expectation(f);
     double sum = 0.0;
     for (const double value : data) {
-        const double diff = f(value) - exp_value;
+        const double diff = f.eval(value) - exp_value;
         sum += diff * diff;
     }
     return sum / N;
 }
 
 // Generalized function to calculate any power moment for an arbitrary function f
-double Statistics::moment(int power, const std::function<double(double)>& f) const {
+double Statistics::moment(int power, const AbstractFunction<double,double>& f) const {
     double sum = 0.0;
     for (double value : data) {
-        sum += std::pow(f(value), power);
+        sum += std::pow(f.eval(value), power);
     }
     return sum / N;
 }
 
 // Function to calculate central moments
-double Statistics::central_moment(int power, const std::function<double(double)>& f) const {
+double Statistics::central_moment(int power, const AbstractFunction<double,double>& f) const {
     const double mean_value = expectation(f);
     double sum = 0.0;
     for (const double value : data) {
-        sum += std::pow(f(value) - mean_value, power);
+        sum += std::pow(f.eval(value) - mean_value, power);
     }
     return sum / N;
 }

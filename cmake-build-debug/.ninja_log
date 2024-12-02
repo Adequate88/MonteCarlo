@@ -1,10 +1,53 @@
 # ninja log v6
-26	185	7539850403215467	CMakeFiles/pcsc.dir/src/uniform_sampler.cc.obj	474d43e37ac50681
-1	131	7539829651815989	CMakeFiles/pcsc.dir/src/pcsc.cc.obj	c555723ea2d2ea3d
-12	224	7539829651913748	CMakeFiles/main.dir/src/probability_generator.cc.obj	2e63d1225159fdd8
-9	283	7539905991534369	build.ninja	3a7c23c9bee65fda
+37	655	7547754621976755	build.ninja	3a7c23c9bee65fda
+73	1186	7546657178630121	CMakeFiles/main.dir/src/sampling/uniform_sampler.cc.obj	ad2dd9565ad804b7
 191	262	7539855918361276	libpcsc.a	3b2bf354ef9174d1
-19	317	7539855916639916	CMakeFiles/main.dir/src/main.cc.obj	a67955d4066cf257
-12	170	7539834530461373	CMakeFiles/pcsc.dir/src/probability_generator.cc.obj	62e2ea9da94a62da
-317	392	7539855919622278	main.exe	360f77a58bf5227a
-16	190	7539855916614871	CMakeFiles/pcsc.dir/src/sampling/uniform_sampler.cc.obj	c4c819403c53a357
+40	1097	7547746903069082	CMakeFiles/main.dir/src/main.cc.obj	7e1dcf66f01bac5f
+63	869	7547745700650600	CMakeFiles/main.dir/src/sampling/abstract_sampler.cc.obj	76ec87a00efa714a
+1098	1280	7547746913643650	main.exe	5d0acca45fadb60
+84	1339	7546657178744970	CMakeFiles/main.dir/src/functions/abstract_function.cpp.obj	145a6603f2a887f7
+72	1216	7547745700740529	CMakeFiles/main.dir/src/statistics/statistics.cc.obj	407029c61000de3f
+54	1573	7546657178446706	CMakeFiles/main.dir/src/sampling/normal_boxmuller_sampler.cc.obj	d0f3cf05c115ed
+60	1575	7546657178501193	CMakeFiles/main.dir/src/sampling/normal_inverse_sampler.cc.obj	6762da889f563375
+67	1618	7546657178570109	CMakeFiles/main.dir/src/sampling/normal_sampler.cc.obj	7d3baf48d1ac23a4
+85	1278	7547745700870568	CMakeFiles/main.dir/src/clt_tester/clt_tester.cpp.obj	5193adc03d8f6df4
+48	1912	7546752732027237	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	c86fbae51b960ebd
+44	2239	7547748968577193	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+41	9225	7546752731955382	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	384664c04e01eda7
+9225	13675	7546752823788026	lib/libgtest.a	dd469f61f37e7a8f
+13675	13778	7546752868290252	lib/libgtest_main.a	85fdfdda9b469cad
+2240	12145	7547748990541847	test_runner.exe	e39acb0e3dea3046
+7543	9119	7547719389970514	C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/run_tests	7681b1438691fee0
+7543	9119	7547719389970514	CMakeFiles/run_tests	7681b1438691fee0
+5	731	7547754621976755	build.ninja	3a7c23c9bee65fda
+53	2244	7547754624804434	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+2244	11836	7547754646718514	test_runner.exe	e39acb0e3dea3046
+74	3149	7547755546088583	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+3150	16446	7547755576834211	test_runner.exe	e39acb0e3dea3046
+40	3143	7547755825884605	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+3144	16434	7547755856911601	test_runner.exe	e39acb0e3dea3046
+64	3529	7547756103901548	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+3530	15885	7547756138572433	test_runner.exe	e39acb0e3dea3046
+15885	19807	7547756262113859	CMakeFiles/run_tests	7681b1438691fee0
+15885	19807	7547756262113859	C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/run_tests	7681b1438691fee0
+41	3086	7547756356016108	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+3087	15385	7547756386472561	test_runner.exe	e39acb0e3dea3046
+42	2176	7547759512243540	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+2177	11383	7547759533596428	test_runner.exe	e39acb0e3dea3046
+36	2029	7547759933889230	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+2030	11040	7547759953831411	test_runner.exe	e39acb0e3dea3046
+11040	14377	7547760043927912	CMakeFiles/run_tests	7681b1438691fee0
+11040	14377	7547760043927912	C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/run_tests	7681b1438691fee0
+30	2179	7547760239282651	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+2180	11709	7547760260789137	test_runner.exe	e39acb0e3dea3046
+40	9883	7547762019197697	test_runner.exe	e39acb0e3dea3046
+9883	14969	7547762117627124	CMakeFiles/run_tests	7681b1438691fee0
+9883	14969	7547762117627124	C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/run_tests	7681b1438691fee0
+32	2240	7547762604856989	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+2241	12157	7547762626940536	test_runner.exe	e39acb0e3dea3046
+12157	17576	7547762726103567	CMakeFiles/run_tests	7681b1438691fee0
+12157	17576	7547762726103567	C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/run_tests	7681b1438691fee0
+28	1611	7547767242121431	CMakeFiles/test_runner.dir/test/test_samplers.cc.obj	42de90faf2d7a566
+1612	7599	7547767257945664	test_runner.exe	e39acb0e3dea3046
+7600	11262	7547767317834963	CMakeFiles/run_tests	7681b1438691fee0
+7600	11262	7547767317834963	C:/Users/Alessandro Salo/Documents/EPFL/SEM1/MATH458/MonteCarlo/cmake-build-debug/CMakeFiles/run_tests	7681b1438691fee0

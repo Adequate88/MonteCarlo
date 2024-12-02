@@ -6,8 +6,8 @@
 
 #include <vector>
 #include <functional>
-#include "abstract_sampler.hh"
-#include "abstract_function.h"
+#include "../sampling/abstract_sampler.hh"
+#include "../functions/abstract_function.h"
 
 class Statistics {
 public:

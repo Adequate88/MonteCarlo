@@ -1,87 +1,42 @@
 //
-// Created by Alessandro Salo on 22.11.2024.
+// Created by Alessandro Salo on 27.11.2024.
 //
 
 #include "normal_sampler.hh"
-#include <cmath>
 #include <iostream>
+#include <cmath>
 
-normal_sampler::normal_sampler(int seed)
-    : nonuniform_sampler(seed),
-      mu(0.0), sigma(1.0),
-      last_muller(0.0), use_last_muller(false), two_pi(2.0*M_PI) {}
+void NormalSampler::generateDistribution(int bins, const int n_samples) {
 
-normal_sampler::normal_sampler(int seed, double mu, double sigma)
-    : nonuniform_sampler(seed),
-      mu(mu), sigma(sigma),
-      last_muller(0.0), use_last_muller(false), two_pi(2.0*M_PI) {}
+    if (bins < 3) {
 
-double normal_sampler::BoxMullerSample(){
-
-    if(use_last_muller){
-        use_last_muller = false;
-        return last_muller;
+        std::cout << "bins must be at least 3. Automatically setting to 3." << std::endl;
+        bins = 3;
     }
 
-    double u1,u2;
-    do
-    {
-        u1 = uniform_sampler.sample();
-    }
-    while (u1 == 0.0);
-    u2 = uniform_sampler.sample();
+    this->distribution_array.resize(bins, 0); // Initialize the array with 0s
 
-    double mag = sigma * sqrt(-2.0 * log(u1));
-    double z0  = mag * cos(two_pi * u2) + mu;
-    double z1  = mag * sin(two_pi * u2) + mu;
+    double minimum = mu - 5*sigma;
+    double maximum = mu + 5*sigma;
 
-    last_muller = z1;
-    use_last_muller = true;
+    const double delta_x = (maximum - minimum) / static_cast<double>(bins - 2);
 
-    return z0;
-}
+    for (int i = 0; i < n_samples; i++) {
+        const double current_sample = sample() - minimum;
+        int index;
 
-// Approximation of the normal quantile function (Beasley-Springer-Moro)
-double normal_sampler::normal_quantile(double p) {
-    if (p <= 0.0 || p >= 1.0) {
-        throw std::invalid_argument("p must be in the range (0, 1)");
-    }
-
-    static const double a[] = {
-        2.50662823884, -18.61500062529, 41.39119773534, -25.44106049637
-    };
-    static const double b[] = {
-        -8.47351093090, 23.08336743743, -21.06224101826, 3.13082909833
-    };
-    static const double c[] = {
-        0.3374754822726147, 0.9761690190917186, 0.1607979714918209,
-        0.0276438810333863, 0.0038405729373609, 0.0003951896511919,
-        0.0000321767881768, 0.0000002888167364, 0.0000003960315187
-    };
-
-    double x = p - 0.5;
-    double r;
-
-    if (std::abs(x) < 0.42) {
-        // Beasley-Springer approximation
-        r = x * x;
-        return x * (((a[3] * r + a[2]) * r + a[1]) * r + a[0]) /
-               ((((b[3] * r + b[2]) * r + b[1]) * r + b[0]) * r + 1.0);
-    } else {
-        // Moro's approximation
-        r = (x < 0.0) ? p : 1.0 - p;
-        r = std::log(-std::log(r));
-        double z = c[0];
-        for (int i = 1; i < 9; ++i) {
-            z += c[i] * std::pow(r, i);
+        // Compute the index safely
+        if (current_sample < 0) {
+            index = 0;
+        } else if (current_sample > maximum - minimum) {
+            index = bins - 1;
+        } else {
+            index = static_cast<int>(std::floor(current_sample / delta_x) + 1);
         }
-        return (x < 0.0) ? -z : z;
+
+        // Increment the corresponding bin by the fractional value
+        this->distribution_array[index] += 1.0 / (n_samples * delta_x);
     }
-}
 
-double normal_sampler::InverseTransformSample(){
-    double u1 = uniform_sampler.sample();
-    return normal_quantile(u1);
 }
-
 

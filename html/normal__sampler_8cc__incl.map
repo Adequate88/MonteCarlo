@@ -1,0 +1,15 @@
+<map id="src/sampling/normal_sampler.cc" name="src/sampling/normal_sampler.cc">
+<area shape="rect" id="Node000001" title="Implements methods for the NormalSampler class." alt="" coords="131,5,270,48"/>
+<area shape="rect" id="Node000002" href="$normal__sampler_8hh.html" title="Defines the NormalSampler class." alt="" coords="9,96,141,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,51,109,90,106,85,167,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="165,96,236,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="203,49,203,80,198,80,198,49"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="260,96,317,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="225,47,265,83,262,87,221,51"/>
+<area shape="rect" id="Node000003" href="$uniform__sampler_8hh.html" title="Defines the UniformSampler class." alt="" coords="7,171,143,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,123,78,155,72,155,72,123"/>
+<area shape="rect" id="Node000004" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="5,245,145,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="78,198,78,230,72,230,72,198"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="46,320,104,347"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="78,273,78,304,72,304,72,273"/>
+</map>

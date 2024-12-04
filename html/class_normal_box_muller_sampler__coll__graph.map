@@ -1,0 +1,10 @@
+<map id="NormalBoxMullerSampler" name="NormalBoxMullerSampler">
+<area shape="rect" id="Node000001" title="Generates samples from a normal distribution using the Box&#45;Muller method." alt="" coords="5,248,175,275"/>
+<area shape="rect" id="Node000002" href="$class_normal_sampler.html" title="Abstract class for normal distribution sampling." alt="" coords="34,172,146,199"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,214,93,248,87,248,87,214"/>
+<area shape="rect" id="Node000003" href="$class_abstract_sampler.html" title="Abstract base class for sampling and distribution generation." alt="" coords="26,5,144,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,47,92,171,87,172,83,47"/>
+<area shape="rect" id="Node000004" href="$class_uniform_sampler.html" title="Generates random samples from a uniform distribution." alt="" coords="106,81,221,108"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="111,41,152,79,148,83,107,45"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="145,122,103,173,98,170,141,118"/>
+</map>

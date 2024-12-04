@@ -1,0 +1,28 @@
+\doxysection{abstract\+\_\+sampler.\+hh}
+\hypertarget{abstract__sampler_8hh_source}{}\label{abstract__sampler_8hh_source}\index{src/sampling/abstract\_sampler.hh@{src/sampling/abstract\_sampler.hh}}
+\mbox{\hyperlink{abstract__sampler_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alessandro\ Salo\ on\ 23.11.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ ABSTRACT\_SAMPLER\_HH}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ ABSTRACT\_SAMPLER\_HH}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_abstract_sampler_aca9828f9112594de69ae6c85bde8e8ee}{\string~AbstractSampler}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}{distribution\_array}};\ \textcolor{comment}{//\ Array\ to\ store\ distribution\ based\ on\ bins}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}}()\{\textcolor{keywordflow}{return}\ 0.0;\}\textcolor{comment}{//\ Return\ random\ double-\/precision\ sample}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{generateDistribution}}(\textcolor{keywordtype}{int}\ bins,\ \textcolor{keywordtype}{int}\ n\_samples)\ \{\}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{printDistribution}}();}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ABSTRACT\_SAMPLER\_HH}}
+
+\end{DoxyCode}

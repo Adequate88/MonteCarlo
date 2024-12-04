@@ -1,0 +1,11 @@
+<map id="src/sampling/normal_boxmuller_sampler.hh" name="src/sampling/normal_boxmuller_sampler.hh">
+<area shape="rect" id="Node000001" title="Defines the NormalBoxMullerSampler class." alt="" coords="5,5,161,48"/>
+<area shape="rect" id="Node000002" href="$normal__sampler_8hh.html" title="Defines the NormalSampler class." alt="" coords="17,96,149,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,49,86,80,80,80,80,49"/>
+<area shape="rect" id="Node000003" href="$uniform__sampler_8hh.html" title="Defines the UniformSampler class." alt="" coords="15,171,151,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,123,86,155,80,155,80,123"/>
+<area shape="rect" id="Node000004" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="13,245,153,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="86,198,86,230,80,230,80,198"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="54,320,112,347"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="86,273,86,304,80,304,80,273"/>
+</map>

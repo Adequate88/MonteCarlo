@@ -1,0 +1,111 @@
+\doxysection{Abstract\+Sampler Class Reference}
+\hypertarget{class_abstract_sampler}{}\label{class_abstract_sampler}\index{AbstractSampler@{AbstractSampler}}
+
+
+Abstract base class for sampling and distribution generation.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+sampler.\+hh$>$}
+
+
+
+Inheritance diagram for Abstract\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_abstract_sampler__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{generate\+Distribution}} (int bins, int n\+\_\+samples)
+\begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_abstract_sampler_aca9828f9112594de69ae6c85bde8e8ee}\label{class_abstract_sampler_aca9828f9112594de69ae6c85bde8e8ee} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}\label{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72} 
+std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for sampling and distribution generation. 
+
+The {\ttfamily \doxylink{class_abstract_sampler}{Abstract\+Sampler}} class provides a virtual interface for generating distributions and sampling values. Derived classes should override the virtual methods to implement specific sampling logic. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}\index{AbstractSampler@{AbstractSampler}!generateDistribution@{generateDistribution}}
+\index{generateDistribution@{generateDistribution}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{generateDistribution()}{generateDistribution()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281} 
+virtual void Abstract\+Sampler\+::generate\+Distribution (\begin{DoxyParamCaption}\item[{int}]{bins}{, }\item[{int}]{n\+\_\+samples}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates a distribution based on bins and sample count. 
+
+This method should be overridden by derived classes to populate the {\ttfamily distribution\+\_\+array}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bins} & Number of bins in the distribution. \\
+\hline
+{\em n\+\_\+samples} & Number of samples to generate. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{Normal\+Sampler}}, and \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{Uniform\+Sampler}}.
+
+\Hypertarget{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}\index{AbstractSampler@{AbstractSampler}!printDistribution@{printDistribution}}
+\index{printDistribution@{printDistribution}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{printDistribution()}{printDistribution()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_afc110350241dd9e506f09282b1090a12} 
+void Abstract\+Sampler\+::print\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints the distribution to the standard output. 
+
+Prints the distribution array to the standard output.
+
+This method iterates over the {\ttfamily distribution\+\_\+array} and prints each bin\textquotesingle{}s data.
+
+Iterates over the {\ttfamily distribution\+\_\+array} and prints the value of each bin in the format "{}\+Bin \mbox{[}index\mbox{]} \+: \mbox{[}value\mbox{]}"{}. \Hypertarget{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}\index{AbstractSampler@{AbstractSampler}!sample@{sample}}
+\index{sample@{sample}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea} 
+virtual double Abstract\+Sampler\+::sample (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates a random sample. 
+
+This method should be overridden by derived classes to implement specific sampling logic.
+
+\begin{DoxyReturn}{Returns}
+A random sample as a double-\/precision floating-\/point number. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_normal_box_muller_sampler_aa5eeb799f6e08d063df49ebca103d388}{Normal\+Box\+Muller\+Sampler}}, \mbox{\hyperlink{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1}{Normal\+Inverse\+Sampler}}, and \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{Uniform\+Sampler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sampling/\mbox{\hyperlink{abstract__sampler_8hh}{abstract\+\_\+sampler.\+hh}}\item 
+src/sampling/\mbox{\hyperlink{abstract__sampler_8cc}{abstract\+\_\+sampler.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{uniform\+\_\+sampler.\+hh}
+\hypertarget{uniform__sampler_8hh_source}{}\label{uniform__sampler_8hh_source}\index{src/sampling/uniform\_sampler.hh@{src/sampling/uniform\_sampler.hh}}
+\mbox{\hyperlink{uniform__sampler_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alessandro\ Salo\ on\ 22.11.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ UNIFORM\_SAMPLER\_HH}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ UNIFORM\_SAMPLER\_HH}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{abstract__sampler_8hh}{abstract\_sampler.hh}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_uniform_sampler}{UniformSampler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ u\{\},v,w;\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minimum,\ maximum;\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialize(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ j);\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ int64();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_uniform_sampler_a6c99f72f96d49f941260b175a8055cfc}{\string~UniformSampler}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_uniform_sampler_a07de0652a0f590b39c74bb07b17cbc15}{UniformSampler}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ j);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_uniform_sampler_a07de0652a0f590b39c74bb07b17cbc15}{UniformSampler}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ j,\ \textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{sample}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{generateDistribution}}(\textcolor{keywordtype}{int}\ bins,\ \textcolor{keywordtype}{int}\ n\_samples)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ plotDistribution();}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//UNIFORM\_SAMPLER\_HH}}
+
+\end{DoxyCode}

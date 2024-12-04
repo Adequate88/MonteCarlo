@@ -22,8 +22,5 @@ int main(int argc, char **argv) {
     std::cout << "Third Moment: " << stats.moment(3, identity) << std::endl;
     std::cout << "Fourth Central Moment: " << stats.central_moment(3, identity) << std::endl;
 
-
-    double expected_4th = std::pow(mu, 4) + 3*std::pow(sigma, 4) + 6*std::pow(epsilon*mu, 2);
-
     return 0;
 }

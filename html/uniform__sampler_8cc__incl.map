@@ -1,0 +1,11 @@
+<map id="src/sampling/uniform_sampler.cc" name="src/sampling/uniform_sampler.cc">
+<area shape="rect" id="Node000001" title="Implements methods for the UniformSampler class." alt="" coords="23,5,165,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,63,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,50,55,85,50,82,76,47"/>
+<area shape="rect" id="Node000003" href="$uniform__sampler_8hh.html" title="Defines the UniformSampler class." alt="" coords="86,96,222,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,47,138,82,133,85,107,50"/>
+<area shape="rect" id="Node000004" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="84,171,224,197"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="157,123,157,155,151,155,151,123"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="125,245,183,272"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="157,198,157,230,151,230,151,198"/>
+</map>

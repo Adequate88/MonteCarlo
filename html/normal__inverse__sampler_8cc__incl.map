@@ -1,0 +1,17 @@
+<map id="src/sampling/normal_inverse_sampler.cc" name="src/sampling/normal_inverse_sampler.cc">
+<area shape="rect" id="Node000001" title="Implements the NormalInverseSampler class." alt="" coords="168,5,309,48"/>
+<area shape="rect" id="Node000002" href="$normal__inverse__sampler_8hh.html" title="Defines the NormalInverseSampler class." alt="" coords="5,96,186,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,51,132,90,130,86,200,46"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="210,96,267,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="241,49,241,80,236,80,236,49"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="290,96,362,123"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="263,47,303,83,299,87,259,51"/>
+<area shape="rect" id="Node000003" href="$normal__sampler_8hh.html" title="Defines the NormalSampler class." alt="" coords="30,171,161,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,123,98,155,93,155,93,123"/>
+<area shape="rect" id="Node000004" href="$uniform__sampler_8hh.html" title="Defines the UniformSampler class." alt="" coords="28,245,163,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,198,98,230,93,230,93,198"/>
+<area shape="rect" id="Node000005" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="26,320,165,347"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="98,273,98,304,93,304,93,273"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="67,395,124,421"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="98,347,98,379,93,379,93,347"/>
+</map>

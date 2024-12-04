@@ -1,0 +1,173 @@
+\doxysection{Uniform\+Sampler Class Reference}
+\hypertarget{class_uniform_sampler}{}\label{class_uniform_sampler}\index{UniformSampler@{UniformSampler}}
+
+
+Generates random samples from a uniform distribution.  
+
+
+
+
+{\ttfamily \#include $<$uniform\+\_\+sampler.\+hh$>$}
+
+
+
+Inheritance diagram for Uniform\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_uniform_sampler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Uniform\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_uniform_sampler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_uniform_sampler_a6c99f72f96d49f941260b175a8055cfc}\label{class_uniform_sampler_a6c99f72f96d49f941260b175a8055cfc} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Uniform\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_uniform_sampler}{Uniform\+Sampler}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_uniform_sampler_a07de0652a0f590b39c74bb07b17cbc15}{Uniform\+Sampler}} (unsigned long long j)
+\begin{DoxyCompactList}\small\item\em Constructor for default uniform distribution. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_uniform_sampler_a0b747cd02fdbdabd06f2aebb8625db50}{Uniform\+Sampler}} (unsigned long long j, float a, float b)
+\begin{DoxyCompactList}\small\item\em Constructor for custom uniform distribution. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{sample}} () override
+\begin{DoxyCompactList}\small\item\em Generates a random sample from the uniform distribution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
+\begin{DoxyCompactList}\small\item\em Generates a histogram of the uniform distribution. \end{DoxyCompactList}\item 
+\Hypertarget{class_uniform_sampler_a7a81094ca4fb4d84fa0cdd1500ad92ea}\label{class_uniform_sampler_a7a81094ca4fb4d84fa0cdd1500ad92ea} 
+void {\bfseries plot\+Distribution} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generates random samples from a uniform distribution. 
+
+Extends the \doxylink{class_abstract_sampler}{Abstract\+Sampler} class to provide a uniform distribution sampler. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_uniform_sampler_a07de0652a0f590b39c74bb07b17cbc15}\index{UniformSampler@{UniformSampler}!UniformSampler@{UniformSampler}}
+\index{UniformSampler@{UniformSampler}!UniformSampler@{UniformSampler}}
+\doxysubsubsection{\texorpdfstring{UniformSampler()}{UniformSampler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_uniform_sampler_a07de0652a0f590b39c74bb07b17cbc15} 
+Uniform\+Sampler\+::\+Uniform\+Sampler (\begin{DoxyParamCaption}\item[{unsigned long long}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for default uniform distribution. 
+
+Initializes the sampler with a range of \mbox{[}0,1\mbox{]}. 
+\begin{DoxyParams}{Parameters}
+{\em j} & Seed for the random number generator. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_uniform_sampler_a0b747cd02fdbdabd06f2aebb8625db50}\index{UniformSampler@{UniformSampler}!UniformSampler@{UniformSampler}}
+\index{UniformSampler@{UniformSampler}!UniformSampler@{UniformSampler}}
+\doxysubsubsection{\texorpdfstring{UniformSampler()}{UniformSampler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_uniform_sampler_a0b747cd02fdbdabd06f2aebb8625db50} 
+Uniform\+Sampler\+::\+Uniform\+Sampler (\begin{DoxyParamCaption}\item[{unsigned long long}]{j}{, }\item[{float}]{a}{, }\item[{float}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for custom uniform distribution. 
+
+Initializes the sampler with a specified range. 
+\begin{DoxyParams}{Parameters}
+{\em j} & Seed for the random number generator. \\
+\hline
+{\em a} & Lower bound of the range. \\
+\hline
+{\em b} & Upper bound of the range.\\
+\hline
+\end{DoxyParams}
+Initializes the sampler with a specified range \mbox{[}a, b\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Seed for the random number generator. \\
+\hline
+{\em a} & Lower bound of the distribution range. \\
+\hline
+{\em b} & Upper bound of the distribution range. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}\index{UniformSampler@{UniformSampler}!generateDistribution@{generateDistribution}}
+\index{generateDistribution@{generateDistribution}!UniformSampler@{UniformSampler}}
+\doxysubsubsection{\texorpdfstring{generateDistribution()}{generateDistribution()}}
+{\footnotesize\ttfamily \label{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d} 
+void Uniform\+Sampler\+::generate\+Distribution (\begin{DoxyParamCaption}\item[{int}]{bins}{, }\item[{int}]{n\+\_\+samples}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates a histogram of the uniform distribution. 
+
+Populates the distribution array with samples. 
+\begin{DoxyParams}{Parameters}
+{\em bins} & Number of bins for the histogram. \\
+\hline
+{\em n\+\_\+samples} & Number of samples to generate.\\
+\hline
+\end{DoxyParams}
+Populates the {\ttfamily distribution\+\_\+array} with bin frequencies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bins} & Number of bins for the histogram. \\
+\hline
+{\em n\+\_\+samples} & Number of samples to generate. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{Abstract\+Sampler}}.
+
+\Hypertarget{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}\index{UniformSampler@{UniformSampler}!sample@{sample}}
+\index{sample@{sample}!UniformSampler@{UniformSampler}}
+\doxysubsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily \label{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c} 
+double Uniform\+Sampler\+::sample (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates a random sample from the uniform distribution. 
+
+\begin{DoxyReturn}{Returns}
+A random double-\/precision value within the specified range.
+
+A double-\/precision value within the range \mbox{[}minimum, maximum\mbox{]}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{Abstract\+Sampler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sampling/\mbox{\hyperlink{uniform__sampler_8hh}{uniform\+\_\+sampler.\+hh}}\item 
+src/sampling/\mbox{\hyperlink{uniform__sampler_8cc}{uniform\+\_\+sampler.\+cc}}\end{DoxyCompactItemize}

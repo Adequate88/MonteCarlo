@@ -1,0 +1,29 @@
+\doxysection{normal\+\_\+sampler.\+hh}
+\hypertarget{normal__sampler_8hh_source}{}\label{normal__sampler_8hh_source}\index{src/sampling/normal\_sampler.hh@{src/sampling/normal\_sampler.hh}}
+\mbox{\hyperlink{normal__sampler_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alessandro\ Salo\ on\ 22.11.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ NORMAL\_SAMPLER}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ NORMAL\_SAMPLER}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{uniform__sampler_8hh}{uniform\_sampler.hh}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_normal_sampler}{NormalSampler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{NormalSampler}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})\ :\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}(\mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}),\ \mbox{\hyperlink{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326}{uniform\_sampler}}(\mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}),\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}(\mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}),\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}}(\mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})\ \{\};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{generateDistribution}}(\textcolor{keywordtype}{int}\ bins,\ \textcolor{keywordtype}{int}\ n\_samples)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_uniform_sampler}{UniformSampler}}\ \mbox{\hyperlink{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326}{uniform\_sampler}};\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}};\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}};\ }
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//NORMAL\_SAMPLER}}
+
+\end{DoxyCode}

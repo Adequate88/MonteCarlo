@@ -1,0 +1,19 @@
+<map id="src/statistics/statistics.hh" name="src/statistics/statistics.hh">
+<area shape="rect" id="Node000001" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="59,5,230,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="12,171,69,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,35,45,53,28,66,15,81,9,99,10,119,26,157,21,159,5,120,3,99,10,79,25,62,42,48,81,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="159,171,237,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,31,175,79,195,155,190,156,170,81,149,34"/>
+<area shape="rect" id="Node000004" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="25,80,161,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,34,116,69,112,66,134,31"/>
+<area shape="rect" id="Node000005" href="$abstract__function_8h_source.html" title=" " alt="" coords="236,80,373,123"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="171,30,251,70,249,75,168,35"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="82,125,59,159,55,156,77,122"/>
+<area shape="poly" id="edge9_Node000005_Node000003" title=" " alt="" coords="279,125,228,163,225,159,276,121"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="261,171,330,197"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="305,124,301,156,296,155,300,123"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="353,171,406,197"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="326,121,359,157,356,161,322,125"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="430,171,508,197"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="348,121,430,161,428,166,346,126"/>
+</map>

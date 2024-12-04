@@ -1,0 +1,151 @@
+\doxysection{abstract\+\_\+function.\+h}
+\hypertarget{abstract__function_8h_source}{}\label{abstract__function_8h_source}\index{src/functions/abstract\_function.h@{src/functions/abstract\_function.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ alixb1908\ on\ 28/11/24.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ ABSTRACT\_FUNCTION\_HH}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ ABSTRACT\_FUNCTION\_HH}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Forward\ declarations\ for\ ComposedFunction\ and\ AddFunction}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_composed_function}{ComposedFunction}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_function}{AddFunction}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multiply_function}{MultiplyFunction}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Abstract\ base\ class\ for\ representing\ a\ function\ with\ specified\ input\ and\ output\ types}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstract_function}{AbstractFunction}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Virtual\ destructor}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_abstract_function}{\string~AbstractFunction}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Pure\ virtual\ method\ to\ evaluate\ the\ function}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ OutputType\ eval(\textcolor{keyword}{const}\ InputType\&\ input)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ compose\ two\ functions}}
+\DoxyCodeLine{00035\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ compose(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ComposedFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Overload\ the\ '|'\ operator\ to\ compose\ two\ functions}}
+\DoxyCodeLine{00040\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ operator|(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ComposedFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Overload\ the\ '+'\ operator\ to\ add\ two\ functions}}
+\DoxyCodeLine{00045\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<AddFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Overload\ the\ '*'\ operator\ to\ multiply\ two\ functions}}
+\DoxyCodeLine{00050\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<MultiplyFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ Separate\ class\ for\ composing\ two\ functions}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_composed_function}{ComposedFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_composed_function}{ComposedFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ second)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ :\ first\_(first),\ second\_(second)\ \{\}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ OutputType\ eval(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ OutputType\ intermediate\ =\ first\_.eval(input);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ second\_.eval(intermediate);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ first\_;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ second\_;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ Separate\ class\ for\ adding\ two\ functions}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_function}{AddFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_add_function}{AddFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ :\ f\_(f),\ g\_(g)\ \{\}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ OutputType\ eval(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ OutputType\ f\_result\ =\ f\_.eval(input);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ OutputType\ g\_result\ =\ g\_.eval(input);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((f\_result\ >\ 0\ \&\&\ g\_result\ >\ std::numeric\_limits<OutputType>::max()\ -\/\ f\_result)\ ||}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ (f\_result\ <\ 0\ \&\&\ g\_result\ <\ std::numeric\_limits<OutputType>::lowest()\ -\/\ f\_result))\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::overflow\_error(\textcolor{stringliteral}{"{}Overflow\ occurred\ during\ addition."{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\_result\ +\ g\_result;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f\_;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g\_;}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ Separate\ class\ for\ multiplying\ two\ functions}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multiply_function}{MultiplyFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00099\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_multiply_function}{MultiplyFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ :\ f\_(f),\ g\_(g)\ \{\}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ OutputType\ eval(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ OutputType\ f\_result\ =\ f\_.eval(input);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ OutputType\ g\_result\ =\ g\_.eval(input);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f\_result\ !=\ 0\ \&\&\ (g\_result\ >\ std::numeric\_limits<OutputType>::max()\ /\ f\_result\ ||}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ g\_result\ <\ std::numeric\_limits<OutputType>::lowest()\ /\ f\_result))\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::overflow\_error(\textcolor{stringliteral}{"{}Overflow\ occurred\ during\ multiplication."{}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\_result\ *\ g\_result;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f\_;}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g\_;}
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ FunctionWrapper\ class\ that\ wraps\ a\ regular\ C++\ function\ and\ creates\ an\ AbstractFunction\ object}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00122\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_function_wrapper}{FunctionWrapper}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00123\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_function_wrapper}{FunctionWrapper}}(\textcolor{keyword}{const}\ std::function<OutputType(InputType)>\&\ func)\ :\ func\_(func)\ \{\}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ OutputType\ eval(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func\_(input);}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00131\ \ \ \ \ std::function<OutputType(InputType)>\ func\_\{\};}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ Identity\ function\ class}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00136\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_identity_function}{IdentityFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<T,\ T>\ \{}
+\DoxyCodeLine{00137\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00138\ \ \ \ \ T\ eval(\textcolor{keyword}{const}\ T\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ input;}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ABSTRACT\_FUNCTION\_HH}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+
+\end{DoxyCode}

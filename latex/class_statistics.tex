@@ -1,0 +1,190 @@
+\doxysection{Statistics Class Reference}
+\hypertarget{class_statistics}{}\label{class_statistics}\index{Statistics@{Statistics}}
+
+
+Computes statistical metrics for a set of samples.  
+
+
+
+
+{\ttfamily \#include $<$statistics.\+hh$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_statistics_a017f34efcc336eb14b38a999e6f18017}{Statistics}} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler, int num\+\_\+samples)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_statistics}{Statistics} object with an initial set of samples. \end{DoxyCompactList}\item 
+\Hypertarget{class_statistics_a470383aad97a6011f325933ccc15bc47}\label{class_statistics_a470383aad97a6011f325933ccc15bc47} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Statistics} ()=default
+\begin{DoxyCompactList}\small\item\em Standard destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_statistics_a5d2d2ab6b64dc34131be24b7ceecccad}{set\+\_\+data}} (const std\+::vector$<$ double $>$ \&samples)
+\begin{DoxyCompactList}\small\item\em Sets the sample data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97}{gen\+\_\+\+N\+\_\+new\+\_\+samples}} (int N)
+\begin{DoxyCompactList}\small\item\em Generates and adds new samples to the dataset. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_statistics_a3456f70d108f6e6763e72dd854ba8f8b}{expectation}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f) const
+\begin{DoxyCompactList}\small\item\em Computes the expectation value of an arbitrary function. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_statistics_a7512c1e22362b97f0f5d35607aa726df}{variance}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f) const
+\begin{DoxyCompactList}\small\item\em Computes the variance of an arbitrary function. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_statistics_afc56fe9ebd7dbb0aa61802074886322e}{moment}} (int power, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f) const
+\begin{DoxyCompactList}\small\item\em Computes a power moment of an arbitrary function. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_statistics_a966bae9272c902c05c162d8273d89c37}{central\+\_\+moment}} (int power, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f) const
+\begin{DoxyCompactList}\small\item\em Computes a central moment of an arbitrary function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}{clear\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Clears all sample data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes statistical metrics for a set of samples. 
+
+The \doxylink{class_statistics}{Statistics} class provides methods to compute statistical properties like expectation, variance, and moments for an arbitrary function applied to the sample data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_statistics_a017f34efcc336eb14b38a999e6f18017}\index{Statistics@{Statistics}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{Statistics()}{Statistics()}}
+{\footnotesize\ttfamily \label{class_statistics_a017f34efcc336eb14b38a999e6f18017} 
+Statistics\+::\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&}]{sampler\+\_\+ref}{, }\item[{int}]{num\+\_\+samples}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_statistics}{Statistics} object with an initial set of samples. 
+
+Initializes the \doxylink{class_statistics}{Statistics} object by sampling {\ttfamily num\+\_\+samples} from the provided sampler. 
+\begin{DoxyParams}{Parameters}
+{\em sampler} & Reference to an \doxylink{class_abstract_sampler}{Abstract\+Sampler} object used to generate the samples. \\
+\hline
+{\em num\+\_\+samples} & Number of samples to initially generate.\\
+\hline
+\end{DoxyParams}
+Samples {\ttfamily num\+\_\+samples} values from the provided sampler and stores them. 
+\begin{DoxyParams}{Parameters}
+{\em sampler\+\_\+ref} & Reference to an \doxylink{class_abstract_sampler}{Abstract\+Sampler} object used to generate the samples. \\
+\hline
+{\em num\+\_\+samples} & Number of samples to initially generate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_statistics_a966bae9272c902c05c162d8273d89c37}\index{Statistics@{Statistics}!central\_moment@{central\_moment}}
+\index{central\_moment@{central\_moment}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{central\_moment()}{central\_moment()}}
+{\footnotesize\ttfamily \label{class_statistics_a966bae9272c902c05c162d8273d89c37} 
+double Statistics\+::central\+\_\+moment (\begin{DoxyParamCaption}\item[{int}]{power}{, }\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&}]{f}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Computes a central moment of an arbitrary function. 
+
+Calculates the central {\ttfamily power}-\/th moment of the function applied to the samples. 
+\begin{DoxyParams}{Parameters}
+{\em power} & The order of the central moment to compute. \\
+\hline
+{\em f} & Reference to an \doxylink{class_abstract_function}{Abstract\+Function} object representing the function to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed central moment. 
+\end{DoxyReturn}
+\Hypertarget{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}\index{Statistics@{Statistics}!clear\_data@{clear\_data}}
+\index{clear\_data@{clear\_data}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{clear\_data()}{clear\_data()}}
+{\footnotesize\ttfamily \label{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712} 
+void Statistics\+::clear\+\_\+data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all sample data. 
+
+Resets the sample dataset and the sample count to zero. \Hypertarget{class_statistics_a3456f70d108f6e6763e72dd854ba8f8b}\index{Statistics@{Statistics}!expectation@{expectation}}
+\index{expectation@{expectation}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{expectation()}{expectation()}}
+{\footnotesize\ttfamily \label{class_statistics_a3456f70d108f6e6763e72dd854ba8f8b} 
+double Statistics\+::expectation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&}]{f}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Computes the expectation value of an arbitrary function. 
+
+Calculates the mean value of the function applied to the samples. 
+\begin{DoxyParams}{Parameters}
+{\em f} & Reference to an \doxylink{class_abstract_function}{Abstract\+Function} object representing the function to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The expectation value. 
+\end{DoxyReturn}
+\Hypertarget{class_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97}\index{Statistics@{Statistics}!gen\_N\_new\_samples@{gen\_N\_new\_samples}}
+\index{gen\_N\_new\_samples@{gen\_N\_new\_samples}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{gen\_N\_new\_samples()}{gen\_N\_new\_samples()}}
+{\footnotesize\ttfamily \label{class_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97} 
+void Statistics\+::gen\+\_\+\+N\+\_\+new\+\_\+samples (\begin{DoxyParamCaption}\item[{int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Generates and adds new samples to the dataset. 
+
+Generates {\ttfamily N} new samples using the associated sampler and appends them to the existing data. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Number of new samples to generate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_statistics_afc56fe9ebd7dbb0aa61802074886322e}\index{Statistics@{Statistics}!moment@{moment}}
+\index{moment@{moment}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{moment()}{moment()}}
+{\footnotesize\ttfamily \label{class_statistics_afc56fe9ebd7dbb0aa61802074886322e} 
+double Statistics\+::moment (\begin{DoxyParamCaption}\item[{int}]{power}{, }\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&}]{f}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Computes a power moment of an arbitrary function. 
+
+Calculates the {\ttfamily power}-\/th moment of the function applied to the samples. 
+\begin{DoxyParams}{Parameters}
+{\em power} & The order of the moment to compute. \\
+\hline
+{\em f} & Reference to an \doxylink{class_abstract_function}{Abstract\+Function} object representing the function to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed moment. 
+\end{DoxyReturn}
+\Hypertarget{class_statistics_a5d2d2ab6b64dc34131be24b7ceecccad}\index{Statistics@{Statistics}!set\_data@{set\_data}}
+\index{set\_data@{set\_data}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{set\_data()}{set\_data()}}
+{\footnotesize\ttfamily \label{class_statistics_a5d2d2ab6b64dc34131be24b7ceecccad} 
+void Statistics\+::set\+\_\+data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{samples}{}\end{DoxyParamCaption})}
+
+
+
+Sets the sample data. 
+
+Replaces the current sample data with the provided vector of samples. 
+\begin{DoxyParams}{Parameters}
+{\em samples} & Vector of sample values. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_statistics_a7512c1e22362b97f0f5d35607aa726df}\index{Statistics@{Statistics}!variance@{variance}}
+\index{variance@{variance}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{variance()}{variance()}}
+{\footnotesize\ttfamily \label{class_statistics_a7512c1e22362b97f0f5d35607aa726df} 
+double Statistics\+::variance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&}]{f}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Computes the variance of an arbitrary function. 
+
+Calculates the variance of the function applied to the samples. 
+\begin{DoxyParams}{Parameters}
+{\em f} & Reference to an \doxylink{class_abstract_function}{Abstract\+Function} object representing the function to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The variance. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/statistics/\mbox{\hyperlink{statistics_8hh}{statistics.\+hh}}\item 
+src/statistics/\mbox{\hyperlink{statistics_8cc}{statistics.\+cc}}\end{DoxyCompactItemize}

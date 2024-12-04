@@ -1,0 +1,17 @@
+<map id="src/sampling/normal_boxmuller_sampler.cc" name="src/sampling/normal_boxmuller_sampler.cc">
+<area shape="rect" id="Node000001" title="Implements the NormalBoxMullerSampler class." alt="" coords="174,5,330,48"/>
+<area shape="rect" id="Node000002" href="$normal__boxmuller__sampler_8hh.html" title="Defines the NormalBoxMullerSampler class." alt="" coords="5,96,200,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,51,140,91,138,86,212,46"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="223,96,280,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="254,49,254,80,249,80,249,49"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="304,96,376,123"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="276,47,317,83,313,87,273,51"/>
+<area shape="rect" id="Node000003" href="$normal__sampler_8hh.html" title="Defines the NormalSampler class." alt="" coords="37,171,168,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,123,105,155,100,155,100,123"/>
+<area shape="rect" id="Node000004" href="$uniform__sampler_8hh.html" title="Defines the UniformSampler class." alt="" coords="35,245,170,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,198,105,230,100,230,100,198"/>
+<area shape="rect" id="Node000005" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="33,320,172,347"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="105,273,105,304,100,304,100,273"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="74,395,131,421"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="105,347,105,379,100,379,100,347"/>
+</map>

@@ -1,0 +1,178 @@
+\doxysection{Normal\+Inverse\+Sampler Class Reference}
+\hypertarget{class_normal_inverse_sampler}{}\label{class_normal_inverse_sampler}\index{NormalInverseSampler@{NormalInverseSampler}}
+
+
+Generates samples from a normal distribution using the inverse transform method.  
+
+
+
+
+{\ttfamily \#include $<$normal\+\_\+inverse\+\_\+sampler.\+hh$>$}
+
+
+
+Inheritance diagram for Normal\+Inverse\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_normal_inverse_sampler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Normal\+Inverse\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_normal_inverse_sampler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_normal_inverse_sampler_a22eab7e8a273f2bebfdf54b2f8b296de}{Normal\+Inverse\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}})
+\begin{DoxyCompactList}\small\item\em Constructor for standard normal distribution. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_normal_inverse_sampler_aae97ecbf9f534ca8ff0c840e83b68c59}{Normal\+Inverse\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}, double \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}, double \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})
+\begin{DoxyCompactList}\small\item\em Constructor for custom normal distribution. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1}{sample}} () override
+\begin{DoxyCompactList}\small\item\em Samples a random value from the normal distribution. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff}{normal\+\_\+quantile}} (double p)
+\begin{DoxyCompactList}\small\item\em Computes the quantile function for the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_normal_sampler}{Normal\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{Normal\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}, double \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}, double \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_normal_sampler}{Normal\+Sampler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
+\begin{DoxyCompactList}\small\item\em Generates a histogram of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_normal_sampler}{Normal\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries seed}
+\begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_uniform_sampler}{Uniform\+Sampler}} {\bfseries uniform\+\_\+sampler}
+\begin{DoxyCompactList}\small\item\em Uniform sampler used internally. \end{DoxyCompactList}\item 
+double {\bfseries mu}
+\begin{DoxyCompactList}\small\item\em Mean of the normal distribution. \end{DoxyCompactList}\item 
+double {\bfseries sigma}
+\begin{DoxyCompactList}\small\item\em Standard deviation of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generates samples from a normal distribution using the inverse transform method. 
+
+Extends the \doxylink{class_normal_sampler}{Normal\+Sampler} class to provide an implementation of the inverse transform method for generating normal-\/distributed random numbers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_normal_inverse_sampler_a22eab7e8a273f2bebfdf54b2f8b296de}\index{NormalInverseSampler@{NormalInverseSampler}!NormalInverseSampler@{NormalInverseSampler}}
+\index{NormalInverseSampler@{NormalInverseSampler}!NormalInverseSampler@{NormalInverseSampler}}
+\doxysubsubsection{\texorpdfstring{NormalInverseSampler()}{NormalInverseSampler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_normal_inverse_sampler_a22eab7e8a273f2bebfdf54b2f8b296de} 
+Normal\+Inverse\+Sampler\+::\+Normal\+Inverse\+Sampler (\begin{DoxyParamCaption}\item[{int}]{seed}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for standard normal distribution. 
+
+Initializes the sampler with mean 0 and standard deviation 1. 
+\begin{DoxyParams}{Parameters}
+{\em seed} & Seed for the random number generator. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_normal_inverse_sampler_aae97ecbf9f534ca8ff0c840e83b68c59}\index{NormalInverseSampler@{NormalInverseSampler}!NormalInverseSampler@{NormalInverseSampler}}
+\index{NormalInverseSampler@{NormalInverseSampler}!NormalInverseSampler@{NormalInverseSampler}}
+\doxysubsubsection{\texorpdfstring{NormalInverseSampler()}{NormalInverseSampler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_normal_inverse_sampler_aae97ecbf9f534ca8ff0c840e83b68c59} 
+Normal\+Inverse\+Sampler\+::\+Normal\+Inverse\+Sampler (\begin{DoxyParamCaption}\item[{int}]{seed}{, }\item[{double}]{mu}{, }\item[{double}]{sigma}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for custom normal distribution. 
+
+Initializes the sampler with specified mean and standard deviation. 
+\begin{DoxyParams}{Parameters}
+{\em seed} & Seed for the random number generator. \\
+\hline
+{\em mu} & Mean of the distribution. \\
+\hline
+{\em sigma} & Standard deviation of the distribution. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff}\index{NormalInverseSampler@{NormalInverseSampler}!normal\_quantile@{normal\_quantile}}
+\index{normal\_quantile@{normal\_quantile}!NormalInverseSampler@{NormalInverseSampler}}
+\doxysubsubsection{\texorpdfstring{normal\_quantile()}{normal\_quantile()}}
+{\footnotesize\ttfamily \label{class_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff} 
+double Normal\+Inverse\+Sampler\+::normal\+\_\+quantile (\begin{DoxyParamCaption}\item[{double}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Computes the quantile function for the normal distribution. 
+
+Calculates the quantile corresponding to a given probability using the Beasley-\/\+Springer-\/\+Moro approximation. 
+\begin{DoxyParams}{Parameters}
+{\em p} & Probability in the range (0,1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The quantile value corresponding to the probability.
+\end{DoxyReturn}
+Approximates the quantile (inverse cumulative distribution function) for a normal distribution using the Beasley-\/\+Springer-\/\+Moro approximation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Probability in the range (0,1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The quantile value corresponding to the probability. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if p is not in the range (0,1). \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1}\index{NormalInverseSampler@{NormalInverseSampler}!sample@{sample}}
+\index{sample@{sample}!NormalInverseSampler@{NormalInverseSampler}}
+\doxysubsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily \label{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1} 
+double Normal\+Inverse\+Sampler\+::sample (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Samples a random value from the normal distribution. 
+
+Uses the inverse transform method to generate a normally distributed random value. \begin{DoxyReturn}{Returns}
+A random value from the normal distribution.
+\end{DoxyReturn}
+Uses the quantile function and a uniformly distributed random sample to generate a value from the normal distribution. \begin{DoxyReturn}{Returns}
+A random value from the normal distribution. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{Abstract\+Sampler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sampling/\mbox{\hyperlink{normal__inverse__sampler_8hh}{normal\+\_\+inverse\+\_\+sampler.\+hh}}\item 
+src/sampling/\mbox{\hyperlink{normal__inverse__sampler_8cc}{normal\+\_\+inverse\+\_\+sampler.\+cc}}\end{DoxyCompactItemize}

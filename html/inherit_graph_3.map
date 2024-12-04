@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_abstract_sampler.html" title="Abstract base class for sampling and distribution generation." alt="" coords="5,56,124,83"/>
+<area shape="rect" id="Node000001" href="$class_normal_sampler.html" title="Abstract class for normal distribution sampling." alt="" coords="174,31,285,57"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="138,55,173,50,173,55,139,61"/>
+<area shape="rect" id="Node000004" href="$class_uniform_sampler.html" title="Generates random samples from a uniform distribution." alt="" coords="172,81,287,108"/>
+<area shape="poly" id="edge9_Node000000_Node000004" title=" " alt="" coords="139,78,172,83,171,88,139,83"/>
+<area shape="rect" id="Node000002" href="$class_normal_box_muller_sampler.html" title="Generates samples from a normal distribution using the Box&#45;Muller method." alt="" coords="335,5,504,32"/>
+<area shape="poly" id="edge7_Node000001_Node000002" title=" " alt="" coords="300,32,334,27,335,33,301,37"/>
+<area shape="rect" id="Node000003" href="$class_normal_inverse_sampler.html" title="Generates samples from a normal distribution using the inverse transform method." alt="" coords="342,56,497,83"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="301,51,342,56,342,62,300,56"/>
+</map>

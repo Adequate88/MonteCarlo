@@ -1,0 +1,8 @@
+<map id="NormalSampler" name="NormalSampler">
+<area shape="rect" id="Node000001" title="Abstract class for normal distribution sampling." alt="" coords="14,172,126,199"/>
+<area shape="rect" id="Node000002" href="$class_abstract_sampler.html" title="Abstract base class for sampling and distribution generation." alt="" coords="5,5,124,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,47,72,171,67,172,63,47"/>
+<area shape="rect" id="Node000003" href="$class_uniform_sampler.html" title="Generates random samples from a uniform distribution." alt="" coords="86,81,201,108"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="91,41,132,79,128,83,87,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,122,82,173,78,170,121,118"/>
+</map>

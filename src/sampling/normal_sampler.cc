@@ -1,11 +1,26 @@
 //
 // Created by Alessandro Salo on 27.11.2024.
 //
+/**
+ * @file normal_sampler.cc
+ * @brief Implements methods for the NormalSampler class.
+ *
+ * Contains the implementation of histogram generation for normal distributions.
+ */
 
 #include "normal_sampler.hh"
 #include <iostream>
 #include <cmath>
 
+/**
+ * @brief Generates a histogram of the normal distribution.
+ *
+ * Populates the `distribution_array` with bin frequencies based on generated samples.
+ * Ensures that bins have a minimum size and samples are allocated appropriately.
+ *
+ * @param bins Number of bins in the histogram.
+ * @param n_samples Number of samples to generate.
+ */
 void NormalSampler::generateDistribution(int bins, const int n_samples) {
 
     if (bins < 3) {

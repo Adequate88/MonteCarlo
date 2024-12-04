@@ -1,0 +1,44 @@
+\doxysection{statistics.\+hh}
+\hypertarget{statistics_8hh_source}{}\label{statistics_8hh_source}\index{src/statistics/statistics.hh@{src/statistics/statistics.hh}}
+\mbox{\hyperlink{statistics_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ alixb1908\ on\ 26/11/24.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ STATISTICS\_HH}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ STATISTICS\_HH}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{abstract__sampler_8hh}{../sampling/abstract\_sampler.hh}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../functions/abstract\_function.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_statistics}{Statistics}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_statistics_a017f34efcc336eb14b38a999e6f18017}{Statistics}}(\mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\&\ sampler,\ \textcolor{keywordtype}{int}\ num\_samples);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_statistics_a470383aad97a6011f325933ccc15bc47}{\string~Statistics}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a5d2d2ab6b64dc34131be24b7ceecccad}{set\_data}}(\textcolor{keyword}{const}\ std::vector<double>\&\ samples);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97}{gen\_N\_new\_samples}}(\textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_a3456f70d108f6e6763e72dd854ba8f8b}{expectation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_a7512c1e22362b97f0f5d35607aa726df}{variance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_afc56fe9ebd7dbb0aa61802074886322e}{moment}}(\textcolor{keywordtype}{int}\ power,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_a966bae9272c902c05c162d8273d89c37}{central\_moment}}(\textcolor{keywordtype}{int}\ power,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}{clear\_data}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\&\ sampler;\ \ }
+\DoxyCodeLine{00105\ \ \ \ \ std::vector<double>\ data;\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N;\ }
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STATISTICS\_HH}}
+
+\end{DoxyCode}

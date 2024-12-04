@@ -1,0 +1,135 @@
+\doxysection{Normal\+Sampler Class Reference}
+\hypertarget{class_normal_sampler}{}\label{class_normal_sampler}\index{NormalSampler@{NormalSampler}}
+
+
+Abstract class for normal distribution sampling.  
+
+
+
+
+{\ttfamily \#include $<$normal\+\_\+sampler.\+hh$>$}
+
+
+
+Inheritance diagram for Normal\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_normal_sampler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Normal\+Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_normal_sampler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{Normal\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}, double \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}, double \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_normal_sampler}{Normal\+Sampler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
+\begin{DoxyCompactList}\small\item\em Generates a histogram of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}\label{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0} 
+int {\bfseries seed}
+\begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
+\Hypertarget{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326}\label{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326} 
+\mbox{\hyperlink{class_uniform_sampler}{Uniform\+Sampler}} {\bfseries uniform\+\_\+sampler}
+\begin{DoxyCompactList}\small\item\em Uniform sampler used internally. \end{DoxyCompactList}\item 
+\Hypertarget{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}\label{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557} 
+double {\bfseries mu}
+\begin{DoxyCompactList}\small\item\em Mean of the normal distribution. \end{DoxyCompactList}\item 
+\Hypertarget{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}\label{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4} 
+double {\bfseries sigma}
+\begin{DoxyCompactList}\small\item\em Standard deviation of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for normal distribution sampling. 
+
+Implements methods for generating and sampling from normal distributions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}\index{NormalSampler@{NormalSampler}!NormalSampler@{NormalSampler}}
+\index{NormalSampler@{NormalSampler}!NormalSampler@{NormalSampler}}
+\doxysubsubsection{\texorpdfstring{NormalSampler()}{NormalSampler()}}
+{\footnotesize\ttfamily \label{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529} 
+Normal\+Sampler\+::\+Normal\+Sampler (\begin{DoxyParamCaption}\item[{int}]{seed}{, }\item[{double}]{mu}{, }\item[{double}]{sigma}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{class_normal_sampler}{Normal\+Sampler}. 
+
+Initializes the normal distribution sampler with a specified seed, mean, and standard deviation. 
+\begin{DoxyParams}{Parameters}
+{\em seed} & Seed for the random number generator. \\
+\hline
+{\em mu} & Mean of the normal distribution. \\
+\hline
+{\em sigma} & Standard deviation of the normal distribution. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}\index{NormalSampler@{NormalSampler}!generateDistribution@{generateDistribution}}
+\index{generateDistribution@{generateDistribution}!NormalSampler@{NormalSampler}}
+\doxysubsubsection{\texorpdfstring{generateDistribution()}{generateDistribution()}}
+{\footnotesize\ttfamily \label{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55} 
+void Normal\+Sampler\+::generate\+Distribution (\begin{DoxyParamCaption}\item[{int}]{bins}{, }\item[{int}]{n\+\_\+samples}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates a histogram of the normal distribution. 
+
+Populates the {\ttfamily distribution\+\_\+array} with bins and corresponding frequencies. 
+\begin{DoxyParams}{Parameters}
+{\em bins} & Number of bins in the histogram. \\
+\hline
+{\em n\+\_\+samples} & Number of samples to generate.\\
+\hline
+\end{DoxyParams}
+Populates the {\ttfamily distribution\+\_\+array} with bin frequencies based on generated samples. Ensures that bins have a minimum size and samples are allocated appropriately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bins} & Number of bins in the histogram. \\
+\hline
+{\em n\+\_\+samples} & Number of samples to generate. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{Abstract\+Sampler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/sampling/\mbox{\hyperlink{normal__sampler_8hh}{normal\+\_\+sampler.\+hh}}\item 
+src/sampling/\mbox{\hyperlink{normal__sampler_8cc}{normal\+\_\+sampler.\+cc}}\end{DoxyCompactItemize}

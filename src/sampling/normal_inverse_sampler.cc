@@ -1,19 +1,48 @@
 //
 // Created by Alessandro Salo on 22.11.2024.
 //
+/**
+ * @file normal_inverse_sampler.cc
+ * @brief Implements the NormalInverseSampler class.
+ *
+ * Contains the implementation of the inverse transform method for generating
+ * normal-distributed random samples.
+ */
 
 #include "normal_inverse_sampler.hh"
 #include <cmath>
 #include <iostream>
 
+/**
+ * @brief Constructor for standard normal distribution.
+ *
+ * Initializes the sampler with mean 0 and standard deviation 1.
+ * @param seed Seed for the random number generator.
+ */
 NormalInverseSampler::NormalInverseSampler(int seed)
     : NormalSampler(seed, 0.0, 1.0) {}
 
+/**
+ * @brief Constructor for custom normal distribution.
+ *
+ * Initializes the sampler with specified mean and standard deviation.
+ * @param seed Seed for the random number generator.
+ * @param mu Mean of the distribution.
+ * @param sigma Standard deviation of the distribution.
+ */
 NormalInverseSampler::NormalInverseSampler(int seed, double mu, double sigma)
     : NormalSampler(seed, mu, sigma) {}
 
-
-// Approximation of the normal quantile function (Beasley-Springer-Moro)
+/**
+ * @brief Computes the quantile function for the normal distribution.
+ *
+ * Approximates the quantile (inverse cumulative distribution function) for a normal
+ * distribution using the Beasley-Springer-Moro approximation.
+ *
+ * @param p Probability in the range (0,1).
+ * @return The quantile value corresponding to the probability.
+ * @throws std::invalid_argument if p is not in the range (0,1).
+ */
 double NormalInverseSampler::normal_quantile(double p) {
     if (p <= 0.0 || p >= 1.0) {
         throw std::invalid_argument("p must be in the range (0, 1)");
@@ -51,6 +80,13 @@ double NormalInverseSampler::normal_quantile(double p) {
     }
 }
 
+/**
+ * @brief Samples a random value from the normal distribution.
+ *
+ * Uses the quantile function and a uniformly distributed random sample
+ * to generate a value from the normal distribution.
+ * @return A random value from the normal distribution.
+ */
 double NormalInverseSampler::sample(){
     double u1 = uniform_sampler.sample();
     return mu + sigma*normal_quantile(u1);

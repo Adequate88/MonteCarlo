@@ -1,0 +1,10 @@
+<map id="NormalInverseSampler" name="NormalInverseSampler">
+<area shape="rect" id="Node000001" title="Generates samples from a normal distribution using the inverse transform method." alt="" coords="5,248,160,275"/>
+<area shape="rect" id="Node000002" href="$class_normal_sampler.html" title="Abstract class for normal distribution sampling." alt="" coords="27,172,138,199"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,214,85,248,80,248,80,214"/>
+<area shape="rect" id="Node000003" href="$class_abstract_sampler.html" title="Abstract base class for sampling and distribution generation." alt="" coords="18,5,136,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,47,85,171,79,172,75,47"/>
+<area shape="rect" id="Node000004" href="$class_uniform_sampler.html" title="Generates random samples from a uniform distribution." alt="" coords="98,81,214,108"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="103,41,145,79,141,83,100,45"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="138,122,95,173,91,170,134,118"/>
+</map>

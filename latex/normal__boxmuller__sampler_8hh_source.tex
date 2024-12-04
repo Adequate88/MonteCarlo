@@ -1,0 +1,31 @@
+\doxysection{normal\+\_\+boxmuller\+\_\+sampler.\+hh}
+\hypertarget{normal__boxmuller__sampler_8hh_source}{}\label{normal__boxmuller__sampler_8hh_source}\index{src/sampling/normal\_boxmuller\_sampler.hh@{src/sampling/normal\_boxmuller\_sampler.hh}}
+\mbox{\hyperlink{normal__boxmuller__sampler_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alessandro\ Salo\ on\ 22.11.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ NORMAL\_BOXMULLER\_SAMPLER\_HH}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ NORMAL\_BOXMULLER\_SAMPLER\_HH}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{normal__sampler_8hh}{normal\_sampler.hh}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_normal_box_muller_sampler}{NormalBoxMullerSampler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_normal_sampler}{NormalSampler}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ last\_muller;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ use\_last\_muller;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ two\_pi;\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_normal_box_muller_sampler_a964c8bb4f841eb0c5759c063c15542ad}{NormalBoxMullerSampler}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_normal_box_muller_sampler_a964c8bb4f841eb0c5759c063c15542ad}{NormalBoxMullerSampler}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_box_muller_sampler_aa5eeb799f6e08d063df49ebca103d388}{sample}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//NORMAL\_BOXMULLER\_SAMPLER\_HH}}
+
+\end{DoxyCode}

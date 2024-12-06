@@ -3,6 +3,13 @@ project(PCSC-project)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# find dependencies (Boost)
+find_package(Boost REQUIRED COMPONENTS
+        iostreams system filesystem
+)
+# adds the search path for includes
+include_directories(gnuplot-iostream)
+
 # Include directories for header files
 include_directories(src/statistics src/sampling src/functions src/clt_tester)
 
@@ -27,7 +34,13 @@ add_subdirectory(googletest)
 file(GLOB TEST_EXECUTABLES "test/*.cc")
 add_executable(test_runner ${TEST_EXECUTABLES})
 target_link_libraries(test_runner gtest_main gtest pthread ${SAMPLING_SRC} ${STATISTICS_SRC} )
-
+# Add Boost libraries and pthread to the main executable
+target_link_libraries(main PRIVATE
+        Boost::iostreams
+        Boost::system
+        Boost::filesystem
+        pthread
+)
 # Define a custom target for running tests
 add_custom_target(run_tests COMMAND ./test_runner DEPENDS test_runner)
 

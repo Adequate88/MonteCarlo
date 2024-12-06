@@ -5,4 +5,4 @@
 [submodule "gnuplot"]
 	path = gnuplot-iostream
 	url = https://github.com/dstahlke/gnuplot-iostream.git
-	branch = main
+	branch = master

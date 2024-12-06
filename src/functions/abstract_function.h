@@ -60,8 +60,8 @@ public:
         : first_(first), second_(second) {}
 
     OutputType eval(const InputType& input) const override {
-        OutputType intermediate = first_.eval(input);
-        return second_.eval(intermediate);
+        OutputType intermediate = second_.eval(input);
+        return first_.eval(intermediate);
     }
 
 private:
@@ -82,7 +82,7 @@ public:
 
         if ((f_result > 0 && g_result > std::numeric_limits<OutputType>::max() - f_result) ||
             (f_result < 0 && g_result < std::numeric_limits<OutputType>::lowest() - f_result)) {
-            throw std::overflow_error("Overflow occurred during addition.");
+            //throw std::overflow_error("Overflow occurred during addition.");
         }
 
         return f_result + g_result;
@@ -106,7 +106,7 @@ public:
 
         if (f_result != 0 && (g_result > std::numeric_limits<OutputType>::max() / f_result ||
             g_result < std::numeric_limits<OutputType>::lowest() / f_result)) {
-            throw std::overflow_error("Overflow occurred during multiplication.");
+            //throw std::overflow_error("Overflow occurred during multiplication.");
         }
 
         return f_result * g_result;
@@ -138,6 +138,21 @@ public:
     T eval(const T& input) const override {
         return input;
     }
+};
+
+template <typename T>
+class ConstantFunction : public AbstractFunction<T, T> {
+    public:
+        explicit ConstantFunction(T input) : constant(input) {}
+        T eval(const T& input) const override {
+            return constant;
+        }
+
+        T eval() const{
+            return constant;
+        }
+    private:
+        T constant;
 };
 
 #endif // ABSTRACT_FUNCTION_HH

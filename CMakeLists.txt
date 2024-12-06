@@ -16,9 +16,7 @@ file(GLOB FUNCTIONS_SRC "src/functions/*.cc")
 
 # Add all executables in the src directory (like main.cc) to the project
 file(GLOB EXECUTABLES "src/*.cc")
-add_executable(main ${EXECUTABLES} ${SAMPLING_SRC} ${STATISTICS_SRC}
-        src/functions/abstract_function.cpp
-        src/functions/abstract_function.h
+add_executable(main ${EXECUTABLES} ${SAMPLING_SRC} ${STATISTICS_SRC} ${FUNCTIONS_SRC}
         src/clt_tester/clt_tester.cpp
         src/clt_tester/clt_tester.h)
 
@@ -32,3 +30,4 @@ target_link_libraries(test_runner gtest_main gtest pthread ${SAMPLING_SRC} ${STA
 
 # Define a custom target for running tests
 add_custom_target(run_tests COMMAND ./test_runner DEPENDS test_runner)
+

@@ -62,12 +62,12 @@ public:
     // Overload the '^' operator to create an exponential function with an integer power
     // (not to be confused with the bitwise XOR operator)
     std::unique_ptr<AbstractFunction<InputType, OutputType>> operator^(int power) const {
-        return std::make_unique<ExponentialFunction<InputType, OutputType>>(std::make_shared<AbstractFunction<InputType, OutputType>>(*this), power);
+        return std::make_unique<ExponentialFunction<InputType, OutputType>>(*this, power);
     }
 
     // Overload the '^' operator to create an exponential function with a double power
     std::unique_ptr<AbstractFunction<double, double>> operator^(double power) const {
-        return std::make_unique<ExponentialFunction<double, double>>(std::make_shared<AbstractFunction<double, double>>(*this), power);
+        return std::make_unique<ExponentialFunction<double, double>>(*this, power);
     }
 };
 
@@ -142,34 +142,34 @@ template <typename InputType, typename OutputType>
 class ExponentialFunction : public AbstractFunction<InputType, OutputType> {
 public:
     // Constructor for integer power (using repeated multiplication)
-    ExponentialFunction(std::shared_ptr<AbstractFunction<InputType, OutputType>> baseFunction, int power)
-        : baseFunction_(std::move(baseFunction)), power_(static_cast<double>(power)), isIntegerPower_(true) {}
+    ExponentialFunction(const AbstractFunction<InputType, OutputType>& baseFunction, int power)
+        : baseFunction_(baseFunction), power_(static_cast<double>(power)), isIntegerPower_(true) {}
 
     // Constructor for double power (using std::pow)
-    ExponentialFunction(std::shared_ptr<AbstractFunction<double, double>> baseFunction, double power)
-        : baseFunction_(std::move(baseFunction)), power_(power), isIntegerPower_(false) {}
+    ExponentialFunction(const AbstractFunction<double, double>& baseFunction, double power)
+        : baseFunction_(baseFunction), power_(power), isIntegerPower_(false) {}
 
     // Evaluate the function at a given x value
     OutputType eval(const InputType& x) const override {
         if (isIntegerPower_) {
             // Use repeated multiplication for integer power
             if (static_cast<int>(power_) == 1) {
-                return baseFunction_->eval(x);
+                return baseFunction_.eval(x);
             }
-            OutputType baseValue = baseFunction_->eval(x);
-            OutputType result = baseFunction_->eval(x);
+            OutputType baseValue = baseFunction_.eval(x);
+            OutputType result = baseFunction_.eval(x);
             for (int i = 0; i < static_cast<int>(power_); ++i) {
                 result *= baseValue;
             }
             return result;
         }
         // Use std::pow for double power
-        const double baseValue = baseFunction_->eval(static_cast<double>(x));
+        const double baseValue = baseFunction_.eval(static_cast<double>(x));
         return static_cast<OutputType>(std::pow(baseValue, power_));
     }
 
 private:
-    std::shared_ptr<AbstractFunction<InputType, OutputType>> baseFunction_;
+    const AbstractFunction<InputType, OutputType>& baseFunction_;
     double power_;
     bool isIntegerPower_;
 };
@@ -213,5 +213,3 @@ class ConstantFunction : public AbstractFunction<T, T> {
 };
 
 #endif // ABSTRACT_FUNCTION_HH
-
-

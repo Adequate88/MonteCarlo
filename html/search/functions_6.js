@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['sample_0',['sample',['../class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea',1,'AbstractSampler::sample()'],['../class_normal_box_muller_sampler.html#aa5eeb799f6e08d063df49ebca103d388',1,'NormalBoxMullerSampler::sample()'],['../class_normal_inverse_sampler.html#a5a125b33494e8a2305d358d188452bc1',1,'NormalInverseSampler::sample()'],['../class_uniform_sampler.html#ae352adfceb12d692f021df61b48c317c',1,'UniformSampler::sample()']]],
-  ['set_5fdata_1',['set_data',['../class_statistics.html#a5d2d2ab6b64dc34131be24b7ceecccad',1,'Statistics']]],
-  ['statistics_2',['Statistics',['../class_statistics.html#a017f34efcc336eb14b38a999e6f18017',1,'Statistics']]]
+  ['normal_5fquantile_0',['normal_quantile',['../class_normal_inverse_sampler.html#a2ec0a28ca12f65d8e150176476aa7eff',1,'NormalInverseSampler']]],
+  ['normalboxmullersampler_1',['NormalBoxMullerSampler',['../class_normal_box_muller_sampler.html#a964c8bb4f841eb0c5759c063c15542ad',1,'NormalBoxMullerSampler::NormalBoxMullerSampler(int seed)'],['../class_normal_box_muller_sampler.html#ae7bdf74dca516db48e8110bbe67017e2',1,'NormalBoxMullerSampler::NormalBoxMullerSampler(int seed, double mu, double sigma)']]],
+  ['normalinversesampler_2',['NormalInverseSampler',['../class_normal_inverse_sampler.html#a22eab7e8a273f2bebfdf54b2f8b296de',1,'NormalInverseSampler::NormalInverseSampler(int seed)'],['../class_normal_inverse_sampler.html#aae97ecbf9f534ca8ff0c840e83b68c59',1,'NormalInverseSampler::NormalInverseSampler(int seed, double mu, double sigma)']]],
+  ['normalsampler_3',['NormalSampler',['../class_normal_sampler.html#a3b5b2b4e4de785f6e261a17d318cb529',1,'NormalSampler']]]
 ];

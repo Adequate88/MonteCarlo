@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functionwrapper_0',['FunctionWrapper',['../class_function_wrapper.html',1,'']]]
+  ['exponentialfunction_0',['ExponentialFunction',['../class_exponential_function.html',1,'']]]
 ];

@@ -62,7 +62,7 @@ class AbstractSampler {
         * This method iterates over the `distribution_array` and prints
         * each bin's data.
         */
-        void printDistribution();
+        virtual void printDistribution();
 };
 
 #endif //ABSTRACT_SAMPLER_HH

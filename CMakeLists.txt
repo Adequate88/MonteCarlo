@@ -4,9 +4,7 @@ project(PCSC-project)
 set(CMAKE_CXX_STANDARD 17)
 
 # find dependencies (Boost)
-find_package(Boost REQUIRED COMPONENTS
-        iostreams system filesystem
-)
+
 # adds the search path for includes
 include_directories(gnuplot-iostream)
 
@@ -20,6 +18,12 @@ file(GLOB STATISTICS_SRC "src/statistics/*.cc")
 # Add all source files in the functions directory
 file(GLOB FUNCTIONS_SRC "src/functions/*.cc")
 
+# Copy the config.txt file to the build directory
+configure_file(config.txt ${CMAKE_BINARY_DIR}/config.txt COPYONLY)
+
+# Specify the path to the source directory (where config.txt is located)
+set(OUTPUT_PATH "${CMAKE_SOURCE_DIR}")  # Output path is the source directory
+add_definitions(-DOUTPUT_PATH="${OUTPUT_PATH}")
 
 # Add all executables in the src directory (like main.cc) to the project
 file(GLOB EXECUTABLES "src/*.cc")
@@ -34,13 +38,22 @@ add_subdirectory(googletest)
 file(GLOB TEST_EXECUTABLES "test/*.cc")
 add_executable(test_runner ${TEST_EXECUTABLES})
 target_link_libraries(test_runner gtest_main gtest pthread ${SAMPLING_SRC} ${STATISTICS_SRC} )
+
+add_custom_target(run_tests COMMAND ./test_runner DEPENDS test_runner)
+
+
 # Add Boost libraries and pthread to the main executable
+
+
+find_package(Boost REQUIRED COMPONENTS
+        iostreams system filesystem
+)
+
 target_link_libraries(main PRIVATE
         Boost::iostreams
         Boost::system
         Boost::filesystem
         pthread
 )
-# Define a custom target for running tests
-add_custom_target(run_tests COMMAND ./test_runner DEPENDS test_runner)
+
 

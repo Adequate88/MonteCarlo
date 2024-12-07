@@ -98,6 +98,12 @@ void UniformSampler::generateDistribution(const int bins, const int n_samples) {
     }
 }
 
+/**
+ * @brief Plots the histogram of the uniform distribution.
+ *
+ * Generates bin centers and corresponding frequencies for plotting.
+ *
+ */
 void UniformSampler::plotDistribution() {
 
     const int bins = distribution_array.size();

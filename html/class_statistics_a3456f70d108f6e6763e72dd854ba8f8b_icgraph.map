@@ -1,0 +1,10 @@
+<map id="Statistics::expectation" name="Statistics::expectation">
+<area shape="rect" id="Node000001" title="Computes the expectation value of an arbitrary function." alt="" coords="339,56,490,83"/>
+<area shape="rect" id="Node000002" href="$class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e" title="Computes a power moment of an arbitrary function." alt="" coords="159,5,290,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="346,54,277,35,278,30,348,49"/>
+<area shape="rect" id="Node000003" href="$class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655" title="Tests the Central Limit Theorem." alt="" coords="5,81,110,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="324,78,110,94,110,88,323,73"/>
+<area shape="rect" id="Node000004" href="$class_statistics.html#a7512c1e22362b97f0f5d35607aa726df" title="Computes the variance of an arbitrary function." alt="" coords="158,107,291,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="348,90,278,109,277,103,346,85"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="142,110,110,105,110,100,143,105"/>
+</map>

@@ -1,6 +1,14 @@
 //
 // Created by Alessandro Salo on 30.11.2024.
 //
+/**
+ * @file sampling.hh
+ * @brief Includes various samplers for different distributions.
+ *
+ * This file acts as an aggregator for various sampling techniques. It includes
+ * headers for different types of samplers, such as uniform distribution sampler
+ * and normal distribution samplers.
+ */
 #ifndef SAMPLING_H
 #define SAMPLING_H
 

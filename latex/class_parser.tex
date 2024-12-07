@@ -1,0 +1,133 @@
+\doxysection{Parser\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_parser}{}\label{class_parser}\index{Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}}
+
+
+Class that parses a mathematical expression into an Abstract Syntax Tree (AST).  
+
+
+
+
+{\ttfamily \#include $<$parse\+\_\+tree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parser_a1a60370aecc2259b45f0694bac10b249}{Parser}} (const std\+::string \&expression)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_parser}{Parser} object and tokenizes the given expression. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ \mbox{\hyperlink{class_parser_a580a2a477d66684c7f061bd710409dda}{parse}} ()
+\begin{DoxyCompactList}\small\item\em Parses the expression into an AST. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_parser_af8cdd573c16595c221ec95358f3e5623}{generate\+Function}} (const \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Generates the function from the given AST node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_parser_ab713fab97b92161da1d30985538ecd26}{get\+Final\+Function}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the final generated function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
+class Parser$<$ Input\+Type, Output\+Type $>$}
+Class that parses a mathematical expression into an Abstract Syntax Tree (AST). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of the input value. \\
+\hline
+{\em Output\+Type} & The type of the output value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parser_a1a60370aecc2259b45f0694bac10b249}\index{Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily \label{class_parser_a1a60370aecc2259b45f0694bac10b249} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+\mbox{\hyperlink{class_parser}{Parser}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_parser}{\+::\+Parser}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expression}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_parser}{Parser} object and tokenizes the given expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expression} & The mathematical expression to parse. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parser_af8cdd573c16595c221ec95358f3e5623}\index{Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}!generateFunction@{generateFunction}}
+\index{generateFunction@{generateFunction}!Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{generateFunction()}{generateFunction()}}
+{\footnotesize\ttfamily \label{class_parser_af8cdd573c16595c221ec95358f3e5623} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+void \mbox{\hyperlink{class_parser}{Parser}}$<$ Input\+Type, Output\+Type $>$\+::generate\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates the function from the given AST node. 
+
+Recursively traverses the AST and generates the corresponding function representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The root node of the AST. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_parser_af8cdd573c16595c221ec95358f3e5623_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_parser_af8cdd573c16595c221ec95358f3e5623_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_parser_ab713fab97b92161da1d30985538ecd26}\index{Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}!getFinalFunction@{getFinalFunction}}
+\index{getFinalFunction@{getFinalFunction}!Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{getFinalFunction()}{getFinalFunction()}}
+{\footnotesize\ttfamily \label{class_parser_ab713fab97b92161da1d30985538ecd26} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+\mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_parser}{Parser}}$<$ Input\+Type, Output\+Type $>$\+::get\+Final\+Function (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the final generated function. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the final function represented by the AST. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If no function has been generated. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_parser_a580a2a477d66684c7f061bd710409dda}\index{Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}!parse@{parse}}
+\index{parse@{parse}!Parser$<$ InputType, OutputType $>$@{Parser$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \label{class_parser_a580a2a477d66684c7f061bd710409dda} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ \mbox{\hyperlink{class_parser}{Parser}}$<$ Input\+Type, Output\+Type $>$\+::parse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parses the expression into an AST. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to the root node of the AST. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If extra tokens remain after parsing. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/functions/\mbox{\hyperlink{parse__tree_8h}{parse\+\_\+tree.\+h}}\end{DoxyCompactItemize}

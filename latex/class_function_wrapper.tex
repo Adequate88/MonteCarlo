@@ -2,6 +2,15 @@
 \hypertarget{class_function_wrapper}{}\label{class_function_wrapper}\index{FunctionWrapper$<$ InputType, OutputType $>$@{FunctionWrapper$<$ InputType, OutputType $>$}}
 
 
+Wrapper class that adapts a standard C++ function to an \doxylink{class_abstract_function}{Abstract\+Function} object.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+function.\+h$>$}
+
+
+
 Inheritance diagram for Function\+Wrapper\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,22 +30,62 @@ Collaboration diagram for Function\+Wrapper\texorpdfstring{$<$}{<} Input\+Type, 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_function_wrapper_a0f664b263b391c754b12cfe9f546d93a}\label{class_function_wrapper_a0f664b263b391c754b12cfe9f546d93a} 
-{\bfseries Function\+Wrapper} (const std\+::function$<$ Output\+Type(Input\+Type)$>$ \&func)
-\item 
+\mbox{\hyperlink{class_function_wrapper_a0f664b263b391c754b12cfe9f546d93a}{Function\+Wrapper}} (const std\+::function$<$ Output\+Type(Input\+Type)$>$ \&func)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_function_wrapper}{Function\+Wrapper} from a given C++ function. \end{DoxyCompactList}\item 
 Output\+Type \mbox{\hyperlink{class_function_wrapper_a6df22621deba60aeacc3bc6dfc56eb17}{eval}} (const Input\+Type \&input) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates the wrapped function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries compose} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator\texorpdfstring{$\vert$}{|}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator+} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
-\end{DoxyCompactItemize}
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Method to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (int power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\texorpdfstring{$^\wedge$}{\string^}}} (double power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
+class Function\+Wrapper$<$ Input\+Type, Output\+Type $>$}
+Wrapper class that adapts a standard C++ function to an \doxylink{class_abstract_function}{Abstract\+Function} object. 
+
+This class allows you to wrap a regular C++ function (such as a lambda or function pointer) and use it as an \doxylink{class_abstract_function}{Abstract\+Function} object. This is particularly useful for integrating custom functions into a broader framework that expects functions derived from \doxylink{class_abstract_function}{Abstract\+Function}.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of the input value. \\
+\hline
+{\em Output\+Type} & The type of the output value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_function_wrapper_a0f664b263b391c754b12cfe9f546d93a}\index{FunctionWrapper$<$ InputType, OutputType $>$@{FunctionWrapper$<$ InputType, OutputType $>$}!FunctionWrapper@{FunctionWrapper}}
+\index{FunctionWrapper@{FunctionWrapper}!FunctionWrapper$<$ InputType, OutputType $>$@{FunctionWrapper$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{FunctionWrapper()}{FunctionWrapper()}}
+{\footnotesize\ttfamily \label{class_function_wrapper_a0f664b263b391c754b12cfe9f546d93a} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+\mbox{\hyperlink{class_function_wrapper}{Function\+Wrapper}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_function_wrapper}{\+::\+Function\+Wrapper}} (\begin{DoxyParamCaption}\item[{const std\+::function$<$ Output\+Type(Input\+Type)$>$ \&}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_function_wrapper}{Function\+Wrapper} from a given C++ function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & A function object, lambda, or function pointer that takes an Input\+Type and returns an Output\+Type. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -49,10 +98,22 @@ Output\+Type \mbox{\hyperlink{class_function_wrapper}{Function\+Wrapper}}$<$ Inp
 
 
 
-Implements \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}.
+Evaluates the wrapped function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value for the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output value produced by the wrapped function. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/functions/abstract\+\_\+function.\+h\end{DoxyCompactItemize}
+src/functions/\mbox{\hyperlink{abstract__function_8h}{abstract\+\_\+function.\+h}}\end{DoxyCompactItemize}

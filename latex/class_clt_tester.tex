@@ -1,16 +1,70 @@
 \doxysection{Clt\+Tester Class Reference}
 \hypertarget{class_clt_tester}{}\label{class_clt_tester}\index{CltTester@{CltTester}}
+
+
+Class that tests the Central Limit Theorem using an abstract sampler.  
+
+
+
+
+{\ttfamily \#include $<$clt\+\_\+tester.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_clt_tester_aba411f79020352b6a778ed5d6e07659e}\label{class_clt_tester_aba411f79020352b6a778ed5d6e07659e} 
-{\bfseries Clt\+Tester} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler, int N, int num\+\_\+iterations)
-\item 
-\Hypertarget{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}\label{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655} 
-void {\bfseries test} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_clt_tester_aba411f79020352b6a778ed5d6e07659e}{Clt\+Tester}} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler, int N, int num\+\_\+iterations)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_clt_tester}{Clt\+Tester} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}{test}} () const
+\begin{DoxyCompactList}\small\item\em Tests the Central Limit Theorem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that tests the Central Limit Theorem using an abstract sampler. 
+
+This class takes in an abstract sampler and generates multiple sets of samples, calculates their means, and then checks if the mean and standard deviation of these sample means conform to the expected properties defined by the Central Limit Theorem. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_clt_tester_aba411f79020352b6a778ed5d6e07659e}\index{CltTester@{CltTester}!CltTester@{CltTester}}
+\index{CltTester@{CltTester}!CltTester@{CltTester}}
+\doxysubsubsection{\texorpdfstring{CltTester()}{CltTester()}}
+{\footnotesize\ttfamily \label{class_clt_tester_aba411f79020352b6a778ed5d6e07659e} 
+Clt\+Tester\+::\+Clt\+Tester (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&}]{sampler}{, }\item[{int}]{N}{, }\item[{int}]{num\+\_\+iterations}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_clt_tester}{Clt\+Tester} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sampler} & Reference to an \doxylink{class_abstract_sampler}{Abstract\+Sampler} used to generate random samples. \\
+\hline
+{\em N} & Number of samples per iteration. \\
+\hline
+{\em num\+\_\+iterations} & Number of iterations to perform. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}\index{CltTester@{CltTester}!test@{test}}
+\index{test@{test}!CltTester@{CltTester}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily \label{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655} 
+void Clt\+Tester\+::test (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tests the Central Limit Theorem. 
+
+This method generates multiple sets of {\ttfamily N} samples, calculates their means, and computes the mean and standard deviation of those sample means. The results are then printed to the console, along with the expected standard deviation as per the CLT. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/clt\+\_\+tester/clt\+\_\+tester.\+h\end{DoxyCompactItemize}
+src/clt\+\_\+tester/\mbox{\hyperlink{clt__tester_8h}{clt\+\_\+tester.\+h}}\end{DoxyCompactItemize}

@@ -2,6 +2,15 @@
 \hypertarget{class_composed_function}{}\label{class_composed_function}\index{ComposedFunction$<$ InputType, OutputType $>$@{ComposedFunction$<$ InputType, OutputType $>$}}
 
 
+Class representing the composition of two functions.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+function.\+h$>$}
+
+
+
 Inheritance diagram for Composed\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,22 +30,62 @@ Collaboration diagram for Composed\+Function\texorpdfstring{$<$}{<} Input\+Type,
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_composed_function_adfcb57f4565d25e85012327ef0df87cd}\label{class_composed_function_adfcb57f4565d25e85012327ef0df87cd} 
-{\bfseries Composed\+Function} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&first, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&second)
-\item 
+\mbox{\hyperlink{class_composed_function_adfcb57f4565d25e85012327ef0df87cd}{Composed\+Function}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&first, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&second)
+\begin{DoxyCompactList}\small\item\em Constructs a composed function from two given functions. \end{DoxyCompactList}\item 
 Output\+Type \mbox{\hyperlink{class_composed_function_abd4cfad752381c6ead52af6c7b878272}{eval}} (const Input\+Type \&input) const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates the composed function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries compose} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator\texorpdfstring{$\vert$}{|}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator+} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
-\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
-\end{DoxyCompactItemize}
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Method to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (int power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\texorpdfstring{$^\wedge$}{\string^}}} (double power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
+class Composed\+Function$<$ Input\+Type, Output\+Type $>$}
+Class representing the composition of two functions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of the input value. \\
+\hline
+{\em Output\+Type} & The type of the output value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_composed_function_adfcb57f4565d25e85012327ef0df87cd}\index{ComposedFunction$<$ InputType, OutputType $>$@{ComposedFunction$<$ InputType, OutputType $>$}!ComposedFunction@{ComposedFunction}}
+\index{ComposedFunction@{ComposedFunction}!ComposedFunction$<$ InputType, OutputType $>$@{ComposedFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{ComposedFunction()}{ComposedFunction()}}
+{\footnotesize\ttfamily \label{class_composed_function_adfcb57f4565d25e85012327ef0df87cd} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+\mbox{\hyperlink{class_composed_function}{Composed\+Function}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_composed_function}{\+::\+Composed\+Function}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{first}{, }\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&}]{second}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a composed function from two given functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & The first function to apply. \\
+\hline
+{\em second} & The second function to apply to the result of the first function. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -49,10 +98,29 @@ Output\+Type \mbox{\hyperlink{class_composed_function}{Composed\+Function}}$<$ I
 
 
 
-Implements \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}.
+Evaluates the composed function. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value for the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output value after applying both functions. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_composed_function_abd4cfad752381c6ead52af6c7b878272_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/functions/abstract\+\_\+function.\+h\end{DoxyCompactItemize}
+src/functions/\mbox{\hyperlink{abstract__function_8h}{abstract\+\_\+function.\+h}}\end{DoxyCompactItemize}

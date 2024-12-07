@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['normal_5fboxmuller_5fsampler_2ecc_0',['normal_boxmuller_sampler.cc',['../normal__boxmuller__sampler_8cc.html',1,'']]],
-  ['normal_5fboxmuller_5fsampler_2ehh_1',['normal_boxmuller_sampler.hh',['../normal__boxmuller__sampler_8hh.html',1,'']]],
-  ['normal_5finverse_5fsampler_2ecc_2',['normal_inverse_sampler.cc',['../normal__inverse__sampler_8cc.html',1,'']]],
-  ['normal_5finverse_5fsampler_2ehh_3',['normal_inverse_sampler.hh',['../normal__inverse__sampler_8hh.html',1,'']]],
-  ['normal_5fquantile_4',['normal_quantile',['../class_normal_inverse_sampler.html#a2ec0a28ca12f65d8e150176476aa7eff',1,'NormalInverseSampler']]],
-  ['normal_5fsampler_2ecc_5',['normal_sampler.cc',['../normal__sampler_8cc.html',1,'']]],
-  ['normal_5fsampler_2ehh_6',['normal_sampler.hh',['../normal__sampler_8hh.html',1,'']]],
-  ['normalboxmullersampler_7',['NormalBoxMullerSampler',['../class_normal_box_muller_sampler.html',1,'NormalBoxMullerSampler'],['../class_normal_box_muller_sampler.html#a964c8bb4f841eb0c5759c063c15542ad',1,'NormalBoxMullerSampler::NormalBoxMullerSampler(int seed)'],['../class_normal_box_muller_sampler.html#ae7bdf74dca516db48e8110bbe67017e2',1,'NormalBoxMullerSampler::NormalBoxMullerSampler(int seed, double mu, double sigma)']]],
-  ['normalinversesampler_8',['NormalInverseSampler',['../class_normal_inverse_sampler.html',1,'NormalInverseSampler'],['../class_normal_inverse_sampler.html#a22eab7e8a273f2bebfdf54b2f8b296de',1,'NormalInverseSampler::NormalInverseSampler(int seed)'],['../class_normal_inverse_sampler.html#aae97ecbf9f534ca8ff0c840e83b68c59',1,'NormalInverseSampler::NormalInverseSampler(int seed, double mu, double sigma)']]],
-  ['normalsampler_9',['NormalSampler',['../class_normal_sampler.html',1,'NormalSampler'],['../class_normal_sampler.html#a3b5b2b4e4de785f6e261a17d318cb529',1,'NormalSampler::NormalSampler()']]]
+  ['makefunc_0',['makeFunc',['../parse__tree_8h.html#ae20d55ef8319cae72ed4576faacbd0d6',1,'parse_tree.h']]],
+  ['makeop_1',['makeOp',['../parse__tree_8h.html#a414c6c28e70c3cc0f56d7c830038f4a6',1,'parse_tree.h']]],
+  ['minus_2',['MINUS',['../parse__tree_8h.html#aa520fbf142ba1e7e659590c07da31921affc0d9b54a1fe677c4c9e6b050e67c81',1,'parse_tree.h']]],
+  ['moment_3',['moment',['../class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e',1,'Statistics']]],
+  ['mu_4',['mu',['../class_normal_sampler.html#af2f647ca068ac66057d59ed4f82dc557',1,'NormalSampler']]],
+  ['mul_5',['MUL',['../parse__tree_8h.html#aa520fbf142ba1e7e659590c07da31921a2cdf52a55876063ec93b7d18bc741f6c',1,'parse_tree.h']]],
+  ['multiplyfunction_6',['MultiplyFunction',['../class_multiply_function.html',1,'MultiplyFunction&lt; InputType, OutputType &gt;'],['../class_multiply_function.html#a49f148ef2b0acf2eb7feb4b05c45c190',1,'MultiplyFunction::MultiplyFunction()']]]
 ];

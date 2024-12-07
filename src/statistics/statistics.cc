@@ -92,10 +92,10 @@ double Statistics::variance(const AbstractFunction<double,double>& f) const {
  * @return The computed moment.
  */
 double Statistics::moment(int power, const AbstractFunction<double,double>& f) const {
-    const double mean_value = expectation(f);
+
     double sum = 0.0;
     for (double value : data) {
-        sum += std::pow(f.eval(value) - mean_value, power);
+        sum += std::pow(f.eval(value), power);
     }
     return sum / N;
 }
@@ -109,9 +109,10 @@ double Statistics::moment(int power, const AbstractFunction<double,double>& f) c
  * @return The computed central moment.
  */
 double Statistics::central_moment(int power, const AbstractFunction<double,double>& f) const {
+    const double mean_value = expectation(f);
     double sum = 0.0;
     for (const double value : data) {
-        sum += std::pow(f.eval(value), power);
+        sum += std::pow(f.eval(value)- mean_value, power);
     }
     return sum / N;
 }

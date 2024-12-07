@@ -1,0 +1,5 @@
+<map id="Statistics::central_moment" name="Statistics::central_moment">
+<area shape="rect" id="Node000001" title="Computes a central moment of an arbitrary function." alt="" coords="5,5,129,48"/>
+<area shape="rect" id="Node000002" href="$class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="177,13,329,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,24,161,24,161,29,129,29"/>
+</map>

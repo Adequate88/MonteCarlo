@@ -2,6 +2,15 @@
 \hypertarget{class_abstract_function}{}\label{class_abstract_function}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
 
 
+Abstract base class for representing a function with specified input and output types.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+function.\+h$>$}
+
+
+
 Inheritance diagram for Abstract\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,23 +21,186 @@ Inheritance diagram for Abstract\+Function\texorpdfstring{$<$}{<} Input\+Type, O
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}\label{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5} 
-virtual Output\+Type {\bfseries eval} (const Input\+Type \&input) const =0
-\item 
-\Hypertarget{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}\label{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries compose} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
-\item 
-\Hypertarget{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}\label{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator\texorpdfstring{$\vert$}{|}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
-\item 
-\Hypertarget{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}\label{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator+} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
-\item 
-\Hypertarget{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}\label{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
-\end{DoxyCompactItemize}
+\Hypertarget{class_abstract_function_ac26add7e4bf8561105a63713a7941ccb}\label{class_abstract_function_ac26add7e4bf8561105a63713a7941ccb} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual Output\+Type \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{eval}} (const Input\+Type \&input) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to evaluate the function. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Method to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (int power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\texorpdfstring{$^\wedge$}{\string^}}} (double power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
+class Abstract\+Function$<$ Input\+Type, Output\+Type $>$}
+Abstract base class for representing a function with specified input and output types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of the input value. \\
+\hline
+{\em Output\+Type} & The type of the output value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!compose@{compose}}
+\index{compose@{compose}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{compose()}{compose()}}
+{\footnotesize\ttfamily \label{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::compose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method to compose two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The function to compose with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the composed function. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!eval@{eval}}
+\index{eval@{eval}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \label{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+virtual Output\+Type \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::eval (\begin{DoxyParamCaption}\item[{const Input\+Type \&}]{input}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to evaluate the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value for the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output value of the function. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_add_function_ae7146267aba659926529d52360ac97a0}{Add\+Function$<$ Input\+Type, Output\+Type $>$}}, \mbox{\hyperlink{class_composed_function_abd4cfad752381c6ead52af6c7b878272}{Composed\+Function$<$ Input\+Type, Output\+Type $>$}}, \mbox{\hyperlink{class_constant_function_a37affec4932324ddeffb8df7474c3eea}{Constant\+Function$<$ T $>$}}, \mbox{\hyperlink{class_exponential_function_accadd374f9a4337c057a4cbb6ba989dd}{Exponential\+Function$<$ Input\+Type, Output\+Type $>$}}, \mbox{\hyperlink{class_function_wrapper_a6df22621deba60aeacc3bc6dfc56eb17}{Function\+Wrapper$<$ Input\+Type, Output\+Type $>$}}, \mbox{\hyperlink{class_identity_function_a4591a0bec042c97d9279d02ba76e8b8e}{Identity\+Function$<$ T $>$}}, and \mbox{\hyperlink{class_multiply_function_ade436578c8adfc6ae34367b3cb020b81}{Multiply\+Function$<$ Input\+Type, Output\+Type $>$}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The function to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the resulting function. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The function to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the resulting function. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{double}]{power}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em power} & The double power to raise the function to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the resulting exponential function. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_abstract_function_ac84176f2570111c470d0b9507af06d1c} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{int}]{power}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em power} & The integer power to raise the function to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the resulting exponential function. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}\index{AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!AbstractFunction$<$ InputType, OutputType $>$@{AbstractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily \label{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The function to compose with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the composed function. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/functions/abstract\+\_\+function.\+h\end{DoxyCompactItemize}
+src/functions/\mbox{\hyperlink{abstract__function_8h}{abstract\+\_\+function.\+h}}\end{DoxyCompactItemize}

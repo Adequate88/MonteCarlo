@@ -1,0 +1,5 @@
+<map id="Statistics::expectation" name="Statistics::expectation">
+<area shape="rect" id="Node000001" title="Computes the expectation value of an arbitrary function." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="Node000002" href="$class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="205,5,357,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,16,189,16,189,21,157,21"/>
+</map>

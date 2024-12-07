@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mu_0',['mu',['../class_normal_sampler.html#af2f647ca068ac66057d59ed4f82dc557',1,'NormalSampler']]]
+  ['distribution_5farray_0',['distribution_array',['../class_abstract_sampler.html#a71497f519fbcbe368c7f419f72b5df72',1,'AbstractSampler']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo: Statistics Class Reference</title>
+<title>MonteCarlo: Statistics Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo
+   <div id="projectname">MonteCarlo
    </div>
   </td>
  </tr>
@@ -165,6 +165,16 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a017f34efcc336eb14b38a999e6f18017_cgraph.png" border="0" usemap="#aclass_statistics_a017f34efcc336eb14b38a999e6f18017_cgraph" alt=""/></div>
+<map name="aclass_statistics_a017f34efcc336eb14b38a999e6f18017_cgraph" id="aclass_statistics_a017f34efcc336eb14b38a999e6f18017_cgraph">
+<area shape="rect" title="Constructs a Statistics object with an initial set of samples." alt="" coords="5,5,145,32"/>
+<area shape="rect" href="class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea" title="Generates a random sample." alt="" coords="193,5,361,32"/>
+<area shape="poly" title=" " alt="" coords="145,16,177,16,177,21,145,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -200,11 +210,21 @@ Public Member Functions</h2></td></tr>
 <p>Calculates the central <code>power</code>-th moment of the function applied to the samples. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">power</td><td>The order of the central moment to compute. </td></tr>
-    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html">AbstractFunction</a> object representing the function to evaluate. </td></tr>
+    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html" title="Abstract base class for representing a function with specified input and output types.">AbstractFunction</a> object representing the function to evaluate. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The computed central moment. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a966bae9272c902c05c162d8273d89c37_cgraph.png" border="0" usemap="#aclass_statistics_a966bae9272c902c05c162d8273d89c37_cgraph" alt=""/></div>
+<map name="aclass_statistics_a966bae9272c902c05c162d8273d89c37_cgraph" id="aclass_statistics_a966bae9272c902c05c162d8273d89c37_cgraph">
+<area shape="rect" title="Computes a central moment of an arbitrary function." alt="" coords="5,5,129,48"/>
+<area shape="rect" href="class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="177,13,329,40"/>
+<area shape="poly" title=" " alt="" coords="129,24,161,24,161,29,129,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -254,11 +274,36 @@ Public Member Functions</h2></td></tr>
 <p>Computes the expectation value of an arbitrary function. </p>
 <p>Calculates the mean value of the function applied to the samples. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html">AbstractFunction</a> object representing the function to evaluate. </td></tr>
+    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html" title="Abstract base class for representing a function with specified input and output types.">AbstractFunction</a> object representing the function to evaluate. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The expectation value. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a3456f70d108f6e6763e72dd854ba8f8b_cgraph.png" border="0" usemap="#aclass_statistics_a3456f70d108f6e6763e72dd854ba8f8b_cgraph" alt=""/></div>
+<map name="aclass_statistics_a3456f70d108f6e6763e72dd854ba8f8b_cgraph" id="aclass_statistics_a3456f70d108f6e6763e72dd854ba8f8b_cgraph">
+<area shape="rect" title="Computes the expectation value of an arbitrary function." alt="" coords="5,5,157,32"/>
+<area shape="rect" href="class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="205,5,357,32"/>
+<area shape="poly" title=" " alt="" coords="157,16,189,16,189,21,157,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a3456f70d108f6e6763e72dd854ba8f8b_icgraph.png" border="0" usemap="#aclass_statistics_a3456f70d108f6e6763e72dd854ba8f8b_icgraph" alt=""/></div>
+<map name="aclass_statistics_a3456f70d108f6e6763e72dd854ba8f8b_icgraph" id="aclass_statistics_a3456f70d108f6e6763e72dd854ba8f8b_icgraph">
+<area shape="rect" title="Computes the expectation value of an arbitrary function." alt="" coords="339,56,490,83"/>
+<area shape="rect" href="class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e" title="Computes a power moment of an arbitrary function." alt="" coords="159,5,290,32"/>
+<area shape="poly" title=" " alt="" coords="346,54,277,35,278,30,348,49"/>
+<area shape="rect" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655" title="Tests the Central Limit Theorem." alt="" coords="5,81,110,108"/>
+<area shape="poly" title=" " alt="" coords="324,78,110,94,110,88,323,73"/>
+<area shape="rect" href="class_statistics.html#a7512c1e22362b97f0f5d35607aa726df" title="Computes the variance of an arbitrary function." alt="" coords="158,107,291,133"/>
+<area shape="poly" title=" " alt="" coords="348,90,278,109,277,103,346,85"/>
+<area shape="poly" title=" " alt="" coords="142,110,110,105,110,100,143,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -284,6 +329,16 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97_cgraph.png" border="0" usemap="#aclass_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97_cgraph" alt=""/></div>
+<map name="aclass_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97_cgraph" id="aclass_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97_cgraph">
+<area shape="rect" title="Generates and adds new samples to the dataset." alt="" coords="5,5,159,48"/>
+<area shape="rect" href="class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea" title="Generates a random sample." alt="" coords="207,13,375,40"/>
+<area shape="poly" title=" " alt="" coords="159,24,191,24,191,29,159,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -318,11 +373,24 @@ Public Member Functions</h2></td></tr>
 <p>Calculates the <code>power</code>-th moment of the function applied to the samples. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">power</td><td>The order of the moment to compute. </td></tr>
-    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html">AbstractFunction</a> object representing the function to evaluate. </td></tr>
+    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html" title="Abstract base class for representing a function with specified input and output types.">AbstractFunction</a> object representing the function to evaluate. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The computed moment. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_afc56fe9ebd7dbb0aa61802074886322e_cgraph.png" border="0" usemap="#aclass_statistics_afc56fe9ebd7dbb0aa61802074886322e_cgraph" alt=""/></div>
+<map name="aclass_statistics_afc56fe9ebd7dbb0aa61802074886322e_cgraph" id="aclass_statistics_afc56fe9ebd7dbb0aa61802074886322e_cgraph">
+<area shape="rect" title="Computes a power moment of an arbitrary function." alt="" coords="5,5,137,32"/>
+<area shape="rect" href="class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="384,5,536,32"/>
+<area shape="poly" title=" " alt="" coords="137,16,368,16,368,21,137,21"/>
+<area shape="rect" href="class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b" title="Computes the expectation value of an arbitrary function." alt="" coords="185,31,336,57"/>
+<area shape="poly" title=" " alt="" coords="137,25,169,29,169,34,137,30"/>
+<area shape="poly" title=" " alt="" coords="336,32,368,28,369,33,337,37"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -348,6 +416,16 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a5d2d2ab6b64dc34131be24b7ceecccad_icgraph.png" border="0" usemap="#aclass_statistics_a5d2d2ab6b64dc34131be24b7ceecccad_icgraph" alt=""/></div>
+<map name="aclass_statistics_a5d2d2ab6b64dc34131be24b7ceecccad_icgraph" id="aclass_statistics_a5d2d2ab6b64dc34131be24b7ceecccad_icgraph">
+<area shape="rect" title="Sets the sample data." alt="" coords="158,5,292,32"/>
+<area shape="rect" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655" title="Tests the Central Limit Theorem." alt="" coords="5,5,110,32"/>
+<area shape="poly" title=" " alt="" coords="142,21,110,21,110,16,142,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -377,11 +455,34 @@ Public Member Functions</h2></td></tr>
 <p>Computes the variance of an arbitrary function. </p>
 <p>Calculates the variance of the function applied to the samples. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html">AbstractFunction</a> object representing the function to evaluate. </td></tr>
+    <tr><td class="paramname">f</td><td>Reference to an <a class="el" href="class_abstract_function.html" title="Abstract base class for representing a function with specified input and output types.">AbstractFunction</a> object representing the function to evaluate. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The variance. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a7512c1e22362b97f0f5d35607aa726df_cgraph.png" border="0" usemap="#aclass_statistics_a7512c1e22362b97f0f5d35607aa726df_cgraph" alt=""/></div>
+<map name="aclass_statistics_a7512c1e22362b97f0f5d35607aa726df_cgraph" id="aclass_statistics_a7512c1e22362b97f0f5d35607aa726df_cgraph">
+<area shape="rect" title="Computes the variance of an arbitrary function." alt="" coords="5,5,139,32"/>
+<area shape="rect" href="class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="386,5,538,32"/>
+<area shape="poly" title=" " alt="" coords="139,16,370,16,370,21,139,21"/>
+<area shape="rect" href="class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b" title="Computes the expectation value of an arbitrary function." alt="" coords="187,31,338,57"/>
+<area shape="poly" title=" " alt="" coords="139,25,171,29,171,34,139,30"/>
+<area shape="poly" title=" " alt="" coords="338,32,370,28,371,33,339,37"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_statistics_a7512c1e22362b97f0f5d35607aa726df_icgraph.png" border="0" usemap="#aclass_statistics_a7512c1e22362b97f0f5d35607aa726df_icgraph" alt=""/></div>
+<map name="aclass_statistics_a7512c1e22362b97f0f5d35607aa726df_icgraph" id="aclass_statistics_a7512c1e22362b97f0f5d35607aa726df_icgraph">
+<area shape="rect" title="Computes the variance of an arbitrary function." alt="" coords="158,5,291,32"/>
+<area shape="rect" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655" title="Tests the Central Limit Theorem." alt="" coords="5,5,110,32"/>
+<area shape="poly" title=" " alt="" coords="142,21,110,21,110,16,142,16"/>
+</map>
+</div>
 
 </div>
 </div>

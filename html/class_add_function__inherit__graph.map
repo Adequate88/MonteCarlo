@@ -1,5 +1,5 @@
 <map id="AddFunction&lt; InputType, OutputType &gt;" name="AddFunction&lt; InputType, OutputType &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="18,96,186,139"/>
-<area shape="rect" id="Node000002" href="$class_abstract_function.html" title=" " alt="" coords="5,5,199,48"/>
+<area shape="rect" id="Node000001" title="Class representing the addition of two functions." alt="" coords="18,96,186,139"/>
+<area shape="rect" id="Node000002" href="$class_abstract_function.html" title="Abstract base class for representing a function with specified input and output types." alt="" coords="5,5,199,48"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,64,105,96,99,96,99,64"/>
 </map>

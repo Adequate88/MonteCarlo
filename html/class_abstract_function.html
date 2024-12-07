@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo: AbstractFunction&lt; InputType, OutputType &gt; Class Template Reference</title>
+<title>MonteCarlo: AbstractFunction&lt; InputType, OutputType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo
+   <div id="projectname">MonteCarlo
    </div>
   </td>
  </tr>
@@ -90,41 +90,346 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">AbstractFunction&lt; InputType, OutputType &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for representing a function with specified input and output types.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="abstract__function_8h_source.html">abstract_function.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AbstractFunction&lt; InputType, OutputType &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_abstract_function__inherit__graph.png" border="0" usemap="#a_abstract_function_3_01_input_type_00_01_output_type_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_abstract_function_3_01_input_type_00_01_output_type_01_4_inherit__map" id="a_abstract_function_3_01_input_type_00_01_output_type_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,105,199,148"/>
-<area shape="rect" href="class_add_function.html" title=" " alt="" coords="267,5,434,48"/>
-<area shape="poly" title=" " alt="" coords="159,96,246,58,277,46,279,51,248,62,161,101"/>
-<area shape="rect" href="class_composed_function.html" title=" " alt="" coords="247,72,454,115"/>
-<area shape="poly" title=" " alt="" coords="214,109,246,105,247,110,214,114"/>
-<area shape="rect" href="class_function_wrapper.html" title=" " alt="" coords="254,139,446,181"/>
-<area shape="poly" title=" " alt="" coords="214,139,254,144,253,150,214,144"/>
-<area shape="rect" href="class_multiply_function.html" title=" " alt="" coords="256,205,445,248"/>
-<area shape="poly" title=" " alt="" coords="161,153,248,191,279,202,277,207,246,196,159,157"/>
+<area shape="rect" title="Abstract base class for representing a function with specified input and output types." alt="" coords="5,139,199,181"/>
+<area shape="rect" href="class_add_function.html" title="Class representing the addition of two functions." alt="" coords="267,5,434,48"/>
+<area shape="poly" title=" " alt="" coords="140,127,189,91,245,58,272,46,274,51,248,62,192,96,143,131"/>
+<area shape="rect" href="class_composed_function.html" title="Class representing the composition of two functions." alt="" coords="247,72,454,115"/>
+<area shape="poly" title=" " alt="" coords="198,131,267,113,269,118,200,137"/>
+<area shape="rect" href="class_exponential_function.html" title="Class representing an exponential function." alt="" coords="262,139,439,181"/>
+<area shape="poly" title=" " alt="" coords="214,157,261,157,261,163,214,163"/>
+<area shape="rect" href="class_function_wrapper.html" title="Wrapper class that adapts a standard C++ function to an AbstractFunction object." alt="" coords="254,205,446,248"/>
+<area shape="poly" title=" " alt="" coords="200,183,269,202,267,207,198,189"/>
+<area shape="rect" href="class_multiply_function.html" title="Class representing the multiplication of two functions." alt="" coords="256,272,445,315"/>
+<area shape="poly" title=" " alt="" coords="143,189,192,224,248,258,274,269,272,274,245,262,189,229,140,193"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a34576e68dc7567ee4709e9a8e7a2bdd5" id="r_a34576e68dc7567ee4709e9a8e7a2bdd5"><td class="memItemLeft" align="right" valign="top"><a id="a34576e68dc7567ee4709e9a8e7a2bdd5" name="a34576e68dc7567ee4709e9a8e7a2bdd5"></a>
-virtual OutputType&#160;</td><td class="memItemRight" valign="bottom"><b>eval</b> (const InputType &amp;input) const =0</td></tr>
+<tr class="memitem:ac26add7e4bf8561105a63713a7941ccb" id="r_ac26add7e4bf8561105a63713a7941ccb"><td class="memItemLeft" align="right" valign="top"><a id="ac26add7e4bf8561105a63713a7941ccb" name="ac26add7e4bf8561105a63713a7941ccb"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractFunction</b> ()=default</td></tr>
+<tr class="memdesc:ac26add7e4bf8561105a63713a7941ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
+<tr class="separator:ac26add7e4bf8561105a63713a7941ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34576e68dc7567ee4709e9a8e7a2bdd5" id="r_a34576e68dc7567ee4709e9a8e7a2bdd5"><td class="memItemLeft" align="right" valign="top">virtual OutputType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34576e68dc7567ee4709e9a8e7a2bdd5">eval</a> (const InputType &amp;input) const =0</td></tr>
+<tr class="memdesc:a34576e68dc7567ee4709e9a8e7a2bdd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to evaluate the function.  <br /></td></tr>
 <tr class="separator:a34576e68dc7567ee4709e9a8e7a2bdd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1631a8dde65e30553f5a82969ddd3747" id="r_a1631a8dde65e30553f5a82969ddd3747"><td class="memItemLeft" align="right" valign="top"><a id="a1631a8dde65e30553f5a82969ddd3747" name="a1631a8dde65e30553f5a82969ddd3747"></a>
-std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>compose</b> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; OutputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memitem:a1631a8dde65e30553f5a82969ddd3747" id="r_a1631a8dde65e30553f5a82969ddd3747"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1631a8dde65e30553f5a82969ddd3747">compose</a> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; OutputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a1631a8dde65e30553f5a82969ddd3747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to compose two functions.  <br /></td></tr>
 <tr class="separator:a1631a8dde65e30553f5a82969ddd3747"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f8a0ed6dd14ae2e31ccd3942fe208ef" id="r_a3f8a0ed6dd14ae2e31ccd3942fe208ef"><td class="memItemLeft" align="right" valign="top"><a id="a3f8a0ed6dd14ae2e31ccd3942fe208ef" name="a3f8a0ed6dd14ae2e31ccd3942fe208ef"></a>
-std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator|</b> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; OutputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memitem:a3f8a0ed6dd14ae2e31ccd3942fe208ef" id="r_a3f8a0ed6dd14ae2e31ccd3942fe208ef"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f8a0ed6dd14ae2e31ccd3942fe208ef">operator|</a> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; OutputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a3f8a0ed6dd14ae2e31ccd3942fe208ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the '|' operator to compose two functions.  <br /></td></tr>
 <tr class="separator:a3f8a0ed6dd14ae2e31ccd3942fe208ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b4c3b0d6856426f644e8e341b41daad" id="r_a9b4c3b0d6856426f644e8e341b41daad"><td class="memItemLeft" align="right" valign="top"><a id="a9b4c3b0d6856426f644e8e341b41daad" name="a9b4c3b0d6856426f644e8e341b41daad"></a>
-std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memitem:a9b4c3b0d6856426f644e8e341b41daad" id="r_a9b4c3b0d6856426f644e8e341b41daad"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4c3b0d6856426f644e8e341b41daad">operator+</a> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a9b4c3b0d6856426f644e8e341b41daad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the '+' operator to add two functions.  <br /></td></tr>
 <tr class="separator:a9b4c3b0d6856426f644e8e341b41daad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b48d46fa1ce50817ac24fae683a61bf" id="r_a1b48d46fa1ce50817ac24fae683a61bf"><td class="memItemLeft" align="right" valign="top"><a id="a1b48d46fa1ce50817ac24fae683a61bf" name="a1b48d46fa1ce50817ac24fae683a61bf"></a>
-std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memitem:a1b48d46fa1ce50817ac24fae683a61bf" id="r_a1b48d46fa1ce50817ac24fae683a61bf"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b48d46fa1ce50817ac24fae683a61bf">operator*</a> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a1b48d46fa1ce50817ac24fae683a61bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the '*' operator to multiply two functions.  <br /></td></tr>
 <tr class="separator:a1b48d46fa1ce50817ac24fae683a61bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84176f2570111c470d0b9507af06d1c" id="r_ac84176f2570111c470d0b9507af06d1c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac84176f2570111c470d0b9507af06d1c">operator^</a> (int power) const</td></tr>
+<tr class="memdesc:ac84176f2570111c470d0b9507af06d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the '^' operator to create an exponential function with an integer power.  <br /></td></tr>
+<tr class="separator:ac84176f2570111c470d0b9507af06d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b82e5ad30714a527d353da2c4e6f27" id="r_a51b82e5ad30714a527d353da2c4e6f27"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51b82e5ad30714a527d353da2c4e6f27">operator^</a> (double power) const</td></tr>
+<tr class="memdesc:a51b82e5ad30714a527d353da2c4e6f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the '^' operator to create an exponential function with a double power.  <br /></td></tr>
+<tr class="separator:a51b82e5ad30714a527d353da2c4e6f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename InputType, typename OutputType&gt;<br />
+class AbstractFunction&lt; InputType, OutputType &gt;</div><p>Abstract base class for representing a function with specified input and output types. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InputType</td><td>The type of the input value. </td></tr>
+    <tr><td class="paramname">OutputType</td><td>The type of the output value. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1631a8dde65e30553f5a82969ddd3747" name="a1631a8dde65e30553f5a82969ddd3747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1631a8dde65e30553f5a82969ddd3747">&#9670;&#160;</a></span>compose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::compose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; OutputType, OutputType &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method to compose two functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The function to compose with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the composed function. </dd></dl>
+
+</div>
+</div>
+<a id="a34576e68dc7567ee4709e9a8e7a2bdd5" name="a34576e68dc7567ee4709e9a8e7a2bdd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34576e68dc7567ee4709e9a8e7a2bdd5">&#9670;&#160;</a></span>eval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual OutputType <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::eval </td>
+          <td>(</td>
+          <td class="paramtype">const InputType &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method to evaluate the function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input value for the function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output value of the function. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_add_function.html#ae7146267aba659926529d52360ac97a0">AddFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_composed_function.html#abd4cfad752381c6ead52af6c7b878272">ComposedFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_constant_function.html#a37affec4932324ddeffb8df7474c3eea">ConstantFunction&lt; T &gt;</a>, <a class="el" href="class_exponential_function.html#accadd374f9a4337c057a4cbb6ba989dd">ExponentialFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_function_wrapper.html#a6df22621deba60aeacc3bc6dfc56eb17">FunctionWrapper&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_identity_function.html#a4591a0bec042c97d9279d02ba76e8b8e">IdentityFunction&lt; T &gt;</a>, and <a class="el" href="class_multiply_function.html#ade436578c8adfc6ae34367b3cb020b81">MultiplyFunction&lt; InputType, OutputType &gt;</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph.png" border="0" usemap="#aclass_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph" alt=""/></div>
+<map name="aclass_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph" id="aclass_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph">
+<area shape="rect" title="Pure virtual method to evaluate the function." alt="" coords="553,123,706,149"/>
+<area shape="rect" href="class_statistics.html#a966bae9272c902c05c162d8273d89c37" title="Computes a central moment of an arbitrary function." alt="" coords="360,5,484,48"/>
+<area shape="poly" title=" " alt="" coords="594,116,504,62,480,51,482,46,507,58,597,111"/>
+<area shape="rect" href="class_composed_function.html#abd4cfad752381c6ead52af6c7b878272" title="Evaluates the composed function." alt="" coords="339,72,505,99"/>
+<area shape="poly" title=" " alt="" coords="556,121,479,102,480,97,557,116"/>
+<area shape="rect" href="class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b" title="Computes the expectation value of an arbitrary function." alt="" coords="346,173,498,200"/>
+<area shape="poly" title=" " alt="" coords="557,156,480,175,479,170,556,151"/>
+<area shape="rect" href="class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e" title="Computes a power moment of an arbitrary function." alt="" coords="159,123,290,149"/>
+<area shape="poly" title=" " alt="" coords="538,139,291,139,291,133,538,133"/>
+<area shape="rect" href="class_statistics.html#a7512c1e22362b97f0f5d35607aa726df" title="Computes the variance of an arbitrary function." alt="" coords="158,224,291,251"/>
+<area shape="poly" title=" " alt="" coords="601,161,558,190,506,215,451,229,394,237,291,242,291,237,393,232,450,224,504,209,555,185,598,157"/>
+<area shape="poly" title=" " alt="" coords="352,171,279,153,280,147,353,166"/>
+<area shape="rect" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655" title="Tests the Central Limit Theorem." alt="" coords="5,199,110,225"/>
+<area shape="poly" title=" " alt="" coords="332,196,110,211,110,206,331,190"/>
+<area shape="poly" title=" " alt="" coords="353,207,280,226,279,221,352,202"/>
+<area shape="poly" title=" " alt="" coords="142,228,110,223,110,217,143,222"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1b48d46fa1ce50817ac24fae683a61bf" name="a1b48d46fa1ce50817ac24fae683a61bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b48d46fa1ce50817ac24fae683a61bf">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload the '*' operator to multiply two functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The function to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the resulting function. </dd></dl>
+
+</div>
+</div>
+<a id="a9b4c3b0d6856426f644e8e341b41daad" name="a9b4c3b0d6856426f644e8e341b41daad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4c3b0d6856426f644e8e341b41daad">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload the '+' operator to add two functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The function to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the resulting function. </dd></dl>
+
+</div>
+</div>
+<a id="a51b82e5ad30714a527d353da2c4e6f27" name="a51b82e5ad30714a527d353da2c4e6f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b82e5ad30714a527d353da2c4e6f27">&#9670;&#160;</a></span>operator^() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; double, double &gt; &gt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>power</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload the '^' operator to create an exponential function with a double power. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">power</td><td>The double power to raise the function to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the resulting exponential function. </dd></dl>
+
+</div>
+</div>
+<a id="ac84176f2570111c470d0b9507af06d1c" name="ac84176f2570111c470d0b9507af06d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac84176f2570111c470d0b9507af06d1c">&#9670;&#160;</a></span>operator^() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::operator^ </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>power</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload the '^' operator to create an exponential function with an integer power. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">power</td><td>The integer power to raise the function to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the resulting exponential function. </dd></dl>
+
+</div>
+</div>
+<a id="a3f8a0ed6dd14ae2e31ccd3942fe208ef" name="a3f8a0ed6dd14ae2e31ccd3942fe208ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8a0ed6dd14ae2e31ccd3942fe208ef">&#9670;&#160;</a></span>operator|()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType , typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt; &gt; <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; InputType, OutputType &gt;::operator| </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; OutputType, OutputType &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload the '|' operator to compose two functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The function to compose with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the composed function. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/functions/<a class="el" href="abstract__function_8h_source.html">abstract_function.h</a></li>
 </ul>

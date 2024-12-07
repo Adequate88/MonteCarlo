@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['distribution_5farray_0',['distribution_array',['../class_abstract_sampler.html#a71497f519fbcbe368c7f419f72b5df72',1,'AbstractSampler']]]
+  ['children_0',['children',['../class_a_s_t_node.html#abf3e9fd194fab8e7b56c38a789cefdac',1,'ASTNode']]]
 ];

@@ -1,0 +1,13 @@
+<map id="CltTester::test" name="CltTester::test">
+<area shape="rect" id="Node000001" title="Tests the Central Limit Theorem." alt="" coords="5,23,110,49"/>
+<area shape="rect" id="Node000002" href="$class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b" title="Computes the expectation value of an arbitrary function." alt="" coords="340,23,491,49"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,19,157,8,225,3,292,8,345,16,344,22,292,13,225,8,158,13,104,25"/>
+<area shape="rect" id="Node000004" href="$class_statistics.html#a5d2d2ab6b64dc34131be24b7ceecccad" title="Sets the sample data." alt="" coords="158,23,292,49"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="110,33,142,33,142,39,110,39"/>
+<area shape="rect" id="Node000005" href="$class_statistics.html#a7512c1e22362b97f0f5d35607aa726df" title="Computes the variance of an arbitrary function." alt="" coords="158,73,292,100"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="105,47,164,66,163,71,103,52"/>
+<area shape="rect" id="Node000003" href="$class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="539,48,692,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="492,43,524,47,523,52,491,48"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="277,70,347,51,349,56,279,75"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="292,80,523,65,524,70,292,85"/>
+</map>

@@ -1,10 +1,10 @@
 <map id="src/sampling/abstract_sampler.hh" name="src/sampling/abstract_sampler.hh">
 <area shape="rect" id="Node000001" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="295,5,442,48"/>
-<area shape="rect" id="Node000002" href="$clt__tester_8h_source.html" title=" " alt="" coords="5,187,121,229"/>
+<area shape="rect" id="Node000002" href="$clt__tester_8h.html" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="5,187,121,229"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,42,168,64,121,80,90,98,77,118,69,141,64,186,59,186,63,140,72,116,87,94,118,75,166,59,279,37"/>
 <area shape="rect" id="Node000003" href="$abstract__sampler_8cc.html" title="Implements methods of the AbstractSampler class." alt="" coords="295,96,442,139"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="371,64,371,96,366,96,366,64"/>
-<area shape="rect" id="Node000004" href="$sampling_8hh_source.html" title=" " alt="" coords="420,376,589,403"/>
+<area shape="rect" id="Node000004" href="$sampling_8hh.html" title="Includes various samplers for different distributions." alt="" coords="420,376,589,403"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="419,56,439,73,456,95,475,133,489,173,504,256,509,328,508,376,502,376,503,328,499,256,483,175,470,135,451,97,436,77,416,60"/>
 <area shape="rect" id="Node000005" href="$uniform__sampler_8hh.html" title="Defines the UniformSampler class." alt="" coords="545,96,688,139"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="442,51,559,93,557,98,440,56"/>

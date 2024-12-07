@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['moment_0',['moment',['../class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e',1,'Statistics']]]
+  ['functionwrapper_0',['FunctionWrapper',['../class_function_wrapper.html#a0f664b263b391c754b12cfe9f546d93a',1,'FunctionWrapper']]]
 ];

@@ -1,0 +1,118 @@
+\doxysection{Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_constant_function}{}\label{class_constant_function}\index{ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}}
+
+
+Class representing a constant function.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+function.\+h$>$}
+
+
+
+Inheritance diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_constant_function__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_constant_function__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_constant_function_afe40d3596272f9060a4f07a85bf5f1da}{Constant\+Function}} (T input)
+\begin{DoxyCompactList}\small\item\em Constructs a constant function. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_constant_function_a37affec4932324ddeffb8df7474c3eea}{eval}} (const T \&input) const override
+\begin{DoxyCompactList}\small\item\em Evaluates the constant function. \end{DoxyCompactList}\item 
+\Hypertarget{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c}\label{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c} 
+T {\bfseries eval} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ T, T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Method to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ $>$ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ $>$ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ T, T $>$ $>$ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (int power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\texorpdfstring{$^\wedge$}{\string^}}} (double power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Constant\+Function$<$ T $>$}
+Class representing a constant function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_constant_function_afe40d3596272f9060a4f07a85bf5f1da}\index{ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}!ConstantFunction@{ConstantFunction}}
+\index{ConstantFunction@{ConstantFunction}!ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ConstantFunction()}{ConstantFunction()}}
+{\footnotesize\ttfamily \label{class_constant_function_afe40d3596272f9060a4f07a85bf5f1da} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{class_constant_function}{Constant\+Function}}$<$ T $>$\mbox{\hyperlink{class_constant_function}{\+::\+Constant\+Function}} (\begin{DoxyParamCaption}\item[{T}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs a constant function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The constant value that the function represents. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_constant_function_a37affec4932324ddeffb8df7474c3eea}\index{ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}!eval@{eval}}
+\index{eval@{eval}!ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \label{class_constant_function_a37affec4932324ddeffb8df7474c3eea} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_constant_function}{Constant\+Function}}$<$ T $>$\+::eval (\begin{DoxyParamCaption}\item[{const T \&}]{input}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates the constant function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value for the function (not used). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The constant value. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{Abstract\+Function$<$ T, T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/functions/\mbox{\hyperlink{abstract__function_8h}{abstract\+\_\+function.\+h}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo: src/statistics/statistics.hh Source File</title>
+<title>MonteCarlo: src/statistics/statistics.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo
+   <div id="projectname">MonteCarlo
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="abstract__sampler_8hh.html">../sampling/abstract_sampler.hh</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;../functions/abstract_function.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="abstract__function_8h.html">../functions/abstract_function.h</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_statistics.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="class_statistics.html">Statistics</a> {</div>
@@ -131,8 +131,9 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#endif </span><span class="comment">// STATISTICS_HH</span></div>
+<div class="ttc" id="aabstract__function_8h_html"><div class="ttname"><a href="abstract__function_8h.html">abstract_function.h</a></div><div class="ttdoc">Defines abstract and concrete function classes for use in mathematical computations.</div></div>
 <div class="ttc" id="aabstract__sampler_8hh_html"><div class="ttname"><a href="abstract__sampler_8hh.html">abstract_sampler.hh</a></div><div class="ttdoc">Defines the AbstractSampler class for sampling distributions.</div></div>
-<div class="ttc" id="aclass_abstract_function_html"><div class="ttname"><a href="class_abstract_function.html">AbstractFunction</a></div><div class="ttdef"><b>Definition</b> abstract_function.h:26</div></div>
+<div class="ttc" id="aclass_abstract_function_html"><div class="ttname"><a href="class_abstract_function.html">AbstractFunction</a></div><div class="ttdoc">Abstract base class for representing a function with specified input and output types.</div><div class="ttdef"><b>Definition</b> abstract_function.h:46</div></div>
 <div class="ttc" id="aclass_abstract_sampler_html"><div class="ttname"><a href="class_abstract_sampler.html">AbstractSampler</a></div><div class="ttdoc">Abstract base class for sampling and distribution generation.</div><div class="ttdef"><b>Definition</b> abstract_sampler.hh:23</div></div>
 <div class="ttc" id="aclass_statistics_html"><div class="ttname"><a href="class_statistics.html">Statistics</a></div><div class="ttdoc">Computes statistical metrics for a set of samples.</div><div class="ttdef"><b>Definition</b> statistics.hh:26</div></div>
 <div class="ttc" id="aclass_statistics_html_a017f34efcc336eb14b38a999e6f18017"><div class="ttname"><a href="class_statistics.html#a017f34efcc336eb14b38a999e6f18017">Statistics::Statistics</a></div><div class="ttdeci">Statistics(AbstractSampler &amp;sampler, int num_samples)</div><div class="ttdoc">Constructs a Statistics object with an initial set of samples.</div><div class="ttdef"><b>Definition</b> statistics.cc:24</div></div>

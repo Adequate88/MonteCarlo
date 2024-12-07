@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniformsampler_0',['UniformSampler',['../class_uniform_sampler.html',1,'']]]
+  ['parser_0',['Parser',['../class_parser.html',1,'']]]
 ];

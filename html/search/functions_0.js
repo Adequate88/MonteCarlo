@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['central_5fmoment_0',['central_moment',['../class_statistics.html#a966bae9272c902c05c162d8273d89c37',1,'Statistics']]],
-  ['clear_5fdata_1',['clear_data',['../class_statistics.html#ac792b9e5d8b688b0da17e56e7bc3a712',1,'Statistics']]]
+  ['addfunction_0',['AddFunction',['../class_add_function.html#afe85e80b17a5c2ff8ba29d0c2ec5fdfc',1,'AddFunction']]],
+  ['astnode_1',['ASTNode',['../class_a_s_t_node.html#aec604d11681563f83bc665e0172b5895',1,'ASTNode']]]
 ];

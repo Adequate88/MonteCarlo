@@ -1,0 +1,8 @@
+<map id="Statistics::moment" name="Statistics::moment">
+<area shape="rect" id="Node000001" title="Computes a power moment of an arbitrary function." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="Node000002" href="$class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="384,5,536,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,368,16,368,21,137,21"/>
+<area shape="rect" id="Node000003" href="$class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b" title="Computes the expectation value of an arbitrary function." alt="" coords="185,31,336,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,25,169,29,169,34,137,30"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="336,32,368,28,369,33,337,37"/>
+</map>

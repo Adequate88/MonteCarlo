@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['normal_5fquantile_0',['normal_quantile',['../class_normal_inverse_sampler.html#a2ec0a28ca12f65d8e150176476aa7eff',1,'NormalInverseSampler']]],
-  ['normalboxmullersampler_1',['NormalBoxMullerSampler',['../class_normal_box_muller_sampler.html#a964c8bb4f841eb0c5759c063c15542ad',1,'NormalBoxMullerSampler::NormalBoxMullerSampler(int seed)'],['../class_normal_box_muller_sampler.html#ae7bdf74dca516db48e8110bbe67017e2',1,'NormalBoxMullerSampler::NormalBoxMullerSampler(int seed, double mu, double sigma)']]],
-  ['normalinversesampler_2',['NormalInverseSampler',['../class_normal_inverse_sampler.html#a22eab7e8a273f2bebfdf54b2f8b296de',1,'NormalInverseSampler::NormalInverseSampler(int seed)'],['../class_normal_inverse_sampler.html#aae97ecbf9f534ca8ff0c840e83b68c59',1,'NormalInverseSampler::NormalInverseSampler(int seed, double mu, double sigma)']]],
-  ['normalsampler_3',['NormalSampler',['../class_normal_sampler.html#a3b5b2b4e4de785f6e261a17d318cb529',1,'NormalSampler']]]
+  ['gen_5fn_5fnew_5fsamples_0',['gen_N_new_samples',['../class_statistics.html#a95ea96d48febf1fec9ffbcbc7ddfed97',1,'Statistics']]],
+  ['generatedistribution_1',['generateDistribution',['../class_abstract_sampler.html#aa3d9fd063a503f8045b3397e9e034281',1,'AbstractSampler::generateDistribution()'],['../class_normal_sampler.html#ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55',1,'NormalSampler::generateDistribution()'],['../class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d',1,'UniformSampler::generateDistribution()']]],
+  ['generatefunction_2',['generateFunction',['../class_parser.html#af8cdd573c16595c221ec95358f3e5623',1,'Parser']]],
+  ['getfinalfunction_3',['getFinalFunction',['../class_parser.html#ab713fab97b92161da1d30985538ecd26',1,'Parser']]]
 ];

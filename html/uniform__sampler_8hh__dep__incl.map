@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Defines the UniformSampler class." alt="" coords="454,5,596,48"/>
 <area shape="rect" id="Node000002" href="$normal__sampler_8hh.html" title="Defines the NormalSampler class." alt="" coords="256,96,394,139"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,57,373,98,371,93,463,52"/>
-<area shape="rect" id="Node000005" href="$sampling_8hh_source.html" title=" " alt="" coords="440,285,610,312"/>
+<area shape="rect" id="Node000005" href="$sampling_8hh.html" title="Includes various samplers for different distributions." alt="" coords="440,285,610,312"/>
 <area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="528,63,528,285,522,285,522,63"/>
 <area shape="rect" id="Node000009" href="$uniform__sampler_8cc.html" title="Implements methods for the UniformSampler class." alt="" coords="562,96,704,139"/>
 <area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="564,56,610,93,606,97,560,60"/>

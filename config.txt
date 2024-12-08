@@ -4,14 +4,14 @@
 # 1. Mathematical Expression
 # Define the mathematical function f(x) to evaluate. Using valid syntax as referenced in README
 # Example: f(x) = sin(x) + x^2
-function_expression = x
+function_expression = x^-1
 
 # 2. Sampler Configuration
 # Specify the random number generator to use. Choose one of the following:
 # - inverse_transform_sampling
 # - box_muller_transform
 # - uniform_distribution
-sampler_method = box_muller_transform
+sampler_method = uniform_distribution
 
 # 3. Number of Samples
 # Enter the number of random samples to generate.

@@ -214,8 +214,7 @@ public:
      * @param expression The mathematical expression to parse.
      */
     Parser(const std::string &expression)
-        : expression(expression), tokens(tokenize(expression)), pos(0)
-    {}
+        : expression(expression), tokens(tokenize(expression)), pos(0) {}
 
     /**
      * @brief Parses the expression into an AST.
@@ -356,9 +355,14 @@ private:
 
         if (token->value == "+") {
             newFunc = std::make_unique<AddFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
-
+        } else if (token->value == "-") {
+            newFunc = std::make_unique<SubtractFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
         } else if (token->value == "*") {
             newFunc = std::make_unique<MultiplyFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
+        } else if (token->value == "/") {
+            newFunc = std::make_unique<DivideFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
+        }else if (token->value == "^") {
+            newFunc = std::make_unique<ExponentialFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
         } else {
             throw std::invalid_argument("Unsupported operator: " + token->value);
         }
@@ -393,8 +397,11 @@ private:
             func = std::make_unique<ConstantFunction<InputType>>(value);
 
         } else if(token->nodeType == NodeType::VAR) {
-            func = std::make_unique<IdentityFunction<InputType>>();
-
+            if (token->value[0] == '-') {
+                func = std::make_unique<NegativeIdentityFunction<InputType>>();
+            } else {
+                func = std::make_unique<IdentityFunction<InputType>>();
+            }
         } else {
             throw std::invalid_argument("Invalid Token Found: " + token->value);
         }
@@ -504,7 +511,22 @@ private:
             expect(TokenType::RPAREN);
             advance(); // consume ')'
             return node;
+        } else if (current().value == "-") {
+            std::string val = current().value;
+            advance();
+            val += current().value;
+            if (current().type == TokenType::NUMBER) {
+                advance();
+                return std::make_unique<ASTNode>(NodeType::NUM, val);
+            } else if (current().type == TokenType::IDENT) {
+                advance();
+                return std::make_unique<ASTNode>(NodeType::VAR, val);
+            } else {
+                throw std::runtime_error("Unexpected token while parsing negative");
+            }
+
         } else {
+
             throw std::runtime_error("Unexpected token while parsing power");
         }
     }

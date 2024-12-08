@@ -181,11 +181,6 @@ public:
         OutputType f_result = f_.eval(input);
         OutputType g_result = g_.eval(input);
 
-        if ((f_result > 0 && g_result > std::numeric_limits<OutputType>::max() - f_result) ||
-            (f_result < 0 && g_result < std::numeric_limits<OutputType>::lowest() - f_result)) {
-            //throw std::overflow_error("Overflow occurred during addition.");
-        }
-
         return f_result + g_result;
     }
 
@@ -193,6 +188,43 @@ private:
     const AbstractFunction<InputType, OutputType>& f_; ///< Function 1
     const AbstractFunction<InputType, OutputType>& g_; ///< Function 2
 };
+
+/**
+ * @brief Class representing the subtraction of two functions.
+ *
+ * @tparam InputType The type of the input value.
+ * @tparam OutputType The type of the output value.
+ */
+template <typename InputType, typename OutputType>
+class SubtractFunction : public AbstractFunction<InputType, OutputType> {
+public:
+    /**
+     * @brief Constructs a subtraction of two functions.
+     *
+     * @param f The first function.
+     * @param g The second function.
+     */
+    SubtractFunction(const AbstractFunction<InputType, OutputType>& f, const AbstractFunction<InputType, OutputType>& g)
+        : f_(f), g_(g) {}
+
+    /**
+     * @brief Evaluates the subtraction of the two functions.
+     *
+     * @param input The input value for the function.
+     * @return The result of subtracting the second function's evaluation from the first's.
+     */
+    OutputType eval(const InputType& input) const override {
+        OutputType f_result = f_.eval(input);
+        OutputType g_result = g_.eval(input);
+
+        return f_result - g_result;
+    }
+
+private:
+    const AbstractFunction<InputType, OutputType>& f_; ///< Function 1
+    const AbstractFunction<InputType, OutputType>& g_; ///< Function 2
+};
+
 
 /**
  * @brief Class representing the multiplication of two functions.
@@ -222,11 +254,6 @@ public:
         OutputType f_result = f_.eval(input);
         OutputType g_result = g_.eval(input);
 
-        if (f_result != 0 && (g_result > std::numeric_limits<OutputType>::max() / f_result ||
-            g_result < std::numeric_limits<OutputType>::lowest() / f_result)) {
-            //throw std::overflow_error("Overflow occurred during multiplication.");
-        }
-
         return f_result * g_result;
     }
 
@@ -235,61 +262,84 @@ private:
     const AbstractFunction<InputType, OutputType>& g_; ///< Function 2
 };
 
-
 /**
- * @brief Class representing an exponential function.
+ * @brief Class representing the division of two functions.
  *
  * @tparam InputType The type of the input value.
  * @tparam OutputType The type of the output value.
- */template <typename InputType, typename OutputType>
-class ExponentialFunction : public AbstractFunction<InputType, OutputType> {
+ */
+template <typename InputType, typename OutputType>
+class DivideFunction : public AbstractFunction<InputType, OutputType> {
 public:
     /**
-     * @brief Constructs an exponential function with an integer power.
+     * @brief Constructs a division of two functions.
      *
-     * @param baseFunction The base function to be raised to a power.
-     * @param power The integer power.
+     * @param f The numerator function.
+     * @param g The denominator function.
      */
-    ExponentialFunction(const AbstractFunction<InputType, OutputType>& baseFunction, int power)
-        : baseFunction_(baseFunction), power_(static_cast<double>(power)), isIntegerPower_(true) {}
+    DivideFunction(const AbstractFunction<InputType, OutputType>& f, const AbstractFunction<InputType, OutputType>& g)
+        : f_(f), g_(g) {}
 
     /**
-     * @brief Constructs an exponential function with a double power.
+     * @brief Evaluates the division of the two functions.
      *
-     * @param baseFunction The base function to be raised to a power.
-     * @param power The double power.
+     * @param input The input value for the function.
+     * @return The result of dividing the numerator function's evaluation by the denominator's.
+     * @throws std::runtime_error If the denominator evaluates to zero.
      */
-    ExponentialFunction(const AbstractFunction<double, double>& baseFunction, double power)
-        : baseFunction_(baseFunction), power_(power), isIntegerPower_(false) {}
+    OutputType eval(const InputType& input) const override {
+        OutputType f_result = f_.eval(input);
+        OutputType g_result = g_.eval(input);
+
+        if (g_result == static_cast<OutputType>(0)) {
+            throw std::runtime_error("Division by zero occurred in DivideFunction.");
+        }
+
+        return f_result / g_result;
+    }
+
+private:
+    const AbstractFunction<InputType, OutputType>& f_; ///< Numerator function
+    const AbstractFunction<InputType, OutputType>& g_; ///< Denominator function
+};
+
+
+
+/**
+ * @brief Class representing an exponential function where both the base and power are functions.
+ *
+ * @tparam InputType The type of the input value.
+ * @tparam OutputType The type of the output value.
+ */
+template <typename InputType, typename OutputType>
+class ExponentialFunction : public AbstractFunction<InputType, OutputType> {
+public:
 
     /**
-     * @brief Evaluates the exponential function.
+     * @brief Constructs an exponential function with a base and power, both represented as functions.
+     *
+     * @param baseFunction The base function to be exponentiated.
+     * @param powerFunction The function representing the power to which the base is raised.
+     */
+    ExponentialFunction(const AbstractFunction<InputType, OutputType>& baseFunction, const AbstractFunction<InputType, OutputType>& powerFunction)
+        : baseFunction_(baseFunction), powerFunction_(powerFunction) {}
+
+    /**
+     * @brief Evaluates the exponential function by raising the base function's value to the power function's value.
      *
      * @param x The input value for the function.
-     * @return The result of the base function raised to the specified power.
+     * @return The result of evaluating the base function and raising it to the power determined by the power function.
      */
     OutputType eval(const InputType& x) const override {
-        if (isIntegerPower_) {
-            // Use repeated multiplication for integer power
-            if (static_cast<int>(power_) == 1) {
-                return baseFunction_.eval(x);
-            }
-            OutputType baseValue = baseFunction_.eval(x);
-            OutputType result = baseFunction_.eval(x);
-            for (int i = 0; i < static_cast<int>(power_); ++i) {
-                result *= baseValue;
-            }
-            return result;
-        }
         // Use std::pow for double power
-        const double baseValue = baseFunction_.eval(static_cast<double>(x));
-        return static_cast<OutputType>(std::pow(baseValue, power_));
+        const auto baseValue = baseFunction_.eval(x);
+        const auto powerValue = powerFunction_.eval(x);
+        return static_cast<OutputType>(std::pow(baseValue, powerValue));
     }
 
 private:
     const AbstractFunction<InputType, OutputType>& baseFunction_; ///< The base function being exponentiated.
-    double power_; ///< The power to which the base function is raised.
-    bool isIntegerPower_; ///< Flag to indicate if the power is an integer or a floating point number.
+    const AbstractFunction<InputType, OutputType>& powerFunction_;  ///< The power function providing the exponent.
 };
 
 /**
@@ -347,6 +397,25 @@ public:
 };
 
 /**
+ * @brief Class representing a negative identity function.
+ *
+ * @tparam T The type of the input and output value.
+ */
+template <typename T>
+class NegativeIdentityFunction : public AbstractFunction<T, T> {
+public:
+    /**
+     * @brief Evaluates the negative of identity function.
+     *
+     * @param input The input value for the function.
+     * @return The same value as the input.
+     */
+    T eval(const T& input) const override {
+        return -1*input;
+    }
+};
+
+/**
  * @brief Class representing a constant function.
  *
  * @tparam T The type of the value.
@@ -372,6 +441,10 @@ class ConstantFunction : public AbstractFunction<T, T> {
         }
 
         T eval() const{
+            return constant;
+        }
+
+        T getConstant() const {
             return constant;
         }
     private:

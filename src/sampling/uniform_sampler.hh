@@ -78,6 +78,5 @@ class UniformSampler : public AbstractSampler {
          */
         void generateDistribution(int bins, int n_samples) override;
 
-        void plotDistribution();
 };
 #endif //UNIFORM_SAMPLER_HH

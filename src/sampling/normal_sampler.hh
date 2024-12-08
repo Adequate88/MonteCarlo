@@ -30,7 +30,12 @@ class NormalSampler : public AbstractSampler{
      * @param mu Mean of the normal distribution.
      * @param sigma Standard deviation of the normal distribution.
      */
-    NormalSampler(int seed, double mu, double sigma) : seed(seed), uniform_sampler(seed), mu(mu), sigma(sigma) {};
+    NormalSampler(int seed, double mu, double sigma) : seed(seed), uniform_sampler(seed), mu(mu), sigma(sigma) {
+
+        plot_minimum = mu - 5*sigma;
+        plot_maximum = mu + 5*sigma;
+
+    };
 
     /**
      * @brief Generates a histogram of the normal distribution.
@@ -46,6 +51,7 @@ protected:
     UniformSampler uniform_sampler; ///< Uniform sampler used internally.
     double mu; ///< Mean of the normal distribution.
     double sigma; ///< Standard deviation of the normal distribution.
+
 };
 
 #endif //NORMAL_SAMPLER

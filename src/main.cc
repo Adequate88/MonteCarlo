@@ -143,7 +143,7 @@ int main() {
     if (histogramBins > 0) {
         results << "######################################################\n";
         results << "Drawing histogram...\n";
-        //sampler->printDistribution();
+        sampler->plotDistribution();
     }
 
     if (computeExpectation) {

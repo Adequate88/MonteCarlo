@@ -24,7 +24,7 @@
 #include "normal_boxmuller_sampler.hh"
 #include <cmath>
 #include <iostream>
-#include <numbers>
+
 
 /**
  * @brief Constructor for standard normal distribution.

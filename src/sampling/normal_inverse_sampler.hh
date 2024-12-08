@@ -59,6 +59,7 @@ class NormalInverseSampler : public NormalSampler {
         */
         double normal_quantile(double p);
 
+
 };
 
 #endif //NORMAL_INVERSE_SAMPLER_HH

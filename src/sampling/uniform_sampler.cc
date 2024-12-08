@@ -11,6 +11,7 @@
 
 #include <cmath>
 #include "uniform_sampler.hh"
+#include <gnuplot-iostream.h>
 
 /**
  * @brief Initializes the random number generator state.
@@ -35,6 +36,8 @@ void UniformSampler::initialize(unsigned long long j) {
 UniformSampler::UniformSampler(unsigned long long j) : v(4101842887655102017LL), w(1), minimum(0.0), maximum(1.0) {
     // Constructor. Call with any integer seed (except value of v above).
     initialize(j);
+    plot_maximum = maximum;
+    plot_minimum = minimum;
 }
 
 /**
@@ -49,6 +52,8 @@ UniformSampler::UniformSampler(unsigned long long j) : v(4101842887655102017LL),
 UniformSampler::UniformSampler(unsigned long long j, float a, float b) : v(4101842887655102017LL), w(1), minimum(a), maximum(b) {
     // Constructor. Call with any integer seed (except value of v above).
     initialize(j);
+    plot_maximum = maximum;
+    plot_minimum = minimum;
 }
 
 /**
@@ -96,31 +101,4 @@ void UniformSampler::generateDistribution(const int bins, const int n_samples) {
         // Increment the corresponding bin by the fractional value
         this->distribution_array[index] += 1.0 / (n_samples * delta_x);
     }
-}
-
-/**
- * @brief Plots the histogram of the uniform distribution.
- *
- * Generates bin centers and corresponding frequencies for plotting.
- *
- */
-void UniformSampler::plotDistribution() {
-
-    const int bins = distribution_array.size();
-
-    std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
-
-    const double delta_x = (maximum - minimum) / static_cast<double>(bins);
-
-    for (int i = 0; i < bins; i++) {
-        bin_centers[i] = delta_x * static_cast<double>(i+1) * 0.5 + minimum;
-    }
-
-    // Combine bin centers and frequencies into a single vector
-    std::vector<std::pair<double, double>> histogram_data;
-    for (size_t i = 0; i < bins; ++i) {
-        histogram_data.emplace_back(bin_centers[i], distribution_array[i]);
-    }
-
-    // Initialize Gnuplot
 }

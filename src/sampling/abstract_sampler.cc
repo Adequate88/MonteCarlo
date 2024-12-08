@@ -11,7 +11,7 @@
 
 #include "abstract_sampler.hh"
 #include <iostream>
-
+#include <gnuplot-iostream.h>
 
 /**
  * @brief Prints the distribution array to the standard output.
@@ -27,4 +27,41 @@ void AbstractSampler::printDistribution() {
 
     }
 
+}
+
+void AbstractSampler::plotDistribution() {
+
+    const int bins = distribution_array.size();
+    std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
+
+    const double delta_x = (plot_maximum - plot_minimum) / static_cast<double>(bins);
+
+    for (int i = 0; i < bins; i++) {
+        // Calculate the center of the i-th bin
+        bin_centers[i] = plot_minimum + (i + 0.5) * delta_x;
+    }
+
+    // Combine bin centers and frequencies into a single vector
+    std::vector<std::pair<double, double>> data;
+    for (size_t i = 0; i < bin_centers.size(); ++i) {
+        data.push_back(std::make_pair(bin_centers[i], distribution_array[i]));
+    }
+
+    // Initialize Gnuplot
+    Gnuplot gp;
+
+    // Send Gnuplot commands to set labels and title
+    gp << "set xlabel 'x'\n";
+    gp << "set ylabel 'pdf(x)'\n";
+    gp << "set title 'Binned Probability Density Function'\n";
+
+    gp << "set boxwidth 0.8 relative\n";  // 0.8 relative to the bin spacing
+    gp << "set style fill solid 1.0\n";   // Solid fill for bars
+
+    gp << "set yrange [0:*]\n";  // Set the Y-axis to range
+    gp << "set xrange [" << plot_minimum << ":" << plot_maximum << "]\n";  // Set the X-axis to range
+
+    // Plot the data using lines
+    gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
+    gp.send1d(data);  // Send the data for plotting
 }

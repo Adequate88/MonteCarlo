@@ -11,6 +11,8 @@
 #include "normal_sampler.hh"
 #include <iostream>
 #include <cmath>
+#include <gnuplot-iostream.h>
+
 
 /**
  * @brief Generates a histogram of the normal distribution.

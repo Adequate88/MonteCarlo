@@ -33,6 +33,7 @@ class AbstractSampler {
         * @brief Array to store distribution data based on bins.
         */
         std::vector<double> distribution_array; // Array to store distribution based on bins
+        double plot_minimum, plot_maximum;
     public:
         /**
         * @brief Generates a random sample.
@@ -63,6 +64,7 @@ class AbstractSampler {
         * each bin's data.
         */
         virtual void printDistribution();
+        void plotDistribution();
 };
 
 #endif //ABSTRACT_SAMPLER_HH

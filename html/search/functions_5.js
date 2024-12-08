@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['makefunc_0',['makeFunc',['../parse__tree_8h.html#ae20d55ef8319cae72ed4576faacbd0d6',1,'parse_tree.h']]],
-  ['makeop_1',['makeOp',['../parse__tree_8h.html#a414c6c28e70c3cc0f56d7c830038f4a6',1,'parse_tree.h']]],
-  ['moment_2',['moment',['../class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e',1,'Statistics']]],
-  ['multiplyfunction_3',['MultiplyFunction',['../class_multiply_function.html#a49f148ef2b0acf2eb7feb4b05c45c190',1,'MultiplyFunction']]]
+  ['gen_5fn_5fnew_5fsamples_0',['gen_N_new_samples',['../class_statistics.html#a95ea96d48febf1fec9ffbcbc7ddfed97',1,'Statistics']]],
+  ['generatedistribution_1',['generateDistribution',['../class_abstract_sampler.html#aa3d9fd063a503f8045b3397e9e034281',1,'AbstractSampler::generateDistribution()'],['../class_normal_sampler.html#ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55',1,'NormalSampler::generateDistribution()'],['../class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d',1,'UniformSampler::generateDistribution()']]],
+  ['generatefunction_2',['generateFunction',['../class_parser.html#af8cdd573c16595c221ec95358f3e5623',1,'Parser']]],
+  ['getfinalfunction_3',['getFinalFunction',['../class_parser.html#ab713fab97b92161da1d30985538ecd26',1,'Parser']]]
 ];

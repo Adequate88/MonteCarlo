@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['eval_0',['eval',['../class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5',1,'AbstractFunction::eval()'],['../class_composed_function.html#abd4cfad752381c6ead52af6c7b878272',1,'ComposedFunction::eval()'],['../class_add_function.html#ae7146267aba659926529d52360ac97a0',1,'AddFunction::eval()'],['../class_multiply_function.html#ade436578c8adfc6ae34367b3cb020b81',1,'MultiplyFunction::eval()'],['../class_exponential_function.html#accadd374f9a4337c057a4cbb6ba989dd',1,'ExponentialFunction::eval()'],['../class_function_wrapper.html#a6df22621deba60aeacc3bc6dfc56eb17',1,'FunctionWrapper::eval()'],['../class_identity_function.html#a4591a0bec042c97d9279d02ba76e8b8e',1,'IdentityFunction::eval()'],['../class_constant_function.html#a37affec4932324ddeffb8df7474c3eea',1,'ConstantFunction::eval()']]],
-  ['expectation_1',['expectation',['../class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b',1,'Statistics']]],
-  ['exponentialfunction_2',['ExponentialFunction',['../class_exponential_function.html#a1a778f8405ba3dfbd9ccf9b528554322',1,'ExponentialFunction::ExponentialFunction(const AbstractFunction&lt; InputType, OutputType &gt; &amp;baseFunction, int power)'],['../class_exponential_function.html#a563cd2c55a99121a5081fd49e51ba73b',1,'ExponentialFunction::ExponentialFunction(const AbstractFunction&lt; double, double &gt; &amp;baseFunction, double power)']]]
+  ['dividefunction_0',['DivideFunction',['../class_divide_function.html#a358a8b2dfbf05d6a7bb5571b44124756',1,'DivideFunction']]]
 ];

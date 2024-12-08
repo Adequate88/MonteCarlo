@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['multiplyfunction_0',['MultiplyFunction',['../class_multiply_function.html',1,'']]]
+  ['identityfunction_0',['IdentityFunction',['../class_identity_function.html',1,'']]]
 ];

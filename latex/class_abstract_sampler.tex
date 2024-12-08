@@ -25,8 +25,11 @@ virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea2
 \begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{generate\+Distribution}} (int bins, int n\+\_\+samples)
 \begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
-\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
+\Hypertarget{class_abstract_sampler_a45aec956af4420ca0b6e9ed7ba6da70d}\label{class_abstract_sampler_a45aec956af4420ca0b6e9ed7ba6da70d} 
+void {\bfseries plot\+Distribution} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,7 +41,13 @@ void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{
 \item 
 \Hypertarget{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}\label{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72} 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
-\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
+\Hypertarget{class_abstract_sampler_a776e3c9cde16c13d0f615d3dfcca8a8b}\label{class_abstract_sampler_a776e3c9cde16c13d0f615d3dfcca8a8b} 
+double {\bfseries plot\+\_\+minimum}
+\item 
+\Hypertarget{class_abstract_sampler_a4289f69270f3247782aa29b3b056cca3}\label{class_abstract_sampler_a4289f69270f3247782aa29b3b056cca3} 
+double {\bfseries plot\+\_\+maximum}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -74,7 +83,7 @@ Reimplemented in \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d1
 \index{printDistribution@{printDistribution}!AbstractSampler@{AbstractSampler}}
 \doxysubsubsection{\texorpdfstring{printDistribution()}{printDistribution()}}
 {\footnotesize\ttfamily \label{class_abstract_sampler_afc110350241dd9e506f09282b1090a12} 
-void Abstract\+Sampler\+::print\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+void Abstract\+Sampler\+::print\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -103,13 +112,6 @@ A random sample as a double-\/precision floating-\/point number.
 
 Reimplemented in \mbox{\hyperlink{class_normal_box_muller_sampler_aa5eeb799f6e08d063df49ebca103d388}{Normal\+Box\+Muller\+Sampler}}, \mbox{\hyperlink{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1}{Normal\+Inverse\+Sampler}}, and \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{Uniform\+Sampler}}.
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea_icgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MonteCarlo: AbstractFunction&lt; InputType, OutputType &gt; Class Template Reference</title>
+<title>Monte Carlo Statistics Module: AbstractFunction&lt; InputType, OutputType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MonteCarlo
+   <div id="projectname">Monte Carlo Statistics Module
    </div>
   </td>
  </tr>
@@ -94,23 +94,27 @@ $(function(){ initResizable(false); });
 <p>Abstract base class for representing a function with specified input and output types.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="abstract__function_8h_source.html">abstract_function.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="abstract__function_8hh_source.html">abstract_function.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AbstractFunction&lt; InputType, OutputType &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_abstract_function__inherit__graph.png" border="0" usemap="#a_abstract_function_3_01_input_type_00_01_output_type_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_abstract_function_3_01_input_type_00_01_output_type_01_4_inherit__map" id="a_abstract_function_3_01_input_type_00_01_output_type_01_4_inherit__map">
-<area shape="rect" title="Abstract base class for representing a function with specified input and output types." alt="" coords="5,139,199,181"/>
+<area shape="rect" title="Abstract base class for representing a function with specified input and output types." alt="" coords="5,205,199,248"/>
 <area shape="rect" href="class_add_function.html" title="Class representing the addition of two functions." alt="" coords="267,5,434,48"/>
-<area shape="poly" title=" " alt="" coords="140,127,189,91,245,58,272,46,274,51,248,62,192,96,143,131"/>
+<area shape="poly" title=" " alt="" coords="123,191,173,123,207,88,245,58,266,46,269,51,248,62,211,92,177,127,127,194"/>
 <area shape="rect" href="class_composed_function.html" title="Class representing the composition of two functions." alt="" coords="247,72,454,115"/>
-<area shape="poly" title=" " alt="" coords="198,131,267,113,269,118,200,137"/>
-<area shape="rect" href="class_exponential_function.html" title="Class representing an exponential function." alt="" coords="262,139,439,181"/>
-<area shape="poly" title=" " alt="" coords="214,157,261,157,261,163,214,163"/>
-<area shape="rect" href="class_function_wrapper.html" title="Wrapper class that adapts a standard C++ function to an AbstractFunction object." alt="" coords="254,205,446,248"/>
-<area shape="poly" title=" " alt="" coords="200,183,269,202,267,207,198,189"/>
-<area shape="rect" href="class_multiply_function.html" title="Class representing the multiplication of two functions." alt="" coords="256,272,445,315"/>
-<area shape="poly" title=" " alt="" coords="143,189,192,224,248,258,274,269,272,274,245,262,189,229,140,193"/>
+<area shape="poly" title=" " alt="" coords="140,193,189,158,245,124,272,113,274,118,248,129,192,162,143,198"/>
+<area shape="rect" href="class_divide_function.html" title="Class representing the division of two functions." alt="" coords="260,139,441,181"/>
+<area shape="poly" title=" " alt="" coords="198,198,267,179,269,185,200,203"/>
+<area shape="rect" href="class_exponential_function.html" title="Class representing an exponential function where both the base and power are functions." alt="" coords="262,205,439,248"/>
+<area shape="poly" title=" " alt="" coords="214,224,261,224,261,229,214,229"/>
+<area shape="rect" href="class_function_wrapper.html" title="Wrapper class that adapts a standard C++ function to an AbstractFunction object." alt="" coords="254,272,446,315"/>
+<area shape="poly" title=" " alt="" coords="200,250,269,269,267,274,198,255"/>
+<area shape="rect" href="class_multiply_function.html" title="Class representing the multiplication of two functions." alt="" coords="256,339,445,381"/>
+<area shape="poly" title=" " alt="" coords="143,256,192,291,248,324,274,336,272,341,245,329,189,295,140,260"/>
+<area shape="rect" href="class_subtract_function.html" title="Class representing the subtraction of two functions." alt="" coords="254,405,447,448"/>
+<area shape="poly" title=" " alt="" coords="127,260,177,326,211,361,248,391,269,403,266,407,245,396,207,365,173,330,123,263"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -223,30 +227,7 @@ template&lt;typename InputType , typename OutputType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output value of the function. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_add_function.html#ae7146267aba659926529d52360ac97a0">AddFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_composed_function.html#abd4cfad752381c6ead52af6c7b878272">ComposedFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_constant_function.html#a37affec4932324ddeffb8df7474c3eea">ConstantFunction&lt; T &gt;</a>, <a class="el" href="class_exponential_function.html#accadd374f9a4337c057a4cbb6ba989dd">ExponentialFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_function_wrapper.html#a6df22621deba60aeacc3bc6dfc56eb17">FunctionWrapper&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_identity_function.html#a4591a0bec042c97d9279d02ba76e8b8e">IdentityFunction&lt; T &gt;</a>, and <a class="el" href="class_multiply_function.html#ade436578c8adfc6ae34367b3cb020b81">MultiplyFunction&lt; InputType, OutputType &gt;</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph.png" border="0" usemap="#aclass_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph" alt=""/></div>
-<map name="aclass_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph" id="aclass_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5_icgraph">
-<area shape="rect" title="Pure virtual method to evaluate the function." alt="" coords="553,123,706,149"/>
-<area shape="rect" href="class_statistics.html#a966bae9272c902c05c162d8273d89c37" title="Computes a central moment of an arbitrary function." alt="" coords="360,5,484,48"/>
-<area shape="poly" title=" " alt="" coords="594,116,504,62,480,51,482,46,507,58,597,111"/>
-<area shape="rect" href="class_composed_function.html#abd4cfad752381c6ead52af6c7b878272" title="Evaluates the composed function." alt="" coords="339,72,505,99"/>
-<area shape="poly" title=" " alt="" coords="556,121,479,102,480,97,557,116"/>
-<area shape="rect" href="class_statistics.html#a3456f70d108f6e6763e72dd854ba8f8b" title="Computes the expectation value of an arbitrary function." alt="" coords="346,173,498,200"/>
-<area shape="poly" title=" " alt="" coords="557,156,480,175,479,170,556,151"/>
-<area shape="rect" href="class_statistics.html#afc56fe9ebd7dbb0aa61802074886322e" title="Computes a power moment of an arbitrary function." alt="" coords="159,123,290,149"/>
-<area shape="poly" title=" " alt="" coords="538,139,291,139,291,133,538,133"/>
-<area shape="rect" href="class_statistics.html#a7512c1e22362b97f0f5d35607aa726df" title="Computes the variance of an arbitrary function." alt="" coords="158,224,291,251"/>
-<area shape="poly" title=" " alt="" coords="601,161,558,190,506,215,451,229,394,237,291,242,291,237,393,232,450,224,504,209,555,185,598,157"/>
-<area shape="poly" title=" " alt="" coords="352,171,279,153,280,147,353,166"/>
-<area shape="rect" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655" title="Tests the Central Limit Theorem." alt="" coords="5,199,110,225"/>
-<area shape="poly" title=" " alt="" coords="332,196,110,211,110,206,331,190"/>
-<area shape="poly" title=" " alt="" coords="353,207,280,226,279,221,352,202"/>
-<area shape="poly" title=" " alt="" coords="142,228,110,223,110,217,143,222"/>
-</map>
-</div>
+<p>Implemented in <a class="el" href="class_add_function.html#ae7146267aba659926529d52360ac97a0">AddFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_composed_function.html#abd4cfad752381c6ead52af6c7b878272">ComposedFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_constant_function.html#a37affec4932324ddeffb8df7474c3eea">ConstantFunction&lt; T &gt;</a>, <a class="el" href="class_divide_function.html#abbff31f4af4d98d4273349a2d1a9e831">DivideFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_exponential_function.html#accadd374f9a4337c057a4cbb6ba989dd">ExponentialFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_function_wrapper.html#a6df22621deba60aeacc3bc6dfc56eb17">FunctionWrapper&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_identity_function.html#a4591a0bec042c97d9279d02ba76e8b8e">IdentityFunction&lt; T &gt;</a>, <a class="el" href="class_multiply_function.html#ade436578c8adfc6ae34367b3cb020b81">MultiplyFunction&lt; InputType, OutputType &gt;</a>, <a class="el" href="class_negative_identity_function.html#a9d5cc5f97044c2f086c13b45e7427b7e">NegativeIdentityFunction&lt; T &gt;</a>, and <a class="el" href="class_subtract_function.html#a09c303199e54c40aa9ce0bfccc6f69ba">SubtractFunction&lt; InputType, OutputType &gt;</a>.</p>
 
 </div>
 </div>
@@ -431,7 +412,7 @@ template&lt;typename InputType , typename OutputType &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/functions/<a class="el" href="abstract__function_8h_source.html">abstract_function.h</a></li>
+<li>src/functions/<a class="el" href="abstract__function_8hh_source.html">abstract_function.hh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -11,7 +11,6 @@
 
 #include <cmath>
 #include "uniform_sampler.hh"
-#include <gnuplot-iostream.h>
 
 /**
  * @brief Initializes the random number generator state.

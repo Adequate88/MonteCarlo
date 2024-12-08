@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MonteCarlo: src/sampling/uniform_sampler.hh Source File</title>
+<title>Monte Carlo Statistics Module: src/sampling/uniform_sampler.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MonteCarlo
+   <div id="projectname">Monte Carlo Statistics Module
    </div>
   </td>
  </tr>
@@ -119,18 +119,16 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d">generateDistribution</a>(<span class="keywordtype">int</span> bins, <span class="keywordtype">int</span> n_samples) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_uniform_sampler.html#a7a81094ca4fb4d84fa0cdd1500ad92ea">plotDistribution</a>();</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
 </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif </span><span class="comment">//UNIFORM_SAMPLER_HH</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">//UNIFORM_SAMPLER_HH</span></div>
 <div class="ttc" id="aabstract__sampler_8hh_html"><div class="ttname"><a href="abstract__sampler_8hh.html">abstract_sampler.hh</a></div><div class="ttdoc">Defines the AbstractSampler class for sampling distributions.</div></div>
 <div class="ttc" id="aclass_abstract_sampler_html"><div class="ttname"><a href="class_abstract_sampler.html">AbstractSampler</a></div><div class="ttdoc">Abstract base class for sampling and distribution generation.</div><div class="ttdef"><b>Definition</b> abstract_sampler.hh:23</div></div>
 <div class="ttc" id="aclass_uniform_sampler_html"><div class="ttname"><a href="class_uniform_sampler.html">UniformSampler</a></div><div class="ttdoc">Generates random samples from a uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.hh:22</div></div>
 <div class="ttc" id="aclass_uniform_sampler_html_a07de0652a0f590b39c74bb07b17cbc15"><div class="ttname"><a href="class_uniform_sampler.html#a07de0652a0f590b39c74bb07b17cbc15">UniformSampler::UniformSampler</a></div><div class="ttdeci">UniformSampler(unsigned long long j)</div><div class="ttdoc">Constructor for default uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.cc:35</div></div>
-<div class="ttc" id="aclass_uniform_sampler_html_a4e3c267099318ddc0035bdade193be0d"><div class="ttname"><a href="class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d">UniformSampler::generateDistribution</a></div><div class="ttdeci">void generateDistribution(int bins, int n_samples) override</div><div class="ttdoc">Generates a histogram of the uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.cc:85</div></div>
+<div class="ttc" id="aclass_uniform_sampler_html_a4e3c267099318ddc0035bdade193be0d"><div class="ttname"><a href="class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d">UniformSampler::generateDistribution</a></div><div class="ttdeci">void generateDistribution(int bins, int n_samples) override</div><div class="ttdoc">Generates a histogram of the uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.cc:89</div></div>
 <div class="ttc" id="aclass_uniform_sampler_html_a6c99f72f96d49f941260b175a8055cfc"><div class="ttname"><a href="class_uniform_sampler.html#a6c99f72f96d49f941260b175a8055cfc">UniformSampler::~UniformSampler</a></div><div class="ttdeci">virtual ~UniformSampler()=default</div><div class="ttdoc">Destructor for UniformSampler.</div></div>
-<div class="ttc" id="aclass_uniform_sampler_html_a7a81094ca4fb4d84fa0cdd1500ad92ea"><div class="ttname"><a href="class_uniform_sampler.html#a7a81094ca4fb4d84fa0cdd1500ad92ea">UniformSampler::plotDistribution</a></div><div class="ttdeci">void plotDistribution()</div><div class="ttdoc">Plots the histogram of the uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.cc:107</div></div>
-<div class="ttc" id="aclass_uniform_sampler_html_ae352adfceb12d692f021df61b48c317c"><div class="ttname"><a href="class_uniform_sampler.html#ae352adfceb12d692f021df61b48c317c">UniformSampler::sample</a></div><div class="ttdeci">double sample() override</div><div class="ttdoc">Generates a random sample from the uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.cc:75</div></div>
+<div class="ttc" id="aclass_uniform_sampler_html_ae352adfceb12d692f021df61b48c317c"><div class="ttname"><a href="class_uniform_sampler.html#ae352adfceb12d692f021df61b48c317c">UniformSampler::sample</a></div><div class="ttdeci">double sample() override</div><div class="ttdoc">Generates a random sample from the uniform distribution.</div><div class="ttdef"><b>Definition</b> uniform_sampler.cc:79</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

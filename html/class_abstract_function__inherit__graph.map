@@ -1,13 +1,17 @@
 <map id="AbstractFunction&lt; InputType, OutputType &gt;" name="AbstractFunction&lt; InputType, OutputType &gt;">
-<area shape="rect" id="Node000001" title="Abstract base class for representing a function with specified input and output types." alt="" coords="5,139,199,181"/>
+<area shape="rect" id="Node000001" title="Abstract base class for representing a function with specified input and output types." alt="" coords="5,205,199,248"/>
 <area shape="rect" id="Node000002" href="$class_add_function.html" title="Class representing the addition of two functions." alt="" coords="267,5,434,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,127,189,91,245,58,272,46,274,51,248,62,192,96,143,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,191,173,123,207,88,245,58,266,46,269,51,248,62,211,92,177,127,127,194"/>
 <area shape="rect" id="Node000003" href="$class_composed_function.html" title="Class representing the composition of two functions." alt="" coords="247,72,454,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,131,267,113,269,118,200,137"/>
-<area shape="rect" id="Node000004" href="$class_exponential_function.html" title="Class representing an exponential function." alt="" coords="262,139,439,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,157,261,157,261,163,214,163"/>
-<area shape="rect" id="Node000005" href="$class_function_wrapper.html" title="Wrapper class that adapts a standard C++ function to an AbstractFunction object." alt="" coords="254,205,446,248"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,183,269,202,267,207,198,189"/>
-<area shape="rect" id="Node000006" href="$class_multiply_function.html" title="Class representing the multiplication of two functions." alt="" coords="256,272,445,315"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="143,189,192,224,248,258,274,269,272,274,245,262,189,229,140,193"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,193,189,158,245,124,272,113,274,118,248,129,192,162,143,198"/>
+<area shape="rect" id="Node000004" href="$class_divide_function.html" title="Class representing the division of two functions." alt="" coords="260,139,441,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="198,198,267,179,269,185,200,203"/>
+<area shape="rect" id="Node000005" href="$class_exponential_function.html" title="Class representing an exponential function where both the base and power are functions." alt="" coords="262,205,439,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="214,224,261,224,261,229,214,229"/>
+<area shape="rect" id="Node000006" href="$class_function_wrapper.html" title="Wrapper class that adapts a standard C++ function to an AbstractFunction object." alt="" coords="254,272,446,315"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="200,250,269,269,267,274,198,255"/>
+<area shape="rect" id="Node000007" href="$class_multiply_function.html" title="Class representing the multiplication of two functions." alt="" coords="256,339,445,381"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="143,256,192,291,248,324,274,336,272,341,245,329,189,295,140,260"/>
+<area shape="rect" id="Node000008" href="$class_subtract_function.html" title="Class representing the subtraction of two functions." alt="" coords="254,405,447,448"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="127,260,177,326,211,361,248,391,269,403,266,407,245,396,207,365,173,330,123,263"/>
 </map>

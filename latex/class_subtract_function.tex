@@ -1,0 +1,121 @@
+\doxysection{Subtract\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_subtract_function}{}\label{class_subtract_function}\index{SubtractFunction$<$ InputType, OutputType $>$@{SubtractFunction$<$ InputType, OutputType $>$}}
+
+
+Class representing the subtraction of two functions.  
+
+
+
+
+{\ttfamily \#include $<$primitive\+\_\+functions.\+hh$>$}
+
+
+
+Inheritance diagram for Subtract\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_subtract_function__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Subtract\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_subtract_function__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_subtract_function_ad72365888e7b2c6b77eb80d29a0cff69}{Subtract\+Function}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&f, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&g)
+\begin{DoxyCompactList}\small\item\em Constructs a subtraction of two functions. \end{DoxyCompactList}\item 
+Output\+Type \mbox{\hyperlink{class_subtract_function_a09c303199e54c40aa9ce0bfccc6f69ba}{eval}} (const Input\+Type \&input) const override
+\begin{DoxyCompactList}\small\item\em Evaluates the subtraction of the two functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Method to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (int power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\texorpdfstring{$^\wedge$}{\string^}}} (double power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
+class Subtract\+Function$<$ Input\+Type, Output\+Type $>$}
+Class representing the subtraction of two functions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of the input value. \\
+\hline
+{\em Output\+Type} & The type of the output value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_subtract_function_ad72365888e7b2c6b77eb80d29a0cff69}\index{SubtractFunction$<$ InputType, OutputType $>$@{SubtractFunction$<$ InputType, OutputType $>$}!SubtractFunction@{SubtractFunction}}
+\index{SubtractFunction@{SubtractFunction}!SubtractFunction$<$ InputType, OutputType $>$@{SubtractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{SubtractFunction()}{SubtractFunction()}}
+{\footnotesize\ttfamily \label{class_subtract_function_ad72365888e7b2c6b77eb80d29a0cff69} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+\mbox{\hyperlink{class_subtract_function}{Subtract\+Function}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_subtract_function}{\+::\+Subtract\+Function}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{f}{, }\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a subtraction of two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The first function. \\
+\hline
+{\em g} & The second function. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_subtract_function_a09c303199e54c40aa9ce0bfccc6f69ba}\index{SubtractFunction$<$ InputType, OutputType $>$@{SubtractFunction$<$ InputType, OutputType $>$}!eval@{eval}}
+\index{eval@{eval}!SubtractFunction$<$ InputType, OutputType $>$@{SubtractFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \label{class_subtract_function_a09c303199e54c40aa9ce0bfccc6f69ba} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+Output\+Type \mbox{\hyperlink{class_subtract_function}{Subtract\+Function}}$<$ Input\+Type, Output\+Type $>$\+::eval (\begin{DoxyParamCaption}\item[{const Input\+Type \&}]{input}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates the subtraction of the two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value for the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of subtracting the second function\textquotesingle{}s evaluation from the first\textquotesingle{}s. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/functions/primitive\+\_\+functions.\+hh\end{DoxyCompactItemize}

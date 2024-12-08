@@ -14,15 +14,17 @@
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_abstract_sampler_aca9828f9112594de69ae6c85bde8e8ee}{\string~AbstractSampler}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}{distribution\_array}};\ \textcolor{comment}{//\ Array\ to\ store\ distribution\ based\ on\ bins}}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}}()\{\textcolor{keywordflow}{return}\ 0.0;\}\textcolor{comment}{//\ Return\ random\ double-\/precision\ sample}}
-\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ plot\_minimum,\ plot\_maximum;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}}()\{\textcolor{keywordflow}{return}\ 0.0;\}\textcolor{comment}{//\ Return\ random\ double-\/precision\ sample}}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{generateDistribution}}(\textcolor{keywordtype}{int}\ bins,\ \textcolor{keywordtype}{int}\ n\_samples)\ \{\}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{printDistribution}}();}
-\DoxyCodeLine{00066\ \};}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ABSTRACT\_SAMPLER\_HH}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{generateDistribution}}(\textcolor{keywordtype}{int}\ bins,\ \textcolor{keywordtype}{int}\ n\_samples)\ \{\}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{printDistribution}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ plotDistribution();}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ABSTRACT\_SAMPLER\_HH}}
 
 \end{DoxyCode}

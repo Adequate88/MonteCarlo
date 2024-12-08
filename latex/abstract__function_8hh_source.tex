@@ -1,0 +1,62 @@
+\doxysection{abstract\+\_\+function.\+hh}
+\hypertarget{abstract__function_8hh_source}{}\label{abstract__function_8hh_source}\index{src/functions/abstract\_function.hh@{src/functions/abstract\_function.hh}}
+\mbox{\hyperlink{abstract__function_8hh}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ alixb1908\ on\ 28/11/24.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ ABSTRACT\_FUNCTION\_HH}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ABSTRACT\_FUNCTION\_HH}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Forward\ declarations\ for\ ComposedFunction\ and\ AddFunction}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_composed_function}{ComposedFunction}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_function}{AddFunction}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multiply_function}{MultiplyFunction}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_exponential_function}{ExponentialFunction}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_constant_function}{ConstantFunction}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstract_function}{AbstractFunction}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_abstract_function_ac26add7e4bf8561105a63713a7941ccb}{\string~AbstractFunction}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ OutputType\ \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ComposedFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator|}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ComposedFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<AddFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<MultiplyFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ other);}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::unique\_ptr<AbstractFunction<InputType,\ OutputType>>\ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\string^}}(\textcolor{keywordtype}{int}\ power)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ExponentialFunction<InputType,\ OutputType>>(*\textcolor{keyword}{this},\ power);}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \ \ \ \ std::unique\_ptr<AbstractFunction<double,\ double>>\ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\string^}}(\textcolor{keywordtype}{double}\ power)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ExponentialFunction<double,\ double>>(*\textcolor{keyword}{this},\ power);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ABSTRACT\_FUNCTION\_HH}}
+
+\end{DoxyCode}

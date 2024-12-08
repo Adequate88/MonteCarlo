@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['token_0',['Token',['../struct_token.html',1,'']]]
+  ['statistics_0',['Statistics',['../class_statistics.html',1,'']]],
+  ['subtractfunction_1',['SubtractFunction',['../class_subtract_function.html',1,'']]]
 ];

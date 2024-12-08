@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MonteCarlo: NormalInverseSampler Class Reference</title>
+<title>Monte Carlo Statistics Module: NormalInverseSampler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MonteCarlo
+   <div id="projectname">Monte Carlo Statistics Module
    </div>
   </td>
  </tr>
@@ -145,9 +145,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55 inherit pub_methods_class_normal_sampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a histogram of the normal distribution.  <br /></td></tr>
 <tr class="separator:ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55 inherit pub_methods_class_normal_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_abstract_sampler"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_abstract_sampler')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_abstract_sampler.html">AbstractSampler</a></td></tr>
-<tr class="memitem:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler" id="r_afc110350241dd9e506f09282b1090a12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_sampler.html#afc110350241dd9e506f09282b1090a12">printDistribution</a> ()</td></tr>
+<tr class="memitem:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler" id="r_afc110350241dd9e506f09282b1090a12"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_sampler.html#afc110350241dd9e506f09282b1090a12">printDistribution</a> ()</td></tr>
 <tr class="memdesc:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the distribution to the standard output.  <br /></td></tr>
 <tr class="separator:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45aec956af4420ca0b6e9ed7ba6da70d inherit pub_methods_class_abstract_sampler" id="r_a45aec956af4420ca0b6e9ed7ba6da70d"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>plotDistribution</b> ()</td></tr>
+<tr class="separator:a45aec956af4420ca0b6e9ed7ba6da70d inherit pub_methods_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -178,6 +181,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>sigma</b></td></tr>
 std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>distribution_array</b></td></tr>
 <tr class="memdesc:a71497f519fbcbe368c7f419f72b5df72 inherit pro_attribs_class_abstract_sampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array to store distribution data based on bins. <br /></td></tr>
 <tr class="separator:a71497f519fbcbe368c7f419f72b5df72 inherit pro_attribs_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776e3c9cde16c13d0f615d3dfcca8a8b inherit pro_attribs_class_abstract_sampler" id="r_a776e3c9cde16c13d0f615d3dfcca8a8b"><td class="memItemLeft" align="right" valign="top">
+double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_minimum</b></td></tr>
+<tr class="separator:a776e3c9cde16c13d0f615d3dfcca8a8b inherit pro_attribs_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4289f69270f3247782aa29b3b056cca3 inherit pro_attribs_class_abstract_sampler" id="r_a4289f69270f3247782aa29b3b056cca3"><td class="memItemLeft" align="right" valign="top">
+double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_maximum</b></td></tr>
+<tr class="separator:a4289f69270f3247782aa29b3b056cca3 inherit pro_attribs_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generates samples from a normal distribution using the inverse transform method. </p>
@@ -282,16 +291,6 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff_icgraph.png" border="0" usemap="#aclass_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff_icgraph" alt=""/></div>
-<map name="aclass_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff_icgraph" id="aclass_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff_icgraph">
-<area shape="rect" title="Computes the quantile function for the normal distribution." alt="" coords="208,5,362,48"/>
-<area shape="rect" href="class_normal_inverse_sampler.html#a5a125b33494e8a2305d358d188452bc1" title="Samples a random value from the normal distribution." alt="" coords="5,5,160,48"/>
-<area shape="poly" title=" " alt="" coords="192,29,160,29,160,24,192,24"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -323,18 +322,6 @@ Here is the caller graph for this function:</div>
 <p>Uses the quantile function and a uniformly distributed random sample to generate a value from the normal distribution. </p><dl class="section return"><dt>Returns</dt><dd>A random value from the normal distribution. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea">AbstractSampler</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1_cgraph.png" border="0" usemap="#aclass_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1_cgraph" alt=""/></div>
-<map name="aclass_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1_cgraph" id="aclass_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1_cgraph">
-<area shape="rect" title="Samples a random value from the normal distribution." alt="" coords="5,35,160,77"/>
-<area shape="rect" href="class_normal_inverse_sampler.html#a2ec0a28ca12f65d8e150176476aa7eff" title="Computes the quantile function for the normal distribution." alt="" coords="213,5,368,48"/>
-<area shape="poly" title=" " alt="" coords="160,42,197,37,198,42,161,48"/>
-<area shape="rect" href="class_uniform_sampler.html#ae352adfceb12d692f021df61b48c317c" title="Generates a random sample from the uniform distribution." alt="" coords="208,72,373,99"/>
-<area shape="poly" title=" " alt="" coords="161,64,192,69,192,74,160,70"/>
-</map>
-</div>
 
 </div>
 </div>

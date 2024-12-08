@@ -48,8 +48,10 @@ void \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{ge
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
-\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
+void {\bfseries plot\+Distribution} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
@@ -71,7 +73,11 @@ double {\bfseries sigma}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
-\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
+double {\bfseries plot\+\_\+minimum}
+\item 
+double {\bfseries plot\+\_\+maximum}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -150,13 +156,6 @@ The quantile value corresponding to the probability.
 {\em std\+::invalid\+\_\+argument} & if p is not in the range (0,1). \\
 \hline
 \end{DoxyExceptions}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=348pt]{class_normal_inverse_sampler_a2ec0a28ca12f65d8e150176476aa7eff_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1}\index{NormalInverseSampler@{NormalInverseSampler}!sample@{sample}}
 \index{sample@{sample}!NormalInverseSampler@{NormalInverseSampler}}
 \doxysubsubsection{\texorpdfstring{sample()}{sample()}}
@@ -177,13 +176,6 @@ A random value from the normal distribution.
 
 Reimplemented from \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{Abstract\+Sampler}}.
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1_cgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

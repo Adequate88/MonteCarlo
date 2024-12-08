@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['identityfunction_0',['IdentityFunction',['../class_identity_function.html',1,'']]]
+  ['functionwrapper_0',['FunctionWrapper',['../class_function_wrapper.html',1,'']]]
 ];

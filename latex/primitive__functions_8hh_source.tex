@@ -1,0 +1,183 @@
+\doxysection{primitive\+\_\+functions.\+hh}
+\hypertarget{primitive__functions_8hh_source}{}\label{primitive__functions_8hh_source}\index{src/functions/primitive\_functions.hh@{src/functions/primitive\_functions.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ alixb1908\ on\ 28/11/24.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Restructured\ by\ Alessandro\ Salo\ on\ 08.12.2024.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PRIMITIVE\_FUNCTIONS\_HH}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PRIMITIVE\_FUNCTIONS\_HH}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{abstract__function_8hh}{abstract\_function.hh}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_composed_function}{ComposedFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_composed_function_adfcb57f4565d25e85012327ef0df87cd}{ComposedFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ first,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ second)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ first\_(first),\ second\_(second)\ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_composed_function_abd4cfad752381c6ead52af6c7b878272}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ OutputType\ intermediate\ =\ second\_.\mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{eval}}(input);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ first\_.eval(intermediate);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ first\_;\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<OutputType,\ OutputType>}}\&\ second\_;\ }
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_function}{AddFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_add_function_afe85e80b17a5c2ff8ba29d0c2ec5fdfc}{AddFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ :\ f\_(f),\ g\_(g)\ \{\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_add_function_ae7146267aba659926529d52360ac97a0}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ OutputType\ f\_result\ =\ f\_.eval(input);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ OutputType\ g\_result\ =\ g\_.eval(input);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\_result\ +\ g\_result;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f\_;\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g\_;\ }
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00090\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_subtract_function}{SubtractFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00091\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_subtract_function_ad72365888e7b2c6b77eb80d29a0cff69}{SubtractFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ :\ f\_(f),\ g\_(g)\ \{\}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_subtract_function_a09c303199e54c40aa9ce0bfccc6f69ba}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ OutputType\ f\_result\ =\ f\_.eval(input);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ OutputType\ g\_result\ =\ g\_.eval(input);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\_result\ -\/\ g\_result;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f\_;\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g\_;\ }
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00127\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_multiply_function}{MultiplyFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00128\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_multiply_function_a49f148ef2b0acf2eb7feb4b05c45c190}{MultiplyFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ :\ f\_(f),\ g\_(g)\ \{\}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00144\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_multiply_function_ade436578c8adfc6ae34367b3cb020b81}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ OutputType\ f\_result\ =\ f\_.eval(input);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ OutputType\ g\_result\ =\ g\_.eval(input);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\_result\ *\ g\_result;}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f\_;\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g\_;\ }
+\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00163\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_divide_function}{DivideFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00164\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_divide_function_a358a8b2dfbf05d6a7bb5571b44124756}{DivideFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g)}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ :\ f\_(f),\ g\_(g)\ \{\}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00181\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_divide_function_abbff31f4af4d98d4273349a2d1a9e831}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ OutputType\ f\_result\ =\ f\_.eval(input);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ OutputType\ g\_result\ =\ g\_.eval(input);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (g\_result\ ==\ \textcolor{keyword}{static\_cast<}OutputType\textcolor{keyword}{>}(0))\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Division\ by\ zero\ occurred\ in\ DivideFunction."{}});}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ f\_result\ /\ g\_result;}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ f\_;\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ g\_;\ }
+\DoxyCodeLine{00195\ \};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00205\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00206\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_exponential_function}{ExponentialFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00207\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{class_exponential_function_a08fbac9bf5afbd4106e0b7b8d39a740e}{ExponentialFunction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ baseFunction,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ powerFunction)}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ :\ baseFunction\_(baseFunction),\ powerFunction\_(powerFunction)\ \{\}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00224\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_exponential_function_accadd374f9a4337c057a4cbb6ba989dd}{eval}}(\textcolor{keyword}{const}\ InputType\&\ x)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ std::pow\ for\ double\ power}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ baseValue\ =\ baseFunction\_.eval(x);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ powerValue\ =\ powerFunction\_.eval(x);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}OutputType\textcolor{keyword}{>}(std::pow(baseValue,\ powerValue));}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ baseFunction\_;\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<InputType,\ OutputType>}}\&\ powerFunction\_;\ \ }
+\DoxyCodeLine{00234\ \};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00246\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputType,\ \textcolor{keyword}{typename}\ OutputType>}
+\DoxyCodeLine{00247\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_function_wrapper}{FunctionWrapper}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<InputType,\ OutputType>\ \{}
+\DoxyCodeLine{00248\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{class_function_wrapper_a0f664b263b391c754b12cfe9f546d93a}{FunctionWrapper}}(\textcolor{keyword}{const}\ std::function<OutputType(InputType)>\&\ func)\ :\ func\_(func)\ \{\}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00262\ \ \ \ \ OutputType\ \mbox{\hyperlink{class_function_wrapper_a6df22621deba60aeacc3bc6dfc56eb17}{eval}}(\textcolor{keyword}{const}\ InputType\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func\_(input);}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00267\ \ \ \ \ std::function<OutputType(InputType)>\ func\_\{\};\ }
+\DoxyCodeLine{00268\ \};}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00276\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00277\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_identity_function}{IdentityFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<T,\ T>\ \{}
+\DoxyCodeLine{00278\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00285\ \ \ \ \ T\ \mbox{\hyperlink{class_identity_function_a4591a0bec042c97d9279d02ba76e8b8e}{eval}}(\textcolor{keyword}{const}\ T\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ input;}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00296\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_negative_identity_function}{NegativeIdentityFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<T,\ T>\ \{}
+\DoxyCodeLine{00297\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00304\ \ \ \ \ T\ \mbox{\hyperlink{class_negative_identity_function_a9d5cc5f97044c2f086c13b45e7427b7e}{eval}}(\textcolor{keyword}{const}\ T\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1*input;}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00314\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00315\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_constant_function}{ConstantFunction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction}}<T,\ T>\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_constant_function_afe40d3596272f9060a4f07a85bf5f1da}{ConstantFunction}}(T\ input)\ :\ constant(input)\ \{\}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{class_constant_function_a37affec4932324ddeffb8df7474c3eea}{eval}}(\textcolor{keyword}{const}\ T\&\ input)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ constant;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ T\ eval()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ constant;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ T\ getConstant()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ constant;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ T\ constant;\ }
+\DoxyCodeLine{00343\ \};}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PRIMITIVE\_FUNCTIONS\_HH}}
+
+\end{DoxyCode}

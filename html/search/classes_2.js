@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exponentialfunction_0',['ExponentialFunction',['../class_exponential_function.html',1,'']]]
+  ['dividefunction_0',['DivideFunction',['../class_divide_function.html',1,'']]]
 ];

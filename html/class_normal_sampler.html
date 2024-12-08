@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MonteCarlo: NormalSampler Class Reference</title>
+<title>Monte Carlo Statistics Module: NormalSampler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MonteCarlo
+   <div id="projectname">Monte Carlo Statistics Module
    </div>
   </td>
  </tr>
@@ -136,9 +136,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7bedcc63775853e2c461aea25d3312ea inherit pub_methods_class_abstract_sampler" id="r_a7bedcc63775853e2c461aea25d3312ea"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea">sample</a> ()</td></tr>
 <tr class="memdesc:a7bedcc63775853e2c461aea25d3312ea inherit pub_methods_class_abstract_sampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random sample.  <br /></td></tr>
 <tr class="separator:a7bedcc63775853e2c461aea25d3312ea inherit pub_methods_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler" id="r_afc110350241dd9e506f09282b1090a12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_sampler.html#afc110350241dd9e506f09282b1090a12">printDistribution</a> ()</td></tr>
+<tr class="memitem:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler" id="r_afc110350241dd9e506f09282b1090a12"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_sampler.html#afc110350241dd9e506f09282b1090a12">printDistribution</a> ()</td></tr>
 <tr class="memdesc:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the distribution to the standard output.  <br /></td></tr>
 <tr class="separator:afc110350241dd9e506f09282b1090a12 inherit pub_methods_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45aec956af4420ca0b6e9ed7ba6da70d inherit pub_methods_class_abstract_sampler" id="r_a45aec956af4420ca0b6e9ed7ba6da70d"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>plotDistribution</b> ()</td></tr>
+<tr class="separator:a45aec956af4420ca0b6e9ed7ba6da70d inherit pub_methods_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -163,6 +166,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>sigma</b></td></tr>
 std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>distribution_array</b></td></tr>
 <tr class="memdesc:a71497f519fbcbe368c7f419f72b5df72 inherit pro_attribs_class_abstract_sampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array to store distribution data based on bins. <br /></td></tr>
 <tr class="separator:a71497f519fbcbe368c7f419f72b5df72 inherit pro_attribs_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776e3c9cde16c13d0f615d3dfcca8a8b inherit pro_attribs_class_abstract_sampler" id="r_a776e3c9cde16c13d0f615d3dfcca8a8b"><td class="memItemLeft" align="right" valign="top">
+double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_minimum</b></td></tr>
+<tr class="separator:a776e3c9cde16c13d0f615d3dfcca8a8b inherit pro_attribs_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4289f69270f3247782aa29b3b056cca3 inherit pro_attribs_class_abstract_sampler" id="r_a4289f69270f3247782aa29b3b056cca3"><td class="memItemLeft" align="right" valign="top">
+double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_maximum</b></td></tr>
+<tr class="separator:a4289f69270f3247782aa29b3b056cca3 inherit pro_attribs_class_abstract_sampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -266,16 +275,6 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_sampler.html#aa3d9fd063a503f8045b3397e9e034281">AbstractSampler</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55_cgraph.png" border="0" usemap="#aclass_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55_cgraph" alt=""/></div>
-<map name="aclass_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55_cgraph" id="aclass_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55_cgraph">
-<area shape="rect" title="Generates a histogram of the normal distribution." alt="" coords="5,5,241,32"/>
-<area shape="rect" href="class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea" title="Generates a random sample." alt="" coords="289,5,457,32"/>
-<area shape="poly" title=" " alt="" coords="241,16,273,16,273,21,241,21"/>
-</map>
-</div>
 
 </div>
 </div>

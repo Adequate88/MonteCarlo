@@ -1,0 +1,126 @@
+\doxysection{Divide\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_divide_function}{}\label{class_divide_function}\index{DivideFunction$<$ InputType, OutputType $>$@{DivideFunction$<$ InputType, OutputType $>$}}
+
+
+Class representing the division of two functions.  
+
+
+
+
+{\ttfamily \#include $<$primitive\+\_\+functions.\+hh$>$}
+
+
+
+Inheritance diagram for Divide\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_divide_function__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Divide\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_divide_function__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_divide_function_a358a8b2dfbf05d6a7bb5571b44124756}{Divide\+Function}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&f, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&g)
+\begin{DoxyCompactList}\small\item\em Constructs a division of two functions. \end{DoxyCompactList}\item 
+Output\+Type \mbox{\hyperlink{class_divide_function_abbff31f4af4d98d4273349a2d1a9e831}{eval}} (const Input\+Type \&input) const override
+\begin{DoxyCompactList}\small\item\em Evaluates the division of the two functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Function} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1631a8dde65e30553f5a82969ddd3747}{compose}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Method to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a3f8a0ed6dd14ae2e31ccd3942fe208ef}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Output\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\vert$}{|}\textquotesingle{} operator to compose two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a9b4c3b0d6856426f644e8e341b41daad}{operator+}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}+\textquotesingle{} operator to add two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_a1b48d46fa1ce50817ac24fae683a61bf}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{} operator to multiply two functions. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ $>$ \mbox{\hyperlink{class_abstract_function_ac84176f2570111c470d0b9507af06d1c}{operator\texorpdfstring{$^\wedge$}{\string^}}} (int power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with an integer power. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ $>$ \mbox{\hyperlink{class_abstract_function_a51b82e5ad30714a527d353da2c4e6f27}{operator\texorpdfstring{$^\wedge$}{\string^}}} (double power) const
+\begin{DoxyCompactList}\small\item\em Overload the \textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textquotesingle{} operator to create an exponential function with a double power. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
+class Divide\+Function$<$ Input\+Type, Output\+Type $>$}
+Class representing the division of two functions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of the input value. \\
+\hline
+{\em Output\+Type} & The type of the output value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_divide_function_a358a8b2dfbf05d6a7bb5571b44124756}\index{DivideFunction$<$ InputType, OutputType $>$@{DivideFunction$<$ InputType, OutputType $>$}!DivideFunction@{DivideFunction}}
+\index{DivideFunction@{DivideFunction}!DivideFunction$<$ InputType, OutputType $>$@{DivideFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{DivideFunction()}{DivideFunction()}}
+{\footnotesize\ttfamily \label{class_divide_function_a358a8b2dfbf05d6a7bb5571b44124756} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+\mbox{\hyperlink{class_divide_function}{Divide\+Function}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_divide_function}{\+::\+Divide\+Function}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{f}{, }\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a division of two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The numerator function. \\
+\hline
+{\em g} & The denominator function. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_divide_function_abbff31f4af4d98d4273349a2d1a9e831}\index{DivideFunction$<$ InputType, OutputType $>$@{DivideFunction$<$ InputType, OutputType $>$}!eval@{eval}}
+\index{eval@{eval}!DivideFunction$<$ InputType, OutputType $>$@{DivideFunction$<$ InputType, OutputType $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \label{class_divide_function_abbff31f4af4d98d4273349a2d1a9e831} 
+template$<$typename Input\+Type , typename Output\+Type $>$ \\
+Output\+Type \mbox{\hyperlink{class_divide_function}{Divide\+Function}}$<$ Input\+Type, Output\+Type $>$\+::eval (\begin{DoxyParamCaption}\item[{const Input\+Type \&}]{input}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates the division of the two functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value for the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of dividing the numerator function\textquotesingle{}s evaluation by the denominator\textquotesingle{}s. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If the denominator evaluates to zero. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/functions/primitive\+\_\+functions.\+hh\end{DoxyCompactItemize}

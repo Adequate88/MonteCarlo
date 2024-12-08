@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['parse_0',['parse',['../class_parser.html#a580a2a477d66684c7f061bd710409dda',1,'Parser']]],
-  ['parser_1',['Parser',['../class_parser.html#a1a60370aecc2259b45f0694bac10b249',1,'Parser']]],
-  ['plotdistribution_2',['plotDistribution',['../class_uniform_sampler.html#a7a81094ca4fb4d84fa0cdd1500ad92ea',1,'UniformSampler']]],
-  ['printdistribution_3',['printDistribution',['../class_abstract_sampler.html#afc110350241dd9e506f09282b1090a12',1,'AbstractSampler']]]
+  ['operator_2a_0',['operator*',['../class_abstract_function.html#a1b48d46fa1ce50817ac24fae683a61bf',1,'AbstractFunction']]],
+  ['operator_2b_1',['operator+',['../class_abstract_function.html#a9b4c3b0d6856426f644e8e341b41daad',1,'AbstractFunction']]],
+  ['operator_5e_2',['operator^',['../class_abstract_function.html#ac84176f2570111c470d0b9507af06d1c',1,'AbstractFunction::operator^(int power) const'],['../class_abstract_function.html#a51b82e5ad30714a527d353da2c4e6f27',1,'AbstractFunction::operator^(double power) const']]],
+  ['operator_7c_3',['operator|',['../class_abstract_function.html#a3f8a0ed6dd14ae2e31ccd3942fe208ef',1,'AbstractFunction']]]
 ];

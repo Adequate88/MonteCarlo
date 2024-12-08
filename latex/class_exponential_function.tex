@@ -2,16 +2,17 @@
 \hypertarget{class_exponential_function}{}\label{class_exponential_function}\index{ExponentialFunction$<$ InputType, OutputType $>$@{ExponentialFunction$<$ InputType, OutputType $>$}}
 
 
-Class representing an exponential function.  
+Class representing an exponential function where both the base and power are functions.  
 
 
 
 
-{\ttfamily \#include $<$abstract\+\_\+function.\+h$>$}
+{\ttfamily \#include $<$primitive\+\_\+functions.\+hh$>$}
 
 
 
-Inheritance diagram for Exponential\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+Inheritance diagram for Exponential\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Exponential\+Function\texorpdfstring{$<$}{<} Input\+Type
 \end{figure}
 
 
-Collaboration diagram for Exponential\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+Collaboration diagram for Exponential\+Function\texorpdfstring{$<$}{<} Input\+Type, Output\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,12 +32,10 @@ Collaboration diagram for Exponential\+Function\texorpdfstring{$<$}{<} Input\+Ty
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_exponential_function_a1a778f8405ba3dfbd9ccf9b528554322}{Exponential\+Function}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&base\+Function, int power)
-\begin{DoxyCompactList}\small\item\em Constructs an exponential function with an integer power. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_exponential_function_a563cd2c55a99121a5081fd49e51ba73b}{Exponential\+Function}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&base\+Function, double power)
-\begin{DoxyCompactList}\small\item\em Constructs an exponential function with a double power. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_exponential_function_a08fbac9bf5afbd4106e0b7b8d39a740e}{Exponential\+Function}} (const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&base\+Function, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&power\+Function)
+\begin{DoxyCompactList}\small\item\em Constructs an exponential function with a base and power, both represented as functions. \end{DoxyCompactList}\item 
 Output\+Type \mbox{\hyperlink{class_exponential_function_accadd374f9a4337c057a4cbb6ba989dd}{eval}} (const Input\+Type \&x) const override
-\begin{DoxyCompactList}\small\item\em Evaluates the exponential function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates the exponential function by raising the base function\textquotesingle{}s value to the power function\textquotesingle{}s value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ Input\+Type, Output\+Type $>$}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,7 +58,7 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_function}{Abstract\+Fu
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename Input\+Type, typename Output\+Type$>$\newline
 class Exponential\+Function$<$ Input\+Type, Output\+Type $>$}
-Class representing an exponential function. 
+Class representing an exponential function where both the base and power are functions. 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -70,40 +70,22 @@ Class representing an exponential function.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_exponential_function_a1a778f8405ba3dfbd9ccf9b528554322}\index{ExponentialFunction$<$ InputType, OutputType $>$@{ExponentialFunction$<$ InputType, OutputType $>$}!ExponentialFunction@{ExponentialFunction}}
+\Hypertarget{class_exponential_function_a08fbac9bf5afbd4106e0b7b8d39a740e}\index{ExponentialFunction$<$ InputType, OutputType $>$@{ExponentialFunction$<$ InputType, OutputType $>$}!ExponentialFunction@{ExponentialFunction}}
 \index{ExponentialFunction@{ExponentialFunction}!ExponentialFunction$<$ InputType, OutputType $>$@{ExponentialFunction$<$ InputType, OutputType $>$}}
-\doxysubsubsection{\texorpdfstring{ExponentialFunction()}{ExponentialFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_exponential_function_a1a778f8405ba3dfbd9ccf9b528554322} 
+\doxysubsubsection{\texorpdfstring{ExponentialFunction()}{ExponentialFunction()}}
+{\footnotesize\ttfamily \label{class_exponential_function_a08fbac9bf5afbd4106e0b7b8d39a740e} 
 template$<$typename Input\+Type , typename Output\+Type $>$ \\
-\mbox{\hyperlink{class_exponential_function}{Exponential\+Function}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_exponential_function}{\+::\+Exponential\+Function}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{base\+Function}{, }\item[{int}]{power}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_exponential_function}{Exponential\+Function}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_exponential_function}{\+::\+Exponential\+Function}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{base\+Function}{, }\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ Input\+Type, Output\+Type $>$ \&}]{power\+Function}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructs an exponential function with an integer power. 
+Constructs an exponential function with a base and power, both represented as functions. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em base\+Function} & The base function to be raised to a power. \\
+{\em base\+Function} & The base function to be exponentiated. \\
 \hline
-{\em power} & The integer power. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{class_exponential_function_a563cd2c55a99121a5081fd49e51ba73b}\index{ExponentialFunction$<$ InputType, OutputType $>$@{ExponentialFunction$<$ InputType, OutputType $>$}!ExponentialFunction@{ExponentialFunction}}
-\index{ExponentialFunction@{ExponentialFunction}!ExponentialFunction$<$ InputType, OutputType $>$@{ExponentialFunction$<$ InputType, OutputType $>$}}
-\doxysubsubsection{\texorpdfstring{ExponentialFunction()}{ExponentialFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_exponential_function_a563cd2c55a99121a5081fd49e51ba73b} 
-template$<$typename Input\+Type , typename Output\+Type $>$ \\
-\mbox{\hyperlink{class_exponential_function}{Exponential\+Function}}$<$ Input\+Type, Output\+Type $>$\mbox{\hyperlink{class_exponential_function}{\+::\+Exponential\+Function}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&}]{base\+Function}{, }\item[{double}]{power}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Constructs an exponential function with a double power. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em base\+Function} & The base function to be raised to a power. \\
-\hline
-{\em power} & The double power. \\
+{\em power\+Function} & The function representing the power to which the base is raised. \\
 \hline
 \end{DoxyParams}
 
@@ -118,7 +100,7 @@ Output\+Type \mbox{\hyperlink{class_exponential_function}{Exponential\+Function}
 
 
 
-Evaluates the exponential function. 
+Evaluates the exponential function by raising the base function\textquotesingle{}s value to the power function\textquotesingle{}s value. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -126,7 +108,7 @@ Evaluates the exponential function.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The result of the base function raised to the specified power. 
+The result of evaluating the base function and raising it to the power determined by the power function. 
 \end{DoxyReturn}
 
 
@@ -134,6 +116,7 @@ Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/functions/\mbox{\hyperlink{abstract__function_8h}{abstract\+\_\+function.\+h}}\end{DoxyCompactItemize}
+src/functions/\mbox{\hyperlink{abstract__function_8hh}{abstract\+\_\+function.\+hh}}\item 
+src/functions/primitive\+\_\+functions.\+hh\end{DoxyCompactItemize}

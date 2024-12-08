@@ -40,14 +40,14 @@ virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Uniform\+Sampler} ()=defau
 double \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{sample}} () override
 \begin{DoxyCompactList}\small\item\em Generates a random sample from the uniform distribution. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
-\begin{DoxyCompactList}\small\item\em Generates a histogram of the uniform distribution. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_uniform_sampler_a7a81094ca4fb4d84fa0cdd1500ad92ea}{plot\+Distribution}} ()
-\begin{DoxyCompactList}\small\item\em Plots the histogram of the uniform distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a histogram of the uniform distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
-\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
+void {\bfseries plot\+Distribution} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
@@ -58,7 +58,11 @@ void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
-\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
+double {\bfseries plot\+\_\+minimum}
+\item 
+double {\bfseries plot\+\_\+maximum}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -145,24 +149,7 @@ Populates the {\ttfamily distribution\+\_\+array} with bin frequencies.
 
 Reimplemented from \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{Abstract\+Sampler}}.
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d_cgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_uniform_sampler_a7a81094ca4fb4d84fa0cdd1500ad92ea}\index{UniformSampler@{UniformSampler}!plotDistribution@{plotDistribution}}
-\index{plotDistribution@{plotDistribution}!UniformSampler@{UniformSampler}}
-\doxysubsubsection{\texorpdfstring{plotDistribution()}{plotDistribution()}}
-{\footnotesize\ttfamily \label{class_uniform_sampler_a7a81094ca4fb4d84fa0cdd1500ad92ea} 
-void Uniform\+Sampler\+::plot\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Plots the histogram of the uniform distribution. 
-
-Generates bin centers and corresponding frequencies for plotting. \Hypertarget{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}\index{UniformSampler@{UniformSampler}!sample@{sample}}
+\Hypertarget{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}\index{UniformSampler@{UniformSampler}!sample@{sample}}
 \index{sample@{sample}!UniformSampler@{UniformSampler}}
 \doxysubsubsection{\texorpdfstring{sample()}{sample()}}
 {\footnotesize\ttfamily \label{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c} 
@@ -181,13 +168,6 @@ A double-\/precision value within the range \mbox{[}minimum, maximum\mbox{]}.
 
 Reimplemented from \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{Abstract\+Sampler}}.
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c_icgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

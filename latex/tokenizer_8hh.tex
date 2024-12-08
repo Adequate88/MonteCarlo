@@ -1,0 +1,224 @@
+\doxysection{src/parser/tokenizer.hh File Reference}
+\hypertarget{tokenizer_8hh}{}\label{tokenizer_8hh}\index{src/parser/tokenizer.hh@{src/parser/tokenizer.hh}}
+
+
+Defines the token and node classes, and helper functions for Abstract Syntax Tree (AST).  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for tokenizer.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tokenizer_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{tokenizer_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_token}{Token}}
+\begin{DoxyCompactList}\small\item\em Struct representing a token in the expression. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_a_s_t_node}{ASTNode}}
+\begin{DoxyCompactList}\small\item\em Class representing a node in the Abstract Syntax Tree (AST). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}} \{ \newline
+\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a34f55eca38e0605a84f169ff61a2a396}{NUMBER}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921af57e263e90cbbb939b6dc6b8db7992b7}{IDENT}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a883acd43c77567e1c3baced84ccf6ed7}{PLUS}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921affc0d9b54a1fe677c4c9e6b050e67c81}{MINUS}}
+, \newline
+\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a2cdf52a55876063ec93b7d18bc741f6c}{MUL}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a29bbf66f7f8529ec47e394fb5a36c646}{DIV}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a17faf4e999b8cee4c36915c1f54ccffe}{POW}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a45bf4f3d35a115aaa2df577ba7861286}{LPAREN}}
+, \newline
+\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921afccedc90f87593a3b31536bd658808b1}{RPAREN}}
+, \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921ab1a326c06d88bf042f73d70f50197905}{END}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the types of tokens in a mathematical expression. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}} \{ \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a44119bf3bae5d40a8d0766b91c304aac}{NUM}}
+, \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16ad6f4440b8633f973d33c78928bdac2e1}{VAR}}
+, \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a1e49c8ad07b69571bfcafaf18ac9fa5b}{FUNC}}
+, \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a7457cdd15d09bfc6c4dbb5d2b6f87390}{OP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the types of AST nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ \mbox{\hyperlink{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6}{make\+Func}} (const std\+::string \&name, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ arg)
+\begin{DoxyCompactList}\small\item\em Creates a function node in the AST. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{make\+Op}} (const std\+::string \&op, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ left, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ right)
+\begin{DoxyCompactList}\small\item\em Creates an operator node in the AST. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_token}{Token}} $>$ \mbox{\hyperlink{tokenizer_8hh_aacdee2b000d637435e504e16117d9d9e}{tokenize}} (const std\+::string \&expr)
+\begin{DoxyCompactList}\small\item\em Tokenizes a given mathematical expression string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the token and node classes, and helper functions for Abstract Syntax Tree (AST). 
+
+This file contains definitions for tokens, AST nodes, helper functions for creating AST nodes 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}\index{tokenizer.hh@{tokenizer.hh}!NodeType@{NodeType}}
+\index{NodeType@{NodeType}!tokenizer.hh@{tokenizer.hh}}
+\doxysubsubsection{\texorpdfstring{NodeType}{NodeType}}
+{\footnotesize\ttfamily \label{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16} 
+enum class \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{Node\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum representing the types of AST nodes. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM@{NUM}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!NUM@{NUM}}}\Hypertarget{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a44119bf3bae5d40a8d0766b91c304aac}\label{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16} 
+NUM&Numeric node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VAR@{VAR}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!VAR@{VAR}}}\Hypertarget{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16ad6f4440b8633f973d33c78928bdac2e1}\label{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16} 
+VAR&Variable node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FUNC@{FUNC}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!FUNC@{FUNC}}}\Hypertarget{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a1e49c8ad07b69571bfcafaf18ac9fa5b}\label{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16} 
+FUNC&Function node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OP@{OP}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!OP@{OP}}}\Hypertarget{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a7457cdd15d09bfc6c4dbb5d2b6f87390}\label{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16} 
+OP&Operator node. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921}\index{tokenizer.hh@{tokenizer.hh}!TokenType@{TokenType}}
+\index{TokenType@{TokenType}!tokenizer.hh@{tokenizer.hh}}
+\doxysubsubsection{\texorpdfstring{TokenType}{TokenType}}
+{\footnotesize\ttfamily \label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+enum class \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921}{Token\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum representing the types of tokens in a mathematical expression. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUMBER@{NUMBER}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!NUMBER@{NUMBER}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a34f55eca38e0605a84f169ff61a2a396}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+NUMBER&Numeric value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDENT@{IDENT}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!IDENT@{IDENT}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921af57e263e90cbbb939b6dc6b8db7992b7}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+IDENT&Variable or function name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLUS@{PLUS}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!PLUS@{PLUS}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a883acd43c77567e1c3baced84ccf6ed7}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+PLUS&Addition operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINUS@{MINUS}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!MINUS@{MINUS}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921affc0d9b54a1fe677c4c9e6b050e67c81}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+MINUS&Subtraction operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MUL@{MUL}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!MUL@{MUL}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a2cdf52a55876063ec93b7d18bc741f6c}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+MUL&Multiplication operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIV@{DIV}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!DIV@{DIV}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a29bbf66f7f8529ec47e394fb5a36c646}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+DIV&Division operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POW@{POW}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!POW@{POW}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a17faf4e999b8cee4c36915c1f54ccffe}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+POW&Power operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LPAREN@{LPAREN}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!LPAREN@{LPAREN}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a45bf4f3d35a115aaa2df577ba7861286}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+LPAREN&Left parenthesis \textquotesingle{}(\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RPAREN@{RPAREN}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!RPAREN@{RPAREN}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921afccedc90f87593a3b31536bd658808b1}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+RPAREN&Right parenthesis \textquotesingle{})\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{END@{END}!tokenizer.hh@{tokenizer.hh}}\index{tokenizer.hh@{tokenizer.hh}!END@{END}}}\Hypertarget{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921ab1a326c06d88bf042f73d70f50197905}\label{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921} 
+END&End of the expression. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6}\index{tokenizer.hh@{tokenizer.hh}!makeFunc@{makeFunc}}
+\index{makeFunc@{makeFunc}!tokenizer.hh@{tokenizer.hh}}
+\doxysubsubsection{\texorpdfstring{makeFunc()}{makeFunc()}}
+{\footnotesize\ttfamily \label{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ make\+Func (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Creates a function node in the AST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the function. \\
+\hline
+{\em arg} & The argument for the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created function node. 
+\end{DoxyReturn}
+\Hypertarget{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}\index{tokenizer.hh@{tokenizer.hh}!makeOp@{makeOp}}
+\index{makeOp@{makeOp}!tokenizer.hh@{tokenizer.hh}}
+\doxysubsubsection{\texorpdfstring{makeOp()}{makeOp()}}
+{\footnotesize\ttfamily \label{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$ make\+Op (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{op}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$}]{left}{, }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_a_s_t_node}{ASTNode}} $>$}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Creates an operator node in the AST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & The operator symbol. \\
+\hline
+{\em left} & The left operand. \\
+\hline
+{\em right} & The right operand. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the created operator node. 
+\end{DoxyReturn}
+\Hypertarget{tokenizer_8hh_aacdee2b000d637435e504e16117d9d9e}\index{tokenizer.hh@{tokenizer.hh}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!tokenizer.hh@{tokenizer.hh}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily \label{tokenizer_8hh_aacdee2b000d637435e504e16117d9d9e} 
+std\+::vector$<$ \mbox{\hyperlink{struct_token}{Token}} $>$ tokenize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expr}{}\end{DoxyParamCaption})}
+
+
+
+Tokenizes a given mathematical expression string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expr} & The mathematical expression as a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of tokens representing the expression. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If an unexpected character is found in the expression. \\
+\hline
+\end{DoxyExceptions}

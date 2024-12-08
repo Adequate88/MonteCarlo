@@ -1,7 +1,5 @@
 <map id="src/statistics/statistics.hh" name="src/statistics/statistics.hh">
-<area shape="rect" id="Node000001" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="61,5,233,32"/>
-<area shape="rect" id="Node000002" href="$clt__tester_8h.html" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="5,80,121,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,45,86,82,82,78,121,41"/>
-<area shape="rect" id="Node000003" href="$statistics_8cc.html" title="Implements the Statistics class." alt="" coords="145,88,317,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,41,220,86,216,90,169,45"/>
+<area shape="rect" id="Node000001" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="Node000002" href="$statistics_8cc.html" title="Implements the Statistics class." alt="" coords="5,80,177,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,48,94,80,88,80,88,48"/>
 </map>

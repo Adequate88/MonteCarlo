@@ -1,7 +1,4 @@
-//
-// Created by alixb1908 on 28/11/24.
-//
-/**
+/*
  * @file clt_tester.hh
  * @brief Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data.
  *
@@ -13,7 +10,7 @@
 #define CLT_TESTER_HH
 
 #include "abstract_sampler.hh"
-
+#include "abstract_function.hh"
 
 /**
  * @brief Class that tests the Central Limit Theorem using an abstract sampler.
@@ -22,16 +19,20 @@
  * means, and then checks if the mean and standard deviation of these sample means conform to the
  * expected properties defined by the Central Limit Theorem.
  */
-class CltTester {
+class CltTester : public AbstractSampler {
 public:
     /**
      * @brief Constructs a CltTester object.
      *
      * @param sampler Reference to an AbstractSampler used to generate random samples.
+     * @param f Reference to an AbstractFunction used to evaluate the samples.
      * @param N Number of samples per iteration.
      * @param num_iterations Number of iterations to perform.
      */
-    CltTester(AbstractSampler& sampler, int N, int num_iterations);
+    CltTester(AbstractSampler& sampler, AbstractFunction<double,double>& f, int N);
+
+
+    void generateDistribution(int bins, int n_samples) override;
 
     /**
      * @brief Tests the Central Limit Theorem.
@@ -44,8 +45,10 @@ public:
 
 private:
     AbstractSampler& sampler_; ///< Reference to the sampler used to generate the samples.
+    AbstractFunction<double,double>& f_; ///< Reference to the function used to evaluate the samples.
     int N_; ///< Number of samples per iteration.
-    int num_iterations_; ///< Number of iterations to perform.
+    // int num_iterations_; ///< Number of iterations to perform.
+    std::vector<double> sample_means_; ///< Vector to store the sample means.
 };
 
 #endif // CLT_TESTER_HH

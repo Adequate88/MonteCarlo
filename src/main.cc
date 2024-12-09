@@ -1,3 +1,4 @@
+#include <clt_tester.hh>
 #include <iostream>
 #include <string>
 #include <memory>
@@ -39,6 +40,7 @@ int main() {
     bool computeExpectation = false;  ///< Flag to compute expectation value
     std::vector<int> statisticalMoments;  ///< Vector to store statistical moments
     bool verifyCLT = false;        ///< Flag to verify Central Limit Theorem (CLT)
+    int cltsamples = 0;
     std::string outputFile;        ///< Output file for saving results
 
     /// Open the configuration file "config.txt"
@@ -78,6 +80,9 @@ int main() {
                 else if (key == "compute_expectation_value") computeExpectation = (value == "yes");
                 else if (key == "statistical_moments") statisticalMoments = parseMomentList(value);  ///< Parse moment list
                 else if (key == "verify_central_limit_theorem") verifyCLT = (value == "yes");
+                else if (key == "number_of_sample_means") {
+                    cltsamples = std::stoi(value);  ///< Convert to int
+                }
                 else if (key == "output_file") {
                     #ifdef OUTPUT_PATH
                     outputFile = std::string(OUTPUT_PATH) + "/" + value;  ///< Combine OUTPUT_PATH with the file name
@@ -174,6 +179,10 @@ int main() {
     if (verifyCLT) {
         results << "######################################################\n";
         results << "Verifying Central Limit Theorem...\n";
+        std::cout << "Verifying Central Limit Theorem...\n" << std::endl;
+        CltTester clt(*sampler, f, numSamples);
+        clt.generateDistribution(histogramBins, cltsamples);
+        clt.test();  ///< Test the Central Limit Theorem
     }
 
     // Save results to the output file, if defined

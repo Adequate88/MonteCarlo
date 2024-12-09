@@ -29,7 +29,7 @@ void AbstractSampler::printDistribution() {
 
 }
 
-void AbstractSampler::plotDistribution() {
+void AbstractSampler::plotDistribution() const {
 
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins

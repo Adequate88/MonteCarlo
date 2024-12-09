@@ -64,7 +64,7 @@ class AbstractSampler {
         * each bin's data.
         */
         virtual void printDistribution();
-        void plotDistribution();
+        void plotDistribution() const;
 };
 
 #endif //ABSTRACT_SAMPLER_HH

@@ -100,6 +100,13 @@ public:
     */
     void clear_data();
 
+    /**
+     *@brief Change sampler attribute
+     *
+     * Change the sampler attribute to the new sampler
+     */
+    void change_sampler(AbstractSampler& sampler);
+
 private:
     AbstractSampler& sampler;  ///< Reference to the sampler used to generate samples.
     std::vector<double> data; ///< Container for the sample data.

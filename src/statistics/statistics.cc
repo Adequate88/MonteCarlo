@@ -127,6 +127,15 @@ void Statistics::clear_data() {
     N = 0;
 }
 
+/**
+ * @brief Change sampler attribute
+ *
+ * Change the sampler attribute to the new sampler
+ */
+void Statistics::change_sampler(AbstractSampler& new_sampler) {
+    sampler = new_sampler;
+}
+
 
 
 

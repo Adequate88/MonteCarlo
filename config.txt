@@ -4,18 +4,18 @@
 # 1. Mathematical Expression
 # Define the mathematical function f(x) to evaluate. Using valid syntax as referenced in README
 # Example: f(x) = sin(x) + x^2
-function_expression = x^-1
+function_expression = x^2
 
 # 2. Sampler Configuration
 # Specify the random number generator to use. Choose one of the following:
 # - inverse_transform_sampling
 # - box_muller_transform
 # - uniform_distribution
-sampler_method = uniform_distribution
+sampler_method = box_muller_transform
 
 # 3. Number of Samples
 # Enter the number of random samples to generate.
-number_of_samples = 1000000
+number_of_samples = 1000
 
 # 4. Random Seed
 # Provide an integer seed for the random number generator. 
@@ -38,6 +38,8 @@ statistical_moments = 2,3,4
 # 8. Central Limit Theorem Verification
 # Set to 'yes' if you want to verify the Central Limit Theorem (CLT).
 verify_central_limit_theorem = yes
+# Specify a number of sample means to generate to test the CLT.
+number_of_sample_means = 1000
 
 # 9. Output Configuration
 # Specify the name of the output file where results will be saved.

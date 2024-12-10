@@ -43,6 +43,14 @@ public:
      */
     void test() const;
 
+    /**
+    * @brief Plots the distribution of sample means as a histogram.
+    *
+    * Overridden from the AbstractSampler class. Changes some GnuPlot labels to be more specific to the CLT.
+    */
+    void plotDistribution() const override;
+
+
 private:
     AbstractSampler& sampler_; ///< Reference to the sampler used to generate the samples.
     AbstractFunction<double,double>& f_; ///< Reference to the function used to evaluate the samples.

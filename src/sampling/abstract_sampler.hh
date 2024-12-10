@@ -64,7 +64,11 @@ class AbstractSampler {
         * each bin's data.
         */
         virtual void printDistribution();
-        void plotDistribution() const;
+
+        /**
+        * @brief Plots the distribution as a histogram.
+        */
+        virtual void plotDistribution() const;
 };
 
 #endif //ABSTRACT_SAMPLER_HH

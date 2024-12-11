@@ -1,4 +1,4 @@
-/*
+/**
  * @file clt_tester.hh
  * @brief Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data.
  *

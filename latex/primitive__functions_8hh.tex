@@ -1,0 +1,55 @@
+\doxysection{src/functions/primitive\+\_\+functions.hh File Reference}
+\hypertarget{primitive__functions_8hh}{}\label{primitive__functions_8hh}\index{src/functions/primitive\_functions.hh@{src/functions/primitive\_functions.hh}}
+
+
+Defines and initializes all primitive function types necessary for constructing more complex functions.  
+
+
+{\ttfamily \#include "{}abstract\+\_\+function.\+hh"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+Include dependency graph for primitive\+\_\+functions.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{primitive__functions_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{primitive__functions_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_composed_function}{Composed\+Function$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing the composition of two functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_add_function}{Add\+Function$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing the addition of two functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_subtract_function}{Subtract\+Function$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing the subtraction of two functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_multiply_function}{Multiply\+Function$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing the multiplication of two functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_divide_function}{Divide\+Function$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing the division of two functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_exponential_function}{Exponential\+Function$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing an exponential function where both the base and power are functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_function_wrapper}{Function\+Wrapper$<$ Input\+Type, Output\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Wrapper class that adapts a standard C++ function to an \doxylink{class_abstract_function}{Abstract\+Function} object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_identity_function}{Identity\+Function$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing an identity function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_negative_identity_function}{Negative\+Identity\+Function$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing a negative identity function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_constant_function}{Constant\+Function$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing a constant function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines and initializes all primitive function types necessary for constructing more complex functions. 
+

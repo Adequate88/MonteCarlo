@@ -168,9 +168,13 @@ By taking in an AbstractSampler object, this module will compute the desired sta
 - **Nth Moment**: Function `f(x)` is applied to each sample, and the difference from the mean is raised to the Nth power. The moments are computed by summing these values and dividing by number of samples.
 - **Nth Central Moment**: Unlike the regular moment, this does not subtract the mean before raising to the Nth power. The sum of the values raised to the power is computed and divided by number of samples.
 
-### Central Limit Theorem Tester
+### Central Limit Theorem Tester (Included as an AbstractSampler Child)
 
-- Validates the CLT property for a given sampler and statistical function.
+The CLT Tester module validates the Central Limit Theorem (CLT) for a given sampler and statistical function by analyzing the distribution of sample means.
+
+- **Sampling and Means**: Computes means from repeated samples using an `AbstractSampler` and a user-defined `AbstractFunction`.
+- **Histogram Generation**: `generateDistribution(int bins, int n_samples)` creates a frequency distribution of sample means, normalized to a probability density function.
+- **CLT Validation**: One can plot the obtained distribution histogram to verify that a normal distribution has been obtained.
 
 ### Functions Module
 
@@ -291,6 +295,14 @@ This template based module is comprised of two parts: the AbstractFunction class
 
 ### TODOs
 
+- Implement more samplers that handle different types of distributions (e.g. Exponential, Binomial, Poisson, etc.)
+- Extend the parser to support further mathematical functions, such as hyperbolic trigonometric functions and special functions (e.g., gamma, beta).
+- Integrate a GUI for easier configuration and visualization of results.
+- Add support for multivariate distributions and corresponding statistical computations.
+- Include additional tests for edge cases, such as handling undefined mathematical expressions or invalid configuration files.
+
 ### Perspectives
 
+- Apply the Monte Carlo program to simulations in financial and physical systems.
+- Extend to a large-scale statistics program: generating all properties (PDF, CDF, etc.) of discrete and continuous of a distribution. Capable of handling multiple variables and generating all statistical properties.
 

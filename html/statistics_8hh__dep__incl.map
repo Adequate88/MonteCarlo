@@ -1,5 +1,7 @@
 <map id="src/statistics/statistics.hh" name="src/statistics/statistics.hh">
-<area shape="rect" id="Node000001" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="5,5,177,32"/>
-<area shape="rect" id="Node000002" href="$statistics_8cc.html" title="Implements the Statistics class." alt="" coords="5,80,177,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,48,94,80,88,80,88,48"/>
+<area shape="rect" id="Node000001" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="103,5,274,32"/>
+<area shape="rect" id="Node000002" href="$clt__tester_8cc.html" title="Initializes functions for CLT Tester." alt="" coords="5,80,177,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,44,109,82,106,77,158,39"/>
+<area shape="rect" id="Node000003" href="$statistics_8cc.html" title="Implements the Statistics class." alt="" coords="201,80,373,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,39,272,77,268,82,216,44"/>
 </map>

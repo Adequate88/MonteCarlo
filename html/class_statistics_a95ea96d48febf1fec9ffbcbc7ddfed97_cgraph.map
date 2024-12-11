@@ -1,5 +1,0 @@
-<map id="Statistics::gen_N_new_samples" name="Statistics::gen_N_new_samples">
-<area shape="rect" id="Node000001" title="Generates and adds new samples to the dataset." alt="" coords="5,5,159,48"/>
-<area shape="rect" id="Node000002" href="$class_abstract_sampler.html#a7bedcc63775853e2c461aea25d3312ea" title="Generates a random sample." alt="" coords="207,13,375,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,24,191,24,191,29,159,29"/>
-</map>

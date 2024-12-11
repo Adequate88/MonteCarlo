@@ -1,7 +1,0 @@
-<map id="gnuplotio::Gnuplot" name="gnuplotio::Gnuplot">
-<area shape="rect" id="Node000001" title=" " alt="" coords="245,39,371,65"/>
-<area shape="rect" id="Node000002" href="$structgnuplotio_1_1_file_handle_wrapper.html" title=" " alt="" coords="5,5,197,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,32,245,39,244,44,202,38"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="18,56,184,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,67,244,59,245,65,200,72"/>
-</map>

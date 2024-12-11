@@ -30,7 +30,9 @@ double \mbox{\hyperlink{class_statistics_afc56fe9ebd7dbb0aa61802074886322e}{mome
 double \mbox{\hyperlink{class_statistics_a966bae9272c902c05c162d8273d89c37}{central\+\_\+moment}} (int power, const \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f) const
 \begin{DoxyCompactList}\small\item\em Computes a central moment of an arbitrary function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}{clear\+\_\+data}} ()
-\begin{DoxyCompactList}\small\item\em Clears all sample data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clears all sample data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_statistics_af321be887f085f89882e212da62e12f7}{change\+\_\+sampler}} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler)
+\begin{DoxyCompactList}\small\item\em Change sampler attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -86,7 +88,17 @@ Calculates the central {\ttfamily power}-\/th moment of the function applied to 
 \begin{DoxyReturn}{Returns}
 The computed central moment. 
 \end{DoxyReturn}
-\Hypertarget{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}\index{Statistics@{Statistics}!clear\_data@{clear\_data}}
+\Hypertarget{class_statistics_af321be887f085f89882e212da62e12f7}\index{Statistics@{Statistics}!change\_sampler@{change\_sampler}}
+\index{change\_sampler@{change\_sampler}!Statistics@{Statistics}}
+\doxysubsubsection{\texorpdfstring{change\_sampler()}{change\_sampler()}}
+{\footnotesize\ttfamily \label{class_statistics_af321be887f085f89882e212da62e12f7} 
+void Statistics\+::change\+\_\+sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&}]{new\+\_\+sampler}{}\end{DoxyParamCaption})}
+
+
+
+Change sampler attribute. 
+
+Change the sampler attribute to the new sampler \Hypertarget{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}\index{Statistics@{Statistics}!clear\_data@{clear\_data}}
 \index{clear\_data@{clear\_data}!Statistics@{Statistics}}
 \doxysubsubsection{\texorpdfstring{clear\_data()}{clear\_data()}}
 {\footnotesize\ttfamily \label{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712} 

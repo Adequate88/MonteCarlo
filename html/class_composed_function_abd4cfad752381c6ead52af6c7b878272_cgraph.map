@@ -1,5 +1,0 @@
-<map id="ComposedFunction::eval" name="ComposedFunction::eval">
-<area shape="rect" id="Node000001" title="Evaluates the composed function." alt="" coords="5,5,172,32"/>
-<area shape="rect" id="Node000002" href="$class_abstract_function.html#a34576e68dc7567ee4709e9a8e7a2bdd5" title="Pure virtual method to evaluate the function." alt="" coords="220,5,372,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,16,204,16,204,21,172,21"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="NormalInverseSampler::normal_quantile" name="NormalInverseSampler::normal_quantile">
-<area shape="rect" id="Node000001" title="Computes the quantile function for the normal distribution." alt="" coords="208,5,362,48"/>
-<area shape="rect" id="Node000002" href="$class_normal_inverse_sampler.html#a5a125b33494e8a2305d358d188452bc1" title="Samples a random value from the normal distribution." alt="" coords="5,5,160,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,29,160,29,160,24,192,24"/>
-</map>

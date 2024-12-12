@@ -41,6 +41,7 @@ int main() {
     std::vector<int> statisticalMoments;  ///< Vector to store statistical moments
     bool verifyCLT = false;        ///< Flag to verify Central Limit Theorem (CLT)
     int cltsamples = 0;
+    int cltbins = 0;
     std::string outputFile;        ///< Output file for saving results
 
     /// Open the configuration file "config.txt"
@@ -82,6 +83,9 @@ int main() {
                 else if (key == "verify_central_limit_theorem") verifyCLT = (value == "yes");
                 else if (key == "number_of_sample_means") {
                     cltsamples = std::stoi(value);  ///< Convert to int
+                }
+                else if (key == "number_of_clt_bins") {
+                    cltbins = std::stoi(value);  ///< Convert to int
                 }
                 else if (key == "output_file") {
                     #ifdef OUTPUT_PATH
@@ -181,7 +185,7 @@ int main() {
         results << "Verifying Central Limit Theorem...\n";
         std::cout << "Verifying Central Limit Theorem...\n" << std::endl;
         CltTester clt(*sampler, f, numSamples);
-        clt.generateDistribution(histogramBins, cltsamples);
+        clt.generateDistribution(cltbins, cltsamples);
         clt.plotDistribution();
         // clt.test();  ///< Test the Central Limit Theorem
     }

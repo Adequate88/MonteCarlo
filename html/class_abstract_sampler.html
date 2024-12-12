@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo Statistics Module: AbstractSampler Class Reference</title>
+<title>Monte Carlo Statistics Program: AbstractSampler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo Statistics Module
+   <div id="projectname">Monte Carlo Statistics Program
    </div>
-   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -87,7 +86,6 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_abstract_sampler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">AbstractSampler Class Reference</div></div>
@@ -119,6 +117,10 @@ Inheritance diagram for AbstractSampler:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:af770cb095334715eedf0445f99f80aa5" id="r_af770cb095334715eedf0445f99f80aa5"><td class="memItemLeft" align="right" valign="top"><a id="af770cb095334715eedf0445f99f80aa5" name="af770cb095334715eedf0445f99f80aa5"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractSampler</b> ()=default</td></tr>
+<tr class="memdesc:af770cb095334715eedf0445f99f80aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic behavior. <br /></td></tr>
+<tr class="separator:af770cb095334715eedf0445f99f80aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bedcc63775853e2c461aea25d3312ea" id="r_a7bedcc63775853e2c461aea25d3312ea"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bedcc63775853e2c461aea25d3312ea">sample</a> ()</td></tr>
 <tr class="memdesc:a7bedcc63775853e2c461aea25d3312ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random sample.  <br /></td></tr>
 <tr class="separator:a7bedcc63775853e2c461aea25d3312ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,16 +130,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc110350241dd9e506f09282b1090a12" id="r_afc110350241dd9e506f09282b1090a12"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc110350241dd9e506f09282b1090a12">printDistribution</a> ()</td></tr>
 <tr class="memdesc:afc110350241dd9e506f09282b1090a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the distribution to the standard output.  <br /></td></tr>
 <tr class="separator:afc110350241dd9e506f09282b1090a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac757a594d8a3a10867fc7c680e3a2c88" id="r_ac757a594d8a3a10867fc7c680e3a2c88"><td class="memItemLeft" align="right" valign="top"><a id="ac757a594d8a3a10867fc7c680e3a2c88" name="ac757a594d8a3a10867fc7c680e3a2c88"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>plotDistribution</b> () const</td></tr>
+<tr class="memitem:ac757a594d8a3a10867fc7c680e3a2c88" id="r_ac757a594d8a3a10867fc7c680e3a2c88"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac757a594d8a3a10867fc7c680e3a2c88">plotDistribution</a> () const</td></tr>
+<tr class="memdesc:ac757a594d8a3a10867fc7c680e3a2c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays and saves image file of plot.  <br /></td></tr>
 <tr class="separator:ac757a594d8a3a10867fc7c680e3a2c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:aca9828f9112594de69ae6c85bde8e8ee" id="r_aca9828f9112594de69ae6c85bde8e8ee"><td class="memItemLeft" align="right" valign="top"><a id="aca9828f9112594de69ae6c85bde8e8ee" name="aca9828f9112594de69ae6c85bde8e8ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractSampler</b> ()=default</td></tr>
-<tr class="memdesc:aca9828f9112594de69ae6c85bde8e8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic behavior. <br /></td></tr>
-<tr class="separator:aca9828f9112594de69ae6c85bde8e8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790c8b6b123ed532467bbc68fc29a128" id="r_a790c8b6b123ed532467bbc68fc29a128"><td class="memItemLeft" align="right" valign="top"><a id="a790c8b6b123ed532467bbc68fc29a128" name="a790c8b6b123ed532467bbc68fc29a128"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getDistribution</b> () const</td></tr>
+<tr class="memdesc:a790c8b6b123ed532467bbc68fc29a128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the distribution array. <br /></td></tr>
+<tr class="separator:a790c8b6b123ed532467bbc68fc29a128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270ee7475f43fccfbc98c8d5524855ff" id="r_a270ee7475f43fccfbc98c8d5524855ff"><td class="memItemLeft" align="right" valign="top"><a id="a270ee7475f43fccfbc98c8d5524855ff" name="a270ee7475f43fccfbc98c8d5524855ff"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getPlotMinimum</b> ()</td></tr>
+<tr class="separator:a270ee7475f43fccfbc98c8d5524855ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa85c528893bd7c4dcde982906630fb88" id="r_aa85c528893bd7c4dcde982906630fb88"><td class="memItemLeft" align="right" valign="top"><a id="aa85c528893bd7c4dcde982906630fb88" name="aa85c528893bd7c4dcde982906630fb88"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getPlotMaximum</b> ()</td></tr>
+<tr class="separator:aa85c528893bd7c4dcde982906630fb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -145,12 +150,12 @@ Protected Attributes</h2></td></tr>
 std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>distribution_array</b></td></tr>
 <tr class="memdesc:a71497f519fbcbe368c7f419f72b5df72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array to store distribution data based on bins. <br /></td></tr>
 <tr class="separator:a71497f519fbcbe368c7f419f72b5df72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a776e3c9cde16c13d0f615d3dfcca8a8b" id="r_a776e3c9cde16c13d0f615d3dfcca8a8b"><td class="memItemLeft" align="right" valign="top"><a id="a776e3c9cde16c13d0f615d3dfcca8a8b" name="a776e3c9cde16c13d0f615d3dfcca8a8b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_minimum</b></td></tr>
-<tr class="separator:a776e3c9cde16c13d0f615d3dfcca8a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4289f69270f3247782aa29b3b056cca3" id="r_a4289f69270f3247782aa29b3b056cca3"><td class="memItemLeft" align="right" valign="top"><a id="a4289f69270f3247782aa29b3b056cca3" name="a4289f69270f3247782aa29b3b056cca3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_maximum</b></td></tr>
-<tr class="separator:a4289f69270f3247782aa29b3b056cca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a078d1a1682b519470a857484417cb982" id="r_a078d1a1682b519470a857484417cb982"><td class="memItemLeft" align="right" valign="top"><a id="a078d1a1682b519470a857484417cb982" name="a078d1a1682b519470a857484417cb982"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_minimum_</b></td></tr>
+<tr class="separator:a078d1a1682b519470a857484417cb982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96467ba817a7fb2f5966d11836abc92" id="r_ac96467ba817a7fb2f5966d11836abc92"><td class="memItemLeft" align="right" valign="top"><a id="ac96467ba817a7fb2f5966d11836abc92" name="ac96467ba817a7fb2f5966d11836abc92"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_maximum_</b></td></tr>
+<tr class="separator:ac96467ba817a7fb2f5966d11836abc92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for sampling and distribution generation. </p>
@@ -194,6 +199,35 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>plot_maximum</b></t
 </dl>
 
 <p>Reimplemented in <a class="el" href="class_clt_tester.html#ac2a104ebbace490a09508ce16db1d456">CltTester</a>, <a class="el" href="class_normal_sampler.html#ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55">NormalSampler</a>, and <a class="el" href="class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d">UniformSampler</a>.</p>
+
+</div>
+</div>
+<a id="ac757a594d8a3a10867fc7c680e3a2c88" name="ac757a594d8a3a10867fc7c680e3a2c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac757a594d8a3a10867fc7c680e3a2c88">&#9670;&#160;</a></span>plotDistribution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbstractSampler::plotDistribution </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays and saves image file of plot. </p>
+
+<p>Reimplemented in <a class="el" href="class_clt_tester.html#a5e86184185ab70de54a839cb80c06f3a">CltTester</a>.</p>
 
 </div>
 </div>

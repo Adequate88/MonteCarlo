@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniform_5fsampler_0',['uniform_sampler',['../class_normal_sampler.html#a36ef34e949f881f8062e23b58aac0326',1,'NormalSampler']]]
+  ['uniform_5fsampler_5f_0',['uniform_sampler_',['../class_normal_sampler.html#a2ad34eeeb5580bd3715f74bc733c2fe8',1,'NormalSampler']]]
 ];

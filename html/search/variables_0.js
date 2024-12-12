@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['children_0',['children',['../class_a_s_t_node.html#abf3e9fd194fab8e7b56c38a789cefdac',1,'ASTNode']]]
+  ['children_5f_0',['children_',['../class_a_s_t_node.html#adea258cef42cfb9b7bf2223e25ea7b49',1,'ASTNode']]]
 ];

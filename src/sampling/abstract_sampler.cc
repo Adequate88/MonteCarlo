@@ -29,6 +29,9 @@ void AbstractSampler::printDistribution() {
 
 }
 
+/**
+ * @brief Displays and saves image file of plot
+ */
 void AbstractSampler::plotDistribution() const {
 
     const int bins = distribution_array.size();

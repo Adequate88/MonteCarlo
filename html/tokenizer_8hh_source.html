@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo Statistics Module: src/parser/tokenizer.hh Source File</title>
+<title>Monte Carlo Statistics Program: src/parser/tokenizer.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo Statistics Module
+   <div id="projectname">Monte Carlo Statistics Program
    </div>
-   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -125,8 +124,8 @@ $(function(){ initResizable(false); });
 </div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_token.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_token.html">Token</a> {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_token.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">   43</a></span>    <a class="code hl_enumeration" href="tokenizer_8hh.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> <a class="code hl_variable" href="struct_token.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">type</a>;        </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_token.html#a4b7142147b8598f8e24c404928d9263b">   44</a></span>    std::string <a class="code hl_variable" href="struct_token.html#a4b7142147b8598f8e24c404928d9263b">value</a>;     </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_token.html#ad553caad96b1f36406baeb168a33de3f">   43</a></span>    <a class="code hl_enumeration" href="tokenizer_8hh.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a> <a class="code hl_variable" href="struct_token.html#ad553caad96b1f36406baeb168a33de3f">type_</a>;        </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_token.html#a23b8c7ef37b0b94b556500a9807f60dd">   44</a></span>    std::string <a class="code hl_variable" href="struct_token.html#a23b8c7ef37b0b94b556500a9807f60dd">value_</a>;     </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
@@ -142,34 +141,34 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html">   60</a></span><span class="keyword">class </span><a class="code hl_class" href="class_a_s_t_node.html">ASTNode</a> {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#aec604d11681563f83bc665e0172b5895">   68</a></span>    <a class="code hl_function" href="class_a_s_t_node.html#aec604d11681563f83bc665e0172b5895">ASTNode</a>(<a class="code hl_enumeration" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16">NodeType</a> t, <span class="keyword">const</span> std::string &amp;val) : <a class="code hl_variable" href="class_a_s_t_node.html#a15fcdbd8403a1169b06d948a827fde55">nodeType</a>(t), <a class="code hl_variable" href="class_a_s_t_node.html#ab98e6f0f9d6a3ce0190c8932a5a2e55d">value</a>(val) {}</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#aec604d11681563f83bc665e0172b5895">   68</a></span>    <a class="code hl_function" href="class_a_s_t_node.html#aec604d11681563f83bc665e0172b5895">ASTNode</a>(<a class="code hl_enumeration" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16">NodeType</a> t, <span class="keyword">const</span> std::string &amp;val) : <a class="code hl_variable" href="class_a_s_t_node.html#a17ff5d0ff29ac02b4d64b1754ea69ad2">node_type_</a>(t), <a class="code hl_variable" href="class_a_s_t_node.html#a855aa31c2b06c21b2299094af44c585c">value_</a>(val) {}</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#a15fcdbd8403a1169b06d948a827fde55">   70</a></span>    <a class="code hl_enumeration" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16">NodeType</a> <a class="code hl_variable" href="class_a_s_t_node.html#a15fcdbd8403a1169b06d948a827fde55">nodeType</a>; </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#ab98e6f0f9d6a3ce0190c8932a5a2e55d">   71</a></span>    std::string <a class="code hl_variable" href="class_a_s_t_node.html#ab98e6f0f9d6a3ce0190c8932a5a2e55d">value</a>; </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#abf3e9fd194fab8e7b56c38a789cefdac">   72</a></span>    std::vector&lt;std::unique_ptr&lt;ASTNode&gt;&gt; <a class="code hl_variable" href="class_a_s_t_node.html#abf3e9fd194fab8e7b56c38a789cefdac">children</a>; </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#a17ff5d0ff29ac02b4d64b1754ea69ad2">   70</a></span>    <a class="code hl_enumeration" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16">NodeType</a> <a class="code hl_variable" href="class_a_s_t_node.html#a17ff5d0ff29ac02b4d64b1754ea69ad2">node_type_</a>; </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#a855aa31c2b06c21b2299094af44c585c">   71</a></span>    std::string <a class="code hl_variable" href="class_a_s_t_node.html#a855aa31c2b06c21b2299094af44c585c">value_</a>; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_a_s_t_node.html#adea258cef42cfb9b7bf2223e25ea7b49">   72</a></span>    std::vector&lt;std::unique_ptr&lt;ASTNode&gt;&gt; <a class="code hl_variable" href="class_a_s_t_node.html#adea258cef42cfb9b7bf2223e25ea7b49">children_</a>; </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
 </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="tokenizer_8hh.html#ae20d55ef8319cae72ed4576faacbd0d6">   82</a></span>std::unique_ptr&lt;ASTNode&gt; <a class="code hl_function" href="tokenizer_8hh.html#ae20d55ef8319cae72ed4576faacbd0d6">makeFunc</a>(<span class="keyword">const</span> std::string &amp;name, std::unique_ptr&lt;ASTNode&gt; arg) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="tokenizer_8hh.html#ae20d55ef8319cae72ed4576faacbd0d6">   82</a></span><span class="keyword">inline</span> std::unique_ptr&lt;ASTNode&gt; <a class="code hl_function" href="tokenizer_8hh.html#ae20d55ef8319cae72ed4576faacbd0d6">makeFunc</a>(<span class="keyword">const</span> std::string &amp;name, std::unique_ptr&lt;ASTNode&gt; arg) {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">auto</span> node = std::make_unique&lt;ASTNode&gt;(<a class="code hl_enumvalue" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16a1e49c8ad07b69571bfcafaf18ac9fa5b">NodeType::FUNC</a>, name);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    node-&gt;children.push_back(std::move(arg));</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    node-&gt;children_.push_back(std::move(arg));</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> node;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="tokenizer_8hh.html#a414c6c28e70c3cc0f56d7c830038f4a6">   96</a></span>std::unique_ptr&lt;ASTNode&gt; <a class="code hl_function" href="tokenizer_8hh.html#a414c6c28e70c3cc0f56d7c830038f4a6">makeOp</a>(<span class="keyword">const</span> std::string &amp;op, std::unique_ptr&lt;ASTNode&gt; left, std::unique_ptr&lt;ASTNode&gt; right) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="tokenizer_8hh.html#a414c6c28e70c3cc0f56d7c830038f4a6">   96</a></span><span class="keyword">inline</span> std::unique_ptr&lt;ASTNode&gt; <a class="code hl_function" href="tokenizer_8hh.html#a414c6c28e70c3cc0f56d7c830038f4a6">makeOp</a>(<span class="keyword">const</span> std::string &amp;op, std::unique_ptr&lt;ASTNode&gt; left, std::unique_ptr&lt;ASTNode&gt; right) {</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">auto</span> node = std::make_unique&lt;ASTNode&gt;(<a class="code hl_enumvalue" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16a7457cdd15d09bfc6c4dbb5d2b6f87390">NodeType::OP</a>, op);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    node-&gt;children.push_back(std::move(left));</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    node-&gt;children.push_back(std::move(right));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    node-&gt;children_.push_back(std::move(left));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    node-&gt;children_.push_back(std::move(right));</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> node;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
 </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
 <div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="tokenizer_8hh.html#aacdee2b000d637435e504e16117d9d9e">  111</a></span>std::vector&lt;Token&gt; <a class="code hl_function" href="tokenizer_8hh.html#aacdee2b000d637435e504e16117d9d9e">tokenize</a>(<span class="keyword">const</span> std::string &amp;expr) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="tokenizer_8hh.html#aacdee2b000d637435e504e16117d9d9e">  111</a></span><span class="keyword">inline</span> std::vector&lt;Token&gt; <a class="code hl_function" href="tokenizer_8hh.html#aacdee2b000d637435e504e16117d9d9e">tokenize</a>(<span class="keyword">const</span> std::string &amp;expr) {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    std::vector&lt;Token&gt; tokens;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">size_t</span> pos = 0;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
@@ -258,13 +257,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">#endif </span><span class="comment">//TOKENIZER_HH</span></div>
 <div class="ttc" id="aclass_a_s_t_node_html"><div class="ttname"><a href="class_a_s_t_node.html">ASTNode</a></div><div class="ttdoc">Class representing a node in the Abstract Syntax Tree (AST).</div><div class="ttdef"><b>Definition</b> tokenizer.hh:60</div></div>
-<div class="ttc" id="aclass_a_s_t_node_html_a15fcdbd8403a1169b06d948a827fde55"><div class="ttname"><a href="class_a_s_t_node.html#a15fcdbd8403a1169b06d948a827fde55">ASTNode::nodeType</a></div><div class="ttdeci">NodeType nodeType</div><div class="ttdoc">The type of the node.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:70</div></div>
-<div class="ttc" id="aclass_a_s_t_node_html_ab98e6f0f9d6a3ce0190c8932a5a2e55d"><div class="ttname"><a href="class_a_s_t_node.html#ab98e6f0f9d6a3ce0190c8932a5a2e55d">ASTNode::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">The value of the node (operator, variable name, function name, or numeric string).</div><div class="ttdef"><b>Definition</b> tokenizer.hh:71</div></div>
-<div class="ttc" id="aclass_a_s_t_node_html_abf3e9fd194fab8e7b56c38a789cefdac"><div class="ttname"><a href="class_a_s_t_node.html#abf3e9fd194fab8e7b56c38a789cefdac">ASTNode::children</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; ASTNode &gt; &gt; children</div><div class="ttdoc">Children nodes for functions and operators.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:72</div></div>
+<div class="ttc" id="aclass_a_s_t_node_html_a17ff5d0ff29ac02b4d64b1754ea69ad2"><div class="ttname"><a href="class_a_s_t_node.html#a17ff5d0ff29ac02b4d64b1754ea69ad2">ASTNode::node_type_</a></div><div class="ttdeci">NodeType node_type_</div><div class="ttdoc">The type of the node.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:70</div></div>
+<div class="ttc" id="aclass_a_s_t_node_html_a855aa31c2b06c21b2299094af44c585c"><div class="ttname"><a href="class_a_s_t_node.html#a855aa31c2b06c21b2299094af44c585c">ASTNode::value_</a></div><div class="ttdeci">std::string value_</div><div class="ttdoc">The value of the node (operator, variable name, function name, or numeric string).</div><div class="ttdef"><b>Definition</b> tokenizer.hh:71</div></div>
+<div class="ttc" id="aclass_a_s_t_node_html_adea258cef42cfb9b7bf2223e25ea7b49"><div class="ttname"><a href="class_a_s_t_node.html#adea258cef42cfb9b7bf2223e25ea7b49">ASTNode::children_</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; ASTNode &gt; &gt; children_</div><div class="ttdoc">Children nodes for functions and operators.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:72</div></div>
 <div class="ttc" id="aclass_a_s_t_node_html_aec604d11681563f83bc665e0172b5895"><div class="ttname"><a href="class_a_s_t_node.html#aec604d11681563f83bc665e0172b5895">ASTNode::ASTNode</a></div><div class="ttdeci">ASTNode(NodeType t, const std::string &amp;val)</div><div class="ttdoc">Constructs an ASTNode with a given type and value.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:68</div></div>
 <div class="ttc" id="astruct_token_html"><div class="ttname"><a href="struct_token.html">Token</a></div><div class="ttdoc">Struct representing a token in the expression.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:42</div></div>
-<div class="ttc" id="astruct_token_html_a4b7142147b8598f8e24c404928d9263b"><div class="ttname"><a href="struct_token.html#a4b7142147b8598f8e24c404928d9263b">Token::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">Value of the token (e.g., number or symbol)</div><div class="ttdef"><b>Definition</b> tokenizer.hh:44</div></div>
-<div class="ttc" id="astruct_token_html_a67919af9f3a80dc0b28a0ab1e6d5bf8a"><div class="ttname"><a href="struct_token.html#a67919af9f3a80dc0b28a0ab1e6d5bf8a">Token::type</a></div><div class="ttdeci">TokenType type</div><div class="ttdoc">Type of the token.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:43</div></div>
+<div class="ttc" id="astruct_token_html_a23b8c7ef37b0b94b556500a9807f60dd"><div class="ttname"><a href="struct_token.html#a23b8c7ef37b0b94b556500a9807f60dd">Token::value_</a></div><div class="ttdeci">std::string value_</div><div class="ttdoc">Value of the token (e.g., number or symbol)</div><div class="ttdef"><b>Definition</b> tokenizer.hh:44</div></div>
+<div class="ttc" id="astruct_token_html_ad553caad96b1f36406baeb168a33de3f"><div class="ttname"><a href="struct_token.html#ad553caad96b1f36406baeb168a33de3f">Token::type_</a></div><div class="ttdeci">TokenType type_</div><div class="ttdoc">Type of the token.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:43</div></div>
 <div class="ttc" id="atokenizer_8hh_html_a414c6c28e70c3cc0f56d7c830038f4a6"><div class="ttname"><a href="tokenizer_8hh.html#a414c6c28e70c3cc0f56d7c830038f4a6">makeOp</a></div><div class="ttdeci">std::unique_ptr&lt; ASTNode &gt; makeOp(const std::string &amp;op, std::unique_ptr&lt; ASTNode &gt; left, std::unique_ptr&lt; ASTNode &gt; right)</div><div class="ttdoc">Creates an operator node in the AST.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:96</div></div>
 <div class="ttc" id="atokenizer_8hh_html_aa520fbf142ba1e7e659590c07da31921"><div class="ttname"><a href="tokenizer_8hh.html#aa520fbf142ba1e7e659590c07da31921">TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">Enum representing the types of tokens in a mathematical expression.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:27</div></div>
 <div class="ttc" id="atokenizer_8hh_html_aa520fbf142ba1e7e659590c07da31921a17faf4e999b8cee4c36915c1f54ccffe"><div class="ttname"><a href="tokenizer_8hh.html#aa520fbf142ba1e7e659590c07da31921a17faf4e999b8cee4c36915c1f54ccffe">TokenType::POW</a></div><div class="ttdeci">@ POW</div><div class="ttdoc">Power operator.</div></div>

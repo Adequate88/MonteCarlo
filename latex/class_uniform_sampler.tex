@@ -40,28 +40,37 @@ virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Uniform\+Sampler} ()=defau
 double \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{sample}} () override
 \begin{DoxyCompactList}\small\item\em Generates a random sample from the uniform distribution. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
-\begin{DoxyCompactList}\small\item\em Generates a histogram of the uniform distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a histogram of the uniform distribution. \end{DoxyCompactList}\item 
+\Hypertarget{class_uniform_sampler_ab321cd63b5cfd124a9f0fdc26050882d}\label{class_uniform_sampler_ab321cd63b5cfd124a9f0fdc26050882d} 
+double {\bfseries get\+Minimum} ()
+\item 
+\Hypertarget{class_uniform_sampler_a76aaf7b3dd052f43a351aab15b0671a6}\label{class_uniform_sampler_a76aaf7b3dd052f43a351aab15b0671a6} 
+double {\bfseries get\+Maximum} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-void {\bfseries plot\+Distribution} () const
+virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
+\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+\begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
+double {\bfseries get\+Plot\+Minimum} ()
+\item 
+double {\bfseries get\+Plot\+Maximum} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
-\begin{DoxyCompactItemize}
-\item 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
-double {\bfseries plot\+\_\+minimum}
+double {\bfseries plot\+\_\+minimum\+\_\+}
 \item 
-double {\bfseries plot\+\_\+maximum}
+double {\bfseries plot\+\_\+maximum\+\_\+}
 \end{DoxyCompactItemize}
 
 

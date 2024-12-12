@@ -1,27 +1,27 @@
 <map id="src/parser/parse_tree.hh" name="src/parser/parse_tree.hh">
-<area shape="rect" id="Node000001" title="Defines the classes and functions used for parsing mathematical expressions into an Abstract Syntax T..." alt="" coords="211,5,374,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="140,80,194,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,35,203,74,200,70,269,30"/>
-<area shape="rect" id="Node000003" href="$primitive__functions_8hh.html" title="Defines and initializes all primitive function types necessary for constructing more complex function..." alt="" coords="218,80,366,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="295,33,295,64,290,64,290,33"/>
-<area shape="rect" id="Node000009" href="$tokenizer_8hh.html" title="Defines the token and node classes, and helper functions for Abstract Syntax Tree (AST)." alt="" coords="456,80,548,107"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="330,30,452,72,450,77,328,35"/>
+<area shape="rect" id="Node000001" title="Defines the classes and functions used for parsing mathematical expressions into an Abstract Syntax T..." alt="" coords="208,5,371,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="138,80,191,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,35,200,74,198,70,267,30"/>
+<area shape="rect" id="Node000003" href="$primitive__functions_8hh.html" title="Defines and initializes all primitive function types necessary for constructing more complex function..." alt="" coords="216,80,364,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,33,292,64,287,64,287,33"/>
+<area shape="rect" id="Node000009" href="$tokenizer_8hh.html" title="Defines the token and node classes, and helper functions for Abstract Syntax Tree (AST)." alt="" coords="453,80,545,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="327,30,449,72,447,77,325,35"/>
 <area shape="rect" id="Node000004" href="$abstract__function_8hh.html" title="Defines abstract and concrete function classes for use in mathematical computations." alt="" coords="5,155,145,181"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="255,110,128,152,127,147,254,105"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="168,155,230,181"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="278,109,229,147,225,143,274,105"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="354,155,433,181"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="312,105,365,143,362,147,308,109"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="254,155,331,181"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="295,107,295,139,290,139,290,107"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="238,229,306,256"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="110,179,224,221,222,226,108,184"/>
-<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="499,108,479,145,464,166,446,183,417,202,384,217,323,235,321,230,383,212,414,198,443,179,460,162,475,142,494,106"/>
-<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="484,109,427,148,424,143,481,105"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="507,155,560,181"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="510,106,525,139,520,142,505,108"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="585,155,656,181"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="524,105,588,144,585,149,521,109"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="680,155,737,181"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="539,105,666,149,664,154,537,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="253,110,128,152,126,147,251,105"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="169,155,226,181"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="275,109,227,147,224,143,272,105"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="352,155,430,181"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="309,105,362,143,359,147,306,109"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="251,155,328,181"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="292,107,292,139,287,139,287,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="237,229,305,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="110,179,223,221,221,226,108,184"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="496,108,477,145,462,166,443,183,414,202,382,217,321,235,320,230,380,212,412,198,440,179,458,162,472,142,492,106"/>
+<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="482,109,424,148,421,143,479,105"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="504,155,558,181"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="507,106,522,139,517,142,502,108"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="582,155,653,181"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="521,105,585,144,583,149,518,109"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="677,155,734,181"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="536,105,664,149,662,154,534,110"/>
 </map>

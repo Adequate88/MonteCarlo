@@ -13,23 +13,22 @@
 \DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_normal_sampler}{NormalSampler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\{}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{NormalSampler}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})\ :\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}(\mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}),\ \mbox{\hyperlink{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326}{uniform\_sampler}}(\mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}),\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}(\mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}),\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}}(\mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{NormalSampler}}(\textcolor{keywordtype}{int}\ seed,\ \textcolor{keywordtype}{double}\ mu,\ \textcolor{keywordtype}{double}\ sigma)\ :\ \mbox{\hyperlink{class_normal_sampler_a394190110f8376c741c8f0760305da55}{seed\_}}(seed),\ \mbox{\hyperlink{class_normal_sampler_a2ad34eeeb5580bd3715f74bc733c2fe8}{uniform\_sampler\_}}(seed),\ \mbox{\hyperlink{class_normal_sampler_a1e82c5e7404d0ffe7de9ba4e730bb87c}{mu\_}}(mu),\ \mbox{\hyperlink{class_normal_sampler_a5bc92829447251d63c2dc2eeacc57618}{sigma\_}}(sigma)\ \{}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ plot\_minimum\ =\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}\ -\/\ 5*\mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}};}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ plot\_maximum\ =\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}\ +\ 5*\mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ plot\_minimum\_\ =\ mu\ -\/\ 5*sigma;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ plot\_maximum\_\ =\ mu\ +\ 5*sigma;}
 \DoxyCodeLine{00037\ }
 \DoxyCodeLine{00038\ \ \ \ \ \};}
 \DoxyCodeLine{00039\ }
 \DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{generateDistribution}}(\textcolor{keywordtype}{int}\ bins,\ \textcolor{keywordtype}{int}\ n\_samples)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00048\ }
 \DoxyCodeLine{00049\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}};\ }
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_uniform_sampler}{UniformSampler}}\ \mbox{\hyperlink{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326}{uniform\_sampler}};\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}};\ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}};\ }
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//NORMAL\_SAMPLER}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_normal_sampler_a394190110f8376c741c8f0760305da55}{seed\_}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_uniform_sampler}{UniformSampler}}\ \mbox{\hyperlink{class_normal_sampler_a2ad34eeeb5580bd3715f74bc733c2fe8}{uniform\_sampler\_}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a1e82c5e7404d0ffe7de9ba4e730bb87c}{mu\_}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_normal_sampler_a5bc92829447251d63c2dc2eeacc57618}{sigma\_}};\ }
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//NORMAL\_SAMPLER}}
 
 \end{DoxyCode}

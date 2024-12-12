@@ -21,32 +21,37 @@ Inheritance diagram for Abstract\+Sampler\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_abstract_sampler_af770cb095334715eedf0445f99f80aa5}\label{class_abstract_sampler_af770cb095334715eedf0445f99f80aa5} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}} ()
 \begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{generate\+Distribution}} (int bins, int n\+\_\+samples)
 \begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-\Hypertarget{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}\label{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88} 
-void {\bfseries plot\+Distribution} () const
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
+\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot. \end{DoxyCompactList}\item 
+\Hypertarget{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}\label{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128} 
+std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+\begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
+\Hypertarget{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff}\label{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff} 
+double {\bfseries get\+Plot\+Minimum} ()
 \item 
-\Hypertarget{class_abstract_sampler_aca9828f9112594de69ae6c85bde8e8ee}\label{class_abstract_sampler_aca9828f9112594de69ae6c85bde8e8ee} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88}\label{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88} 
+double {\bfseries get\+Plot\+Maximum} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}\label{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72} 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
-\Hypertarget{class_abstract_sampler_a776e3c9cde16c13d0f615d3dfcca8a8b}\label{class_abstract_sampler_a776e3c9cde16c13d0f615d3dfcca8a8b} 
-double {\bfseries plot\+\_\+minimum}
+\Hypertarget{class_abstract_sampler_a078d1a1682b519470a857484417cb982}\label{class_abstract_sampler_a078d1a1682b519470a857484417cb982} 
+double {\bfseries plot\+\_\+minimum\+\_\+}
 \item 
-\Hypertarget{class_abstract_sampler_a4289f69270f3247782aa29b3b056cca3}\label{class_abstract_sampler_a4289f69270f3247782aa29b3b056cca3} 
-double {\bfseries plot\+\_\+maximum}
+\Hypertarget{class_abstract_sampler_ac96467ba817a7fb2f5966d11836abc92}\label{class_abstract_sampler_ac96467ba817a7fb2f5966d11836abc92} 
+double {\bfseries plot\+\_\+maximum\+\_\+}
 \end{DoxyCompactItemize}
 
 
@@ -78,6 +83,20 @@ This method should be overridden by derived classes to populate the {\ttfamily d
 
 
 Reimplemented in \mbox{\hyperlink{class_clt_tester_ac2a104ebbace490a09508ce16db1d456}{Clt\+Tester}}, \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{Normal\+Sampler}}, and \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{Uniform\+Sampler}}.
+
+\Hypertarget{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}\index{AbstractSampler@{AbstractSampler}!plotDistribution@{plotDistribution}}
+\index{plotDistribution@{plotDistribution}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{plotDistribution()}{plotDistribution()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88} 
+void Abstract\+Sampler\+::plot\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays and saves image file of plot. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a}{Clt\+Tester}}.
 
 \Hypertarget{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}\index{AbstractSampler@{AbstractSampler}!printDistribution@{printDistribution}}
 \index{printDistribution@{printDistribution}!AbstractSampler@{AbstractSampler}}

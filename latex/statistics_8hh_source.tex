@@ -19,9 +19,9 @@
 \DoxyCodeLine{00036\ }
 \DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_statistics_a470383aad97a6011f325933ccc15bc47}{\string~Statistics}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a5d2d2ab6b64dc34131be24b7ceecccad}{set\_data}}(\textcolor{keyword}{const}\ std::vector<double>\&\ samples);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a934177ba3097bfe735282560a7020153}{setData}}(\textcolor{keyword}{const}\ std::vector<double>\&\ samples);}
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a95ea96d48febf1fec9ffbcbc7ddfed97}{gen\_N\_new\_samples}}(\textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a375dfb758a738cc034608adf3d246df3}{genNNewSamples}}(\textcolor{keywordtype}{int}\ N);}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00065\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_a3456f70d108f6e6763e72dd854ba8f8b}{expectation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00066\ }
@@ -29,16 +29,16 @@
 \DoxyCodeLine{00075\ }
 \DoxyCodeLine{00084\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_afc56fe9ebd7dbb0aa61802074886322e}{moment}}(\textcolor{keywordtype}{int}\ power,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00094\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_a966bae9272c902c05c162d8273d89c37}{central\_moment}}(\textcolor{keywordtype}{int}\ power,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_statistics_a676766de89cb0712b00502431a99648e}{centralMoment}}(\textcolor{keywordtype}{int}\ power,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_abstract_function}{AbstractFunction<double,double>}}\&\ f)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00095\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_ac792b9e5d8b688b0da17e56e7bc3a712}{clear\_data}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a7170e34aac9c1c1d9a6e2a018159b907}{clearData}}();}
 \DoxyCodeLine{00102\ }
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_af321be887f085f89882e212da62e12f7}{change\_sampler}}(\mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\&\ sampler);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_statistics_a5b50fe0439a38d788005ef2eb411a9a6}{changeSampler}}(\mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\&\ sampler);}
 \DoxyCodeLine{00109\ }
 \DoxyCodeLine{00110\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\&\ sampler;\ \ }
-\DoxyCodeLine{00112\ \ \ \ \ std::vector<double>\ data;\ }
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N;\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_abstract_sampler}{AbstractSampler}}\&\ sampler\_;\ \ }
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<double>\ data\_;\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N\_;\ }
 \DoxyCodeLine{00114\ \};}
 \DoxyCodeLine{00115\ }
 \DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STATISTICS\_HH}}

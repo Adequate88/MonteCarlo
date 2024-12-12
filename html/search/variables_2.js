@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mu_0',['mu',['../class_normal_sampler.html#af2f647ca068ac66057d59ed4f82dc557',1,'NormalSampler']]]
+  ['mu_5f_0',['mu_',['../class_normal_sampler.html#a1e82c5e7404d0ffe7de9ba4e730bb87c',1,'NormalSampler']]]
 ];

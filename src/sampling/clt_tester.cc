@@ -61,7 +61,7 @@ void CltTester::generateDistribution(int bins, int n_samples){
     }
   }
 
-void CltTester::plotDistribution() const {
+void CltTester::plotDistribution(bool display) const {
 
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
@@ -82,6 +82,11 @@ void CltTester::plotDistribution() const {
     // Initialize Gnuplot
     Gnuplot gp;
 
+    if (!display) {
+        gp << "set terminal png size 800,600\n";
+        gp << "set output 'clt_plot.png'\n";
+    }
+
     // Send Gnuplot commands to set labels and title
     gp << "set xlabel 'x'\n";
     gp << "set ylabel 'pdf(x)'\n";
@@ -97,12 +102,13 @@ void CltTester::plotDistribution() const {
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
     gp.send1d(data);  // Send the data for plotting
 
-    // Configure terminal and output file
-    gp << "set terminal png size 800,600\n";
-    gp << "set output 'clt_plot.png'\n";
-    gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
-
-    gp.send1d(data);  // Send the data for plotting
+    if (display) {
+        // Configure terminal and output file
+        gp << "set terminal png size 800,600\n";
+        gp << "set output 'clt_plot.png'\n";
+        gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
+        gp.send1d(data);  // Send the data for plotting
+    }
 }
 
 /**
@@ -112,8 +118,8 @@ void CltTester::plotDistribution() const {
  * the mean and standard deviation of those sample means. The results are then printed
  * to the console, along with the expected standard deviation as per the CLT.
  */
-void CltTester::test() const {
+void CltTester::test(bool display) const {
     // Plot the distribution as a histogram
     std::cout<< "Plotting the distribution as a histogram" << std::endl;
-    this -> plotDistribution();
+    this -> plotDistribution(display);
 }

@@ -64,7 +64,7 @@ class AbstractSampler {
         */
         virtual void printDistribution();
 
-        virtual void plotDistribution() const;
+        virtual void plotDistribution(bool display) const;
 
         /**
         * @brief Returns the distribution array

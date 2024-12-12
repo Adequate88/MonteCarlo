@@ -51,12 +51,12 @@ TEST(MonteCarloTest, UniformSamplerTest) {
     UniformSampler sampler(42, 0, 1); // a = 0, b = 1
     Statistics stats(sampler, sample_num);
     sampler.generateDistribution(bins, sample_num);
-    sampler.plotDistribution();
+    sampler.plotDistribution(false);
 
     //Test CLT
     CltTester clt(sampler, f, sample_num);
     clt.generateDistribution(bins, sample_mean_num);
-    clt.test();
+    clt.test(false);
 
     EXPECT_NEAR(stats.expectation(f), 3.5, epsilon);
     // Check the variance (theoretical variance of the uniform distribution)
@@ -93,12 +93,12 @@ TEST(MonteCarloTest, NormalBoxMullerTest) {
     int sample_mean_num = 1e3;
     int bins = 50;
     sampler.generateDistribution(bins, sample_num);
-    sampler.plotDistribution();
+    sampler.plotDistribution(false);
 
     //Test CLT
     CltTester clt(sampler, f, sample_num);
     clt.generateDistribution(bins, sample_mean_num);
-    clt.test();
+    clt.test(false);
 
 
     EXPECT_NEAR(stats.expectation(f), 2, epsilon);
@@ -134,12 +134,12 @@ TEST(MonteCarloTest, NormalInverseTest) {
     int sample_mean_num = 1e3;
     int bins = 50;
     sampler.generateDistribution(bins, sample_num);
-    sampler.plotDistribution();
+    sampler.plotDistribution(false);
 
     //Test CLT
     CltTester clt(sampler, f, sample_num);
     clt.generateDistribution(bins, sample_mean_num);
-    clt.test();
+    clt.test(false);
 
     EXPECT_NEAR(stats.expectation(f), 2, epsilon);
     // Check the variance (theoretical variance of the uniform distribution)

@@ -41,14 +41,14 @@ public:
      * the mean and standard deviation of those sample means. The results are then printed
      * to the console, along with the expected standard deviation as per the CLT.
      */
-    void test() const;
+    void test(bool display) const;
 
     /**
     * @brief Plots the distribution of sample means as a histogram.
     *
     * Overridden from the AbstractSampler class. Changes some GnuPlot labels to be more specific to the CLT.
     */
-    void plotDistribution() const override;
+    void plotDistribution(bool display) const override;
 
 
 private:

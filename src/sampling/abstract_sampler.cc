@@ -32,7 +32,7 @@ void AbstractSampler::printDistribution() {
 /**
  * @brief Displays and saves image file of plot
  */
-void AbstractSampler::plotDistribution() const {
+void AbstractSampler::plotDistribution(bool display) const {
 
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
@@ -54,7 +54,10 @@ void AbstractSampler::plotDistribution() const {
     Gnuplot gp;
 
 
-
+    if (!display) {
+        gp << "set terminal png size 800,600\n";
+        gp << "set output 'pdf_plot.png'\n";
+    }
     // Send Gnuplot commands to set labels and title
     gp << "set xlabel 'x'\n";
     gp << "set ylabel 'pdf(x)'\n";
@@ -70,13 +73,13 @@ void AbstractSampler::plotDistribution() const {
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
     gp.send1d(data);  // Send the data for plotting
 
-
-    // Configure terminal and output file
-    gp << "set terminal png size 800,600\n";
-    gp << "set output 'pdf_plot.png'\n";
-    gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
-
-    gp.send1d(data);  // Send the data for plotting
+    if (display) {
+        // Configure terminal and output file
+        gp << "set terminal png size 800,600\n";
+        gp << "set output 'pdf_plot.png'\n";
+        gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
+        gp.send1d(data);  // Send the data for plotting
+    }
 }
 
 std::vector<double> AbstractSampler::getDistribution() const {

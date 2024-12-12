@@ -188,7 +188,7 @@ int main() {
     if (histogramBins > 0) {
         results << "######################################################\n";
         results << "Drawing histogram...\n";
-        sampler->plotDistribution();  ///< Plot the distribution as a histogram
+        sampler->plotDistribution(true);  ///< Plot the distribution as a histogram
     }
 
     if (computeExpectation) {
@@ -213,9 +213,8 @@ int main() {
         std::cout << "Verifying Central Limit Theorem...\n" << std::endl;
         CltTester clt(*sampler, f, numSamples);
         clt.generateDistribution(cltbins, cltsamples);
-        clt.test();  ///< Test the Central Limit Theorem
+        clt.test(true);  ///< Test the Central Limit Theorem
     }
-
     // Save results to the output file, if defined
     if (!outputFile.empty()) {
         saveResults(outputFile, results.str());

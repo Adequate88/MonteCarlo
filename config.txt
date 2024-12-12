@@ -11,7 +11,7 @@ function_expression = x^2
 # - inverse_transform_sampling
 # - box_muller_transform
 # - uniform_distribution
-sampler_method = box_muller_transform
+sampler_method = inverse_transform_sampling
 
 # 3. Number of Samples
 # Enter the number of random samples to generate.
@@ -39,7 +39,7 @@ statistical_moments = 2,3,4
 # Set to 'yes' if you want to verify the Central Limit Theorem (CLT).
 verify_central_limit_theorem = yes
 # Specify a number of sample means to generate to test the CLT.
-number_of_sample_means = 1000
+number_of_sample_means = 10000
 # Specify number of bins for CLT histogram
 number_of_clt_bins = 50
 

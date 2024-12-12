@@ -50,6 +50,10 @@ void AbstractSampler::plotDistribution() const {
     // Initialize Gnuplot
     Gnuplot gp;
 
+    // Configure terminal and output file
+    gp << "set terminal png size 800,600\n";
+    gp << "set output 'pdf_plot.png'\n";
+
     // Send Gnuplot commands to set labels and title
     gp << "set xlabel 'x'\n";
     gp << "set ylabel 'pdf(x)'\n";

@@ -29,7 +29,7 @@ This project provides a modular framework for sampling, statistical analysis, an
 - Sampling distributions (e.g., uniform, normal, and Box-Muller transforms).
 - A mathematical expression parser
 - Statistical computations such as expectation, variance, and moments.
-- Distribution Plotting
+- Distribution Plotting and saving in build file
 - A Central Limit Theorem tester.
 
 Detailed code documentation is available by navigating to the `\html` directory and opening the `index.html` file. This will launch the Doxygen-generated documentation platform.
@@ -224,12 +224,18 @@ This template based module is comprised of two parts: the AbstractFunction class
        - Third moment near 0.
        - Central moment calculations close to expected values.
 
-4. `NormalInverse.Consistency`
+
+4. `Uniform.PDFCheck`
+   - **Purpose**: Insures that PDF sums to 1.
+   - **Accuracy Threshold**: 1 unit tolerance for statistical calculations (`epsilon = e-2`).
+
+
+5. `NormalInverse.Consistency`
    - **Purpose**: Ensures normal inverse samplers with the same seed produce identical sequences.
    - **Accuracy**: The samplers must match exactly on all 1000 samples.
    - **Expected Outcome**: Identical sample sequences between samplers.
 
-5. `NormalInverse.StatisticCheck`
+6. `NormalInverse.StatisticCheck`
    - **Purpose**: Validates statistical properties of normal distributions.
    - **Accuracy Threshold**: 1 unit tolerance for statistical calculations (`epsilon = 1`).
    - **Expected Outcome**:
@@ -238,33 +244,43 @@ This template based module is comprised of two parts: the AbstractFunction class
        - Third moment near 0.
        - Central and fourth moments close to theoretical values.
 
-6. `NormalBoxMuller.Consistency`
+7. `NormalInverse.PDFCheck`
+   - **Purpose**: Insures that PDF sums to 1.
+   - **Accuracy Threshold**: 1 unit tolerance for statistical calculations (`epsilon = e-2`).
+
+
+8. `NormalBoxMuller.Consistency`
    - **Purpose**: Ensures Box-Muller normal samplers with the same seed produce identical sequences.
    - **Accuracy**: The samplers must match exactly on all 1000 samples.
    - **Expected Outcome**: Identical sample sequences between samplers.
 
-7. `NormalBoxMuller.StatisticCheck`
+9. `NormalBoxMuller.StatisticCheck`
    - **Purpose**: Validates statistical properties of normal distributions using the Box-Muller method.
    - **Accuracy Threshold**: 1 unit tolerance for statistical calculations (`epsilon = 1`).
    - **Expected Outcome**: Statistical properties (mean, variance, moments) should match expected values for the specified `mu` and `sigma`.
 
-8. `ParserTest.TokenizeSimpleExpression`
+10. `NormalBoxMuller.PDFCheck`
+   - **Purpose**: Insures that PDF sums to 1.
+   - **Accuracy Threshold**: 1 unit tolerance for statistical calculations (`epsilon = e-2`).
+
+
+11. `ParserTest.TokenizeSimpleExpression`
    - **Purpose**: Validates the tokenization of a simple arithmetic expression.
    - **Accuracy**: The tokenization process must correctly identify numbers, operators, and the end of the expression.
    - **Expected Outcome**: The tokenizer should output four tokens: two numbers, one operator, and one END token.
 
-9. `ParserTest.ParseSimpleExpression`
+12. `ParserTest.ParseSimpleExpression`
     - **Purpose**: Verifies that a simple arithmetic expression is correctly parsed into an Abstract Syntax Tree (AST).
     - **Accuracy**: The AST must contain an operator node with two children, both numeric values.
     - **Expected Outcome**: The AST should be parsed with a root operator node (`+`) and two numeric children.
 
-10. `ParserTest.GenerateFunction`
+13. `ParserTest.GenerateFunction`
     - **Purpose**: Ensures that a parsed expression is correctly transformed into a functional form.
     - **Accuracy**: The resulting function must evaluate the expression correctly for a given input.
     - **Expected Outcome**: The function should evaluate to approximately `22045.7` when `x = 5.0`.
 
-11. `MonteCarloTest.UniformSamplerTest`
-    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Uniform distribution between 0 and 1.
+14. `MonteCarloTest.UniformSamplerTest`
+    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Uniform distribution between 0 and 1. Additionally checks that file is created correctly.
     - **Accuracy**: The sample statistics must match the theoretical values of expectation, variance, and higher moments.
     - **Expected Outcome**:
         - Expectation should be close to `3.5`.
@@ -272,14 +288,24 @@ This template based module is comprised of two parts: the AbstractFunction class
         - The 3rd moment should be approximately `50.75`.
         - The 4th moment should be approximately `206.2`.
 
-12. `MonteCarloTest.NormalBoxMullerTest`
-    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`.
+15. `MonteCarloTest.NormalBoxMullerTest`
+    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`. Additionally checks that file is created correctly.
     - **Accuracy**: The sample statistics must match the theoretical values of expectation, variance, and higher moments.
     - **Expected Outcome**:
         - Expectation should be close to `2`.
         - Variance should be close to `9`.
         - The 3rd moment should be approximately `62`.
         - The 4th moment should be approximately `475`.
+
+16. `MonteCarloTest.NormalInverseTest`
+    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`. Additionally checks that file is created correctly.
+    - **Accuracy**: The sample statistics must match the theoretical values of expectation, variance, and higher moments.
+    - **Expected Outcome**:
+        - Expectation should be close to `2`.
+        - Variance should be close to `9`.
+        - The 3rd moment should be approximately `62`.
+        - The 4th moment should be approximately `475`.
+
 
 ---
 

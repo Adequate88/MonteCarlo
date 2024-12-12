@@ -11,8 +11,7 @@ Abstract base class for sampling and distribution generation.
 
 
 
-Inheritance diagram for Abstract\+Sampler\+:
-\nopagebreak
+Inheritance diagram for Abstract\+Sampler\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +31,7 @@ virtual void \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot. \end{DoxyCompactList}\item 
 \Hypertarget{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}\label{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128} 
 std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
 \begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
@@ -90,6 +89,10 @@ Reimplemented in \mbox{\hyperlink{class_clt_tester_ac2a104ebbace490a09508ce16db1
 \doxysubsubsection{\texorpdfstring{plotDistribution()}{plotDistribution()}}
 {\footnotesize\ttfamily \label{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88} 
 void Abstract\+Sampler\+::plot\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays and saves image file of plot. 
 
 
 

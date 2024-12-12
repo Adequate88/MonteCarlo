@@ -1,37 +1,36 @@
 <map id="src/sampling/clt_tester.cc" name="src/sampling/clt_tester.cc">
-<area shape="rect" id="Node000001" title="Initializes functions for CLT Tester." alt="" coords="432,5,603,32"/>
-<area shape="rect" id="Node000002" href="$clt__tester_8hh.html" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="128,80,222,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,35,238,82,236,76,457,30"/>
+<area shape="rect" id="Node000001" title="Initializes functions for CLT Tester." alt="" coords="412,5,583,32"/>
+<area shape="rect" id="Node000002" href="$clt__tester_8hh.html" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="134,80,227,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="443,35,243,81,242,75,442,30"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="62,229,120,256"/>
-<area shape="poly" id="edge17_Node000001_Node000004" title=" " alt="" coords="432,24,362,29,282,39,198,57,117,83,54,108,32,126,12,156,9,174,17,190,32,206,52,219,49,224,29,210,13,193,4,174,7,154,28,123,51,104,115,77,197,51,281,34,362,24,431,19"/>
-<area shape="rect" id="Node000007" href="$statistics_8hh.html" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="246,80,338,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="479,35,347,77,345,72,478,30"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="535,80,663,107"/>
-<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="534,31,576,68,572,72,530,35"/>
-<area shape="rect" id="Node000010" href="$primitive__functions_8hh.html" title="Defines and initializes all primitive function types necessary for constructing more complex function..." alt="" coords="362,80,510,107"/>
-<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="505,35,463,72,460,68,502,31"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="688,80,745,107"/>
-<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="553,30,674,74,672,79,551,35"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="769,80,837,107"/>
-<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="569,30,755,77,753,82,568,35"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="861,80,932,107"/>
-<area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="596,30,846,77,845,82,595,35"/>
+<area shape="poly" id="edge17_Node000001_Node000004" title=" " alt="" coords="412,26,347,32,274,42,197,59,123,83,57,108,33,126,12,156,9,174,17,190,32,206,52,219,49,224,29,210,12,193,4,174,7,154,29,122,54,103,121,77,195,54,273,37,347,27,412,21"/>
+<area shape="rect" id="Node000007" href="$statistics_8hh.html" title="Defines the Statistics class for statistical analysis of samples." alt="" coords="252,80,344,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="464,35,348,77,346,72,462,30"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="591,80,719,107"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="526,30,615,71,613,75,524,35"/>
+<area shape="rect" id="Node000010" href="$primitive__functions_8hh.html" title="Defines and initializes all primitive function types necessary for constructing more complex function..." alt="" coords="368,80,516,107"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="490,34,463,69,458,66,486,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="601,155,658,181"/>
+<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="511,31,610,141,606,145,507,34"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="743,80,810,107"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="548,30,728,76,727,82,547,35"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="834,80,905,107"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="574,30,819,77,818,82,573,35"/>
 <area shape="rect" id="Node000003" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="21,155,161,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,109,119,146,115,142,159,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="167,109,120,147,117,143,163,105"/>
 <area shape="rect" id="Node000005" href="$abstract__function_8hh.html" title="Defines abstract and concrete function classes for use in mathematical computations." alt="" coords="235,155,374,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="199,105,270,144,267,149,196,110"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="203,105,271,144,269,149,201,110"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,182,94,214,88,214,88,182"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="270,229,338,256"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="270,229,339,256"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="307,182,307,214,302,214,302,182"/>
-<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="258,110,141,151,140,146,256,105"/>
-<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="277,109,122,222,119,218,274,105"/>
-<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="297,107,302,139,297,140,292,108"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="263,110,142,152,141,147,261,105"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="282,109,123,222,119,218,279,105"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="302,107,305,139,299,139,296,107"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="398,155,475,181"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="319,105,399,145,396,150,316,110"/>
-<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="415,110,342,149,339,145,412,105"/>
-<area shape="poly" id="edge16_Node000010_Node000008" title=" " alt="" coords="439,107,439,139,434,139,434,107"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="600,155,662,181"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="471,105,587,147,585,152,469,110"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="498,155,577,181"/>
-<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="455,105,509,143,506,147,452,109"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="323,105,400,145,397,149,321,110"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="419,110,343,149,341,145,417,105"/>
+<area shape="poly" id="edge16_Node000010_Node000008" title=" " alt="" coords="443,107,441,139,436,139,438,107"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="475,105,587,148,585,152,474,110"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="499,155,577,181"/>
+<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="460,105,511,143,507,147,457,109"/>
 </map>

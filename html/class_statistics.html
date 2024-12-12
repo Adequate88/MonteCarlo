@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo Statistics Module: Statistics Class Reference</title>
+<title>Monte Carlo Statistics Program: Statistics Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo Statistics Module
+   <div id="projectname">Monte Carlo Statistics Program
    </div>
-   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -106,12 +105,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Statistics</b> ()=default</td></tr>
 <tr class="memdesc:a470383aad97a6011f325933ccc15bc47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard destructor. <br /></td></tr>
 <tr class="separator:a470383aad97a6011f325933ccc15bc47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d2d2ab6b64dc34131be24b7ceecccad" id="r_a5d2d2ab6b64dc34131be24b7ceecccad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d2d2ab6b64dc34131be24b7ceecccad">set_data</a> (const std::vector&lt; double &gt; &amp;samples)</td></tr>
-<tr class="memdesc:a5d2d2ab6b64dc34131be24b7ceecccad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sample data.  <br /></td></tr>
-<tr class="separator:a5d2d2ab6b64dc34131be24b7ceecccad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95ea96d48febf1fec9ffbcbc7ddfed97" id="r_a95ea96d48febf1fec9ffbcbc7ddfed97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95ea96d48febf1fec9ffbcbc7ddfed97">gen_N_new_samples</a> (int N)</td></tr>
-<tr class="memdesc:a95ea96d48febf1fec9ffbcbc7ddfed97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and adds new samples to the dataset.  <br /></td></tr>
-<tr class="separator:a95ea96d48febf1fec9ffbcbc7ddfed97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934177ba3097bfe735282560a7020153" id="r_a934177ba3097bfe735282560a7020153"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a934177ba3097bfe735282560a7020153">setData</a> (const std::vector&lt; double &gt; &amp;samples)</td></tr>
+<tr class="memdesc:a934177ba3097bfe735282560a7020153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sample data.  <br /></td></tr>
+<tr class="separator:a934177ba3097bfe735282560a7020153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375dfb758a738cc034608adf3d246df3" id="r_a375dfb758a738cc034608adf3d246df3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a375dfb758a738cc034608adf3d246df3">genNNewSamples</a> (int N)</td></tr>
+<tr class="memdesc:a375dfb758a738cc034608adf3d246df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and adds new samples to the dataset.  <br /></td></tr>
+<tr class="separator:a375dfb758a738cc034608adf3d246df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3456f70d108f6e6763e72dd854ba8f8b" id="r_a3456f70d108f6e6763e72dd854ba8f8b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3456f70d108f6e6763e72dd854ba8f8b">expectation</a> (const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; double, double &gt; &amp;f) const</td></tr>
 <tr class="memdesc:a3456f70d108f6e6763e72dd854ba8f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the expectation value of an arbitrary function.  <br /></td></tr>
 <tr class="separator:a3456f70d108f6e6763e72dd854ba8f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,15 +120,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc56fe9ebd7dbb0aa61802074886322e" id="r_afc56fe9ebd7dbb0aa61802074886322e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc56fe9ebd7dbb0aa61802074886322e">moment</a> (int power, const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; double, double &gt; &amp;f) const</td></tr>
 <tr class="memdesc:afc56fe9ebd7dbb0aa61802074886322e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a power moment of an arbitrary function.  <br /></td></tr>
 <tr class="separator:afc56fe9ebd7dbb0aa61802074886322e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a966bae9272c902c05c162d8273d89c37" id="r_a966bae9272c902c05c162d8273d89c37"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a966bae9272c902c05c162d8273d89c37">central_moment</a> (int power, const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; double, double &gt; &amp;f) const</td></tr>
-<tr class="memdesc:a966bae9272c902c05c162d8273d89c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a central moment of an arbitrary function.  <br /></td></tr>
-<tr class="separator:a966bae9272c902c05c162d8273d89c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac792b9e5d8b688b0da17e56e7bc3a712" id="r_ac792b9e5d8b688b0da17e56e7bc3a712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac792b9e5d8b688b0da17e56e7bc3a712">clear_data</a> ()</td></tr>
-<tr class="memdesc:ac792b9e5d8b688b0da17e56e7bc3a712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all sample data.  <br /></td></tr>
-<tr class="separator:ac792b9e5d8b688b0da17e56e7bc3a712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af321be887f085f89882e212da62e12f7" id="r_af321be887f085f89882e212da62e12f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af321be887f085f89882e212da62e12f7">change_sampler</a> (<a class="el" href="class_abstract_sampler.html">AbstractSampler</a> &amp;sampler)</td></tr>
-<tr class="memdesc:af321be887f085f89882e212da62e12f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change sampler attribute.  <br /></td></tr>
-<tr class="separator:af321be887f085f89882e212da62e12f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676766de89cb0712b00502431a99648e" id="r_a676766de89cb0712b00502431a99648e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a676766de89cb0712b00502431a99648e">centralMoment</a> (int power, const <a class="el" href="class_abstract_function.html">AbstractFunction</a>&lt; double, double &gt; &amp;f) const</td></tr>
+<tr class="memdesc:a676766de89cb0712b00502431a99648e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a central moment of an arbitrary function.  <br /></td></tr>
+<tr class="separator:a676766de89cb0712b00502431a99648e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7170e34aac9c1c1d9a6e2a018159b907" id="r_a7170e34aac9c1c1d9a6e2a018159b907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7170e34aac9c1c1d9a6e2a018159b907">clearData</a> ()</td></tr>
+<tr class="memdesc:a7170e34aac9c1c1d9a6e2a018159b907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all sample data.  <br /></td></tr>
+<tr class="separator:a7170e34aac9c1c1d9a6e2a018159b907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b50fe0439a38d788005ef2eb411a9a6" id="r_a5b50fe0439a38d788005ef2eb411a9a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b50fe0439a38d788005ef2eb411a9a6">changeSampler</a> (<a class="el" href="class_abstract_sampler.html">AbstractSampler</a> &amp;sampler)</td></tr>
+<tr class="memdesc:a5b50fe0439a38d788005ef2eb411a9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change sampler attribute.  <br /></td></tr>
+<tr class="separator:a5b50fe0439a38d788005ef2eb411a9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Computes statistical metrics for a set of samples. </p>
@@ -173,8 +172,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a966bae9272c902c05c162d8273d89c37" name="a966bae9272c902c05c162d8273d89c37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a966bae9272c902c05c162d8273d89c37">&#9670;&#160;</a></span>central_moment()</h2>
+<a id="a676766de89cb0712b00502431a99648e" name="a676766de89cb0712b00502431a99648e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676766de89cb0712b00502431a99648e">&#9670;&#160;</a></span>centralMoment()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +182,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Statistics::central_moment </td>
+          <td class="memname">double Statistics::centralMoment </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>power</em></span>, </td>
         </tr>
@@ -212,14 +211,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af321be887f085f89882e212da62e12f7" name="af321be887f085f89882e212da62e12f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af321be887f085f89882e212da62e12f7">&#9670;&#160;</a></span>change_sampler()</h2>
+<a id="a5b50fe0439a38d788005ef2eb411a9a6" name="a5b50fe0439a38d788005ef2eb411a9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b50fe0439a38d788005ef2eb411a9a6">&#9670;&#160;</a></span>changeSampler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Statistics::change_sampler </td>
+          <td class="memname">void Statistics::changeSampler </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_sampler.html">AbstractSampler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>new_sampler</em></span></td><td>)</td>
           <td></td>
@@ -232,14 +231,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac792b9e5d8b688b0da17e56e7bc3a712" name="ac792b9e5d8b688b0da17e56e7bc3a712"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac792b9e5d8b688b0da17e56e7bc3a712">&#9670;&#160;</a></span>clear_data()</h2>
+<a id="a7170e34aac9c1c1d9a6e2a018159b907" name="a7170e34aac9c1c1d9a6e2a018159b907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7170e34aac9c1c1d9a6e2a018159b907">&#9670;&#160;</a></span>clearData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Statistics::clear_data </td>
+          <td class="memname">void Statistics::clearData </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -286,14 +285,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a95ea96d48febf1fec9ffbcbc7ddfed97" name="a95ea96d48febf1fec9ffbcbc7ddfed97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95ea96d48febf1fec9ffbcbc7ddfed97">&#9670;&#160;</a></span>gen_N_new_samples()</h2>
+<a id="a375dfb758a738cc034608adf3d246df3" name="a375dfb758a738cc034608adf3d246df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a375dfb758a738cc034608adf3d246df3">&#9670;&#160;</a></span>genNNewSamples()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Statistics::gen_N_new_samples </td>
+          <td class="memname">void Statistics::genNNewSamples </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>N</em></span></td><td>)</td>
           <td></td>
@@ -350,14 +349,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d2d2ab6b64dc34131be24b7ceecccad" name="a5d2d2ab6b64dc34131be24b7ceecccad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d2d2ab6b64dc34131be24b7ceecccad">&#9670;&#160;</a></span>set_data()</h2>
+<a id="a934177ba3097bfe735282560a7020153" name="a934177ba3097bfe735282560a7020153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a934177ba3097bfe735282560a7020153">&#9670;&#160;</a></span>setData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Statistics::set_data </td>
+          <td class="memname">void Statistics::setData </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; double &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>samples</em></span></td><td>)</td>
           <td></td>

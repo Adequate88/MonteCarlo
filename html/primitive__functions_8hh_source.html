@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo Statistics Module: src/functions/primitive_functions.hh Source File</title>
+<title>Monte Carlo Statistics Program: src/functions/primitive_functions.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo Statistics Module
+   <div id="projectname">Monte Carlo Statistics Program
    </div>
-   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -100,7 +99,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define PRIMITIVE_FUNCTIONS_HH</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="abstract__function_8hh.html">abstract_function.hh</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -236,21 +235,21 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="foldopen" id="foldopen00220" data-start="{" data-end="}">
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="class_exponential_function.html#a08fbac9bf5afbd4106e0b7b8d39a740e">  220</a></span>    <a class="code hl_function" href="class_exponential_function.html#a08fbac9bf5afbd4106e0b7b8d39a740e">ExponentialFunction</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;InputType, OutputType&gt;</a>&amp; baseFunction, <span class="keyword">const</span> <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;InputType, OutputType&gt;</a>&amp; powerFunction)</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        : baseFunction_(baseFunction), powerFunction_(powerFunction) {}</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        : base_function_(baseFunction), power_function_(powerFunction) {}</div>
 </div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
 <div class="foldopen" id="foldopen00229" data-start="{" data-end="}">
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="class_exponential_function.html#accadd374f9a4337c057a4cbb6ba989dd">  229</a></span>    OutputType <a class="code hl_function" href="class_exponential_function.html#accadd374f9a4337c057a4cbb6ba989dd">eval</a>(<span class="keyword">const</span> InputType&amp; x)<span class="keyword"> const override </span>{</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="comment">// Use std::pow for double power</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keyword">const</span> <span class="keyword">auto</span> baseValue = baseFunction_.eval(x);</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keyword">const</span> <span class="keyword">auto</span> powerValue = powerFunction_.eval(x);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keyword">const</span> <span class="keyword">auto</span> baseValue = base_function_.eval(x);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keyword">const</span> <span class="keyword">auto</span> powerValue = power_function_.eval(x);</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>OutputType<span class="keyword">&gt;</span>(std::pow(baseValue, powerValue));</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>
 </div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;InputType, OutputType&gt;</a>&amp; baseFunction_; </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;InputType, OutputType&gt;</a>&amp; powerFunction_;  </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;InputType, OutputType&gt;</a>&amp; base_function_; </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;InputType, OutputType&gt;</a>&amp; power_function_;  </div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>};</div>
 </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>

@@ -11,7 +11,8 @@ Generates samples from a normal distribution using the Box-\/\+Muller method.
 
 
 
-Inheritance diagram for Normal\+Box\+Muller\+Sampler\+:\nopagebreak
+Inheritance diagram for Normal\+Box\+Muller\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,61 +21,65 @@ Inheritance diagram for Normal\+Box\+Muller\+Sampler\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Normal\+Box\+Muller\+Sampler\+:\nopagebreak
+Collaboration diagram for Normal\+Box\+Muller\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=251pt]{class_normal_box_muller_sampler__coll__graph}
+\includegraphics[width=256pt]{class_normal_box_muller_sampler__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_normal_box_muller_sampler_a964c8bb4f841eb0c5759c063c15542ad}{Normal\+Box\+Muller\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}})
+\mbox{\hyperlink{class_normal_box_muller_sampler_a964c8bb4f841eb0c5759c063c15542ad}{Normal\+Box\+Muller\+Sampler}} (int seed)
 \begin{DoxyCompactList}\small\item\em Constructor for standard normal distribution. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_normal_box_muller_sampler_ae7bdf74dca516db48e8110bbe67017e2}{Normal\+Box\+Muller\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}, double \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}, double \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})
+\mbox{\hyperlink{class_normal_box_muller_sampler_ae7bdf74dca516db48e8110bbe67017e2}{Normal\+Box\+Muller\+Sampler}} (int seed, double mu, double sigma)
 \begin{DoxyCompactList}\small\item\em Constructor for custom normal distribution. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_normal_box_muller_sampler_aa5eeb799f6e08d063df49ebca103d388}{sample}} () override
 \begin{DoxyCompactList}\small\item\em Samples a random value from the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_normal_sampler}{Normal\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{Normal\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}, double \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}, double \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})
+\mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{Normal\+Sampler}} (int seed, double mu, double sigma)
 \begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_normal_sampler}{Normal\+Sampler}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
 \begin{DoxyCompactList}\small\item\em Generates a histogram of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-void {\bfseries plot\+Distribution} () const
+virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
+\item 
+std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+\begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
+double {\bfseries get\+Plot\+Minimum} ()
+\item 
+double {\bfseries get\+Plot\+Maximum} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
-\begin{DoxyCompactItemize}
-\item 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_normal_sampler}{Normal\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
-int {\bfseries seed}
+int {\bfseries seed\+\_\+}
 \begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_uniform_sampler}{Uniform\+Sampler}} {\bfseries uniform\+\_\+sampler}
+\mbox{\hyperlink{class_uniform_sampler}{Uniform\+Sampler}} {\bfseries uniform\+\_\+sampler\+\_\+}
 \begin{DoxyCompactList}\small\item\em Uniform sampler used internally. \end{DoxyCompactList}\item 
-double {\bfseries mu}
+double {\bfseries mu\+\_\+}
 \begin{DoxyCompactList}\small\item\em Mean of the normal distribution. \end{DoxyCompactList}\item 
-double {\bfseries sigma}
+double {\bfseries sigma\+\_\+}
 \begin{DoxyCompactList}\small\item\em Standard deviation of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
-double {\bfseries plot\+\_\+minimum}
+double {\bfseries plot\+\_\+minimum\+\_\+}
 \item 
-double {\bfseries plot\+\_\+maximum}
+double {\bfseries plot\+\_\+maximum\+\_\+}
 \end{DoxyCompactItemize}
 
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo Statistics Module: ASTNode Class Reference</title>
+<title>Monte Carlo Statistics Program: ASTNode Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,8 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Monte Carlo Statistics Module
+   <div id="projectname">Monte Carlo Statistics Program
    </div>
-   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -106,18 +105,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a15fcdbd8403a1169b06d948a827fde55" id="r_a15fcdbd8403a1169b06d948a827fde55"><td class="memItemLeft" align="right" valign="top"><a id="a15fcdbd8403a1169b06d948a827fde55" name="a15fcdbd8403a1169b06d948a827fde55"></a>
-<a class="el" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nodeType</b></td></tr>
-<tr class="memdesc:a15fcdbd8403a1169b06d948a827fde55"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the node. <br /></td></tr>
-<tr class="separator:a15fcdbd8403a1169b06d948a827fde55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab98e6f0f9d6a3ce0190c8932a5a2e55d" id="r_ab98e6f0f9d6a3ce0190c8932a5a2e55d"><td class="memItemLeft" align="right" valign="top"><a id="ab98e6f0f9d6a3ce0190c8932a5a2e55d" name="ab98e6f0f9d6a3ce0190c8932a5a2e55d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
-<tr class="memdesc:ab98e6f0f9d6a3ce0190c8932a5a2e55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of the node (operator, variable name, function name, or numeric string). <br /></td></tr>
-<tr class="separator:ab98e6f0f9d6a3ce0190c8932a5a2e55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf3e9fd194fab8e7b56c38a789cefdac" id="r_abf3e9fd194fab8e7b56c38a789cefdac"><td class="memItemLeft" align="right" valign="top"><a id="abf3e9fd194fab8e7b56c38a789cefdac" name="abf3e9fd194fab8e7b56c38a789cefdac"></a>
-std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_a_s_t_node.html">ASTNode</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>children</b></td></tr>
-<tr class="memdesc:abf3e9fd194fab8e7b56c38a789cefdac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Children nodes for functions and operators. <br /></td></tr>
-<tr class="separator:abf3e9fd194fab8e7b56c38a789cefdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ff5d0ff29ac02b4d64b1754ea69ad2" id="r_a17ff5d0ff29ac02b4d64b1754ea69ad2"><td class="memItemLeft" align="right" valign="top"><a id="a17ff5d0ff29ac02b4d64b1754ea69ad2" name="a17ff5d0ff29ac02b4d64b1754ea69ad2"></a>
+<a class="el" href="tokenizer_8hh.html#acac9cbaeea226ed297804c012dc12b16">NodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>node_type_</b></td></tr>
+<tr class="memdesc:a17ff5d0ff29ac02b4d64b1754ea69ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the node. <br /></td></tr>
+<tr class="separator:a17ff5d0ff29ac02b4d64b1754ea69ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855aa31c2b06c21b2299094af44c585c" id="r_a855aa31c2b06c21b2299094af44c585c"><td class="memItemLeft" align="right" valign="top"><a id="a855aa31c2b06c21b2299094af44c585c" name="a855aa31c2b06c21b2299094af44c585c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>value_</b></td></tr>
+<tr class="memdesc:a855aa31c2b06c21b2299094af44c585c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of the node (operator, variable name, function name, or numeric string). <br /></td></tr>
+<tr class="separator:a855aa31c2b06c21b2299094af44c585c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea258cef42cfb9b7bf2223e25ea7b49" id="r_adea258cef42cfb9b7bf2223e25ea7b49"><td class="memItemLeft" align="right" valign="top"><a id="adea258cef42cfb9b7bf2223e25ea7b49" name="adea258cef42cfb9b7bf2223e25ea7b49"></a>
+std::vector&lt; std::unique_ptr&lt; <a class="el" href="class_a_s_t_node.html">ASTNode</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>children_</b></td></tr>
+<tr class="memdesc:adea258cef42cfb9b7bf2223e25ea7b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Children nodes for functions and operators. <br /></td></tr>
+<tr class="separator:adea258cef42cfb9b7bf2223e25ea7b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing a node in the Abstract Syntax Tree (AST). </p>

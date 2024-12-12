@@ -32,8 +32,8 @@
 \DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921ab1a326c06d88bf042f73d70f50197905}{END}}\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00038\ \};}
 \DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_token}{Token}}\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \mbox{\hyperlink{struct_token_a67919af9f3a80dc0b28a0ab1e6d5bf8a}{type}};\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_token_a4b7142147b8598f8e24c404928d9263b}{value}};\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921}{TokenType}}\ \mbox{\hyperlink{struct_token_ad553caad96b1f36406baeb168a33de3f}{type\_}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};\ \ \ \ \ }
 \DoxyCodeLine{00045\ \};}
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00050\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ \{}
@@ -45,28 +45,28 @@
 \DoxyCodeLine{00056\ }
 \DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_s_t_node}{ASTNode}}\ \{}
 \DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_a_s_t_node_aec604d11681563f83bc665e0172b5895}{ASTNode}}(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ t,\ \textcolor{keyword}{const}\ std::string\ \&val)\ :\ \mbox{\hyperlink{class_a_s_t_node_a15fcdbd8403a1169b06d948a827fde55}{nodeType}}(t),\ \mbox{\hyperlink{class_a_s_t_node_ab98e6f0f9d6a3ce0190c8932a5a2e55d}{value}}(val)\ \{\}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_a_s_t_node_aec604d11681563f83bc665e0172b5895}{ASTNode}}(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ t,\ \textcolor{keyword}{const}\ std::string\ \&val)\ :\ \mbox{\hyperlink{class_a_s_t_node_a17ff5d0ff29ac02b4d64b1754ea69ad2}{node\_type\_}}(t),\ \mbox{\hyperlink{class_a_s_t_node_a855aa31c2b06c21b2299094af44c585c}{value\_}}(val)\ \{\}}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ \mbox{\hyperlink{class_a_s_t_node_a15fcdbd8403a1169b06d948a827fde55}{nodeType}};\ }
-\DoxyCodeLine{00071\ \ \ \ \ std::string\ \mbox{\hyperlink{class_a_s_t_node_ab98e6f0f9d6a3ce0190c8932a5a2e55d}{value}};\ }
-\DoxyCodeLine{00072\ \ \ \ \ std::vector<std::unique\_ptr<ASTNode>>\ \mbox{\hyperlink{class_a_s_t_node_abf3e9fd194fab8e7b56c38a789cefdac}{children}};\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16}{NodeType}}\ \mbox{\hyperlink{class_a_s_t_node_a17ff5d0ff29ac02b4d64b1754ea69ad2}{node\_type\_}};\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ \mbox{\hyperlink{class_a_s_t_node_a855aa31c2b06c21b2299094af44c585c}{value\_}};\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::vector<std::unique\_ptr<ASTNode>>\ \mbox{\hyperlink{class_a_s_t_node_adea258cef42cfb9b7bf2223e25ea7b49}{children\_}};\ }
 \DoxyCodeLine{00073\ \};}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00082\ std::unique\_ptr<ASTNode>\ \mbox{\hyperlink{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6}{makeFunc}}(\textcolor{keyword}{const}\ std::string\ \&name,\ std::unique\_ptr<ASTNode>\ arg)\ \{}
+\DoxyCodeLine{00082\ \textcolor{keyword}{inline}\ std::unique\_ptr<ASTNode>\ \mbox{\hyperlink{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6}{makeFunc}}(\textcolor{keyword}{const}\ std::string\ \&name,\ std::unique\_ptr<ASTNode>\ arg)\ \{}
 \DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a1e49c8ad07b69571bfcafaf18ac9fa5b}{NodeType::FUNC}},\ name);}
-\DoxyCodeLine{00084\ \ \ \ \ node-\/>children.push\_back(std::move(arg));}
+\DoxyCodeLine{00084\ \ \ \ \ node-\/>children\_.push\_back(std::move(arg));}
 \DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
 \DoxyCodeLine{00086\ \}}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00096\ std::unique\_ptr<ASTNode>\ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{makeOp}}(\textcolor{keyword}{const}\ std::string\ \&op,\ std::unique\_ptr<ASTNode>\ left,\ std::unique\_ptr<ASTNode>\ right)\ \{}
+\DoxyCodeLine{00096\ \textcolor{keyword}{inline}\ std::unique\_ptr<ASTNode>\ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{makeOp}}(\textcolor{keyword}{const}\ std::string\ \&op,\ std::unique\_ptr<ASTNode>\ left,\ std::unique\_ptr<ASTNode>\ right)\ \{}
 \DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a7457cdd15d09bfc6c4dbb5d2b6f87390}{NodeType::OP}},\ op);}
-\DoxyCodeLine{00098\ \ \ \ \ node-\/>children.push\_back(std::move(left));}
-\DoxyCodeLine{00099\ \ \ \ \ node-\/>children.push\_back(std::move(right));}
+\DoxyCodeLine{00098\ \ \ \ \ node-\/>children\_.push\_back(std::move(left));}
+\DoxyCodeLine{00099\ \ \ \ \ node-\/>children\_.push\_back(std::move(right));}
 \DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
 \DoxyCodeLine{00101\ \}}
 \DoxyCodeLine{00102\ }
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00111\ std::vector<Token>\ \mbox{\hyperlink{tokenizer_8hh_aacdee2b000d637435e504e16117d9d9e}{tokenize}}(\textcolor{keyword}{const}\ std::string\ \&expr)\ \{}
+\DoxyCodeLine{00111\ \textcolor{keyword}{inline}\ std::vector<Token>\ \mbox{\hyperlink{tokenizer_8hh_aacdee2b000d637435e504e16117d9d9e}{tokenize}}(\textcolor{keyword}{const}\ std::string\ \&expr)\ \{}
 \DoxyCodeLine{00112\ \ \ \ \ std::vector<Token>\ tokens;}
 \DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ 0;}
 \DoxyCodeLine{00114\ }

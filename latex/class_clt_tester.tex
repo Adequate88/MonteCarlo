@@ -11,7 +11,8 @@ Class that tests the Central Limit Theorem using an abstract sampler.
 
 
 
-Inheritance diagram for Clt\+Tester\+:\nopagebreak
+Inheritance diagram for Clt\+Tester\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Clt\+Tester\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Clt\+Tester\+:\nopagebreak
+Collaboration diagram for Clt\+Tester\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,30 +37,33 @@ Collaboration diagram for Clt\+Tester\+:\nopagebreak
 void \mbox{\hyperlink{class_clt_tester_ac2a104ebbace490a09508ce16db1d456}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
 \begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}{test}} () const
-\begin{DoxyCompactList}\small\item\em Tests the Central Limit Theorem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tests the Central Limit Theorem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a}{plot\+Distribution}} () const override
+\begin{DoxyCompactList}\small\item\em Plots the distribution of sample means as a histogram. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}} ()
 \begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-void {\bfseries plot\+Distribution} () const
+std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+\begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
+double {\bfseries get\+Plot\+Minimum} ()
+\item 
+double {\bfseries get\+Plot\+Maximum} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
-\begin{DoxyCompactItemize}
-\item 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
-double {\bfseries plot\+\_\+minimum}
+double {\bfseries plot\+\_\+minimum\+\_\+}
 \item 
-double {\bfseries plot\+\_\+maximum}
+double {\bfseries plot\+\_\+maximum\+\_\+}
 \end{DoxyCompactItemize}
 
 
@@ -118,6 +123,20 @@ This method should be overridden by derived classes to populate the {\ttfamily d
 
 
 Reimplemented from \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{Abstract\+Sampler}}.
+
+\Hypertarget{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a}\index{CltTester@{CltTester}!plotDistribution@{plotDistribution}}
+\index{plotDistribution@{plotDistribution}!CltTester@{CltTester}}
+\doxysubsubsection{\texorpdfstring{plotDistribution()}{plotDistribution()}}
+{\footnotesize\ttfamily \label{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a} 
+void Clt\+Tester\+::plot\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Plots the distribution of sample means as a histogram. 
+
+Overridden from the \doxylink{class_abstract_sampler}{Abstract\+Sampler} class. Changes some Gnu\+Plot labels to be more specific to the CLT. 
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}.
 
 \Hypertarget{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}\index{CltTester@{CltTester}!test@{test}}
 \index{test@{test}!CltTester@{CltTester}}

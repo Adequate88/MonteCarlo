@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['seed_0',['seed',['../class_normal_sampler.html#a1db098ed0e84379ec61b18bf871488a0',1,'NormalSampler']]],
-  ['sigma_1',['sigma',['../class_normal_sampler.html#a4e43e8b53b1b7159681b990afd8fecb4',1,'NormalSampler']]]
+  ['seed_5f_0',['seed_',['../class_normal_sampler.html#a394190110f8376c741c8f0760305da55',1,'NormalSampler']]],
+  ['sigma_5f_1',['sigma_',['../class_normal_sampler.html#a5bc92829447251d63c2dc2eeacc57618',1,'NormalSampler']]]
 ];

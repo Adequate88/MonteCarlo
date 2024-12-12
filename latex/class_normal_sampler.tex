@@ -11,7 +11,8 @@ Abstract class for normal distribution sampling.
 
 
 
-Inheritance diagram for Normal\+Sampler\+:\nopagebreak
+Inheritance diagram for Normal\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,59 +21,62 @@ Inheritance diagram for Normal\+Sampler\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Normal\+Sampler\+:\nopagebreak
+Collaboration diagram for Normal\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=236pt]{class_normal_sampler__coll__graph}
+\includegraphics[width=241pt]{class_normal_sampler__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{Normal\+Sampler}} (int \mbox{\hyperlink{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}{seed}}, double \mbox{\hyperlink{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}{mu}}, double \mbox{\hyperlink{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}{sigma}})
+\mbox{\hyperlink{class_normal_sampler_a3b5b2b4e4de785f6e261a17d318cb529}{Normal\+Sampler}} (int seed, double mu, double sigma)
 \begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_normal_sampler}{Normal\+Sampler}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
 \begin{DoxyCompactList}\small\item\em Generates a histogram of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}} ()
 \begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-void {\bfseries plot\+Distribution} () const
+virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
+\item 
+std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+\begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
+double {\bfseries get\+Plot\+Minimum} ()
+\item 
+double {\bfseries get\+Plot\+Maximum} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0}\label{class_normal_sampler_a1db098ed0e84379ec61b18bf871488a0} 
-int {\bfseries seed}
+\Hypertarget{class_normal_sampler_a394190110f8376c741c8f0760305da55}\label{class_normal_sampler_a394190110f8376c741c8f0760305da55} 
+int {\bfseries seed\+\_\+}
 \begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
-\Hypertarget{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326}\label{class_normal_sampler_a36ef34e949f881f8062e23b58aac0326} 
-\mbox{\hyperlink{class_uniform_sampler}{Uniform\+Sampler}} {\bfseries uniform\+\_\+sampler}
+\Hypertarget{class_normal_sampler_a2ad34eeeb5580bd3715f74bc733c2fe8}\label{class_normal_sampler_a2ad34eeeb5580bd3715f74bc733c2fe8} 
+\mbox{\hyperlink{class_uniform_sampler}{Uniform\+Sampler}} {\bfseries uniform\+\_\+sampler\+\_\+}
 \begin{DoxyCompactList}\small\item\em Uniform sampler used internally. \end{DoxyCompactList}\item 
-\Hypertarget{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557}\label{class_normal_sampler_af2f647ca068ac66057d59ed4f82dc557} 
-double {\bfseries mu}
+\Hypertarget{class_normal_sampler_a1e82c5e7404d0ffe7de9ba4e730bb87c}\label{class_normal_sampler_a1e82c5e7404d0ffe7de9ba4e730bb87c} 
+double {\bfseries mu\+\_\+}
 \begin{DoxyCompactList}\small\item\em Mean of the normal distribution. \end{DoxyCompactList}\item 
-\Hypertarget{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4}\label{class_normal_sampler_a4e43e8b53b1b7159681b990afd8fecb4} 
-double {\bfseries sigma}
+\Hypertarget{class_normal_sampler_a5bc92829447251d63c2dc2eeacc57618}\label{class_normal_sampler_a5bc92829447251d63c2dc2eeacc57618} 
+double {\bfseries sigma\+\_\+}
 \begin{DoxyCompactList}\small\item\em Standard deviation of the normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
-double {\bfseries plot\+\_\+minimum}
+double {\bfseries plot\+\_\+minimum\+\_\+}
 \item 
-double {\bfseries plot\+\_\+maximum}
+double {\bfseries plot\+\_\+maximum\+\_\+}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
-\begin{DoxyCompactItemize}
-\item 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
-\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

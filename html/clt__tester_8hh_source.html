@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monte Carlo Statistics Module: src/clt_tester/clt_tester.hh Source File</title>
+<title>Monte Carlo Statistics Module: src/sampling/clt_tester.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Monte Carlo Statistics Module
    </div>
+   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -83,7 +84,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_50c219b98ae2a5d62b91c12c721bc8d9.html">clt_tester</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_24a3817a3c61c11f04a0a72057522f4f.html">sampling</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -91,35 +92,41 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">clt_tester.hh</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="clt__tester_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by alixb1908 on 28/11/24.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef CLT_TESTER_HH</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define CLT_TESTER_HH</span></div>
+<a href="clt__tester_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef CLT_TESTER_HH</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define CLT_TESTER_HH</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="abstract__sampler_8hh.html">abstract_sampler.hh</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="abstract__function_8hh.html">abstract_function.hh</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="abstract__sampler_8hh.html">abstract_sampler.hh</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_clt_tester.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="class_clt_tester.html">CltTester</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_clt_tester.html#aba411f79020352b6a778ed5d6e07659e">CltTester</a>(<a class="code hl_class" href="class_abstract_sampler.html">AbstractSampler</a>&amp; sampler, <span class="keywordtype">int</span> N, <span class="keywordtype">int</span> num_iterations);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655">test</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="class_abstract_sampler.html">AbstractSampler</a>&amp; sampler_; </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> N_; </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> num_iterations_; </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_clt_tester.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_clt_tester.html">CltTester</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_abstract_sampler.html">AbstractSampler</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_clt_tester.html#a915d303efb04aaa821c8d90e9db2ef6f">CltTester</a>(<a class="code hl_class" href="class_abstract_sampler.html">AbstractSampler</a>&amp; sampler, <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;double,double&gt;</a>&amp; f, <span class="keywordtype">int</span> N);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_clt_tester.html#ac2a104ebbace490a09508ce16db1d456">generateDistribution</a>(<span class="keywordtype">int</span> bins, <span class="keywordtype">int</span> n_samples) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655">test</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="class_abstract_sampler.html">AbstractSampler</a>&amp; sampler_; </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_class" href="class_abstract_function.html">AbstractFunction&lt;double,double&gt;</a>&amp; f_; </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> N_; </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// int num_iterations_; ///&lt; Number of iterations to perform.</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::vector&lt;double&gt; sample_means_; </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// CLT_TESTER_HH</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">// CLT_TESTER_HH</span></div>
+<div class="ttc" id="aabstract__function_8hh_html"><div class="ttname"><a href="abstract__function_8hh.html">abstract_function.hh</a></div><div class="ttdoc">Defines abstract and concrete function classes for use in mathematical computations.</div></div>
 <div class="ttc" id="aabstract__sampler_8hh_html"><div class="ttname"><a href="abstract__sampler_8hh.html">abstract_sampler.hh</a></div><div class="ttdoc">Defines the AbstractSampler class for sampling distributions.</div></div>
+<div class="ttc" id="aclass_abstract_function_html"><div class="ttname"><a href="class_abstract_function.html">AbstractFunction</a></div><div class="ttdoc">Abstract base class for representing a function with specified input and output types.</div><div class="ttdef"><b>Definition</b> abstract_function.hh:40</div></div>
 <div class="ttc" id="aclass_abstract_sampler_html"><div class="ttname"><a href="class_abstract_sampler.html">AbstractSampler</a></div><div class="ttdoc">Abstract base class for sampling and distribution generation.</div><div class="ttdef"><b>Definition</b> abstract_sampler.hh:23</div></div>
-<div class="ttc" id="aclass_clt_tester_html"><div class="ttname"><a href="class_clt_tester.html">CltTester</a></div><div class="ttdoc">Class that tests the Central Limit Theorem using an abstract sampler.</div><div class="ttdef"><b>Definition</b> clt_tester.hh:25</div></div>
-<div class="ttc" id="aclass_clt_tester_html_a1b6d9bd43d8acbe6f38a1310fcb38655"><div class="ttname"><a href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655">CltTester::test</a></div><div class="ttdeci">void test() const</div><div class="ttdoc">Tests the Central Limit Theorem.</div><div class="ttdef"><b>Definition</b> clt_tester.cc:30</div></div>
-<div class="ttc" id="aclass_clt_tester_html_aba411f79020352b6a778ed5d6e07659e"><div class="ttname"><a href="class_clt_tester.html#aba411f79020352b6a778ed5d6e07659e">CltTester::CltTester</a></div><div class="ttdeci">CltTester(AbstractSampler &amp;sampler, int N, int num_iterations)</div><div class="ttdoc">Constructs a CltTester object.</div><div class="ttdef"><b>Definition</b> clt_tester.cc:20</div></div>
+<div class="ttc" id="aclass_clt_tester_html"><div class="ttname"><a href="class_clt_tester.html">CltTester</a></div><div class="ttdoc">Class that tests the Central Limit Theorem using an abstract sampler.</div><div class="ttdef"><b>Definition</b> clt_tester.hh:22</div></div>
+<div class="ttc" id="aclass_clt_tester_html_a1b6d9bd43d8acbe6f38a1310fcb38655"><div class="ttname"><a href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655">CltTester::test</a></div><div class="ttdeci">void test() const</div><div class="ttdoc">Tests the Central Limit Theorem.</div><div class="ttdef"><b>Definition</b> clt_tester.cc:63</div></div>
+<div class="ttc" id="aclass_clt_tester_html_a915d303efb04aaa821c8d90e9db2ef6f"><div class="ttname"><a href="class_clt_tester.html#a915d303efb04aaa821c8d90e9db2ef6f">CltTester::CltTester</a></div><div class="ttdeci">CltTester(AbstractSampler &amp;sampler, AbstractFunction&lt; double, double &gt; &amp;f, int N)</div><div class="ttdoc">Constructs a CltTester object.</div><div class="ttdef"><b>Definition</b> clt_tester.cc:24</div></div>
+<div class="ttc" id="aclass_clt_tester_html_ac2a104ebbace490a09508ce16db1d456"><div class="ttname"><a href="class_clt_tester.html#ac2a104ebbace490a09508ce16db1d456">CltTester::generateDistribution</a></div><div class="ttdeci">void generateDistribution(int bins, int n_samples) override</div><div class="ttdoc">Generates a distribution based on bins and sample count.</div><div class="ttdef"><b>Definition</b> clt_tester.cc:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

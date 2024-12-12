@@ -1,0 +1,5 @@
+<map id="src/sampling/clt_tester.hh" name="src/sampling/clt_tester.hh">
+<area shape="rect" id="Node000001" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="Node000002" href="$clt__tester_8cc.html" title="Initializes functions for CLT Tester." alt="" coords="5,80,177,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,48,94,80,88,80,88,48"/>
+</map>

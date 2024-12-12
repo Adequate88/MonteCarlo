@@ -9,13 +9,57 @@ Class that tests the Central Limit Theorem using an abstract sampler.
 
 {\ttfamily \#include $<$clt\+\_\+tester.\+hh$>$}
 
+
+
+Inheritance diagram for Clt\+Tester\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_clt_tester__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Clt\+Tester\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_clt_tester__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_clt_tester_aba411f79020352b6a778ed5d6e07659e}{Clt\+Tester}} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler, int N, int num\+\_\+iterations)
+\mbox{\hyperlink{class_clt_tester_a915d303efb04aaa821c8d90e9db2ef6f}{Clt\+Tester}} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler, \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f, int N)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_clt_tester}{Clt\+Tester} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_clt_tester_ac2a104ebbace490a09508ce16db1d456}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
+\begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}{test}} () const
 \begin{DoxyCompactList}\small\item\em Tests the Central Limit Theorem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea25d3312ea}{sample}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
+\begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
+void {\bfseries plot\+Distribution} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+\begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
+double {\bfseries plot\+\_\+minimum}
+\item 
+double {\bfseries plot\+\_\+maximum}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -24,11 +68,11 @@ Class that tests the Central Limit Theorem using an abstract sampler.
 This class takes in an abstract sampler and generates multiple sets of samples, calculates their means, and then checks if the mean and standard deviation of these sample means conform to the expected properties defined by the Central Limit Theorem. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_clt_tester_aba411f79020352b6a778ed5d6e07659e}\index{CltTester@{CltTester}!CltTester@{CltTester}}
+\Hypertarget{class_clt_tester_a915d303efb04aaa821c8d90e9db2ef6f}\index{CltTester@{CltTester}!CltTester@{CltTester}}
 \index{CltTester@{CltTester}!CltTester@{CltTester}}
 \doxysubsubsection{\texorpdfstring{CltTester()}{CltTester()}}
-{\footnotesize\ttfamily \label{class_clt_tester_aba411f79020352b6a778ed5d6e07659e} 
-Clt\+Tester\+::\+Clt\+Tester (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&}]{sampler}{, }\item[{int}]{N}{, }\item[{int}]{num\+\_\+iterations}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_clt_tester_a915d303efb04aaa821c8d90e9db2ef6f} 
+Clt\+Tester\+::\+Clt\+Tester (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&}]{sampler}{, }\item[{\mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&}]{f}{, }\item[{int}]{N}{}\end{DoxyParamCaption})}
 
 
 
@@ -38,14 +82,43 @@ Constructs a \doxylink{class_clt_tester}{Clt\+Tester} object.
 \begin{DoxyParams}{Parameters}
 {\em sampler} & Reference to an \doxylink{class_abstract_sampler}{Abstract\+Sampler} used to generate random samples. \\
 \hline
+{\em f} & Reference to an \doxylink{class_abstract_function}{Abstract\+Function} used to evaluate the samples. \\
+\hline
 {\em N} & Number of samples per iteration. \\
 \hline
-{\em num\+\_\+iterations} & Number of iterations to perform. \\
+{\em num\+\_\+iterations} & Number of iterations to perform.\\
+\hline
+{\em sampler} & Reference to an \doxylink{class_abstract_sampler}{Abstract\+Sampler} used to generate random samples. \\
+\hline
+{\em N} & Number of samples per iteration. \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_clt_tester_ac2a104ebbace490a09508ce16db1d456}\index{CltTester@{CltTester}!generateDistribution@{generateDistribution}}
+\index{generateDistribution@{generateDistribution}!CltTester@{CltTester}}
+\doxysubsubsection{\texorpdfstring{generateDistribution()}{generateDistribution()}}
+{\footnotesize\ttfamily \label{class_clt_tester_ac2a104ebbace490a09508ce16db1d456} 
+void Clt\+Tester\+::generate\+Distribution (\begin{DoxyParamCaption}\item[{int}]{bins}{, }\item[{int}]{n\+\_\+samples}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates a distribution based on bins and sample count. 
+
+This method should be overridden by derived classes to populate the {\ttfamily distribution\+\_\+array}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bins} & Number of bins in the distribution. \\
+\hline
+{\em n\+\_\+samples} & Number of samples to generate. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{Abstract\+Sampler}}.
+
 \Hypertarget{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}\index{CltTester@{CltTester}!test@{test}}
 \index{test@{test}!CltTester@{CltTester}}
 \doxysubsubsection{\texorpdfstring{test()}{test()}}
@@ -60,5 +133,5 @@ This method generates multiple sets of {\ttfamily N} samples, calculates their m
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/clt\+\_\+tester/\mbox{\hyperlink{clt__tester_8hh}{clt\+\_\+tester.\+hh}}\item 
-src/clt\+\_\+tester/clt\+\_\+tester.\+cc\end{DoxyCompactItemize}
+src/sampling/\mbox{\hyperlink{clt__tester_8hh}{clt\+\_\+tester.\+hh}}\item 
+src/sampling/\mbox{\hyperlink{clt__tester_8cc}{clt\+\_\+tester.\+cc}}\end{DoxyCompactItemize}

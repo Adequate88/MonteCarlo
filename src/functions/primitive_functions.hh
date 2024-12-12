@@ -2,6 +2,11 @@
 // Created by alixb1908 on 28/11/24.
 // Restructured by Alessandro Salo on 08.12.2024.
 //
+/**
+ * @file primitive_functions.hh
+ * @brief Defines and initializes all primitive function types necessary for constructing more complex functions.
+ */
+
 #ifndef PRIMITIVE_FUNCTIONS_HH
 #define PRIMITIVE_FUNCTIONS_HH
 

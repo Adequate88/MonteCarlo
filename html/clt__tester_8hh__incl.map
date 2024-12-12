@@ -1,7 +1,11 @@
-<map id="src/clt_tester/clt_tester.hh" name="src/clt_tester/clt_tester.hh">
-<area shape="rect" id="Node000001" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="17,5,133,48"/>
-<area shape="rect" id="Node000002" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="5,96,145,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,49,78,80,72,80,72,49"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="46,171,104,197"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,123,78,155,72,155,72,123"/>
+<map id="src/sampling/clt_tester.hh" name="src/sampling/clt_tester.hh">
+<area shape="rect" id="Node000001" title="Defines the CltTester class, which tests the Central Limit Theorem (CLT) using sample data." alt="" coords="71,5,242,32"/>
+<area shape="rect" id="Node000002" href="$abstract__sampler_8hh.html" title="Defines the AbstractSampler class for sampling distributions." alt="" coords="5,80,145,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,35,102,72,98,68,140,31"/>
+<area shape="rect" id="Node000004" href="$abstract__function_8hh.html" title="Defines abstract and concrete function classes for use in mathematical computations." alt="" coords="169,80,309,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,31,215,68,212,72,169,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="46,155,104,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,107,78,139,72,139,72,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="205,155,273,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="242,107,242,139,236,139,236,107"/>
 </map>

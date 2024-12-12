@@ -27,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">Monte Carlo Statistics Module
    </div>
+   <div id="projectbrief">See README</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +100,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define PARSE_TREE_HH</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;primitive_functions.hh&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="primitive__functions_8hh.html">primitive_functions.hh</a>&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="tokenizer_8hh.html">tokenizer.hh</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> InputType, <span class="keyword">typename</span> OutputType&gt;</div>
@@ -379,6 +380,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclass_parser_html_a580a2a477d66684c7f061bd710409dda"><div class="ttname"><a href="class_parser.html#a580a2a477d66684c7f061bd710409dda">Parser::parse</a></div><div class="ttdeci">std::unique_ptr&lt; ASTNode &gt; parse()</div><div class="ttdoc">Parses the expression into an AST.</div><div class="ttdef"><b>Definition</b> parse_tree.hh:42</div></div>
 <div class="ttc" id="aclass_parser_html_ab713fab97b92161da1d30985538ecd26"><div class="ttname"><a href="class_parser.html#ab713fab97b92161da1d30985538ecd26">Parser::getFinalFunction</a></div><div class="ttdeci">AbstractFunction&lt; InputType, OutputType &gt; * getFinalFunction()</div><div class="ttdoc">Retrieves the final generated function.</div><div class="ttdef"><b>Definition</b> parse_tree.hh:78</div></div>
 <div class="ttc" id="aclass_parser_html_af8cdd573c16595c221ec95358f3e5623"><div class="ttname"><a href="class_parser.html#af8cdd573c16595c221ec95358f3e5623">Parser::generateFunction</a></div><div class="ttdeci">void generateFunction(const ASTNode *node)</div><div class="ttdoc">Generates the function from the given AST node.</div><div class="ttdef"><b>Definition</b> parse_tree.hh:57</div></div>
+<div class="ttc" id="aprimitive__functions_8hh_html"><div class="ttname"><a href="primitive__functions_8hh.html">primitive_functions.hh</a></div><div class="ttdoc">Defines and initializes all primitive function types necessary for constructing more complex function...</div></div>
 <div class="ttc" id="astruct_token_html"><div class="ttname"><a href="struct_token.html">Token</a></div><div class="ttdoc">Struct representing a token in the expression.</div><div class="ttdef"><b>Definition</b> tokenizer.hh:42</div></div>
 <div class="ttc" id="astruct_token_html_a4b7142147b8598f8e24c404928d9263b"><div class="ttname"><a href="struct_token.html#a4b7142147b8598f8e24c404928d9263b">Token::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">Value of the token (e.g., number or symbol)</div><div class="ttdef"><b>Definition</b> tokenizer.hh:44</div></div>
 <div class="ttc" id="atokenizer_8hh_html"><div class="ttname"><a href="tokenizer_8hh.html">tokenizer.hh</a></div><div class="ttdoc">Defines the token and node classes, and helper functions for Abstract Syntax Tree (AST).</div></div>

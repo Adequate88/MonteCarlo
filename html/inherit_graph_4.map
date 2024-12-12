@@ -1,3 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_a_s_t_node.html" title="Class representing a node in the Abstract Syntax Tree (AST)." alt="" coords="5,5,84,32"/>
+<area shape="rect" id="Node000000" href="$class_abstract_sampler.html" title="Abstract base class for sampling and distribution generation." alt="" coords="5,56,124,83"/>
+<area shape="rect" id="Node000001" href="$class_clt_tester.html" title="Class that tests the Central Limit Theorem using an abstract sampler." alt="" coords="192,5,266,32"/>
+<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="124,48,191,27,192,33,126,53"/>
+<area shape="rect" id="Node000002" href="$class_normal_sampler.html" title="Abstract class for normal distribution sampling." alt="" coords="174,56,285,83"/>
+<area shape="poly" id="edge12_Node000000_Node000002" title=" " alt="" coords="139,67,173,67,173,72,139,72"/>
+<area shape="rect" id="Node000005" href="$class_uniform_sampler.html" title="Generates random samples from a uniform distribution." alt="" coords="172,107,287,133"/>
+<area shape="poly" id="edge15_Node000000_Node000005" title=" " alt="" coords="126,85,184,104,183,109,124,90"/>
+<area shape="rect" id="Node000003" href="$class_normal_box_muller_sampler.html" title="Generates samples from a normal distribution using the Box&#45;Muller method." alt="" coords="335,31,504,57"/>
+<area shape="poly" id="edge13_Node000002_Node000003" title=" " alt="" coords="300,57,334,53,335,58,301,63"/>
+<area shape="rect" id="Node000004" href="$class_normal_inverse_sampler.html" title="Generates samples from a normal distribution using the inverse transform method." alt="" coords="342,81,497,108"/>
+<area shape="poly" id="edge14_Node000002_Node000004" title=" " alt="" coords="301,76,342,82,342,87,300,81"/>
 </map>

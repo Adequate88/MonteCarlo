@@ -1,6 +1,10 @@
 //
 // Created by alixb1908 on 28/11/24.
 //
+/**
+ * @file clt_tester.cc
+ * @brief Initializes functions for CLT Tester
+ */
 
 #include "clt_tester.hh"
 #include "statistics.hh"

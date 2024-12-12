@@ -15,7 +15,7 @@ sampler_method = inverse_transform_sampling
 
 # 3. Number of Samples
 # Enter the number of random samples to generate.
-number_of_samples = 10000
+number_of_samples = 1000
 
 # 4. Random Seed
 # Provide an integer seed for the random number generator. 
@@ -39,7 +39,7 @@ statistical_moments = 2,3,4
 # Set to 'yes' if you want to verify the Central Limit Theorem (CLT).
 verify_central_limit_theorem = yes
 # Specify a number of sample means to generate to test the CLT.
-number_of_sample_means = 10000
+number_of_sample_means = 1000
 # Specify number of bins for CLT histogram
 number_of_clt_bins = 50
 

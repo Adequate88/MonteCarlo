@@ -82,10 +82,6 @@ void CltTester::plotDistribution() const {
     // Initialize Gnuplot
     Gnuplot gp;
 
-    // Configure terminal and output file
-    gp << "set terminal png size 800,600\n";
-    gp << "set output 'clt_plot.png'\n";
-
     // Send Gnuplot commands to set labels and title
     gp << "set xlabel 'x'\n";
     gp << "set ylabel 'pdf(x)'\n";
@@ -99,6 +95,13 @@ void CltTester::plotDistribution() const {
 
     // Plot the data using lines
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
+    gp.send1d(data);  // Send the data for plotting
+
+    // Configure terminal and output file
+    gp << "set terminal png size 800,600\n";
+    gp << "set output 'clt_plot.png'\n";
+    gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
+
     gp.send1d(data);  // Send the data for plotting
 }
 

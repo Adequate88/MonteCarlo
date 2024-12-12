@@ -213,8 +213,7 @@ int main() {
         std::cout << "Verifying Central Limit Theorem...\n" << std::endl;
         CltTester clt(*sampler, f, numSamples);
         clt.generateDistribution(cltbins, cltsamples);
-        clt.plotDistribution();
-        // clt.test();  ///< Test the Central Limit Theorem
+        clt.test();  ///< Test the Central Limit Theorem
     }
 
     // Save results to the output file, if defined

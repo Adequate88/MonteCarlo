@@ -79,7 +79,7 @@ public:
  * @param arg The argument for the function.
  * @return A unique pointer to the created function node.
  */
-std::unique_ptr<ASTNode> makeFunc(const std::string &name, std::unique_ptr<ASTNode> arg) {
+inline std::unique_ptr<ASTNode> makeFunc(const std::string &name, std::unique_ptr<ASTNode> arg) {
     auto node = std::make_unique<ASTNode>(NodeType::FUNC, name);
     node->children_.push_back(std::move(arg));
     return node;
@@ -93,7 +93,7 @@ std::unique_ptr<ASTNode> makeFunc(const std::string &name, std::unique_ptr<ASTNo
  * @param right The right operand.
  * @return A unique pointer to the created operator node.
  */
-std::unique_ptr<ASTNode> makeOp(const std::string &op, std::unique_ptr<ASTNode> left, std::unique_ptr<ASTNode> right) {
+inline std::unique_ptr<ASTNode> makeOp(const std::string &op, std::unique_ptr<ASTNode> left, std::unique_ptr<ASTNode> right) {
     auto node = std::make_unique<ASTNode>(NodeType::OP, op);
     node->children_.push_back(std::move(left));
     node->children_.push_back(std::move(right));
@@ -108,7 +108,7 @@ std::unique_ptr<ASTNode> makeOp(const std::string &op, std::unique_ptr<ASTNode> 
  * @return A vector of tokens representing the expression.
  * @throws std::runtime_error If an unexpected character is found in the expression.
  */
-std::vector<Token> tokenize(const std::string &expr) {
+inline std::vector<Token> tokenize(const std::string &expr) {
     std::vector<Token> tokens;
     size_t pos = 0;
 

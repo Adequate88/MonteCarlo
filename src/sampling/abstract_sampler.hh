@@ -64,7 +64,8 @@ class AbstractSampler {
         * each bin's data.
         */
         virtual void printDistribution();
-        void plotDistribution() const;
+
+        virtual void plotDistribution() const;
 
         /**
         * @brief Returns the distribution array
@@ -72,6 +73,7 @@ class AbstractSampler {
         std::vector<double> getDistribution() const;
         double getPlotMinimum();
         double getPlotMaximum();
+
 };
 
 #endif //ABSTRACT_SAMPLER_HH

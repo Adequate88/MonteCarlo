@@ -53,6 +53,43 @@ void CltTester::generateDistribution(int bins, int n_samples){
     }
   }
 
+void CltTester::plotDistribution() const {
+
+    const int bins = distribution_array.size();
+    std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
+
+    const double delta_x = (plot_maximum - plot_minimum) / static_cast<double>(bins);
+
+    for (int i = 0; i < bins; i++) {
+        // Calculate the center of the i-th bin
+        bin_centers[i] = plot_minimum + (i + 0.5) * delta_x;
+    }
+
+    // Combine bin centers and frequencies into a single vector
+    std::vector<std::pair<double, double>> data;
+    for (size_t i = 0; i < bin_centers.size(); ++i) {
+        data.push_back(std::make_pair(bin_centers[i], distribution_array[i]));
+    }
+
+    // Initialize Gnuplot
+    Gnuplot gp;
+
+    // Send Gnuplot commands to set labels and title
+    gp << "set xlabel 'x'\n";
+    gp << "set ylabel 'pdf(x)'\n";
+    gp << "set title 'Binned Distribution of Sample Means'\n";
+
+    gp << "set boxwidth 0.8 relative\n";  // 0.8 relative to the bin spacing
+    gp << "set style fill solid 1.0\n";   // Solid fill for bars
+
+    gp << "set yrange [0:*]\n";  // Set the Y-axis to range
+    gp << "set xrange [" << plot_minimum << ":" << plot_maximum << "]\n";  // Set the X-axis to range
+
+    // Plot the data using lines
+    gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
+    gp.send1d(data);  // Send the data for plotting
+}
+
 /**
  * @brief Tests the Central Limit Theorem.
  *
@@ -64,16 +101,4 @@ void CltTester::test() const {
     // Plot the distribution as a histogram
     std::cout<< "Plotting the distribution as a histogram" << std::endl;
     this -> plotDistribution();
-
-    // Use the Statistics class to calculate the mean and standard deviation of the sample means
-    // Statistics mean_stats(sampler_, 0);
-    // mean_stats.set_data(sample_means);
-    // double mean_of_means = mean_stats.expectation(IdentityFunction<double>());
-    // double standard_deviation_of_means = std::sqrt(mean_stats.variance(IdentityFunction<double>()));
-    //
-    // // Output the results
-    // std::cout << "Mean of Sample Means: " << mean_of_means << std::endl;
-    // std::cout << "Mean of Original Distribution: " << 0 << std::endl;
-    // std::cout << "Standard Deviation of Sample Means: " << standard_deviation_of_means << std::endl;
-    // std::cout << "According to CLT, the Standard Deviation should be approximately: " << 1.0 / std::sqrt(N_) << std::endl;
 }

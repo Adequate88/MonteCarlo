@@ -65,11 +65,11 @@ public:
      * @param t The type of the node.
      * @param val The value of the node, such as operator symbol, function name, or numeric string.
      */
-    ASTNode(NodeType t, const std::string &val) : nodeType(t), value_(val) {}
+    ASTNode(NodeType t, const std::string &val) : node_type_(t), value_(val) {}
 
-    NodeType nodeType; ///< The type of the node.
+    NodeType node_type_; ///< The type of the node.
     std::string value_; ///< The value of the node (operator, variable name, function name, or numeric string).
-    std::vector<std::unique_ptr<ASTNode>> children; ///< Children nodes for functions and operators.
+    std::vector<std::unique_ptr<ASTNode>> children_; ///< Children nodes for functions and operators.
 };
 
 /**
@@ -81,7 +81,7 @@ public:
  */
 std::unique_ptr<ASTNode> makeFunc(const std::string &name, std::unique_ptr<ASTNode> arg) {
     auto node = std::make_unique<ASTNode>(NodeType::FUNC, name);
-    node->children.push_back(std::move(arg));
+    node->children_.push_back(std::move(arg));
     return node;
 }
 
@@ -95,8 +95,8 @@ std::unique_ptr<ASTNode> makeFunc(const std::string &name, std::unique_ptr<ASTNo
  */
 std::unique_ptr<ASTNode> makeOp(const std::string &op, std::unique_ptr<ASTNode> left, std::unique_ptr<ASTNode> right) {
     auto node = std::make_unique<ASTNode>(NodeType::OP, op);
-    node->children.push_back(std::move(left));
-    node->children.push_back(std::move(right));
+    node->children_.push_back(std::move(left));
+    node->children_.push_back(std::move(right));
     return node;
 }
 

@@ -30,10 +30,10 @@ class NormalSampler : public AbstractSampler{
      * @param mu Mean of the normal distribution.
      * @param sigma Standard deviation of the normal distribution.
      */
-    NormalSampler(int seed, double mu, double sigma) : seed(seed), uniform_sampler(seed), mu(mu), sigma(sigma) {
+    NormalSampler(int seed, double mu, double sigma) : seed_(seed), uniform_sampler_(seed), mu_(mu), sigma_(sigma) {
 
-        plot_minimum = mu - 5*sigma;
-        plot_maximum = mu + 5*sigma;
+        plot_minimum_ = mu - 5*sigma;
+        plot_maximum_ = mu + 5*sigma;
 
     };
 
@@ -47,11 +47,10 @@ class NormalSampler : public AbstractSampler{
     void generateDistribution(int bins, int n_samples) override;
 
 protected:
-    int seed; ///< Seed for the random number generator.
-    UniformSampler uniform_sampler; ///< Uniform sampler used internally.
-    double mu; ///< Mean of the normal distribution.
-    double sigma; ///< Standard deviation of the normal distribution.
-
+    int seed_; ///< Seed for the random number generator.
+    UniformSampler uniform_sampler_; ///< Uniform sampler used internally.
+    double mu_; ///< Mean of the normal distribution.
+    double sigma_; ///< Standard deviation of the normal distribution.
 };
 
 #endif //NORMAL_SAMPLER

@@ -28,7 +28,7 @@ class AbstractSampler {
         * @brief Array to store distribution data based on bins.
         */
         std::vector<double> distribution_array; // Array to store distribution based on bins
-        double plot_minimum, plot_maximum;
+        double plot_minimum_, plot_maximum_;
     public:
         /**
         * @brief Virtual destructor for safe polymorphic behavior.

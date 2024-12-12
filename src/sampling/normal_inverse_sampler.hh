@@ -57,7 +57,7 @@ class NormalInverseSampler : public NormalSampler {
         * @param p Probability in the range (0,1).
         * @return The quantile value corresponding to the probability.
         */
-        double normal_quantile(double p);
+        double normalQuantile(double p);
 
 
 };

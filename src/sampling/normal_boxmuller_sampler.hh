@@ -24,9 +24,9 @@
 class NormalBoxMullerSampler : public NormalSampler {
 
     private:
-        double last_muller; ///< Stores the secondary value from Box-Muller computation.
-        bool use_last_muller; ///< Indicates whether the stored value can be reused.
-        const double two_pi; ///< Constant value of 2π.
+        double last_muller_; ///< Stores the secondary value from Box-Muller computation.
+        bool use_last_muller_; ///< Indicates whether the stored value can be reused.
+        const double two_pi_; ///< Constant value of 2π.
 
     public:
         /**

@@ -43,7 +43,7 @@ NormalInverseSampler::NormalInverseSampler(int seed, double mu, double sigma)
  * @return The quantile value corresponding to the probability.
  * @throws std::invalid_argument if p is not in the range (0,1).
  */
-double NormalInverseSampler::normal_quantile(double p) {
+double NormalInverseSampler::normalQuantile(double p) {
     if (p <= 0.0 || p >= 1.0) {
         throw std::invalid_argument("p must be in the range (0, 1)");
     }
@@ -88,7 +88,7 @@ double NormalInverseSampler::normal_quantile(double p) {
  * @return A random value from the normal distribution.
  */
 double NormalInverseSampler::sample(){
-    double u1 = uniform_sampler.sample();
-    return mu + sigma*normal_quantile(u1);
+    double u1 = uniform_sampler_.sample();
+    return mu_ + sigma_*normalQuantile(u1);
 }
 

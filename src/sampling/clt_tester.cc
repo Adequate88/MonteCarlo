@@ -34,16 +34,16 @@ void CltTester::generateDistribution(int bins, int n_samples){
         double sample_mean = stats.expectation(f_);
         sample_means_.push_back(sample_mean);
     }
-    plot_minimum = *std::min_element(sample_means_.begin(), sample_means_.end());
-    plot_maximum = *std::max_element(sample_means_.begin(), sample_means_.end());
+    plot_minimum_ = *std::min_element(sample_means_.begin(), sample_means_.end());
+    plot_maximum_ = *std::max_element(sample_means_.begin(), sample_means_.end());
     if (bins < 3) {
         std::cout << "bins must be at least 3. Automatically setting to 3." << std::endl;
         bins = 3;
     }
     this->distribution_array.resize(bins, 0); // Initialize the array with 0s
     //split the sample_means into bins and calculate the frequency of each bin, store it in distribution_array
-    double minimum = plot_minimum;
-    double maximum = plot_maximum;
+    double minimum = plot_minimum_;
+    double maximum = plot_maximum_;
     const double delta_x = (maximum - minimum) / static_cast<double>(bins);
     for (int i = 0; i < n_samples; i++) {
         const double current_sample = sample_means_[i] - minimum;
@@ -66,11 +66,11 @@ void CltTester::plotDistribution() const {
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
 
-    const double delta_x = (plot_maximum - plot_minimum) / static_cast<double>(bins);
+    const double delta_x = (plot_maximum_ - plot_minimum_) / static_cast<double>(bins);
 
     for (int i = 0; i < bins; i++) {
         // Calculate the center of the i-th bin
-        bin_centers[i] = plot_minimum + (i + 0.5) * delta_x;
+        bin_centers[i] = plot_minimum_ + (i + 0.5) * delta_x;
     }
 
     // Combine bin centers and frequencies into a single vector
@@ -91,7 +91,7 @@ void CltTester::plotDistribution() const {
     gp << "set style fill solid 1.0\n";   // Solid fill for bars
 
     gp << "set yrange [0:*]\n";  // Set the Y-axis to range
-    gp << "set xrange [" << plot_minimum << ":" << plot_maximum << "]\n";  // Set the X-axis to range
+    gp << "set xrange [" << plot_minimum_ << ":" << plot_maximum_ << "]\n";  // Set the X-axis to range
 
     // Plot the data using lines
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";

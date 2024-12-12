@@ -34,11 +34,11 @@ void AbstractSampler::plotDistribution() const {
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
 
-    const double delta_x = (plot_maximum - plot_minimum) / static_cast<double>(bins);
+    const double delta_x = (plot_maximum_ - plot_minimum_) / static_cast<double>(bins);
 
     for (int i = 0; i < bins; i++) {
         // Calculate the center of the i-th bin
-        bin_centers[i] = plot_minimum + (i + 0.5) * delta_x;
+        bin_centers[i] = plot_minimum_ + (i + 0.5) * delta_x;
     }
 
     // Combine bin centers and frequencies into a single vector
@@ -59,7 +59,7 @@ void AbstractSampler::plotDistribution() const {
     gp << "set style fill solid 1.0\n";   // Solid fill for bars
 
     gp << "set yrange [0:*]\n";  // Set the Y-axis to range
-    gp << "set xrange [" << plot_minimum << ":" << plot_maximum << "]\n";  // Set the X-axis to range
+    gp << "set xrange [" << plot_minimum_ << ":" << plot_maximum_ << "]\n";  // Set the X-axis to range
 
     // Plot the data using lines
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
@@ -71,9 +71,9 @@ std::vector<double> AbstractSampler::getDistribution() const {
 }
 
 double AbstractSampler::getPlotMinimum() {
-    return plot_minimum;
+    return plot_minimum_;
 }
 
 double AbstractSampler::getPlotMaximum() {
-    return plot_maximum;
+    return plot_maximum_;
 }

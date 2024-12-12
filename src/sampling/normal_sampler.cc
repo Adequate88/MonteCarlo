@@ -30,8 +30,8 @@ void NormalSampler::generateDistribution(int bins, const int n_samples) {
 
     this->distribution_array.resize(bins, 0); // Initialize the array with 0s
 
-    double minimum = mu - 5*sigma;
-    double maximum = mu + 5*sigma;
+    double minimum = mu_ - 5*sigma_;
+    double maximum = mu_ + 5*sigma_;
 
     const double delta_x = (maximum - minimum) / static_cast<double>(bins - 2);
 

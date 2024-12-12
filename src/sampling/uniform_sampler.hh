@@ -26,8 +26,8 @@ class UniformSampler : public AbstractSampler {
     names. The period of the generator is  3:138  1057.
     */
     private:
-        unsigned long long u{},v,w; ///< Internal state variables for random number generation.
-        double minimum, maximum; ///< Range of the uniform distribution.
+        unsigned long long u_{},v_,w_; ///< Internal state variables for random number generation.
+        double minimum_, maximum_; ///< Range of the uniform distribution.
         void initialize(unsigned long long j); ///< Initializes the state variables
 
         /**

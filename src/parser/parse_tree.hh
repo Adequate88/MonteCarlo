@@ -56,15 +56,15 @@ public:
      */
     void generateFunction(const ASTNode* node) {
 
-        for (const auto &child : node->children) {
+        for (const auto &child : node->children_) {
             generateFunction(child.get());
         }
 
-        if (node->children.empty() && (node->nodeType == NodeType::NUM || node->nodeType == NodeType::VAR)) {
+        if (node->children_.empty() && (node->node_type_ == NodeType::NUM || node->node_type_ == NodeType::VAR)) {
             createNumerics(node);
-        } else if (node->nodeType == NodeType::OP) {
+        } else if (node->node_type_ == NodeType::OP) {
             performOperation(node);
-        } else if (node->nodeType == NodeType::FUNC) {
+        } else if (node->node_type_ == NodeType::FUNC) {
             composeFunc(node);
         }
     }
@@ -202,7 +202,7 @@ private:
     void createNumerics(const ASTNode* token) {
         std::unique_ptr<AbstractFunction<InputType, OutputType>> func;
 
-        if(token->nodeType == NodeType::NUM) {
+        if(token->node_type_ == NodeType::NUM) {
             InputType value;
             if constexpr (std::is_floating_point<InputType>::value) {
                 value = static_cast<InputType>(std::stod(token->value_)); // Convert to floating-point
@@ -213,7 +213,7 @@ private:
             }
             func = std::make_unique<ConstantFunction<InputType>>(value);
 
-        } else if(token->nodeType == NodeType::VAR) {
+        } else if(token->node_type_ == NodeType::VAR) {
             if (token->value_[0] == '-') {
                 func = std::make_unique<NegativeIdentityFunction<InputType>>();
             } else {

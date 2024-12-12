@@ -21,9 +21,9 @@
  * @param sampler_ref Reference to an AbstractSampler object used to generate the samples.
  * @param num_samples Number of samples to initially generate.
  */
-Statistics::Statistics(AbstractSampler& sampler_ref, int num_samples) : sampler(sampler_ref), N(num_samples) {
+Statistics::Statistics(AbstractSampler& sampler_ref, int num_samples) : sampler_(sampler_ref), N_(num_samples) {
     for (int i = 0; i < num_samples; ++i) {
-        data.push_back(sampler_ref.sample());
+        data_.push_back(sampler_ref.sample());
     }
 }
 
@@ -34,8 +34,8 @@ Statistics::Statistics(AbstractSampler& sampler_ref, int num_samples) : sampler(
  * @param samples Vector of sample values.
  */
 void Statistics::setData(const std::vector<double>& samples) {
-    data = samples;
-    N = samples.size();
+    data_ = samples;
+    N_ = samples.size();
 }
 
 /**
@@ -46,9 +46,9 @@ void Statistics::setData(const std::vector<double>& samples) {
  */
 void Statistics::genNNewSamples(int N) {
     for (int i = 0; i < N; ++i) {
-        data.push_back(sampler.sample());
+        data_.push_back(sampler_.sample());
     }
-    this->N += N;
+    this->N_ += N;
 }
 
 /**
@@ -60,10 +60,10 @@ void Statistics::genNNewSamples(int N) {
  */
 double Statistics::expectation(const  AbstractFunction<double,double>& f) const {
     double sum = 0.0;
-    for (double value : data) {
+    for (double value : data_) {
         sum += f.eval(value);
     }
-    return sum / N;
+    return sum / N_;
 }
 
 /**
@@ -76,11 +76,11 @@ double Statistics::expectation(const  AbstractFunction<double,double>& f) const 
 double Statistics::variance(const AbstractFunction<double,double>& f) const {
     const double exp_value = expectation(f);
     double sum = 0.0;
-    for (const double value : data) {
+    for (const double value : data_) {
         const double diff = f.eval(value) - exp_value;
         sum += diff * diff;
     }
-    return sum / N;
+    return sum / N_;
 }
 
 /**
@@ -94,10 +94,10 @@ double Statistics::variance(const AbstractFunction<double,double>& f) const {
 double Statistics::moment(int power, const AbstractFunction<double,double>& f) const {
 
     double sum = 0.0;
-    for (double value : data) {
+    for (double value : data_) {
         sum += std::pow(f.eval(value), power);
     }
-    return sum / N;
+    return sum / N_;
 }
 
 /**
@@ -111,10 +111,10 @@ double Statistics::moment(int power, const AbstractFunction<double,double>& f) c
 double Statistics::centralMoment(int power, const AbstractFunction<double,double>& f) const {
     const double mean_value = expectation(f);
     double sum = 0.0;
-    for (const double value : data) {
+    for (const double value : data_) {
         sum += std::pow(f.eval(value)- mean_value, power);
     }
-    return sum / N;
+    return sum / N_;
 }
 
 /**
@@ -123,8 +123,8 @@ double Statistics::centralMoment(int power, const AbstractFunction<double,double
  * Resets the sample dataset and the sample count to zero.
  */
 void Statistics::clearData() {
-    data.clear();
-    N = 0;
+    data_.clear();
+    N_ = 0;
 }
 
 /**
@@ -133,7 +133,7 @@ void Statistics::clearData() {
  * Change the sampler attribute to the new sampler
  */
 void Statistics::changeSampler(AbstractSampler& new_sampler) {
-    sampler = new_sampler;
+    sampler_ = new_sampler;
 }
 
 

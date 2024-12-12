@@ -108,9 +108,9 @@ public:
     void changeSampler(AbstractSampler& sampler);
 
 private:
-    AbstractSampler& sampler;  ///< Reference to the sampler used to generate samples.
-    std::vector<double> data; ///< Container for the sample data.
-    unsigned int N; ///< Number of samples in the dataset.
+    AbstractSampler& sampler_;  ///< Reference to the sampler used to generate samples.
+    std::vector<double> data_; ///< Container for the sample data.
+    unsigned int N_; ///< Number of samples in the dataset.
 };
 
 #endif // STATISTICS_HH

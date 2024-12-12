@@ -34,7 +34,7 @@
  */
 NormalBoxMullerSampler::NormalBoxMullerSampler(int seed)
     : NormalSampler(seed, 0.0, 1.0),
-      last_muller(0.0), use_last_muller(false), two_pi(2.0*M_PI) {}
+      last_muller_(0.0), use_last_muller_(false), two_pi_(2.0*M_PI) {}
 
 /**
  * @brief Constructor for custom normal distribution.
@@ -46,7 +46,7 @@ NormalBoxMullerSampler::NormalBoxMullerSampler(int seed)
  */
 NormalBoxMullerSampler::NormalBoxMullerSampler(int seed, double mu, double sigma)
     : NormalSampler(seed, mu, sigma),
-      last_muller(0.0), use_last_muller(false), two_pi(2.0*M_PI) {}
+      last_muller_(0.0), use_last_muller_(false), two_pi_(2.0*M_PI) {}
 
 /**
  * @brief Samples a random value from the normal distribution.
@@ -56,25 +56,25 @@ NormalBoxMullerSampler::NormalBoxMullerSampler(int seed, double mu, double sigma
  */
 double NormalBoxMullerSampler::sample(){
 
-    if(use_last_muller){
-        use_last_muller = false;
-        return last_muller;
+    if(use_last_muller_){
+        use_last_muller_ = false;
+        return last_muller_;
     }
 
     double u1,u2;
     do
     {
-        u1 = uniform_sampler.sample();
+        u1 = uniform_sampler_.sample();
     }
     while (u1 == 0.0);
-    u2 = uniform_sampler.sample();
+    u2 = uniform_sampler_.sample();
 
-    double mag = sigma * sqrt(-2.0 * log(u1));
-    double z0  = mag * cos(two_pi * u2) + mu;
-    double z1  = mag * sin(two_pi * u2) + mu;
+    double mag = sigma_ * sqrt(-2.0 * log(u1));
+    double z0  = mag * cos(two_pi_ * u2) + mu_;
+    double z1  = mag * sin(two_pi_ * u2) + mu_;
 
-    last_muller = z1;
-    use_last_muller = true;
+    last_muller_ = z1;
+    use_last_muller_ = true;
 
     return z0;
 }

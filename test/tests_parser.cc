@@ -31,11 +31,11 @@ TEST(ParserTest, ParseSimpleExpression) {
     auto ast = parser.parse();
 
     // Expect an AST with an operator node (PLUS) and two numeric children
-    EXPECT_EQ(ast->nodeType, NodeType::OP);
+    EXPECT_EQ(ast->node_type_, NodeType::OP);
     EXPECT_EQ(ast->value_, "+");
-    EXPECT_EQ(ast->children.size(), 2);
-    EXPECT_EQ(ast->children[0]->nodeType, NodeType::NUM);
-    EXPECT_EQ(ast->children[1]->nodeType, NodeType::NUM);
+    EXPECT_EQ(ast->children_.size(), 2);
+    EXPECT_EQ(ast->children_[0]->node_type_, NodeType::NUM);
+    EXPECT_EQ(ast->children_[1]->node_type_, NodeType::NUM);
 }
 
 TEST(ParserTest, GenerateFunction) {

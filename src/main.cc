@@ -182,7 +182,8 @@ int main() {
         std::cout << "Verifying Central Limit Theorem...\n" << std::endl;
         CltTester clt(*sampler, f, numSamples);
         clt.generateDistribution(histogramBins, cltsamples);
-        clt.test();  ///< Test the Central Limit Theorem
+        clt.plotDistribution();
+        // clt.test();  ///< Test the Central Limit Theorem
     }
 
     // Save results to the output file, if defined
@@ -192,6 +193,8 @@ int main() {
 
     // Print the results to the console
     std::cout << results.str();
+
+    delete sampler;  ///< Free the memory allocated for the sampler
 
     return 0;  ///< Exit successfully
 }
@@ -229,4 +232,5 @@ void saveResults(const std::string& outputFile, const std::string& results) {
     outFile.close();
 
     std::cout << "Results saved to " << outputFile << std::endl;  ///< Inform the user that results were saved
+
 }

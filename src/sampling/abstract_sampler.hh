@@ -25,16 +25,15 @@ class AbstractSampler {
     */
     protected:
         /**
-         * @brief Virtual destructor for safe polymorphic behavior.
-         */
-        ~AbstractSampler() = default;
-
-        /**
         * @brief Array to store distribution data based on bins.
         */
         std::vector<double> distribution_array; // Array to store distribution based on bins
         double plot_minimum, plot_maximum;
     public:
+        /**
+        * @brief Virtual destructor for safe polymorphic behavior.
+        */
+        virtual ~AbstractSampler() = default;
         /**
         * @brief Generates a random sample.
         *

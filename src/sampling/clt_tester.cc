@@ -28,6 +28,7 @@ CltTester::CltTester(AbstractSampler& sampler,AbstractFunction<double,double>& f
 
 void CltTester::generateDistribution(int bins, int n_samples){
     // Take multiple sets of N samples and calculate their means
+    std::cout << "Generating distribution for the Central Limit Theorem..." << std::endl;
     for (int i = 0; i < n_samples; ++i) {
         Statistics stats(sampler_, N_);
         double sample_mean = stats.expectation(f_);
@@ -47,7 +48,14 @@ void CltTester::generateDistribution(int bins, int n_samples){
     for (int i = 0; i < n_samples; i++) {
         const double current_sample = sample_means_[i] - minimum;
         int index;
-        index = static_cast<int>(std::floor(current_sample / delta_x) + 1);
+        // Compute the index safely
+        if (current_sample < 0) {
+            index = 0;
+        } else if (current_sample >= maximum - minimum) {
+            index = bins - 1;
+        } else {
+            index = static_cast<int>(std::floor(current_sample / delta_x));
+        }
         // Increment the corresponding bin by the fractional value
         this->distribution_array[index] += 1.0 / (n_samples * delta_x);
     }

@@ -54,7 +54,7 @@ void CheckUniformStats(const StatsType& stats, double min, double max, double ep
     EXPECT_NEAR(stats.moment(3, func), expected_moment, epsilon);
 
     // Check the third central moment
-    EXPECT_NEAR(stats.central_moment(3, func), 0.0, epsilon);
+    EXPECT_NEAR(stats.centralMoment(3, func), 0.0, epsilon);
 }
 
 /**
@@ -80,14 +80,14 @@ void CheckNormalStats(const StatsType& stats, double mu, double sigma, double ep
     EXPECT_NEAR(stats.moment(3, func), std::pow(mu, 3) + 3 * mu * sigma * sigma, epsilon);
 
     // Check the third central moment (theoretical third central moment)
-    EXPECT_NEAR(stats.central_moment(3, func), 0, epsilon);
+    EXPECT_NEAR(stats.centralMoment(3, func), 0, epsilon);
 
     // Check the fourth moment (theoretical value for normal distribution)
     double expected_4th = std::pow(mu, 4) + 3 * std::pow(sigma, 4) + 6 * std::pow(sigma * mu, 2);
     EXPECT_NEAR(stats.moment(4, func),expected_4th , epsilon);
 
     // Check the fourth central moment (theoretical value)
-    EXPECT_NEAR(stats.central_moment(4, func), 3 * std::pow(sigma, 4), epsilon);
+    EXPECT_NEAR(stats.centralMoment(4, func), 3 * std::pow(sigma, 4), epsilon);
 }
 
 /* ==========================================================
@@ -279,10 +279,10 @@ TEST(ParserTest, TokenizeSimpleExpression) {
     std::vector<Token> tokens = tokenize(expression);
 
     ASSERT_EQ(tokens.size(), 4); // 3 tokens + 1 END token
-    EXPECT_EQ(tokens[0].type, TokenType::NUMBER);
-    EXPECT_EQ(tokens[1].type, TokenType::PLUS);
-    EXPECT_EQ(tokens[2].type, TokenType::NUMBER);
-    EXPECT_EQ(tokens[3].type, TokenType::END);
+    EXPECT_EQ(tokens[0].type_, TokenType::NUMBER);
+    EXPECT_EQ(tokens[1].type_, TokenType::PLUS);
+    EXPECT_EQ(tokens[2].type_, TokenType::NUMBER);
+    EXPECT_EQ(tokens[3].type_, TokenType::END);
 }
 
 TEST(ParserTest, ParseSimpleExpression) {
@@ -292,7 +292,7 @@ TEST(ParserTest, ParseSimpleExpression) {
 
     // Expect an AST with an operator node (PLUS) and two numeric children
     EXPECT_EQ(ast->nodeType, NodeType::OP);
-    EXPECT_EQ(ast->value, "+");
+    EXPECT_EQ(ast->value_, "+");
     EXPECT_EQ(ast->children.size(), 2);
     EXPECT_EQ(ast->children[0]->nodeType, NodeType::NUM);
     EXPECT_EQ(ast->children[1]->nodeType, NodeType::NUM);

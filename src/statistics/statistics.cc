@@ -33,7 +33,7 @@ Statistics::Statistics(AbstractSampler& sampler_ref, int num_samples) : sampler(
  * Replaces the current sample data with the provided vector of samples.
  * @param samples Vector of sample values.
  */
-void Statistics::set_data(const std::vector<double>& samples) {
+void Statistics::setData(const std::vector<double>& samples) {
     data = samples;
     N = samples.size();
 }
@@ -44,7 +44,7 @@ void Statistics::set_data(const std::vector<double>& samples) {
  * Generates `N` new samples using the associated sampler and appends them to the existing data.
  * @param N Number of new samples to generate.
  */
-void Statistics::gen_N_new_samples(int N) {
+void Statistics::genNNewSamples(int N) {
     for (int i = 0; i < N; ++i) {
         data.push_back(sampler.sample());
     }
@@ -108,7 +108,7 @@ double Statistics::moment(int power, const AbstractFunction<double,double>& f) c
  * @param f Reference to an AbstractFunction object representing the function to evaluate.
  * @return The computed central moment.
  */
-double Statistics::central_moment(int power, const AbstractFunction<double,double>& f) const {
+double Statistics::centralMoment(int power, const AbstractFunction<double,double>& f) const {
     const double mean_value = expectation(f);
     double sum = 0.0;
     for (const double value : data) {
@@ -122,7 +122,7 @@ double Statistics::central_moment(int power, const AbstractFunction<double,doubl
  *
  * Resets the sample dataset and the sample count to zero.
  */
-void Statistics::clear_data() {
+void Statistics::clearData() {
     data.clear();
     N = 0;
 }
@@ -132,7 +132,7 @@ void Statistics::clear_data() {
  *
  * Change the sampler attribute to the new sampler
  */
-void Statistics::change_sampler(AbstractSampler& new_sampler) {
+void Statistics::changeSampler(AbstractSampler& new_sampler) {
     sampler = new_sampler;
 }
 

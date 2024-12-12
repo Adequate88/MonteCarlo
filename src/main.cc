@@ -203,7 +203,7 @@ int main() {
         for (int i = 0; i < statisticalMoments.size(); i++) {
             results << "######################################################\n";
             results << "Moment " << statisticalMoments[i] << ": " << stats.moment(statisticalMoments[i], f) << "\n";  ///< Compute raw moment
-            results << "Central Moment " << statisticalMoments[i] << ": " << stats.central_moment(statisticalMoments[i], f) << "\n";  ///< Compute central moment
+            results << "Central Moment " << statisticalMoments[i] << ": " << stats.centralMoment(statisticalMoments[i], f) << "\n";  ///< Compute central moment
         }
     }
 

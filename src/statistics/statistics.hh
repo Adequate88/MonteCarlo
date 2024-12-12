@@ -45,7 +45,7 @@ public:
      * Replaces the current sample data with the provided vector of samples.
      * @param samples Vector of sample values.
      */
-    void set_data(const std::vector<double>& samples);
+    void setData(const std::vector<double>& samples);
 
     /**
      * @brief Generates and adds new samples to the dataset.
@@ -53,7 +53,7 @@ public:
      * Generates `N` new samples using the associated sampler and appends them to the existing data.
      * @param N Number of new samples to generate.
      */
-    void gen_N_new_samples(int N);
+    void genNNewSamples(int N);
 
     /**
      * @brief Computes the expectation value of an arbitrary function.
@@ -91,21 +91,21 @@ public:
     * @param f Reference to an AbstractFunction object representing the function to evaluate.
     * @return The computed central moment.
     */
-    [[nodiscard]] double central_moment(int power, const AbstractFunction<double,double>& f) const;
+    [[nodiscard]] double centralMoment(int power, const AbstractFunction<double,double>& f) const;
 
     /**
     * @brief Clears all sample data.
     *
     * Resets the sample dataset and the sample count to zero.
     */
-    void clear_data();
+    void clearData();
 
     /**
      *@brief Change sampler attribute
      *
      * Change the sampler attribute to the new sampler
      */
-    void change_sampler(AbstractSampler& sampler);
+    void changeSampler(AbstractSampler& sampler);
 
 private:
     AbstractSampler& sampler;  ///< Reference to the sampler used to generate samples.

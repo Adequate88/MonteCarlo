@@ -40,8 +40,8 @@ enum class TokenType {
  * @brief Struct representing a token in the expression.
  */
 struct Token {
-    TokenType type;        ///< Type of the token
-    std::string value;     ///< Value of the token (e.g., number or symbol)
+    TokenType type_;        ///< Type of the token
+    std::string value_;     ///< Value of the token (e.g., number or symbol)
 };
 
 /**
@@ -65,10 +65,10 @@ public:
      * @param t The type of the node.
      * @param val The value of the node, such as operator symbol, function name, or numeric string.
      */
-    ASTNode(NodeType t, const std::string &val) : nodeType(t), value(val) {}
+    ASTNode(NodeType t, const std::string &val) : nodeType(t), value_(val) {}
 
     NodeType nodeType; ///< The type of the node.
-    std::string value; ///< The value of the node (operator, variable name, function name, or numeric string).
+    std::string value_; ///< The value of the node (operator, variable name, function name, or numeric string).
     std::vector<std::unique_ptr<ASTNode>> children; ///< Children nodes for functions and operators.
 };
 

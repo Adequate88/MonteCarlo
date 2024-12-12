@@ -31,7 +31,7 @@ public:
      * @param expression The mathematical expression to parse.
      */
     Parser(const std::string &expression)
-        : expression(expression), tokens(tokenize(expression)), pos(0) {}
+        : expression_(expression), tokens_(tokenize(expression)), pos_(0) {}
 
     /**
      * @brief Parses the expression into an AST.
@@ -41,7 +41,7 @@ public:
      */
     std::unique_ptr<ASTNode> parse() {
         auto node = parseExpression();
-        if (current().type != TokenType::END) {
+        if (current().type_ != TokenType::END) {
             throw std::runtime_error("Extra tokens after valid expression");
         }
         return node;
@@ -76,20 +76,20 @@ public:
      * @throws std::runtime_error If no function has been generated.
      */
     AbstractFunction<InputType, OutputType>* getFinalFunction() {
-        if (functionStack.empty()) {
+        if (function_stack_.empty()) {
             throw std::runtime_error("Function Stack is Empty. Run generateFunction() first.");
         }
 
-        return functionStack.top();
+        return function_stack_.top();
 
     }
 
 private:
-    std::string expression; ///< The original mathematical expression.
-    std::vector<Token> tokens; ///< The tokens representing the expression.
-    size_t pos; ///< The current position in the tokens vector.
-    std::stack<AbstractFunction<InputType, OutputType>*> functionStack; ///< Stack used for function generation.
-    std::vector<std::unique_ptr<AbstractFunction<InputType, OutputType>>> functionMemory; ///< Stores generated functions.
+    std::string expression_; ///< The original mathematical expression.
+    std::vector<Token> tokens_; ///< The tokens representing the expression.
+    size_t pos_; ///< The current position in the tokens vector.
+    std::stack<AbstractFunction<InputType, OutputType>*> function_stack_; ///< Stack used for function generation.
+    std::vector<std::unique_ptr<AbstractFunction<InputType, OutputType>>> function_memory_; ///< Stores generated functions.
 
     /**
      * @brief Composes a function node.
@@ -104,23 +104,23 @@ private:
     void composeFunc(const ASTNode* token) {
         std::unique_ptr<AbstractFunction<InputType, OutputType>> func;
 
-        if (token->value == "cos") {
+        if (token->value_ == "cos") {
             func = std::make_unique<FunctionWrapper<InputType, OutputType>>(
                 [](InputType x) { return std::cos(x); }
             );
-        } else if (token->value == "sin") {
+        } else if (token->value_ == "sin") {
             func = std::make_unique<FunctionWrapper<InputType, OutputType>>(
                 [](InputType x) { return std::sin(x); }
             );
-        } else if (token->value == "tan") {
+        } else if (token->value_ == "tan") {
             func = std::make_unique<FunctionWrapper<InputType, OutputType>>(
                 [](InputType x) { return std::tan(x); }
             );
-        } else if (token->value == "exp") {
+        } else if (token->value_ == "exp") {
             func = std::make_unique<FunctionWrapper<InputType, OutputType>>(
                 [](InputType x) { return std::exp(x); }
             );
-        } else if (token->value == "log") {
+        } else if (token->value_ == "log") {
             func = std::make_unique<FunctionWrapper<InputType, OutputType>>(
                 [](InputType x) {
                     if (x <= 0) {
@@ -130,25 +130,25 @@ private:
                 }
             );
         } else {
-            throw std::invalid_argument("Unknown function: " + token->value);
+            throw std::invalid_argument("Unknown function: " + token->value_);
         }
 
         // Ensure there is an argument on the stack for the composed function
-        if (functionStack.empty()) {
-            throw std::runtime_error("Not enough arguments on the stack for function: " + token->value);
+        if (function_stack_.empty()) {
+            throw std::runtime_error("Not enough arguments on the stack for function: " + token->value_);
         }
 
         // Move the top argument off the stack before popping
-        auto argPtr = functionStack.top();
-        functionStack.pop();
+        auto argPtr = function_stack_.top();
+        function_stack_.pop();
 
-        functionMemory.push_back(std::move(func));
-        auto funcPtr = functionMemory.back().get();
+        function_memory_.push_back(std::move(func));
+        auto funcPtr = function_memory_.back().get();
 
         // Now create the composed function using both func and arg
         auto composed = std::make_unique<ComposedFunction<InputType, OutputType>>(*funcPtr, *argPtr);
-        functionMemory.push_back(std::move(composed));
-        functionStack.push(functionMemory.back().get());
+        function_memory_.push_back(std::move(composed));
+        function_stack_.push(function_memory_.back().get());
     }
 
     /**
@@ -164,28 +164,28 @@ private:
     void performOperation(const ASTNode* token) {
         std::unique_ptr<AbstractFunction<InputType, OutputType>> newFunc;
         // Extract the right operand
-        auto rightPtr = functionStack.top();
-        functionStack.pop();
+        auto rightPtr = function_stack_.top();
+        function_stack_.pop();
 
-        auto leftPtr = functionStack.top();
-        functionStack.pop();
+        auto leftPtr = function_stack_.top();
+        function_stack_.pop();
 
-        if (token->value == "+") {
+        if (token->value_ == "+") {
             newFunc = std::make_unique<AddFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
-        } else if (token->value == "-") {
+        } else if (token->value_ == "-") {
             newFunc = std::make_unique<SubtractFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
-        } else if (token->value == "*") {
+        } else if (token->value_ == "*") {
             newFunc = std::make_unique<MultiplyFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
-        } else if (token->value == "/") {
+        } else if (token->value_ == "/") {
             newFunc = std::make_unique<DivideFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
-        }else if (token->value == "^") {
+        }else if (token->value_ == "^") {
             newFunc = std::make_unique<ExponentialFunction<InputType, OutputType>>(*leftPtr, *rightPtr);
         } else {
-            throw std::invalid_argument("Unsupported operator: " + token->value);
+            throw std::invalid_argument("Unsupported operator: " + token->value_);
         }
 
-        functionMemory.push_back(std::move(newFunc));
-        functionStack.push(functionMemory.back().get());;
+        function_memory_.push_back(std::move(newFunc));
+        function_stack_.push(function_memory_.back().get());;
 
     }
 
@@ -205,27 +205,27 @@ private:
         if(token->nodeType == NodeType::NUM) {
             InputType value;
             if constexpr (std::is_floating_point<InputType>::value) {
-                value = static_cast<InputType>(std::stod(token->value)); // Convert to floating-point
+                value = static_cast<InputType>(std::stod(token->value_)); // Convert to floating-point
             } else if constexpr (std::is_integral<InputType>::value) {
-                value = static_cast<InputType>(std::stoi(token->value)); // Convert to integer
+                value = static_cast<InputType>(std::stoi(token->value_)); // Convert to integer
             } else {
                 throw std::invalid_argument("Unsupported InputType for conversion");
             }
             func = std::make_unique<ConstantFunction<InputType>>(value);
 
         } else if(token->nodeType == NodeType::VAR) {
-            if (token->value[0] == '-') {
+            if (token->value_[0] == '-') {
                 func = std::make_unique<NegativeIdentityFunction<InputType>>();
             } else {
                 func = std::make_unique<IdentityFunction<InputType>>();
             }
         } else {
-            throw std::invalid_argument("Invalid Token Found: " + token->value);
+            throw std::invalid_argument("Invalid Token Found: " + token->value_);
         }
 
-        functionMemory.push_back(std::move(func));
+        function_memory_.push_back(std::move(func));
         // Push a raw pointer onto the stack
-        functionStack.push(functionMemory.back().get());
+        function_stack_.push(function_memory_.back().get());
     }
 
     /**
@@ -237,23 +237,23 @@ private:
      * @return The current token.
      */
     const Token& current() const {
-        if (pos < tokens.size()) return tokens[pos];
+        if (pos_ < tokens_.size()) return tokens_[pos_];
         static Token endToken{TokenType::END, ""};
         return endToken;
     }
 
     const Token& peek() const {
-        if (pos+1 < tokens.size()) return tokens[pos+1];
+        if (pos_+1 < tokens_.size()) return tokens_[pos_+1];
         static Token endToken{TokenType::END, ""};
         return endToken;
     }
 
     void advance() {
-        if (pos < tokens.size()) pos++;
+        if (pos_ < tokens_.size()) pos_++;
     }
 
     void expect(TokenType t) {
-        if (current().type != t) {
+        if (current().type_ != t) {
             throw std::runtime_error("Unexpected token type");
         }
     }
@@ -269,8 +269,8 @@ private:
      */
     std::unique_ptr<ASTNode> parseExpression() {
         auto node = parseTerm();
-        while (current().type == TokenType::PLUS || current().type == TokenType::MINUS) {
-            std::string op = current().value;
+        while (current().type_ == TokenType::PLUS || current().type_ == TokenType::MINUS) {
+            std::string op = current().value_;
             advance();
             auto right = parseTerm();
             node = makeOp(op, std::move(node), std::move(right));
@@ -281,8 +281,8 @@ private:
     // Term := Factor { ('*' | '/') Factor }
     std::unique_ptr<ASTNode> parseTerm() {
         auto node = parseFactor();
-        while (current().type == TokenType::MUL || current().type == TokenType::DIV) {
-            std::string op = current().value;
+        while (current().type_ == TokenType::MUL || current().type_ == TokenType::DIV) {
+            std::string op = current().value_;
             advance();
             auto right = parseFactor();
             node = makeOp(op, std::move(node), std::move(right));
@@ -293,7 +293,7 @@ private:
     // Factor := Power { '^' Power }
     std::unique_ptr<ASTNode> parseFactor() {
         auto node = parsePower();
-        while (current().type == TokenType::POW) {
+        while (current().type_ == TokenType::POW) {
             advance(); // consume '^'
             auto right = parsePower();
             node = makeOp("^", std::move(node), std::move(right));
@@ -303,10 +303,10 @@ private:
 
     // Power := FunctionCall | Variable | Number | '(' Expression ')'
     std::unique_ptr<ASTNode> parsePower() {
-        if (current().type == TokenType::IDENT) {
-            std::string name = current().value;
+        if (current().type_ == TokenType::IDENT) {
+            std::string name = current().value_;
             // Check if it's a function call
-            if (peek().type == TokenType::LPAREN) {
+            if (peek().type_ == TokenType::LPAREN) {
                 advance(); // consume IDENT
                 advance(); // consume '('
                 auto arg = parseExpression();
@@ -318,24 +318,24 @@ private:
                 advance();
                 return std::make_unique<ASTNode>(NodeType::VAR, name);
             }
-        } else if (current().type == TokenType::NUMBER) {
-            std::string val = current().value;
+        } else if (current().type_ == TokenType::NUMBER) {
+            std::string val = current().value_;
             advance();
             return std::make_unique<ASTNode>(NodeType::NUM, val);
-        } else if (current().type == TokenType::LPAREN) {
+        } else if (current().type_ == TokenType::LPAREN) {
             advance(); // consume '('
             auto node = parseExpression();
             expect(TokenType::RPAREN);
             advance(); // consume ')'
             return node;
-        } else if (current().value == "-") {
-            std::string val = current().value;
+        } else if (current().value_ == "-") {
+            std::string val = current().value_;
             advance();
-            val += current().value;
-            if (current().type == TokenType::NUMBER) {
+            val += current().value_;
+            if (current().type_ == TokenType::NUMBER) {
                 advance();
                 return std::make_unique<ASTNode>(NodeType::NUM, val);
-            } else if (current().type == TokenType::IDENT) {
+            } else if (current().type_ == TokenType::IDENT) {
                 advance();
                 return std::make_unique<ASTNode>(NodeType::VAR, val);
             } else {

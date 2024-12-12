@@ -11,7 +11,7 @@
 #define PRIMITIVE_FUNCTIONS_HH
 
 #include "abstract_function.hh"
-#include <math.h>
+#include <cmath>
 #include <stdexcept>
 #include <functional>
 
@@ -218,7 +218,7 @@ public:
      * @param powerFunction The function representing the power to which the base is raised.
      */
     ExponentialFunction(const AbstractFunction<InputType, OutputType>& baseFunction, const AbstractFunction<InputType, OutputType>& powerFunction)
-        : baseFunction_(baseFunction), powerFunction_(powerFunction) {}
+        : base_function_(baseFunction), power_function_(powerFunction) {}
 
     /**
      * @brief Evaluates the exponential function by raising the base function's value to the power function's value.
@@ -228,14 +228,14 @@ public:
      */
     OutputType eval(const InputType& x) const override {
         // Use std::pow for double power
-        const auto baseValue = baseFunction_.eval(x);
-        const auto powerValue = powerFunction_.eval(x);
+        const auto baseValue = base_function_.eval(x);
+        const auto powerValue = power_function_.eval(x);
         return static_cast<OutputType>(std::pow(baseValue, powerValue));
     }
 
 private:
-    const AbstractFunction<InputType, OutputType>& baseFunction_; ///< The base function being exponentiated.
-    const AbstractFunction<InputType, OutputType>& powerFunction_;  ///< The power function providing the exponent.
+    const AbstractFunction<InputType, OutputType>& base_function_; ///< The base function being exponentiated.
+    const AbstractFunction<InputType, OutputType>& power_function_;  ///< The power function providing the exponent.
 };
 
 /**

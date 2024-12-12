@@ -24,7 +24,6 @@
 void NormalSampler::generateDistribution(int bins, const int n_samples) {
 
     if (bins < 3) {
-
         std::cout << "bins must be at least 3. Automatically setting to 3." << std::endl;
         bins = 3;
     }

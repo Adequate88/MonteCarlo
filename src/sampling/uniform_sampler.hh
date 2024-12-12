@@ -78,5 +78,8 @@ class UniformSampler : public AbstractSampler {
          */
         void generateDistribution(int bins, int n_samples) override;
 
+        double getMinimum();
+        double getMaximum();
 };
+
 #endif //UNIFORM_SAMPLER_HH

@@ -101,3 +101,7 @@ void UniformSampler::generateDistribution(const int bins, const int n_samples) {
         this->distribution_array[index] += 1.0 / (n_samples * delta_x);
     }
 }
+
+double UniformSampler::getMinimum() { return minimum; }
+double UniformSampler::getMaximum() { return maximum; }
+

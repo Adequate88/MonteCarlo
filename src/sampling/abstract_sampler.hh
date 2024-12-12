@@ -65,6 +65,13 @@ class AbstractSampler {
         */
         virtual void printDistribution();
         void plotDistribution() const;
+
+        /**
+        * @brief Returns the distribution array
+        */
+        std::vector<double> getDistribution() const;
+        double getPlotMinimum();
+        double getPlotMaximum();
 };
 
 #endif //ABSTRACT_SAMPLER_HH

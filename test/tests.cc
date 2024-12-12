@@ -6,7 +6,7 @@
 #include <gtest/gtest.h>
 #include "sampling.hh"
 #include "statistics.hh"
-#include "parse_tree.h"
+#include "parse_tree.hh"
 
 /* ==========================================================
  * TEMPLATED TEST FUNCTIONS
@@ -141,6 +141,27 @@ TEST(Uniform, StatisticCheck) {
     std::cout << "Uniform.StatisticCheck checked with tolerance " << epsilon << std::endl;
 }
 
+TEST(Uniform, PDFCheck) {
+    int sample_num = 1000000;
+    int bins = 1000;
+    double epsilon = 1E-2;
+
+
+    // Generate samples and calculate statistics
+    UniformSampler sampler(42); // [0,1] range
+    sampler.generateDistribution(bins, sample_num);
+
+    std::vector<double> pdf = sampler.getDistribution();
+
+    double sum = 0;
+    double delta_x = (sampler.getMaximum() - sampler.getMinimum()) / static_cast<double>(bins);
+    for (int i = 0; i < bins; i++) {
+        sum += pdf[i]*delta_x;
+    }
+    EXPECT_NEAR(sum,1 , epsilon);
+
+}
+
 /* ==========================================================
  * NORMAL INVERSE SAMPLER TESTS
  * ==========================================================
@@ -173,6 +194,27 @@ TEST(NormalInverse, StatisticCheck) {
     std::cout << "NormalInverse.StatisticCheck checked with tolerance " << epsilon << std::endl;
 }
 
+TEST(NormalInverse, PDFCheck) {
+    int sample_num = 1000000;
+    int bins = 1000;
+    double epsilon = 1E-2;
+
+
+    // Generate samples and calculate statistics
+    NormalInverseSampler sampler(42); // [0,1] range
+    sampler.generateDistribution(bins, sample_num);
+
+    std::vector<double> pdf = sampler.getDistribution();
+
+    double sum = 0;
+    double delta_x = (sampler.getPlotMaximum() - sampler.getPlotMinimum()) / static_cast<double>(bins);
+    for (int i = 0; i < bins; i++) {
+        sum += pdf[i]*delta_x;
+    }
+    EXPECT_NEAR(sum,1 , epsilon);
+
+}
+
 /* ==========================================================
  * NORMAL BOX-MULLER SAMPLER TESTS
  * ==========================================================
@@ -203,6 +245,27 @@ TEST(NormalMuller, StatisticCheck) {
     CheckNormalStats(stats3, -1.5, 0.5, epsilon);
 
     std::cout << "NormalBoxMuller.StatisticCheck checked with tolerance " << epsilon << std::endl;
+}
+
+TEST(NormalMuller, PDFCheck) {
+    int sample_num = 1000000;
+    int bins = 1000;
+    double epsilon = 1E-2;
+
+
+    // Generate samples and calculate statistics
+    NormalBoxMullerSampler sampler(42); // [0,1] range
+    sampler.generateDistribution(bins, sample_num);
+
+    std::vector<double> pdf = sampler.getDistribution();
+
+    double sum = 0;
+    double delta_x = (sampler.getPlotMaximum() - sampler.getPlotMinimum()) / static_cast<double>(bins);
+    for (int i = 0; i < bins; i++) {
+        sum += pdf[i]*delta_x;
+    }
+    EXPECT_NEAR(sum,1 , epsilon);
+
 }
 
 /* ==========================================================
@@ -293,6 +356,32 @@ TEST(MonteCarloTest, NormalBoxMullerTest) {
     int sample_num = 10000000;
     double epsilon = 0.1;
     NormalBoxMullerSampler sampler(42, 0, 1); // mu = 0, sigma = 1
+    Statistics stats(sampler, sample_num);
+
+    EXPECT_NEAR(stats.expectation(f), 2, epsilon);
+    // Check the variance (theoretical variance of the uniform distribution)
+    EXPECT_NEAR(stats.variance(f), 9, epsilon);
+    // Check the third moment (for uniform distribution, it should be 0 due to symmetry)
+    EXPECT_NEAR(stats.moment(3, f), 62 , epsilon);
+
+    EXPECT_NEAR(stats.moment(4, f), 475, epsilon);
+
+    std::cout << "MonteCarloTest.NormalBoxMullerSamplerTest checked with tolerance " << epsilon << std::endl;
+}
+
+TEST(MonteCarloTest, NormalInverseTest) {
+    std::string expression = "3*x + 2";
+    Parser<double, double> parser(expression);
+    auto ast = parser.parse();
+
+    // Generate the function
+    parser.generateFunction(ast.get());
+    auto& f = *parser.getFinalFunction();
+
+    // Sample from Normal distribution with mu = 0, sigma = 1
+    int sample_num = 10000000;
+    double epsilon = 0.1;
+    NormalInverseSampler sampler(42, 0, 1); // mu = 0, sigma = 1
     Statistics stats(sampler, sample_num);
 
     EXPECT_NEAR(stats.expectation(f), 2, epsilon);

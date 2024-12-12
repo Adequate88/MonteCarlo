@@ -65,3 +65,15 @@ void AbstractSampler::plotDistribution() const {
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
     gp.send1d(data);  // Send the data for plotting
 }
+
+std::vector<double> AbstractSampler::getDistribution() const {
+  return distribution_array;
+}
+
+double AbstractSampler::getPlotMinimum() {
+    return plot_minimum;
+}
+
+double AbstractSampler::getPlotMaximum() {
+    return plot_maximum;
+}

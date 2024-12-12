@@ -32,8 +32,11 @@ void AbstractSampler::printDistribution() {
 /**
  * @brief Displays and saves image file of plot
  */
-void AbstractSampler::plotDistribution(bool display) const {
-
+void AbstractSampler::plotDistribution(bool display, bool filesave) const {
+    if (!display && !filesave) {
+        // throw an error if both display and filesave are false
+        throw std::invalid_argument("At least one of display or filesave must be true.");
+    }
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
 
@@ -54,7 +57,7 @@ void AbstractSampler::plotDistribution(bool display) const {
     Gnuplot gp;
 
 
-    if (!display) {
+    if (!display && filesave) {
         gp << "set terminal png size 800,600\n";
         gp << "set output 'pdf_plot.png'\n";
     }
@@ -73,7 +76,7 @@ void AbstractSampler::plotDistribution(bool display) const {
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
     gp.send1d(data);  // Send the data for plotting
 
-    if (display) {
+    if (display && filesave) {
         // Configure terminal and output file
         gp << "set terminal png size 800,600\n";
         gp << "set output 'pdf_plot.png'\n";

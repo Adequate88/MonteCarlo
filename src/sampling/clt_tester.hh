@@ -37,18 +37,22 @@ public:
     /**
      * @brief Tests the Central Limit Theorem.
      *
-     * This method generates multiple sets of `N` samples, calculates their means, and computes
-     * the mean and standard deviation of those sample means. The results are then printed
-     * to the console, along with the expected standard deviation as per the CLT.
+     * Wrapper function that plots the distribution of sample means to test the CLT.
+     *
+     * @params display Flag to display the plot.
+     * @params filesave Flag to save the plot to a file.
      */
-    void test(bool display) const;
+    void test(bool display, bool filesave) const;
 
     /**
     * @brief Plots the distribution of sample means as a histogram.
     *
     * Overridden from the AbstractSampler class. Changes some GnuPlot labels to be more specific to the CLT.
+    *
+    * @params display Flag to display the plot.
+    * @params filesave Flag to save the plot to a file.
     */
-    void plotDistribution(bool display) const override;
+    void plotDistribution(bool display, bool filesave) const override;
 
 
 private:

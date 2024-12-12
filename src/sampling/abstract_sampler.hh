@@ -64,7 +64,13 @@ class AbstractSampler {
         */
         virtual void printDistribution();
 
-        virtual void plotDistribution(bool display) const;
+        /**
+         * @brief Displays and saves image file of plot of pdf distribution
+         *
+         * @param display flag to display the plot
+         * @param filesave flag to save the plot to a file
+         */
+        virtual void plotDistribution(bool display, bool filesave) const;
 
         /**
         * @brief Returns the distribution array

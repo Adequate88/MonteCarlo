@@ -36,12 +36,16 @@ int main() {
     std::string samplerMethod; ///< The sampling method (e.g., "uniform_distribution")
     int numSamples = 0;            ///< Number of samples to generate
     int histogramBins = 0;         ///< Number of bins for histogram
+    bool displayHistogram = false; ///< Flag to display histogram
+    bool saveHistogram = false;    ///< Flag to save histogram
     int randomSeed = 42;           ///< Default random seed value (42)
     bool computeExpectation = false;  ///< Flag to compute expectation value
     std::vector<int> statisticalMoments;  ///< Vector to store statistical moments
     bool verifyCLT = false;        ///< Flag to verify Central Limit Theorem (CLT)
-    int cltsamples = 0;
-    int cltbins = 0;
+    int cltsamples = 0;             ///< Number of sample means for CLT
+    int cltbins = 0;                ///< Number of bins for CLT histogram
+    bool cltdisplay = false;        ///< Flag to display CLT histogram
+    bool cltsave = false;           ///< Flag to save CLT histogram
     std::string outputFile;        ///< Output file for saving results
 
     /// Open the configuration file "config.txt"
@@ -81,12 +85,6 @@ int main() {
                 else if (key == "compute_expectation_value") computeExpectation = (value == "yes");
                 else if (key == "statistical_moments") statisticalMoments = parseMomentList(value);  ///< Parse moment list
                 else if (key == "verify_central_limit_theorem") verifyCLT = (value == "yes");
-                else if (key == "number_of_sample_means") {
-                    cltsamples = std::stoi(value);  ///< Convert to int
-                }
-                else if (key == "number_of_clt_bins") {
-                    cltbins = std::stoi(value);  ///< Convert to int
-                }
                 else if (key == "output_file") {
                     #ifdef OUTPUT_PATH
                     outputFile = std::string(OUTPUT_PATH) + "/" + value;  ///< Combine OUTPUT_PATH with the file name
@@ -174,6 +172,63 @@ int main() {
         std::cerr << "Error: Unknown sampler method: " << samplerMethod << std::endl;
         return 1;  ///< Exit with error code if an unknown sampler method is specified
     }
+if (histogramBins != 0) {
+        std::cout<<"Do you want to display the histogram? (yes/no): ";
+        std::string display_str;
+        std::cin>>display_str;
+        displayHistogram = (display_str == "yes");
+        std::cout<<"Do you want to save the histogram? (yes/no): ";
+        std::string save_str;
+        std::cin>>save_str;
+        saveHistogram = (save_str == "yes");
+        try {
+            if (histogramBins < 0) {
+                throw std::runtime_error("Number of bins must be a non-negative integer.");
+            } if (display_str != "yes" && display_str != "no") {
+                throw std::runtime_error("Invalid display input. Please enter 'yes' or 'no'.");
+            } if (save_str != "yes" && save_str != "no") {
+                throw std::runtime_error("Invalid filesave input. Please enter 'yes' or 'no'.");
+            }
+        } catch (const std::runtime_error& e) {
+            // Handle the error
+            std::cerr << "Error: " << e.what() << std::endl;
+            return EXIT_FAILURE; // Return non-zero exit code
+        }
+    }
+
+    if (verifyCLT) {
+        std::cout<<"Enter the number of sample means for CLT: ";
+        std::cin>>cltsamples;
+        std::cout<<"Enter the number of bins for CLT histogram: ";
+        std::cin>>cltbins;
+        std::cout<<"Do you want to display the CLT histogram? (yes/no): ";
+        std::string clt_display_str;
+        std::cin>>clt_display_str;
+        cltdisplay = (clt_display_str == "yes");
+        std::cout<<"Do you want to save the CLT histogram? (yes/no): ";
+        std::string clt_save_str;
+        std::cin>>clt_save_str;
+        cltsave = (clt_save_str == "yes");
+        try {
+            if (cltsamples <= 0) {
+                throw std::runtime_error("Number of sample means must be a positive integer.");
+            } if (cltbins <= 0) {
+                throw std::runtime_error("Number of bins for CLT histogram must be a positive integer.");
+            } if (cltsamples < cltbins) {
+                throw std::runtime_error("Number of sample means must be greater than or equal to the number of bins.");
+            } if (clt_display_str != "yes" && clt_display_str != "no") {
+                throw std::runtime_error("Invalid display input. Please enter 'yes' or 'no'.");
+            } if (clt_save_str != "yes" && clt_save_str != "no") {
+                throw std::runtime_error("Invalid filesave input. Please enter 'yes' or 'no'.");
+            }
+        } catch (const std::runtime_error& e) {
+            // Handle the error
+            std::cerr << "Error: " << e.what() << std::endl;
+            return EXIT_FAILURE; // Return non-zero exit code
+        }
+
+    }
+
 
     // Create Statistics object using the selected sampler and number of samples
     Statistics stats(*sampler, numSamples);
@@ -188,7 +243,7 @@ int main() {
     if (histogramBins > 0) {
         results << "######################################################\n";
         results << "Drawing histogram...\n";
-        sampler->plotDistribution(true);  ///< Plot the distribution as a histogram
+        sampler->plotDistribution(displayHistogram,saveHistogram);  ///< Plot the distribution as a histogram
     }
 
     if (computeExpectation) {
@@ -213,7 +268,7 @@ int main() {
         std::cout << "Verifying Central Limit Theorem...\n" << std::endl;
         CltTester clt(*sampler, f, numSamples);
         clt.generateDistribution(cltbins, cltsamples);
-        clt.test(true);  ///< Test the Central Limit Theorem
+        clt.test(cltdisplay,cltsave);  ///< Test the Central Limit Theorem
     }
     // Save results to the output file, if defined
     if (!outputFile.empty()) {

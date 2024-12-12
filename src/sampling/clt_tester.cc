@@ -61,8 +61,11 @@ void CltTester::generateDistribution(int bins, int n_samples){
     }
   }
 
-void CltTester::plotDistribution(bool display) const {
-
+void CltTester::plotDistribution(bool display, bool filesave) const {
+    if (!display && !filesave) {
+        // throw an error if both display and filesave are false
+        throw std::invalid_argument("At least one of display or filesave must be true.");
+    }
     const int bins = distribution_array.size();
     std::vector<double> bin_centers(bins, 0.0); // Midpoints of the bins
 
@@ -82,7 +85,7 @@ void CltTester::plotDistribution(bool display) const {
     // Initialize Gnuplot
     Gnuplot gp;
 
-    if (!display) {
+    if (!display && filesave) {
         gp << "set terminal png size 800,600\n";
         gp << "set output 'clt_plot.png'\n";
     }
@@ -102,7 +105,7 @@ void CltTester::plotDistribution(bool display) const {
     gp << "plot '-' using 1:2 with boxes lc rgb '#3B429F' title 'Probability Density'\n";
     gp.send1d(data);  // Send the data for plotting
 
-    if (display) {
+    if (display && filesave) {
         // Configure terminal and output file
         gp << "set terminal png size 800,600\n";
         gp << "set output 'clt_plot.png'\n";
@@ -111,15 +114,8 @@ void CltTester::plotDistribution(bool display) const {
     }
 }
 
-/**
- * @brief Tests the Central Limit Theorem.
- *
- * This method generates multiple sets of `N` samples, calculates their means, and computes
- * the mean and standard deviation of those sample means. The results are then printed
- * to the console, along with the expected standard deviation as per the CLT.
- */
-void CltTester::test(bool display) const {
+void CltTester::test(bool display, bool filesave) const {
     // Plot the distribution as a histogram
     std::cout<< "Plotting the distribution as a histogram" << std::endl;
-    this -> plotDistribution(display);
+    this -> plotDistribution(display, filesave);
 }

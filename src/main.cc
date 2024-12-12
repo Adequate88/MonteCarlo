@@ -123,7 +123,18 @@ int main() {
         std::cin >> minVal;
         std::cout << "Enter the maximum value for uniform distribution: ";
         std::cin >> maxVal;
-
+        try {
+            if (minVal == maxVal) {
+                throw std::runtime_error("Cannot set minimum equal to maximum.");
+            }
+            if (maxVal < minVal) {
+                throw std::runtime_error("Maximum value must be greater than minimum value.");
+            }
+        } catch (const std::runtime_error& e) {
+            // Handle the error
+            std::cerr << "Error: " << e.what() << std::endl;
+            return EXIT_FAILURE; // Return non-zero exit code
+        }
         sampler = new UniformSampler(randomSeed, minVal, maxVal);  ///< Create UniformSampler instance
     } else if (samplerMethod == "box_muller_transform") {
         // Box-Muller transform: Normal distribution sampler
@@ -132,7 +143,15 @@ int main() {
         std::cin >> mean;
         std::cout << "Enter the standard deviation for normal distribution (Box-Muller): ";
         std::cin >> stddev;
-
+        try {
+            if (stddev <= 0) {
+                throw std::runtime_error("Standard Deviation must be positive.");
+            }
+        } catch (const std::runtime_error& e) {
+            // Handle the error
+            std::cerr << "Error: " << e.what() << std::endl;
+            return EXIT_FAILURE; // Return non-zero exit code
+        }
         sampler = new NormalBoxMullerSampler(randomSeed, mean, stddev);  ///< Create NormalBoxMullerSampler instance
     } else if (samplerMethod == "inverse_transform_sampling") {
         // Inverse transform sampling: Normal distribution sampler
@@ -141,7 +160,15 @@ int main() {
         std::cin >> mean;
         std::cout << "Enter the standard deviation for normal distribution (Inverse Transform): ";
         std::cin >> stddev;
-
+        try {
+            if (stddev <= 0) {
+                throw std::runtime_error("Standard Deviation must be positive.");
+            }
+        } catch (const std::runtime_error& e) {
+            // Handle the error
+            std::cerr << "Error: " << e.what() << std::endl;
+            return EXIT_FAILURE; // Return non-zero exit code
+        }
         sampler = new NormalInverseSampler(randomSeed, mean, stddev);  ///< Create NormalInverseSampler instance
     } else {
         std::cerr << "Error: Unknown sampler method: " << samplerMethod << std::endl;

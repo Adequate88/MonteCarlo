@@ -36,14 +36,7 @@ add_subdirectory(googletest)
 
 # Add test executable
 file(GLOB TEST_EXECUTABLES "test/*.cc")
-add_executable(test_runner ${TEST_EXECUTABLES})
-target_link_libraries(test_runner
-        gtest_main gtest pthread ${SAMPLING_SRC} ${STATISTICS_SRC}
-        Boost::iostreams
-        Boost::system
-        Boost::filesystem
-        pthread
-)
+add_executable(test_runner ${TEST_EXECUTABLES} ${SAMPLING_SRC} ${STATISTICS_SRC} ${FUNCTIONS_SRC} ${PARSER_SRC})
 
 add_custom_target(run_tests COMMAND ./test_runner DEPENDS test_runner)
 
@@ -53,6 +46,14 @@ add_custom_target(run_tests COMMAND ./test_runner DEPENDS test_runner)
 
 find_package(Boost REQUIRED COMPONENTS
         iostreams system filesystem
+)
+
+target_link_libraries(test_runner PRIVATE
+        gtest_main gtest pthread
+        Boost::iostreams
+        Boost::system
+        Boost::filesystem
+        pthread
 )
 
 target_link_libraries(main PRIVATE

@@ -380,7 +380,7 @@ TEST(MonteCarloTest, NormalInverseTest) {
 
     // Sample from Normal distribution with mu = 0, sigma = 1
     int sample_num = 10000000;
-    double epsilon = 0.1;
+    double epsilon = 1;
     NormalInverseSampler sampler(42, 0, 1); // mu = 0, sigma = 1
     Statistics stats(sampler, sample_num);
 

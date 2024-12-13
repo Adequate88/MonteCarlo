@@ -11,6 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -49,19 +51,29 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
-<div id="doc-content">
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){ initResizable(false); });
+$(function(){initNavTree('functions.html',''); initResizable(true); });
 /* @license-end */
 </script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -126,8 +138,13 @@ $(function(){ initResizable(false); });
 <li>generateDistribution()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#aa3d9fd063a503f8045b3397e9e034281">AbstractSampler</a>, <a class="el" href="class_clt_tester.html#ac2a104ebbace490a09508ce16db1d456">CltTester</a>, <a class="el" href="class_normal_sampler.html#ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55">NormalSampler</a>, <a class="el" href="class_uniform_sampler.html#a4e3c267099318ddc0035bdade193be0d">UniformSampler</a></li>
 <li>generateFunction()&#160;:&#160;<a class="el" href="class_parser.html#af8cdd573c16595c221ec95358f3e5623">Parser&lt; InputType, OutputType &gt;</a></li>
 <li>genNNewSamples()&#160;:&#160;<a class="el" href="class_statistics.html#a375dfb758a738cc034608adf3d246df3">Statistics</a></li>
+<li>getConstant()&#160;:&#160;<a class="el" href="class_constant_function.html#a55a84e12c23becc931a8d60feafaba0e">ConstantFunction&lt; T &gt;</a></li>
 <li>getDistribution()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#a790c8b6b123ed532467bbc68fc29a128">AbstractSampler</a></li>
 <li>getFinalFunction()&#160;:&#160;<a class="el" href="class_parser.html#ab713fab97b92161da1d30985538ecd26">Parser&lt; InputType, OutputType &gt;</a></li>
+<li>getMaximum()&#160;:&#160;<a class="el" href="class_uniform_sampler.html#a76aaf7b3dd052f43a351aab15b0671a6">UniformSampler</a></li>
+<li>getMinimum()&#160;:&#160;<a class="el" href="class_uniform_sampler.html#ab321cd63b5cfd124a9f0fdc26050882d">UniformSampler</a></li>
+<li>getPlotMaximum()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#aa85c528893bd7c4dcde982906630fb88">AbstractSampler</a></li>
+<li>getPlotMinimum()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#a270ee7475f43fccfbc98c8d5524855ff">AbstractSampler</a></li>
 </ul>
 
 
@@ -158,7 +175,9 @@ $(function(){ initResizable(false); });
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>parse()&#160;:&#160;<a class="el" href="class_parser.html#a580a2a477d66684c7f061bd710409dda">Parser&lt; InputType, OutputType &gt;</a></li>
 <li>Parser()&#160;:&#160;<a class="el" href="class_parser.html#a1a60370aecc2259b45f0694bac10b249">Parser&lt; InputType, OutputType &gt;</a></li>
-<li>plotDistribution()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#ac757a594d8a3a10867fc7c680e3a2c88">AbstractSampler</a>, <a class="el" href="class_clt_tester.html#a5e86184185ab70de54a839cb80c06f3a">CltTester</a></li>
+<li>plot_maximum_&#160;:&#160;<a class="el" href="class_abstract_sampler.html#ac96467ba817a7fb2f5966d11836abc92">AbstractSampler</a></li>
+<li>plot_minimum_&#160;:&#160;<a class="el" href="class_abstract_sampler.html#a078d1a1682b519470a857484417cb982">AbstractSampler</a></li>
+<li>plotDistribution()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#a48d9bf51d639fbcc3b62cd7b96531c79">AbstractSampler</a>, <a class="el" href="class_clt_tester.html#aff47bc264340b428fc9a835d060f93bc">CltTester</a></li>
 <li>printDistribution()&#160;:&#160;<a class="el" href="class_abstract_sampler.html#afc110350241dd9e506f09282b1090a12">AbstractSampler</a></li>
 </ul>
 
@@ -174,7 +193,7 @@ $(function(){ initResizable(false); });
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>test()&#160;:&#160;<a class="el" href="class_clt_tester.html#a1b6d9bd43d8acbe6f38a1310fcb38655">CltTester</a></li>
+<li>test()&#160;:&#160;<a class="el" href="class_clt_tester.html#aee442dac3151b6a047ea01c0c5143e10">CltTester</a></li>
 <li>type_&#160;:&#160;<a class="el" href="struct_token.html#ad553caad96b1f36406baeb168a33de3f">Token</a></li>
 </ul>
 
@@ -198,10 +217,12 @@ $(function(){ initResizable(false); });
 <li>~UniformSampler()&#160;:&#160;<a class="el" href="class_uniform_sampler.html#a6c99f72f96d49f941260b175a8055cfc">UniformSampler</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
-</small></address>
 </div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
 </body>
 </html>

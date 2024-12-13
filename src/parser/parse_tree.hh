@@ -278,7 +278,15 @@ private:
         return node;
     }
 
-    // Term := Factor { ('*' | '/') Factor }
+    /**
+     * @brief Parses a term in an expression.
+     *
+     * This method parses terms that are multiplied or divided, respecting the multiplication and
+     * division operator precedence. It recursively handles the left and right operands, building
+     * the Abstract Syntax Tree (AST) accordingly.
+     *
+     * @return A unique pointer to the root node representing the parsed term.
+     */
     std::unique_ptr<ASTNode> parseTerm() {
         auto node = parseFactor();
         while (current().type_ == TokenType::MUL || current().type_ == TokenType::DIV) {
@@ -290,7 +298,14 @@ private:
         return node;
     }
 
-    // Factor := Power { '^' Power }
+    /**
+     * @brief Parses a factor in an expression.
+     *
+     * This method handles factors in an expression, which can be powers (exponentiation). It
+     * recursively processes the right operand when a power operator (^) is encountered.
+     *
+     * @return A unique pointer to the root node representing the parsed factor.
+     */
     std::unique_ptr<ASTNode> parseFactor() {
         auto node = parsePower();
         while (current().type_ == TokenType::POW) {
@@ -301,7 +316,15 @@ private:
         return node;
     }
 
-    // Power := FunctionCall | Variable | Number | '(' Expression ')'
+    /**
+     * @brief Parses a power in an expression.
+     *
+     * A power can be a function call, a variable, a number, or a parenthesized expression. This
+     * method handles these cases by identifying the appropriate token type and creating the
+     * corresponding AST node.
+     *
+     * @return A unique pointer to the root node representing the parsed power.
+     */
     std::unique_ptr<ASTNode> parsePower() {
         if (current().type_ == TokenType::IDENT) {
             std::string name = current().value_;

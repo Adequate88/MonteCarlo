@@ -336,10 +336,21 @@ class ConstantFunction : public AbstractFunction<T, T> {
             return constant;
         }
 
+        /**
+         * @brief Evaluates the constant function (no input version).
+         *
+         * @param No Input.
+         * @return The constant value.
+         */
         T eval() const{
             return constant;
         }
 
+        /**
+         * @brief Public function to get constant value
+         *
+         * @return The constant value.
+         */
         T getConstant() const {
             return constant;
         }

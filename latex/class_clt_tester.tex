@@ -11,7 +11,8 @@ Class that tests the Central Limit Theorem using an abstract sampler.
 
 
 
-Inheritance diagram for Clt\+Tester\+:\nopagebreak
+Inheritance diagram for Clt\+Tester\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Clt\+Tester\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Clt\+Tester\+:\nopagebreak
+Collaboration diagram for Clt\+Tester\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,10 +35,10 @@ Collaboration diagram for Clt\+Tester\+:\nopagebreak
 \mbox{\hyperlink{class_clt_tester_a915d303efb04aaa821c8d90e9db2ef6f}{Clt\+Tester}} (\mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}} \&sampler, \mbox{\hyperlink{class_abstract_function}{Abstract\+Function}}$<$ double, double $>$ \&f, int N)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_clt_tester}{Clt\+Tester} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_clt_tester_ac2a104ebbace490a09508ce16db1d456}{generate\+Distribution}} (int bins, int n\+\_\+samples) override
-\begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}{test}} () const
+\begin{DoxyCompactList}\small\item\em Generates a distribution for the Central Limit Theorem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_clt_tester_aee442dac3151b6a047ea01c0c5143e10}{test}} (bool display, bool filesave) const
 \begin{DoxyCompactList}\small\item\em Tests the Central Limit Theorem. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a}{plot\+Distribution}} () const override
+void \mbox{\hyperlink{class_clt_tester_aff47bc264340b428fc9a835d060f93bc}{plot\+Distribution}} (bool display, bool filesave) const override
 \begin{DoxyCompactList}\small\item\em Plots the distribution of sample means as a histogram. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
@@ -47,22 +49,22 @@ virtual double \mbox{\hyperlink{class_abstract_sampler_a7bedcc63775853e2c461aea2
 \begin{DoxyCompactList}\small\item\em Generates a random sample. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}{get\+Distribution}} () const
 \begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
-double {\bfseries get\+Plot\+Minimum} ()
-\item 
-double {\bfseries get\+Plot\+Maximum} ()
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff}{get\+Plot\+Minimum}} ()
+\begin{DoxyCompactList}\small\item\em Gets the minimum value of the plot range. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88}{get\+Plot\+Maximum}} ()
+\begin{DoxyCompactList}\small\item\em Gets the maximum value of the plot range. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}{distribution\+\_\+array}}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
 double {\bfseries plot\+\_\+minimum\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Minimum value for plot (helps with bin evaluation) \end{DoxyCompactList}\item 
 double {\bfseries plot\+\_\+maximum\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum value for plot (helps with bin evaluation) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -107,46 +109,81 @@ void Clt\+Tester\+::generate\+Distribution (\begin{DoxyParamCaption}\item[{int}]
 
 
 
-Generates a distribution based on bins and sample count. 
+Generates a distribution for the Central Limit Theorem. 
 
-This method should be overridden by derived classes to populate the {\ttfamily distribution\+\_\+array}.
+This method takes multiple sets of N samples, calculates their means, and stores these sample means in the {\ttfamily sample\+\_\+means\+\_\+} vector. It then divides the sample means into bins and calculates the frequency of each bin to populate the {\ttfamily distribution\+\_\+array}. The plot range (minimum and maximum) is also determined from the sample means.
 
 
 \begin{DoxyParams}{Parameters}
-{\em bins} & Number of bins in the distribution. \\
+{\em bins} & The number of bins to divide the distribution into. \\
 \hline
-{\em n\+\_\+samples} & Number of samples to generate. \\
+{\em n\+\_\+samples} & The number of samples to generate for the distribution. \\
 \hline
 \end{DoxyParams}
 
 
 Reimplemented from \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e034281}{Abstract\+Sampler}}.
 
-\Hypertarget{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a}\index{CltTester@{CltTester}!plotDistribution@{plotDistribution}}
+\Hypertarget{class_clt_tester_aff47bc264340b428fc9a835d060f93bc}\index{CltTester@{CltTester}!plotDistribution@{plotDistribution}}
 \index{plotDistribution@{plotDistribution}!CltTester@{CltTester}}
 \doxysubsubsection{\texorpdfstring{plotDistribution()}{plotDistribution()}}
-{\footnotesize\ttfamily \label{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a} 
-void Clt\+Tester\+::plot\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_clt_tester_aff47bc264340b428fc9a835d060f93bc} 
+void Clt\+Tester\+::plot\+Distribution (\begin{DoxyParamCaption}\item[{bool}]{display}{, }\item[{bool}]{filesave}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Plots the distribution of sample means as a histogram. 
 
-Overridden from the \doxylink{class_abstract_sampler}{Abstract\+Sampler} class. Changes some Gnu\+Plot labels to be more specific to the CLT. 
+Plots the distribution as a histogram.
 
-Reimplemented from \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{Abstract\+Sampler}}.
+Overridden from the \doxylink{class_abstract_sampler}{Abstract\+Sampler} class. Changes some Gnu\+Plot labels to be more specific to the CLT.
 
-\Hypertarget{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655}\index{CltTester@{CltTester}!test@{test}}
+@params display Flag to display the plot. @params filesave Flag to save the plot to a file.
+
+This method plots the binned distribution of sample means using Gnuplot. The user can either display the plot on the screen or save it as a file. If neither {\ttfamily display} nor {\ttfamily filesave} is true, an exception is thrown. The plot includes labels, title, and a customized range for the X and Y axes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & A flag indicating whether to display the plot. \\
+\hline
+{\em filesave} & A flag indicating whether to save the plot to a file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If both {\ttfamily display} and {\ttfamily filesave} are false. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{class_abstract_sampler_a48d9bf51d639fbcc3b62cd7b96531c79}{Abstract\+Sampler}}.
+
+\Hypertarget{class_clt_tester_aee442dac3151b6a047ea01c0c5143e10}\index{CltTester@{CltTester}!test@{test}}
 \index{test@{test}!CltTester@{CltTester}}
 \doxysubsubsection{\texorpdfstring{test()}{test()}}
-{\footnotesize\ttfamily \label{class_clt_tester_a1b6d9bd43d8acbe6f38a1310fcb38655} 
-void Clt\+Tester\+::test (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \label{class_clt_tester_aee442dac3151b6a047ea01c0c5143e10} 
+void Clt\+Tester\+::test (\begin{DoxyParamCaption}\item[{bool}]{display}{, }\item[{bool}]{filesave}{}\end{DoxyParamCaption}) const}
 
 
 
 Tests the Central Limit Theorem. 
 
-This method generates multiple sets of {\ttfamily N} samples, calculates their means, and computes the mean and standard deviation of those sample means. The results are then printed to the console, along with the expected standard deviation as per the CLT. 
+Tests the distribution by plotting it as a histogram.
+
+Wrapper function that plots the distribution of sample means to test the CLT.
+
+@params display Flag to display the plot. @params filesave Flag to save the plot to a file.
+
+This method calls the {\ttfamily plot\+Distribution} function to visualize the distribution as a histogram. It takes the same {\ttfamily display} and {\ttfamily filesave} flags to control whether the plot is displayed or saved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & A flag indicating whether to display the plot. \\
+\hline
+{\em filesave} & A flag indicating whether to save the plot to a file. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

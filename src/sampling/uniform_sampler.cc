@@ -102,6 +102,23 @@ void UniformSampler::generateDistribution(const int bins, const int n_samples) {
     }
 }
 
+/**
+ * @brief Retrieves the minimum value of the uniform distribution.
+ *
+ * This function returns the minimum value that defines the lower boundary of the uniform distribution
+ * range, which is used when generating random samples.
+ *
+ * @return The minimum value of the uniform distribution.
+ */
 double UniformSampler::getMinimum() { return minimum_; }
+
+/**
+ * @brief Retrieves the maximum value of the uniform distribution.
+ *
+ * This function returns the maximum value that defines the upper boundary of the uniform distribution
+ * range, which is used when generating random samples.
+ *
+ * @return The maximum value of the uniform distribution.
+ */
 double UniformSampler::getMaximum() { return maximum_; }
 

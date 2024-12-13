@@ -11,7 +11,8 @@ Generates samples from a normal distribution using the Box-\/\+Muller method.
 
 
 
-Inheritance diagram for Normal\+Box\+Muller\+Sampler\+:\nopagebreak
+Inheritance diagram for Normal\+Box\+Muller\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Normal\+Box\+Muller\+Sampler\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Normal\+Box\+Muller\+Sampler\+:\nopagebreak
+Collaboration diagram for Normal\+Box\+Muller\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -50,14 +52,14 @@ virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Abstract\+Sampler} ()=defa
 \begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic behavior. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
-\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot. \end{DoxyCompactList}\item 
-std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+virtual void \mbox{\hyperlink{class_abstract_sampler_a48d9bf51d639fbcc3b62cd7b96531c79}{plot\+Distribution}} (bool display, bool filesave) const
+\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot of pdf distribution. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}{get\+Distribution}} () const
 \begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
-double {\bfseries get\+Plot\+Minimum} ()
-\item 
-double {\bfseries get\+Plot\+Maximum} ()
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff}{get\+Plot\+Minimum}} ()
+\begin{DoxyCompactList}\small\item\em Gets the minimum value of the plot range. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88}{get\+Plot\+Maximum}} ()
+\begin{DoxyCompactList}\small\item\em Gets the maximum value of the plot range. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_normal_sampler}{Normal\+Sampler}}}
 \begin{DoxyCompactItemize}
@@ -73,12 +75,12 @@ double {\bfseries sigma\+\_\+}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_abstract_sampler}{Abstract\+Sampler}}}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}{distribution\+\_\+array}}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
 double {\bfseries plot\+\_\+minimum\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Minimum value for plot (helps with bin evaluation) \end{DoxyCompactList}\item 
 double {\bfseries plot\+\_\+maximum\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum value for plot (helps with bin evaluation) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

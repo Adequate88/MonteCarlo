@@ -58,18 +58,18 @@ Detailed code documentation is available by navigating to the `\html` directory 
    cmake ..
    ```
    
-   Build the project:
+   Build the project and make executables:
    ```bash
    cmake --build .
+   make run_tests
    ```
 
-3. **Alternatively, compile directly with g++ (if preferred):**
-
-   Navigate to the root directory of the project:
+   Run executables:
    ```bash
-   g++ -std=c++17 -o main src/sampling/*.cc src/statistics/*.cc src/functions/*.cc src/clt_tester/clt_tester.cc
+   ./main
+   ./test_runner
    ```
-   
+
 ### External Libraries
 
 Ensure that the required external libraries (like boost) are installed in your system and that the submodules are updated. To perform the latter, run the following in the root directory:
@@ -280,7 +280,7 @@ This template based module is comprised of two parts: the AbstractFunction class
     - **Expected Outcome**: The function should evaluate to approximately `22045.7` when `x = 5.0`.
 
 14. `MonteCarloTest.UniformSamplerTest`
-    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Uniform distribution between 0 and 1. Additionally checks that file is created correctly.
+    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Uniform distribution between 0 and 1. Additionally checks that the CLT tester runs correctly and that a file is created.
     - **Accuracy**: The sample statistics must match the theoretical values of expectation, variance, and higher moments.
     - **Expected Outcome**:
         - Expectation should be close to `3.5`.
@@ -289,7 +289,7 @@ This template based module is comprised of two parts: the AbstractFunction class
         - The 4th moment should be approximately `206.2`.
 
 15. `MonteCarloTest.NormalBoxMullerTest`
-    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`. Additionally checks that file is created correctly.
+    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`. Additionally checks that the CLT tester runs correctly and that a file is created.
     - **Accuracy**: The sample statistics must match the theoretical values of expectation, variance, and higher moments.
     - **Expected Outcome**:
         - Expectation should be close to `2`.
@@ -298,7 +298,7 @@ This template based module is comprised of two parts: the AbstractFunction class
         - The 4th moment should be approximately `475`.
 
 16. `MonteCarloTest.NormalInverseTest`
-    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`. Additionally checks that file is created correctly.
+    - **Purpose**: Tests the statistical properties (expectation, variance, 3rd and 4th moments) of the function `3*x + 2` sampled from a Normal distribution with `mu = 0` and `sigma = 1`. Additionally checks that the CLT tester runs correctly and that a file is created.
     - **Accuracy**: The sample statistics must match the theoretical values of expectation, variance, and higher moments.
     - **Expected Outcome**:
         - Expectation should be close to `2`.
@@ -313,7 +313,7 @@ This template based module is comprised of two parts: the AbstractFunction class
 
 - **GoogleTest**: Thanks to the developers of GoogleTest for providing a testing framework. [Repository](https://github.com/google/googletest).
 - **gnuplot-iostream**: Thanks to the creators of gnuplot-iostream. [Repository](https://github.com/dstahlke/gnuplot-iostream).
-- **Numerical Recipes**: Algorithms in this project are inspired by and taken from *Numerical Recipes* (Press et al., 2007).
+- **Numerical Recipes**: Some algorithms in this project are inspired by and taken from *Numerical Recipes* (Press et al., 2007).
 
 ---
 

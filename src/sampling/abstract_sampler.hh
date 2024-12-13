@@ -21,14 +21,13 @@
  * the virtual methods to implement specific sampling logic.
  */
 class AbstractSampler {
-    /**
-    */
     protected:
         /**
         * @brief Array to store distribution data based on bins.
         */
-        std::vector<double> distribution_array; // Array to store distribution based on bins
-        double plot_minimum_, plot_maximum_;
+        std::vector<double> distribution_array; ///< Vector containing emperical pdf in bins
+        double plot_minimum_; ///< Minimum value for plot (helps with bin evaluation)
+        double plot_maximum_; ///< Maximum value for plot (helps with bin evaluation)
     public:
         /**
         * @brief Virtual destructor for safe polymorphic behavior.
@@ -76,7 +75,23 @@ class AbstractSampler {
         * @brief Returns the distribution array
         */
         std::vector<double> getDistribution() const;
+
+        /**
+        * @brief Gets the minimum value of the plot range.
+        *
+        * This function returns the minimum value that defines the lower boundary of the plot's X-axis range.
+        *
+        * @return The minimum value of the plot range.
+        */
         double getPlotMinimum();
+
+       /**
+        * @brief Gets the maximum value of the plot range.
+        *
+        * This function returns the maximum value that defines the upper boundary of the plot's X-axis range.
+        *
+        * @return The maximum value of the plot range.
+        */
         double getPlotMaximum();
 
 };

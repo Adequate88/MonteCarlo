@@ -78,7 +78,24 @@ class UniformSampler : public AbstractSampler {
          */
         void generateDistribution(int bins, int n_samples) override;
 
+       /**
+        * @brief Retrieves the minimum value of the uniform distribution.
+        *
+        * This function returns the minimum value that defines the lower boundary of the uniform distribution
+        * range, which is used when generating random samples.
+        *
+        * @return The minimum value of the uniform distribution.
+        */
         double getMinimum();
+
+       /**
+        * @brief Retrieves the maximum value of the uniform distribution.
+        *
+        * This function returns the maximum value that defines the upper boundary of the uniform distribution
+        * range, which is used when generating random samples.
+        *
+        * @return The maximum value of the uniform distribution.
+        */
         double getMaximum();
 };
 

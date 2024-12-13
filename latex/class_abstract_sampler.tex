@@ -11,7 +11,8 @@ Abstract base class for sampling and distribution generation.
 
 
 
-Inheritance diagram for Abstract\+Sampler\+:\nopagebreak
+Inheritance diagram for Abstract\+Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,29 +31,25 @@ virtual void \mbox{\hyperlink{class_abstract_sampler_aa3d9fd063a503f8045b3397e9e
 \begin{DoxyCompactList}\small\item\em Generates a distribution based on bins and sample count. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}{print\+Distribution}} ()
 \begin{DoxyCompactList}\small\item\em Prints the distribution to the standard output. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}{plot\+Distribution}} () const
-\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot. \end{DoxyCompactList}\item 
-\Hypertarget{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}\label{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128} 
-std\+::vector$<$ double $>$ {\bfseries get\+Distribution} () const
+virtual void \mbox{\hyperlink{class_abstract_sampler_a48d9bf51d639fbcc3b62cd7b96531c79}{plot\+Distribution}} (bool display, bool filesave) const
+\begin{DoxyCompactList}\small\item\em Displays and saves image file of plot of pdf distribution. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}{get\+Distribution}} () const
 \begin{DoxyCompactList}\small\item\em Returns the distribution array. \end{DoxyCompactList}\item 
-\Hypertarget{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff}\label{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff} 
-double {\bfseries get\+Plot\+Minimum} ()
-\item 
-\Hypertarget{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88}\label{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88} 
-double {\bfseries get\+Plot\+Maximum} ()
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff}{get\+Plot\+Minimum}} ()
+\begin{DoxyCompactList}\small\item\em Gets the minimum value of the plot range. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88}{get\+Plot\+Maximum}} ()
+\begin{DoxyCompactList}\small\item\em Gets the maximum value of the plot range. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}\label{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72} 
-std\+::vector$<$ double $>$ {\bfseries distribution\+\_\+array}
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}{distribution\+\_\+array}}
 \begin{DoxyCompactList}\small\item\em Array to store distribution data based on bins. \end{DoxyCompactList}\item 
 \Hypertarget{class_abstract_sampler_a078d1a1682b519470a857484417cb982}\label{class_abstract_sampler_a078d1a1682b519470a857484417cb982} 
 double {\bfseries plot\+\_\+minimum\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Minimum value for plot (helps with bin evaluation) \end{DoxyCompactList}\item 
 \Hypertarget{class_abstract_sampler_ac96467ba817a7fb2f5966d11836abc92}\label{class_abstract_sampler_ac96467ba817a7fb2f5966d11836abc92} 
 double {\bfseries plot\+\_\+maximum\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum value for plot (helps with bin evaluation) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -84,19 +81,103 @@ This method should be overridden by derived classes to populate the {\ttfamily d
 
 Reimplemented in \mbox{\hyperlink{class_clt_tester_ac2a104ebbace490a09508ce16db1d456}{Clt\+Tester}}, \mbox{\hyperlink{class_normal_sampler_ae2cd1cfdb1a6fc77b7c1f3d16fd9ec55}{Normal\+Sampler}}, and \mbox{\hyperlink{class_uniform_sampler_a4e3c267099318ddc0035bdade193be0d}{Uniform\+Sampler}}.
 
-\Hypertarget{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88}\index{AbstractSampler@{AbstractSampler}!plotDistribution@{plotDistribution}}
+\Hypertarget{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128}\index{AbstractSampler@{AbstractSampler}!getDistribution@{getDistribution}}
+\index{getDistribution@{getDistribution}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{getDistribution()}{getDistribution()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_a790c8b6b123ed532467bbc68fc29a128} 
+std\+::vector$<$ double $>$ Abstract\+Sampler\+::get\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the distribution array. 
+
+Retrieves the distribution array.
+
+This method returns a copy of the distribution array, which contains the binned frequency values that represent the probability distribution.
+
+\begin{DoxyReturn}{Returns}
+A vector of doubles representing the distribution array. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88}\index{AbstractSampler@{AbstractSampler}!getPlotMaximum@{getPlotMaximum}}
+\index{getPlotMaximum@{getPlotMaximum}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{getPlotMaximum()}{getPlotMaximum()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_aa85c528893bd7c4dcde982906630fb88} 
+double Abstract\+Sampler\+::get\+Plot\+Maximum (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the maximum value of the plot range. 
+
+Retrieves the maximum value for the plot range.
+
+This function returns the maximum value that defines the upper boundary of the plot\textquotesingle{}s X-\/axis range.
+
+\begin{DoxyReturn}{Returns}
+The maximum value of the plot range.
+\end{DoxyReturn}
+This method returns the maximum value used to define the range of the plot.
+
+\begin{DoxyReturn}{Returns}
+The maximum value of the plot range. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff}\index{AbstractSampler@{AbstractSampler}!getPlotMinimum@{getPlotMinimum}}
+\index{getPlotMinimum@{getPlotMinimum}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{getPlotMinimum()}{getPlotMinimum()}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_a270ee7475f43fccfbc98c8d5524855ff} 
+double Abstract\+Sampler\+::get\+Plot\+Minimum (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the minimum value of the plot range. 
+
+Retrieves the minimum value for the plot range.
+
+This function returns the minimum value that defines the lower boundary of the plot\textquotesingle{}s X-\/axis range.
+
+\begin{DoxyReturn}{Returns}
+The minimum value of the plot range.
+\end{DoxyReturn}
+This method returns the minimum value used to define the range of the plot.
+
+\begin{DoxyReturn}{Returns}
+The minimum value of the plot range. 
+\end{DoxyReturn}
+\Hypertarget{class_abstract_sampler_a48d9bf51d639fbcc3b62cd7b96531c79}\index{AbstractSampler@{AbstractSampler}!plotDistribution@{plotDistribution}}
 \index{plotDistribution@{plotDistribution}!AbstractSampler@{AbstractSampler}}
 \doxysubsubsection{\texorpdfstring{plotDistribution()}{plotDistribution()}}
-{\footnotesize\ttfamily \label{class_abstract_sampler_ac757a594d8a3a10867fc7c680e3a2c88} 
-void Abstract\+Sampler\+::plot\+Distribution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_a48d9bf51d639fbcc3b62cd7b96531c79} 
+void Abstract\+Sampler\+::plot\+Distribution (\begin{DoxyParamCaption}\item[{bool}]{display}{, }\item[{bool}]{filesave}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Displays and saves image file of plot. 
+Displays and saves image file of plot of pdf distribution. 
+
+Plots the distribution of values using Gnuplot.
 
 
+\begin{DoxyParams}{Parameters}
+{\em display} & flag to display the plot \\
+\hline
+{\em filesave} & flag to save the plot to a file\\
+\hline
+\end{DoxyParams}
+This function calculates the bin centers for the distribution and visualizes the probability density function (PDF) as a histogram-\/like plot. It can either display the plot on-\/screen or save it as a PNG file. At least one of these options must be enabled.
 
-Reimplemented in \mbox{\hyperlink{class_clt_tester_a5e86184185ab70de54a839cb80c06f3a}{Clt\+Tester}}.
+
+\begin{DoxyParams}{Parameters}
+{\em display} & A boolean flag indicating whether to display the plot on-\/screen. \\
+\hline
+{\em filesave} & A boolean flag indicating whether to save the plot to a file as a PNG image.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If both {\ttfamily display} and {\ttfamily filesave} are set to false. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \mbox{\hyperlink{class_clt_tester_aff47bc264340b428fc9a835d060f93bc}{Clt\+Tester}}.
 
 \Hypertarget{class_abstract_sampler_afc110350241dd9e506f09282b1090a12}\index{AbstractSampler@{AbstractSampler}!printDistribution@{printDistribution}}
 \index{printDistribution@{printDistribution}!AbstractSampler@{AbstractSampler}}
@@ -132,6 +213,19 @@ A random sample as a double-\/precision floating-\/point number.
 Reimplemented in \mbox{\hyperlink{class_normal_box_muller_sampler_aa5eeb799f6e08d063df49ebca103d388}{Normal\+Box\+Muller\+Sampler}}, \mbox{\hyperlink{class_normal_inverse_sampler_a5a125b33494e8a2305d358d188452bc1}{Normal\+Inverse\+Sampler}}, and \mbox{\hyperlink{class_uniform_sampler_ae352adfceb12d692f021df61b48c317c}{Uniform\+Sampler}}.
 
 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72}\index{AbstractSampler@{AbstractSampler}!distribution\_array@{distribution\_array}}
+\index{distribution\_array@{distribution\_array}!AbstractSampler@{AbstractSampler}}
+\doxysubsubsection{\texorpdfstring{distribution\_array}{distribution\_array}}
+{\footnotesize\ttfamily \label{class_abstract_sampler_a71497f519fbcbe368c7f419f72b5df72} 
+std\+::vector$<$double$>$ Abstract\+Sampler\+::distribution\+\_\+array\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array to store distribution data based on bins. 
+
+Vector containing emperical pdf in bins 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

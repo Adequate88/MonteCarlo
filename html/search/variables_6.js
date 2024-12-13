@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniform_5fsampler_5f_0',['uniform_sampler_',['../class_normal_sampler.html#a2ad34eeeb5580bd3715f74bc733c2fe8',1,'NormalSampler']]]
+  ['type_5f_0',['type_',['../struct_token.html#ad553caad96b1f36406baeb168a33de3f',1,'Token']]]
 ];

@@ -26,6 +26,17 @@ CltTester::CltTester(AbstractSampler& sampler,AbstractFunction<double,double>& f
     std::cout<< "CltTester object created" << std::endl;
 }
 
+/**
+ * @brief Generates a distribution for the Central Limit Theorem.
+ *
+ * This method takes multiple sets of N samples, calculates their means, and stores these sample means
+ * in the `sample_means_` vector. It then divides the sample means into bins and calculates the frequency
+ * of each bin to populate the `distribution_array`. The plot range (minimum and maximum) is also determined
+ * from the sample means.
+ *
+ * @param bins The number of bins to divide the distribution into.
+ * @param n_samples The number of samples to generate for the distribution.
+ */
 void CltTester::generateDistribution(int bins, int n_samples){
     // Take multiple sets of N samples and calculate their means
     std::cout << "Generating distribution for the Central Limit Theorem..." << std::endl;
@@ -61,6 +72,17 @@ void CltTester::generateDistribution(int bins, int n_samples){
     }
   }
 
+  /**
+ * @brief Plots the distribution as a histogram.
+ *
+ * This method plots the binned distribution of sample means using Gnuplot. The user can either display
+ * the plot on the screen or save it as a file. If neither `display` nor `filesave` is true, an exception
+ * is thrown. The plot includes labels, title, and a customized range for the X and Y axes.
+ *
+ * @param display A flag indicating whether to display the plot.
+ * @param filesave A flag indicating whether to save the plot to a file.
+ * @throws std::invalid_argument If both `display` and `filesave` are false.
+ */
 void CltTester::plotDistribution(bool display, bool filesave) const {
     if (!display && !filesave) {
         // throw an error if both display and filesave are false
@@ -114,6 +136,15 @@ void CltTester::plotDistribution(bool display, bool filesave) const {
     }
 }
 
+/**
+ * @brief Tests the distribution by plotting it as a histogram.
+ *
+ * This method calls the `plotDistribution` function to visualize the distribution as a histogram. It takes
+ * the same `display` and `filesave` flags to control whether the plot is displayed or saved.
+ *
+ * @param display A flag indicating whether to display the plot.
+ * @param filesave A flag indicating whether to save the plot to a file.
+ */
 void CltTester::test(bool display, bool filesave) const {
     // Plot the distribution as a histogram
     std::cout<< "Plotting the distribution as a histogram" << std::endl;

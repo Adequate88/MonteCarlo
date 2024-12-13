@@ -30,7 +30,16 @@ void AbstractSampler::printDistribution() {
 }
 
 /**
- * @brief Displays and saves image file of plot
+ * @brief Plots the distribution of values using Gnuplot.
+ *
+ * This function calculates the bin centers for the distribution and visualizes the
+ * probability density function (PDF) as a histogram-like plot. It can either display
+ * the plot on-screen or save it as a PNG file. At least one of these options must be enabled.
+ *
+ * @param display A boolean flag indicating whether to display the plot on-screen.
+ * @param filesave A boolean flag indicating whether to save the plot to a file as a PNG image.
+ *
+ * @throws std::invalid_argument If both `display` and `filesave` are set to false.
  */
 void AbstractSampler::plotDistribution(bool display, bool filesave) const {
     if (!display && !filesave) {
@@ -85,14 +94,36 @@ void AbstractSampler::plotDistribution(bool display, bool filesave) const {
     }
 }
 
+/**
+ * @brief Retrieves the distribution array.
+ *
+ * This method returns a copy of the distribution array, which contains the binned
+ * frequency values that represent the probability distribution.
+ *
+ * @return A vector of doubles representing the distribution array.
+ */
 std::vector<double> AbstractSampler::getDistribution() const {
   return distribution_array;
 }
 
+/**
+ * @brief Retrieves the minimum value for the plot range.
+ *
+ * This method returns the minimum value used to define the range of the plot.
+ *
+ * @return The minimum value of the plot range.
+ */
 double AbstractSampler::getPlotMinimum() {
     return plot_minimum_;
 }
 
+/**
+ * @brief Retrieves the maximum value for the plot range.
+ *
+ * This method returns the maximum value used to define the range of the plot.
+ *
+ * @return The maximum value of the plot range.
+ */
 double AbstractSampler::getPlotMaximum() {
     return plot_maximum_;
 }

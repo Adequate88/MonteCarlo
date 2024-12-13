@@ -198,77 +198,74 @@
 \DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
 \DoxyCodeLine{00279\ \ \ \ \ \}}
 \DoxyCodeLine{00280\ }
-\DoxyCodeLine{00281\ \ \ \ \ \textcolor{comment}{//\ Term\ :=\ Factor\ \{\ ('*'\ |\ '/')\ Factor\ \}}}
-\DoxyCodeLine{00282\ \ \ \ \ std::unique\_ptr<ASTNode>\ parseTerm()\ \{}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ parseFactor();}
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a2cdf52a55876063ec93b7d18bc741f6c}{TokenType::MUL}}\ ||\ current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a29bbf66f7f8529ec47e394fb5a36c646}{TokenType::DIV}})\ \{}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ op\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
-\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
-\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ right\ =\ parseFactor();}
-\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{makeOp}}(op,\ std::move(node),\ std::move(right));}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
-\DoxyCodeLine{00291\ \ \ \ \ \}}
-\DoxyCodeLine{00292\ }
-\DoxyCodeLine{00293\ \ \ \ \ \textcolor{comment}{//\ Factor\ :=\ Power\ \{\ '\string^'\ Power\ \}}}
-\DoxyCodeLine{00294\ \ \ \ \ std::unique\_ptr<ASTNode>\ parseFactor()\ \{}
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ parsePower();}
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a17faf4e999b8cee4c36915c1f54ccffe}{TokenType::POW}})\ \{}
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ '\string^'}}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ right\ =\ parsePower();}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{makeOp}}(\textcolor{stringliteral}{"{}\string^"{}},\ std::move(node),\ std::move(right));}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
-\DoxyCodeLine{00302\ \ \ \ \ \}}
-\DoxyCodeLine{00303\ }
-\DoxyCodeLine{00304\ \ \ \ \ \textcolor{comment}{//\ Power\ :=\ FunctionCall\ |\ Variable\ |\ Number\ |\ '('\ Expression\ ')'}}
-\DoxyCodeLine{00305\ \ \ \ \ std::unique\_ptr<ASTNode>\ parsePower()\ \{}
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921af57e263e90cbbb939b6dc6b8db7992b7}{TokenType::IDENT}})\ \{}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ name\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ it's\ a\ function\ call}}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (peek().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a45bf4f3d35a115aaa2df577ba7861286}{TokenType::LPAREN}})\ \{}
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ IDENT}}
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ '('}}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ arg\ =\ parseExpression();}
-\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ expect(\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921afccedc90f87593a3b31536bd658808b1}{TokenType::RPAREN}});}
-\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ ')'}}
-\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6}{makeFunc}}(name,\ std::move(arg));}
-\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Just\ a\ variable}}
-\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16ad6f4440b8633f973d33c78928bdac2e1}{NodeType::VAR}},\ name);}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a34f55eca38e0605a84f169ff61a2a396}{TokenType::NUMBER}})\ \{}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ val\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
-\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
-\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a44119bf3bae5d40a8d0766b91c304aac}{NodeType::NUM}},\ val);}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a45bf4f3d35a115aaa2df577ba7861286}{TokenType::LPAREN}})\ \{}
-\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ '('}}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ parseExpression();}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ expect(\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921afccedc90f87593a3b31536bd658808b1}{TokenType::RPAREN}});}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ ')'}}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().value\_\ ==\ \textcolor{stringliteral}{"{}-\/"{}})\ \{}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ val\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
-\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
-\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ val\ +=\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
-\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a34f55eca38e0605a84f169ff61a2a396}{TokenType::NUMBER}})\ \{}
-\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a44119bf3bae5d40a8d0766b91c304aac}{NodeType::NUM}},\ val);}
-\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921af57e263e90cbbb939b6dc6b8db7992b7}{TokenType::IDENT}})\ \{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16ad6f4440b8633f973d33c78928bdac2e1}{NodeType::VAR}},\ val);}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unexpected\ token\ while\ parsing\ negative"{}});}
+\DoxyCodeLine{00290\ \ \ \ \ std::unique\_ptr<ASTNode>\ parseTerm()\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ parseFactor();}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a2cdf52a55876063ec93b7d18bc741f6c}{TokenType::MUL}}\ ||\ current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a29bbf66f7f8529ec47e394fb5a36c646}{TokenType::DIV}})\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ op\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ right\ =\ parseFactor();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{makeOp}}(op,\ std::move(node),\ std::move(right));}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00309\ \ \ \ \ std::unique\_ptr<ASTNode>\ parseFactor()\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ parsePower();}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a17faf4e999b8cee4c36915c1f54ccffe}{TokenType::POW}})\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ '\string^'}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ right\ =\ parsePower();}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \mbox{\hyperlink{tokenizer_8hh_a414c6c28e70c3cc0f56d7c830038f4a6}{makeOp}}(\textcolor{stringliteral}{"{}\string^"{}},\ std::move(node),\ std::move(right));}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00328\ \ \ \ \ std::unique\_ptr<ASTNode>\ parsePower()\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921af57e263e90cbbb939b6dc6b8db7992b7}{TokenType::IDENT}})\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ name\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ it's\ a\ function\ call}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (peek().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a45bf4f3d35a115aaa2df577ba7861286}{TokenType::LPAREN}})\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ IDENT}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ '('}}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ arg\ =\ parseExpression();}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ expect(\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921afccedc90f87593a3b31536bd658808b1}{TokenType::RPAREN}});}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ ')'}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{tokenizer_8hh_ae20d55ef8319cae72ed4576faacbd0d6}{makeFunc}}(name,\ std::move(arg));}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Just\ a\ variable}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16ad6f4440b8633f973d33c78928bdac2e1}{NodeType::VAR}},\ name);}
 \DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00344\ }
-\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00346\ }
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unexpected\ token\ while\ parsing\ power"{}});}
-\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00349\ \ \ \ \ \}}
-\DoxyCodeLine{00350\ \};}
-\DoxyCodeLine{00351\ }
-\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PARSE\_TREE\_HH}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a34f55eca38e0605a84f169ff61a2a396}{TokenType::NUMBER}})\ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ val\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a44119bf3bae5d40a8d0766b91c304aac}{NodeType::NUM}},\ val);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a45bf4f3d35a115aaa2df577ba7861286}{TokenType::LPAREN}})\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ '('}}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ parseExpression();}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ expect(\mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921afccedc90f87593a3b31536bd658808b1}{TokenType::RPAREN}});}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ advance();\ \textcolor{comment}{//\ consume\ ')'}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().value\_\ ==\ \textcolor{stringliteral}{"{}-\/"{}})\ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ val\ =\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ val\ +=\ current().\mbox{\hyperlink{struct_token_a23b8c7ef37b0b94b556500a9807f60dd}{value\_}};}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921a34f55eca38e0605a84f169ff61a2a396}{TokenType::NUMBER}})\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16a44119bf3bae5d40a8d0766b91c304aac}{NodeType::NUM}},\ val);}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (current().type\_\ ==\ \mbox{\hyperlink{tokenizer_8hh_aa520fbf142ba1e7e659590c07da31921af57e263e90cbbb939b6dc6b8db7992b7}{TokenType::IDENT}})\ \{}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ advance();}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<ASTNode>(\mbox{\hyperlink{tokenizer_8hh_acac9cbaeea226ed297804c012dc12b16ad6f4440b8633f973d33c78928bdac2e1}{NodeType::VAR}},\ val);}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unexpected\ token\ while\ parsing\ negative"{}});}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unexpected\ token\ while\ parsing\ power"{}});}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \ \ \}}
+\DoxyCodeLine{00373\ \};}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PARSE\_TREE\_HH}}
 
 \end{DoxyCode}

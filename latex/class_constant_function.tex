@@ -11,7 +11,8 @@ Class representing a constant function.
 
 
 
-Inheritance diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+Inheritance diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstr
 \end{figure}
 
 
-Collaboration diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+Collaboration diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,12 +36,10 @@ Collaboration diagram for Constant\+Function\texorpdfstring{$<$}{<} T \texorpdfs
 \begin{DoxyCompactList}\small\item\em Constructs a constant function. \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{class_constant_function_a37affec4932324ddeffb8df7474c3eea}{eval}} (const T \&input) const override
 \begin{DoxyCompactList}\small\item\em Evaluates the constant function. \end{DoxyCompactList}\item 
-\Hypertarget{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c}\label{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c} 
-T {\bfseries eval} () const
-\item 
-\Hypertarget{class_constant_function_a55a84e12c23becc931a8d60feafaba0e}\label{class_constant_function_a55a84e12c23becc931a8d60feafaba0e} 
-T {\bfseries get\+Constant} () const
-\end{DoxyCompactItemize}
+T \mbox{\hyperlink{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c}{eval}} () const
+\begin{DoxyCompactList}\small\item\em Evaluates the constant function (no input version). \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_constant_function_a55a84e12c23becc931a8d60feafaba0e}{get\+Constant}} () const
+\begin{DoxyCompactList}\small\item\em Public function to get constant value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_function}{Abstract\+Function$<$ T, T $>$}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -91,9 +91,28 @@ Constructs a constant function.
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c}\index{ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}!eval@{eval}}
+\index{eval@{eval}!ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_constant_function_a7fb8bfcbd0b8cb473b35cc3dc766ca6c} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_constant_function}{Constant\+Function}}$<$ T $>$\+::eval (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Evaluates the constant function (no input version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & Input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The constant value. 
+\end{DoxyReturn}
 \Hypertarget{class_constant_function_a37affec4932324ddeffb8df7474c3eea}\index{ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}!eval@{eval}}
 \index{eval@{eval}!ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_constant_function_a37affec4932324ddeffb8df7474c3eea} 
 template$<$typename T $>$ \\
 T \mbox{\hyperlink{class_constant_function}{Constant\+Function}}$<$ T $>$\+::eval (\begin{DoxyParamCaption}\item[{const T \&}]{input}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
@@ -114,6 +133,20 @@ The constant value.
 
 Implements \mbox{\hyperlink{class_abstract_function_a34576e68dc7567ee4709e9a8e7a2bdd5}{Abstract\+Function$<$ T, T $>$}}.
 
+\Hypertarget{class_constant_function_a55a84e12c23becc931a8d60feafaba0e}\index{ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}!getConstant@{getConstant}}
+\index{getConstant@{getConstant}!ConstantFunction$<$ T $>$@{ConstantFunction$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getConstant()}{getConstant()}}
+{\footnotesize\ttfamily \label{class_constant_function_a55a84e12c23becc931a8d60feafaba0e} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_constant_function}{Constant\+Function}}$<$ T $>$\+::get\+Constant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Public function to get constant value. 
+
+\begin{DoxyReturn}{Returns}
+The constant value. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
